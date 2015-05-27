@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6FEF7149-FFD9-4F68-BCEC-F03D557678DF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Yinner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5035D08F16AE7E61A0E2379E553B28AFB734FBCC</key>
+		<string>https://github.com/Maru-zhang/Yinner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Yinner.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5035D08F16AE7E61A0E2379E553B28AFB734FBCC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Maru-zhang/Yinner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5035D08F16AE7E61A0E2379E553B28AFB734FBCC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5035D08F16AE7E61A0E2379E553B28AFB734FBCC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Yinner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
