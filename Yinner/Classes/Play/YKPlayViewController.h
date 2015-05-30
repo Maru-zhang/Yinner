@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YKPlayViewController : UIViewController
+@interface YKPlayViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @end

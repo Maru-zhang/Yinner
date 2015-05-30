@@ -10,7 +10,7 @@
 #import "YKDock.h"
 #import "YKHomeViewController.h"
 #import "YKPlayViewController.h"
-#import "YKMoreViewController.h"
+#import "YKLibraryController.h"
 
 @interface YKMainViewController : UIViewController <UINavigationBarDelegate>
 

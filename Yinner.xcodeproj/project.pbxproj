@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
+		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
+		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
+		426B73C41B188C0800E7EA7E /* example.wav in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C21B188C0800E7EA7E /* example.wav */; };
+		426B73C51B188C0800E7EA7E /* 1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C31B188C0800E7EA7E /* 1.mov */; };
 		4273A52C1B12D0F100871B44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4273A52B1B12D0F100871B44 /* Images.xcassets */; };
 		4297F8F61B143B1B00706B72 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F31B143B1B00706B72 /* YKDock.m */; };
 		4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F51B143B1B00706B72 /* YKDockItem.m */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
 		4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9001B143D3700706B72 /* YKMainViewController.m */; };
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
-		4297F90D1B144CFB00706B72 /* YKMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKMoreViewController.m */; };
+		4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKLibraryController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
 		42C585D91B0AFAF0005BE52E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585D81B0AFAF0005BE52E /* main.m */; };
 		42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585DB1B0AFAF0005BE52E /* AppDelegate.m */; };
 		42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E01B0AFAF0005BE52E /* Main.storyboard */; };
 		42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */; };
 		42C585F31B0AFAF0005BE52E /* YinnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585F21B0AFAF0005BE52E /* YinnerTests.m */; };
+		42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F31B17099400247877 /* AVFoundation.framework */; };
+		42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F51B17099D00247877 /* CoreAudio.framework */; };
+		597978221B5EC40915C43DEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D911E37F7CBA5D8373180423 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
+		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
+		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
+		42656D281B15986400D2AB4B /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		42656D291B15987B00D2AB4B /* YKWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKWorkViewController.h; sourceTree = "<group>"; };
+		42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKWorkViewController.m; sourceTree = "<group>"; };
+		426B73C21B188C0800E7EA7E /* example.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = example.wav; sourceTree = "<group>"; };
+		426B73C31B188C0800E7EA7E /* 1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 1.mov; sourceTree = "<group>"; };
+		426B73C71B1898F100E7EA7E /* ReuseFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReuseFrame.h; path = Other/ReuseFrame.h; sourceTree = "<group>"; };
 		4273A52B1B12D0F100871B44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4297F8F21B143B1B00706B72 /* YKDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDock.h; sourceTree = "<group>"; };
 		4297F8F31B143B1B00706B72 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDock.m; sourceTree = "<group>"; };
@@ -44,8 +61,8 @@
 		4297F9001B143D3700706B72 /* YKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMainViewController.m; sourceTree = "<group>"; };
 		4297F9081B144CF100706B72 /* YKPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayViewController.h; sourceTree = "<group>"; };
 		4297F9091B144CF100706B72 /* YKPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayViewController.m; sourceTree = "<group>"; };
-		4297F90B1B144CFB00706B72 /* YKMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMoreViewController.h; sourceTree = "<group>"; };
-		4297F90C1B144CFB00706B72 /* YKMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMoreViewController.m; sourceTree = "<group>"; };
+		4297F90B1B144CFB00706B72 /* YKLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLibraryController.h; sourceTree = "<group>"; };
+		4297F90C1B144CFB00706B72 /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryController.m; sourceTree = "<group>"; };
 		4297F90E1B144D0700706B72 /* YKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeViewController.h; sourceTree = "<group>"; };
 		4297F90F1B144D0700706B72 /* YKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeViewController.m; sourceTree = "<group>"; };
 		42C585D31B0AFAF0005BE52E /* Yinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +75,11 @@
 		42C585EC1B0AFAF0005BE52E /* YinnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C585F11B0AFAF0005BE52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C585F21B0AFAF0005BE52E /* YinnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinnerTests.m; sourceTree = "<group>"; };
+		42E644F31B17099400247877 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		42E644F51B17099D00247877 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		D911E37F7CBA5D8373180423 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F073887A5EC671A59ED481CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */,
+				42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */,
+				597978221B5EC40915C43DEC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +103,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B142949B1845E1D05C96578 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */,
+				F073887A5EC671A59ED481CE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42656D1B1B157C2E00D2AB4B /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdLib;
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		42656D1D1B157CCC00D2AB4B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				426B73C21B188C0800E7EA7E /* example.wav */,
+				426B73C31B188C0800E7EA7E /* 1.mov */,
+				42656D1E1B157EC200D2AB4B /* example.mov */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		42656D231B1597A300D2AB4B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				42656D241B1597D900D2AB4B /* YKLocationViewController.h */,
+				42656D251B1597D900D2AB4B /* YKLocationViewController.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		42656D271B1597F900D2AB4B /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				42656D281B15986400D2AB4B /* Singleton.h */,
+				42656D291B15987B00D2AB4B /* YKWorkViewController.h */,
+				42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */,
+			);
+			name = Toolkit;
+			path = ToolKit;
+			sourceTree = "<group>";
+		};
 		4273A5271B12CF2900871B44 /* BasicController */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +181,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		4297F9061B144C6400706B72 /* More */ = {
+		4297F9061B144C6400706B72 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				4297F90B1B144CFB00706B72 /* YKMoreViewController.h */,
-				4297F90C1B144CFB00706B72 /* YKMoreViewController.m */,
+				4297F90B1B144CFB00706B72 /* YKLibraryController.h */,
+				4297F90C1B144CFB00706B72 /* YKLibraryController.m */,
 			);
+			name = Library;
 			path = More;
 			sourceTree = "<group>";
 		};
@@ -123,6 +196,7 @@
 			children = (
 				4297F9081B144CF100706B72 /* YKPlayViewController.h */,
 				4297F9091B144CF100706B72 /* YKPlayViewController.m */,
+				42656D231B1597A300D2AB4B /* Location */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -133,6 +207,8 @@
 				42C585D51B0AFAF0005BE52E /* Yinner */,
 				42C585EF1B0AFAF0005BE52E /* YinnerTests */,
 				42C585D41B0AFAF0005BE52E /* Products */,
+				2B142949B1845E1D05C96578 /* Pods */,
+				4A5EECD4D2F2C38269793CFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				4273A52B1B12D0F100871B44 /* Images.xcassets */,
+				42656D1D1B157CCC00D2AB4B /* Resource */,
 				42C585FD1B0AFBE2005BE52E /* Other */,
 				42C585FC1B0AFBC2005BE52E /* Classes */,
 				42C585D61B0AFAF0005BE52E /* Supporting Files */,
@@ -185,9 +262,11 @@
 		42C585FC1B0AFBC2005BE52E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				42656D271B1597F900D2AB4B /* Toolkit */,
+				42656D1B1B157C2E00D2AB4B /* ThirdLib */,
 				4297F8F81B143B7200706B72 /* Category */,
 				4297F9071B144C6A00706B72 /* Play */,
-				4297F9061B144C6400706B72 /* More */,
+				4297F9061B144C6400706B72 /* Library */,
 				4297F9051B144C4700706B72 /* Home */,
 				4273A5271B12CF2900871B44 /* BasicController */,
 			);
@@ -201,8 +280,19 @@
 				42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */,
 				42C585DA1B0AFAF0005BE52E /* AppDelegate.h */,
 				42C585DB1B0AFAF0005BE52E /* AppDelegate.m */,
+				426B73C71B1898F100E7EA7E /* ReuseFrame.h */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42E644F51B17099D00247877 /* CoreAudio.framework */,
+				42E644F31B17099400247877 /* AVFoundation.framework */,
+				D911E37F7CBA5D8373180423 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42C585F61B0AFAF0005BE52E /* Build configuration list for PBXNativeTarget "Yinner" */;
 			buildPhases = (
+				9293B5FDF6A37EC431F0C7A8 /* Check Pods Manifest.lock */,
 				42C585CF1B0AFAF0005BE52E /* Sources */,
 				42C585D01B0AFAF0005BE52E /* Frameworks */,
 				42C585D11B0AFAF0005BE52E /* Resources */,
+				0CC8FA2513C3F8A66B383E24 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,6 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
+				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
+				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				4273A52C1B12D0F100871B44 /* Images.xcassets in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
@@ -300,11 +395,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CC8FA2513C3F8A66B383E24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9293B5FDF6A37EC431F0C7A8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42C585CF1B0AFAF0005BE52E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */,
 				4297F8F61B143B1B00706B72 /* YKDock.m in Sources */,
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
 				4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */,
@@ -313,7 +442,8 @@
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
-				4297F90D1B144CFB00706B72 /* YKMoreViewController.m in Sources */,
+				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
+				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +563,7 @@
 		};
 		42C585F71B0AFAF0005BE52E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Yinner/Info.plist;
@@ -443,6 +574,7 @@
 		};
 		42C585F81B0AFAF0005BE52E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F073887A5EC671A59ED481CE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Yinner/Info.plist;

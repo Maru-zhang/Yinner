@@ -36,8 +36,8 @@
 - (void)cteateAllController
 {
     YKHomeViewController *home = [[YKHomeViewController alloc] init];
-    YKPlayViewController *play = [[YKPlayViewController alloc] init];
-    YKMoreViewController *more = [[YKMoreViewController alloc] init];
+    YKPlayViewController *play = [[self storyboard] instantiateViewControllerWithIdentifier:@"play"];
+    YKLibraryController *more = [[YKLibraryController alloc] init];
     
     [self addChildViewController:home];
     [self addChildViewController:play];
@@ -53,7 +53,7 @@
     //添加item
     [_dock addDockItemWithIcon:@"tabbar_home.png" title:@"首页"];
     [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
-    [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"更多"];
+    [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"音库"];
     
     //监听按钮的点击
     _dock.itemClickBlock = ^(int index)
@@ -68,7 +68,12 @@
 {
     NSLog(@"%d 子视图的数量 %ld",index,self.view.subviews.count);
     if (_currentIndex == index) {
-        NSLog(@"dsadsa");
+        return;
+    }
+    
+    //进入主功能界面
+    if (index == 1) {
+        [self performSegueWithIdentifier:@"play" sender:self];
         return;
     }
     

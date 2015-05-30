@@ -1,0 +1,10 @@
+PODS:
+  - KRVideoPlayer (1.0.1)
+
+DEPENDENCIES:
+  - KRVideoPlayer
+
+SPEC CHECKSUMS:
+  KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
+
+COCOAPODS: 0.34.4

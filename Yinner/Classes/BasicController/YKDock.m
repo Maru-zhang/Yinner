@@ -10,6 +10,8 @@
 #import "YKDockItem.h"
 #import "NSString+File.h"
 
+#define KWinW [UIScreen mainScreen].bounds.size.width
+
 @interface YKDock()
 {
     YKDockItem *_currentItem;
@@ -68,7 +70,7 @@
     
     UIButton *item;
     
-    CGFloat itemWidth = self.frame.size.width / count;
+    CGFloat itemWidth = KWinW / count;
     CGFloat itemHigh = self.frame.size.height;
     
     for (int i = 0; i < count; i++) {
