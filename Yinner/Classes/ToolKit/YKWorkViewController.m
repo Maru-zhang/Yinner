@@ -14,7 +14,10 @@
 @interface YKWorkViewController ()
 {
     UIButton *_start;
+    UIButton *_back;
+    UIButton *_info;
     AVAudioRecorder *_recorder;
+    NSMutableArray *_locationArray;
 }
 @end
 
@@ -59,13 +62,33 @@ singleton_implementation(YKWorkViewController)
 {
     [super viewDidLayoutSubviews];
     
+    //start添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-20]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - self.view.frame.size.width]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - KwinW]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - self.view.frame.size.width]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - KwinW]];
+    
+    //back添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:40 - KwinW]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KWinH]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:20]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-20]];
+    
+    //info添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:40 - KwinW]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KWinH]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-20]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-20]];
+    
     
 }
 
@@ -79,15 +102,40 @@ singleton_implementation(YKWorkViewController)
 #pragma mark - 初始化视图
 - (void)setupView
 {
+    //添加开始、暂停按钮
     _start = [[UIButton alloc] init];
     _start.backgroundColor = [UIColor redColor];
-    [_start setTitle:@"start" forState:UIControlStateNormal];
+    [_start setTitle:@"开始" forState:UIControlStateNormal];
+    [_start setTitle:@"暂停" forState:UIControlStateSelected];
     [_start.layer setCornerRadius:25];
     [_start addTarget:self action:@selector(startButtonClick) forControlEvents:UIControlEventTouchUpInside];
     _start.translatesAutoresizingMaskIntoConstraints = NO;
-    
+    _start.adjustsImageWhenHighlighted = NO;
 
     [self.view addSubview:_start];
+    
+    //添加返回按钮
+    _back = [[UIButton alloc] init];
+    _back.backgroundColor = [UIColor redColor];
+    [_back setTitle:@"返回" forState:UIControlStateNormal];
+    [_back.layer setCornerRadius:20];
+    _back.translatesAutoresizingMaskIntoConstraints = NO;
+    _back.adjustsImageWhenHighlighted = NO;
+    [_back addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_back];
+    
+    //添加信息按钮
+    _info = [[UIButton alloc] init];
+    _info.backgroundColor = [UIColor redColor];
+    [_info setTitle:@"信息" forState:UIControlStateNormal];
+    [_info.layer setCornerRadius:20];
+    _info.translatesAutoresizingMaskIntoConstraints = NO;
+    _info.adjustsImageWhenHighlighted = NO;
+    [_info addTarget:self action:@selector(infoButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_info];
+    
 }
 
 
@@ -170,14 +218,33 @@ singleton_implementation(YKWorkViewController)
         
         [self presentViewController:alert animated:YES completion:^{
             
+            //更新本地媒体库
+            [self writeToLocationWithFileName:@"test" andPath:url];
+            
+            
         }];
+        
+        NSLog(@"最终的地址:%@",myPathDocs);
         
     }];
 }
 
+#pragma mark 按钮点击事件
 - (void)startButtonClick
 {
+    _start.selected ? [_start setSelected:NO] : [_start setSelected:YES];
     _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ? [_videoPlayer pause] : [_videoPlayer play];
+    
+}
+
+- (void)backButtonClick
+{
+    //退出
+    [self exit];
+}
+
+- (void)infoButtonClick
+{
     
 }
 
@@ -221,12 +288,32 @@ singleton_implementation(YKWorkViewController)
     
 }
 
+#pragma mark 写入本地文件目录
+- (void)writeToLocationWithFileName:(NSString *)name andPath:(NSURL *)url
+{
+
+}
+
 
 #pragma mark  退出控制器
 - (void)exit
 {
-    [_videoPlayer dismiss];
-    [self dismissViewControllerAnimated:NO completion:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前配音吗？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [_videoPlayer dismiss];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        return ;
+    }];
+    
+    [alert addAction:confirm];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 #pragma mark - audioRecode delegate

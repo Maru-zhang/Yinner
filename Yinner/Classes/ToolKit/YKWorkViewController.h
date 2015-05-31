@@ -11,6 +11,7 @@
 #import <KRVideoPlayer/KRVideoPlayerController.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import "YKLocationMediaModel.h"
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate>
 
