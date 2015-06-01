@@ -218,6 +218,9 @@ singleton_implementation(YKWorkViewController)
             
             [self saveDatabaseWithURL:myPathDocs];
             
+            //发送更新本地音库的消息
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"saveover" object:nil];
+            
         }];
         
     }];
@@ -228,7 +231,7 @@ singleton_implementation(YKWorkViewController)
 {
     YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
     
-    model.cover = nil;
+    model.cover = url;
     model.name = [[url lastPathComponent] stringByDeletingPathExtension];
     model.origin = @"音控";
     model.time = [[NSDate date] getCurrentTime];
