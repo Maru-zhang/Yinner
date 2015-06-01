@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800AC701B1A223600F0F4B6 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */; };
 		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1800AC6E1B1A223600F0F4B6 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
+		1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
 		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
@@ -103,6 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1800AC6A1B1A165600F0F4B6 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		1800AC6D1B1A21FF00F0F4B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1800AC6E1B1A223600F0F4B6 /* YKLocationMediaModel.h */,
+				1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2B142949B1845E1D05C96578 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +142,7 @@
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1800AC6A1B1A165600F0F4B6 /* Plist */,
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
 				42656D1E1B157EC200D2AB4B /* example.mov */,
@@ -184,6 +204,7 @@
 		4297F9061B144C6400706B72 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1800AC6D1B1A21FF00F0F4B6 /* Model */,
 				4297F90B1B144CFB00706B72 /* YKLibraryController.h */,
 				4297F90C1B144CFB00706B72 /* YKLibraryController.m */,
 			);
@@ -438,6 +459,7 @@
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
 				4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */,
 				42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */,
+				1800AC701B1A223600F0F4B6 /* YKLocationMediaModel.m in Sources */,
 				4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */,
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
