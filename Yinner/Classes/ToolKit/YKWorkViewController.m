@@ -55,6 +55,9 @@ singleton_implementation(YKWorkViewController)
     }
     
     [self setupView];
+    
+    YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
+    
 }
 
 #pragma mark - autolayout

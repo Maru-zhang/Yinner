@@ -10,14 +10,5 @@
 
 @implementation YKLocationMediaModel
 
-+ (YKLocationMediaModel *)locationModelWithName:(NSString *)name andURL:(NSString *)url
-{
-    YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
-    
-    model.mediaName = name;
-    model.mediaURL = url;
-    
-    return model;
-}
 
 @end
