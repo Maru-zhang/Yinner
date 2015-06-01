@@ -10,9 +10,12 @@
 
 @interface YKLocationMediaModel : NSObject
 
-@property (nonatomic,copy) NSString *mediaName;
-@property (nonatomic,copy) NSString *mediaURL;
+@property (nonatomic,retain) NSData *cover;
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *origin;
+@property (nonatomic,copy) NSString *time;
+@property (nonatomic,copy) NSString *titleurl;
+@property (nonatomic,copy) NSString *url;
 
-+ (YKLocationMediaModel *)locationModelWithName:(NSString *)name andURL:(NSString *)url;
 
 @end

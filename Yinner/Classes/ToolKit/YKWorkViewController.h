@@ -12,6 +12,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import "YKLocationMediaModel.h"
+#import "YKCoreDataManager.h"
+#import "NSDate+Current.h"
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate>
 

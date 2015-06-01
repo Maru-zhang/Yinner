@@ -28,6 +28,11 @@
 		42C585F31B0AFAF0005BE52E /* YinnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585F21B0AFAF0005BE52E /* YinnerTests.m */; };
 		42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F31B17099400247877 /* AVFoundation.framework */; };
 		42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F51B17099D00247877 /* CoreAudio.framework */; };
+		42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */; };
+		42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */; };
+		42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4BD151B1C597400E23726 /* CoreData.framework */; };
+		42F4BD181B1C846000E23726 /* DefautCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F4BD171B1C846000E23726 /* DefautCover.png */; };
+		42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */; };
 		597978221B5EC40915C43DEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D911E37F7CBA5D8373180423 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,13 @@
 		42C585F21B0AFAF0005BE52E /* YinnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinnerTests.m; sourceTree = "<group>"; };
 		42E644F31B17099400247877 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42E644F51B17099D00247877 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaModel.xcdatamodel; sourceTree = "<group>"; };
+		42F4BD121B1C54DD00E23726 /* YKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCoreDataManager.h; sourceTree = "<group>"; };
+		42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCoreDataManager.m; sourceTree = "<group>"; };
+		42F4BD151B1C597400E23726 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		42F4BD171B1C846000E23726 /* DefautCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefautCover.png; sourceTree = "<group>"; };
+		42F4BD191B1C89F300E23726 /* NSDate+Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Current.h"; sourceTree = "<group>"; };
+		42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Current.m"; sourceTree = "<group>"; };
 		D911E37F7CBA5D8373180423 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F073887A5EC671A59ED481CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */,
 				42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */,
 				42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */,
 				597978221B5EC40915C43DEC /* libPods.a in Frameworks */,
@@ -146,6 +159,7 @@
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
 				42656D1E1B157EC200D2AB4B /* example.mov */,
+				42F4BD171B1C846000E23726 /* DefautCover.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -165,6 +179,8 @@
 				42656D281B15986400D2AB4B /* Singleton.h */,
 				42656D291B15987B00D2AB4B /* YKWorkViewController.h */,
 				42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */,
+				42F4BD121B1C54DD00E23726 /* YKCoreDataManager.h */,
+				42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */,
 			);
 			name = Toolkit;
 			path = ToolKit;
@@ -188,6 +204,8 @@
 			children = (
 				4297F8FC1B143BD500706B72 /* NSString+File.h */,
 				4297F8FD1B143BD500706B72 /* NSString+File.m */,
+				42F4BD191B1C89F300E23726 /* NSDate+Current.h */,
+				42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -299,9 +317,10 @@
 			children = (
 				42C585E01B0AFAF0005BE52E /* Main.storyboard */,
 				42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */,
+				426B73C71B1898F100E7EA7E /* ReuseFrame.h */,
 				42C585DA1B0AFAF0005BE52E /* AppDelegate.h */,
 				42C585DB1B0AFAF0005BE52E /* AppDelegate.m */,
-				426B73C71B1898F100E7EA7E /* ReuseFrame.h */,
+				42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -309,6 +328,7 @@
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42F4BD151B1C597400E23726 /* CoreData.framework */,
 				42E644F51B17099D00247877 /* CoreAudio.framework */,
 				42E644F31B17099400247877 /* AVFoundation.framework */,
 				D911E37F7CBA5D8373180423 /* libPods.a */,
@@ -403,6 +423,7 @@
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				4273A52C1B12D0F100871B44 /* Images.xcassets in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
+				42F4BD181B1C846000E23726 /* DefautCover.png in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,10 +483,13 @@
 				1800AC701B1A223600F0F4B6 /* YKLocationMediaModel.m in Sources */,
 				4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */,
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
+				42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */,
+				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
 				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
+				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +694,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */,
+			);
+			currentVersion = 42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */;
+			path = MediaModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 42C585CB1B0AFAF0005BE52E /* Project object */;
 }

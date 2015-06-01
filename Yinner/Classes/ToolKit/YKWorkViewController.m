@@ -163,16 +163,6 @@ singleton_implementation(YKWorkViewController)
 #pragma mark mrege video&audio
 - (void)mregeWithVideo:(NSURL *)videoURL andAudio:(NSURL *)audioURL
 {
-//    AVURLAsset *testAsset = [[AVURLAsset alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"] options:nil];
-    
-//    NSURL *videourl = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"];
-//    NSURL *audiourl = [NSURL URLWithString:@"/Users/maru/Library/Developer/CoreSimulator/Devices/97C2E3E5-8C1A-46CC-B060-516A01742216/data/Containers/Data/Application/DEFA2C68-BDDC-441E-8078-D9D7EE390CF5/Library/Caches/test.wav"];
-    
-//    NSURL *videoTest = [[NSBundle mainBundle] URLForResource:@"1" withExtension:@"mov"];
-//    NSURL *audiotest = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"wav"];
-//    
-//    NSLog(@"%@",videoTest.absoluteString);
-//    NSLog(@"%@",audiotest.absoluteString);
     
     AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
     AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
@@ -200,6 +190,11 @@ singleton_implementation(YKWorkViewController)
     export.outputFileType = AVFileTypeQuickTimeMovie;
     export.shouldOptimizeForNetworkUse = YES;
     
+    //如果已经存在同名同路径的文件，那么就先把它删除然后再保存
+    if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
+        [[NSFileManager defaultManager] removeItemAtPath:myPathDocs error:nil];
+    }
+    
     [export exportAsynchronouslyWithCompletionHandler:^{
         //友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
@@ -221,12 +216,29 @@ singleton_implementation(YKWorkViewController)
             //更新本地媒体库
             [self writeToLocationWithFileName:@"test" andPath:url];
             
+            [self saveDatabaseWithURL:myPathDocs];
             
         }];
         
-        NSLog(@"最终的地址:%@",myPathDocs);
-        
     }];
+}
+
+#pragma mark 保存数据至本地数据库
+- (void)saveDatabaseWithURL:(NSString *)url
+{
+    YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
+    
+    model.cover = nil;
+    model.name = [[url lastPathComponent] stringByDeletingPathExtension];
+    model.origin = @"音控";
+    model.time = [[NSDate date] getCurrentTime];
+    model.titleurl = url;
+    model.url = url;
+    
+    //开始存储数据
+    YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
+    [manager insertEntityWithLocationMediaModel:model];
+    [manager queryAllDataBase];
 }
 
 #pragma mark 按钮点击事件
