@@ -78,16 +78,10 @@
     return cell;
 }
 
-<<<<<<< HEAD
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-=======
 #pragma mark delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
->>>>>>> macbook
 }
 
 @end

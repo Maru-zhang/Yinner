@@ -252,7 +252,6 @@ singleton_implementation(YKWorkViewController)
 {
     YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
     
-    model.cover = nil;
     model.cover = url;
     model.name = [[url lastPathComponent] stringByDeletingPathExtension];
     model.origin = @"音控";

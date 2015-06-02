@@ -11,7 +11,6 @@
 
 @interface YKLibraryController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) NSMutableArray *mediaArray;
 @property (nonatomic,strong) NSArray *mediaArray;
 @property (nonatomic,strong) UITableView *libTableView;
 
