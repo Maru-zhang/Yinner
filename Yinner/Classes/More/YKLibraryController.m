@@ -10,7 +10,6 @@
 #import "ReuseFrame.h"
 
 @interface YKLibraryController ()
-
 @end
 
 @implementation YKLibraryController
@@ -23,6 +22,15 @@
 
 }
 
+#pragma mark - public method
+- (void)reloadNewDataSource
+{
+    YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
+    
+    _mediaArray = [manager queryEntityWithEntityName:@"Media"];
+    
+    [_libTableView reloadData];
+}
 
 #pragma mark - private method
 - (void)setup
@@ -35,15 +43,20 @@
     }
     
     if (!_mediaArray) {
-        _mediaArray = [NSMutableArray array];
+        _mediaArray = [NSArray array];
     }
+    
+    //添加接收消息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewDataSource) name:@"saveover" object:nil];
 
+    //第一次加载的时候也要进行一次查询
+    [self reloadNewDataSource];
 }
 
 #pragma mark - datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return _mediaArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,15 +70,24 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = @"哈哈哈哈";
+    NSManagedObject *entity = _mediaArray[indexPath.row];
+    
+    cell.textLabel.text = [entity valueForKey:@"name"];
     
     
     return cell;
 }
 
+<<<<<<< HEAD
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+=======
+#pragma mark delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+>>>>>>> macbook
 }
 
 @end

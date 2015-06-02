@@ -91,4 +91,19 @@ singleton_implementation(YKCoreDataManager)
         NSLog(@"name:%@",[entity valueForKey:@"name"]);
     }
 }
+
+- (NSArray *)queryEntityWithEntityName:(NSString *)name
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:name inManagedObjectContext:_context];
+    
+    [request setEntity:entity];
+    
+    NSError *error = nil;
+    
+    NSArray *result = [_context executeFetchRequest:request error:&error];
+    
+    return result;
+}
 @end

@@ -11,6 +11,7 @@
 @interface YKLocationMediaModel : NSObject
 
 @property (nonatomic,retain) NSData *cover;
+@property (nonatomic,copy) NSString *cover;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *origin;
 @property (nonatomic,copy) NSString *time;

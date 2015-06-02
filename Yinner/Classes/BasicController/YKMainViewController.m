@@ -28,6 +28,9 @@
     
     self.title = @"音控";
     
+    //统一导航栏背景颜色
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    
 }
 
 
