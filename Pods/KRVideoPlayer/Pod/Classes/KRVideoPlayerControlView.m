@@ -37,12 +37,12 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.topBar];
-//        [self.topBar addSubview:self.closeButton];
+        [self.topBar addSubview:self.closeButton];
         [self addSubview:self.bottomBar];
-//        [self.bottomBar addSubview:self.playButton];
-//        [self.bottomBar addSubview:self.pauseButton];
+        [self.bottomBar addSubview:self.playButton];
+        [self.bottomBar addSubview:self.pauseButton];
         self.pauseButton.hidden = YES;
-//        [self.bottomBar addSubview:self.fullScreenButton];
+        [self.bottomBar addSubview:self.fullScreenButton];
         [self.bottomBar addSubview:self.shrinkScreenButton];
         self.shrinkScreenButton.hidden = YES;
         [self.bottomBar addSubview:self.progressSlider];
