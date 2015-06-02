@@ -166,6 +166,7 @@ singleton_implementation(YKWorkViewController)
     }
     
     //设置默认的模式
+    self.alreadyMrege = NO;
     self.watchModel = NO;
 }
 
@@ -247,7 +248,7 @@ singleton_implementation(YKWorkViewController)
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
-            return;
+            
             
         }];
         
@@ -278,10 +279,15 @@ singleton_implementation(YKWorkViewController)
         
         [self presentViewController:alert animated:YES completion:^{
             
-        [self saveDatabaseWithURL:myPathDocs];
-
+            [self saveDatabaseWithURL:myPathDocs];
+            
+            //设置为已经录制完成
+            self.alreadyMrege = YES;
+        
+            NSLog(@"完成alert操作");
+            
             //发送更新本地音库的消息
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
             
         }];
         
@@ -376,6 +382,11 @@ singleton_implementation(YKWorkViewController)
     }
     
     NSLog(@"%d",_watchModel);
+    
+    //判断是否已经录音完成
+    if (self.alreadyMrege) {
+        return;
+    }
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前配音吗？" preferredStyle:UIAlertControllerStyleAlert];
     

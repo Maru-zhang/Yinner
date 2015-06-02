@@ -21,6 +21,7 @@
 singleton_interface(YKWorkViewController)
 
 @property (nonatomic) BOOL watchModel;
+@property (nonatomic) BOOL alreadyMrege;
 @property (nonatomic,strong) NSURL *audioURL;
 @property (nonatomic,strong) NSURL *videoURL;
 @property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
