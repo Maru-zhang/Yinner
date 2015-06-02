@@ -237,12 +237,12 @@ singleton_implementation(YKWorkViewController)
     
     //如果已经存在同名同路径的文件，那么就先把它删除然后再保存
     if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
-//        [[NSFileManager defaultManager] removeItemAtPath:myPathDocs error:nil];
-        
+
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
+        
             
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -347,11 +347,12 @@ singleton_implementation(YKWorkViewController)
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
     
+    //覆盖操作
+    [[NSFileManager defaultManager] removeRepeatFileWithPath:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
+    
     _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:nil];
     
-    _recorder.delegate = self; 
-    
-//    [_recorder recordForDuration:duration];
+    _recorder.delegate = self;
     
     [_recorder record];
     
