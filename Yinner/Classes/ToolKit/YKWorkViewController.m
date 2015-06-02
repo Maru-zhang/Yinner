@@ -92,12 +92,22 @@ singleton_implementation(YKWorkViewController)
 #pragma mark 设置是否为观看模式
 - (void)setWatchModel:(BOOL)watchModel
 {
+    //赋值
+    _watchModel = watchModel;
+    
+    NSLog(@"开始设置");
     if (watchModel) {
         [_videoPlayer showWorkButton];
+        _start.hidden = YES;
+        _back.hidden =YES;
+        _info.hidden = YES;
     }
     else
     {
         [_videoPlayer hidenWorkButton];
+        _start.hidden = NO;
+        _back.hidden = NO;
+        _info.hidden = NO;
     }
 }
 
@@ -176,9 +186,23 @@ singleton_implementation(YKWorkViewController)
     }
     self.videoPlayer.contentURL = url;
     
-    //添加消息通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDurationChange) name:MPMovieDurationAvailableNotification object:nil];
     
+    //完成播放通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStart) name:MPMoviePlayerReadyForDisplayDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStop) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+
+    
+}
+
+- (void)playerStart
+{
+    [self startAudioRecordWithName:@"test" andDuration:_videoPlayer.duration];
+    NSLog(@"素材时间：%lf",_videoPlayer.duration);
+}
+
+- (void)playerStop
+{
+    [_recorder stop];
 }
 
 #pragma mark mrege video&audio
@@ -213,9 +237,29 @@ singleton_implementation(YKWorkViewController)
     
     //如果已经存在同名同路径的文件，那么就先把它删除然后再保存
     if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
-        [[NSFileManager defaultManager] removeItemAtPath:myPathDocs error:nil];
+//        [[NSFileManager defaultManager] removeItemAtPath:myPathDocs error:nil];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            return;
+            
+        }];
+        
+        [alert addAction:confim];
+        [alert addAction:cancel];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
     
+    
+    //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
         //友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
@@ -234,13 +278,10 @@ singleton_implementation(YKWorkViewController)
         
         [self presentViewController:alert animated:YES completion:^{
             
-            //更新本地媒体库
-            [self writeToLocationWithFileName:@"test" andPath:url];
-            
-            [self saveDatabaseWithURL:myPathDocs];
-            
+        [self saveDatabaseWithURL:myPathDocs];
+
             //发送更新本地音库的消息
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"saveover" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
             
         }];
         
@@ -269,7 +310,8 @@ singleton_implementation(YKWorkViewController)
 - (void)startButtonClick
 {
     _start.selected ? [_start setSelected:NO] : [_start setSelected:YES];
-    _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ? [_videoPlayer pause] : [_videoPlayer play];
+    _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ?[_videoPlayer pause],[_recorder pause]: [_videoPlayer play],[_recorder record];
+    [self setWatchModel:NO];
     
 }
 
@@ -282,11 +324,6 @@ singleton_implementation(YKWorkViewController)
 - (void)infoButtonClick
 {
     
-}
-
-- (void)onDurationChange
-{
-    [self startAudioRecordWithName:@"test" andDuration:_videoPlayer.duration];
 }
 
 #pragma mark audio record
@@ -312,9 +349,9 @@ singleton_implementation(YKWorkViewController)
     
     _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:nil];
     
-    _recorder.delegate = self;
+    _recorder.delegate = self; 
     
-    [_recorder recordForDuration:duration];
+//    [_recorder recordForDuration:duration];
     
     [_recorder record];
     
@@ -324,16 +361,21 @@ singleton_implementation(YKWorkViewController)
     
 }
 
-#pragma mark 写入本地文件目录
-- (void)writeToLocationWithFileName:(NSString *)name andPath:(NSURL *)url
-{
-
-}
 
 
 #pragma mark  退出控制器
 - (void)exit
 {
+    //判断是否为观赏模式
+    if (self.watchModel) {
+        [_videoPlayer dismiss];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        NSLog(@"判断");
+        return;
+    }
+    
+    NSLog(@"%d",_watchModel);
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前配音吗？" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

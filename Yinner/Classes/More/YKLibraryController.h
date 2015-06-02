@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YKWorkViewController.h"
 #import "YKCoreDataManager.h"
 
 @interface YKLibraryController : UIViewController <UITableViewDataSource,UITableViewDelegate>

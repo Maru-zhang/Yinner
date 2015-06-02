@@ -24,6 +24,7 @@ singleton_interface(YKCoreDataManager)
 //查询数据库
 - (void)queryAllDataBase;
 - (NSArray *)queryEntityWithEntityName:(NSString *)name;
-
+//删除数据库
+- (void)deleteDataWithEntity:(NSManagedObject *)entity;
 
 @end

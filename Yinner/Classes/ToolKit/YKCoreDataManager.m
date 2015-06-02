@@ -106,4 +106,17 @@ singleton_implementation(YKCoreDataManager)
     
     return result;
 }
+
+- (void)deleteDataWithEntity:(NSManagedObject *)entity
+{
+    [_context deleteObject:entity];
+    
+    NSError *error = nil;
+    
+    [_context save:&error];
+    
+    if (error) {
+        [NSException raise:@"删除数据库数据出错！" format:@"%@",[error localizedDescription]];
+    }
+}
 @end

@@ -33,9 +33,9 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 - (void)showWorkButton
 {
-    _videoControl.closeButton.hidden = NO;
+    _videoControl.closeButton.hidden = YES;
     _videoControl.playButton.hidden = NO;
-    _videoControl.pauseButton.hidden = NO;
+//    _videoControl.pauseButton.hidden = NO;
     _videoControl.fullScreenButton.hidden = NO;
 }
 

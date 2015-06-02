@@ -61,6 +61,9 @@
     
     YKWorkViewController *player = [YKWorkViewController WorkViewControllerWithURL:url];
     
+    //关闭观赏模式
+    player.watchModel = NO;
+    
     [self presentViewController:player animated:YES completion:nil];
     
 }
