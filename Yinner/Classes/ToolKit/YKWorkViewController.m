@@ -40,20 +40,10 @@ singleton_implementation(YKWorkViewController)
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [UIColor colorWithWhite:0.298 alpha:1.000];
     
-    //添加返回手势
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(exit)];
-    swipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swipe];
-    
-    //隐藏状态栏
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        [self prefersStatusBarHidden];
-        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
-    }
-    
+    //初始化设置
+    [self setupSetting];
+    //初始化视图
     [self setupView];
 }
 
@@ -99,7 +89,19 @@ singleton_implementation(YKWorkViewController)
     return YES;
 }
 
-#pragma mark - 初始化视图
+#pragma mark 设置是否为观看模式
+- (void)setWatchModel:(BOOL)watchModel
+{
+    if (watchModel) {
+        [_videoPlayer showWorkButton];
+    }
+    else
+    {
+        [_videoPlayer hidenWorkButton];
+    }
+}
+
+#pragma mark - 初始化
 - (void)setupView
 {
     //添加开始、暂停按钮
@@ -136,6 +138,25 @@ singleton_implementation(YKWorkViewController)
     
     [self.view addSubview:_info];
     
+}
+
+- (void)setupSetting
+{
+    self.view.backgroundColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+    
+    //添加返回手势
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(exit)];
+    swipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipe];
+    
+    //隐藏状态栏
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    }
+    
+    //设置默认的模式
+    self.watchModel = NO;
 }
 
 

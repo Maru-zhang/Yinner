@@ -23,6 +23,22 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
 
 @implementation KRVideoPlayerController
 
+- (void)hidenWorkButton
+{
+    _videoControl.closeButton.hidden = YES;
+    _videoControl.playButton.hidden = YES;
+    _videoControl.pauseButton.hidden = YES;
+    _videoControl.fullScreenButton.hidden = YES;
+}
+
+- (void)showWorkButton
+{
+    _videoControl.closeButton.hidden = NO;
+    _videoControl.playButton.hidden = NO;
+    _videoControl.pauseButton.hidden = NO;
+    _videoControl.fullScreenButton.hidden = NO;
+}
+
 - (void)dealloc
 {
     [self cancelObserver];
