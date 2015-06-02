@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1800AC701B1A223600F0F4B6 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */; };
+		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
 		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
@@ -48,8 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1800AC6E1B1A223600F0F4B6 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
-		1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		183941331B1E05DF0086B537 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
+		183941341B1E05DF0086B537 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
 		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 		1800AC6D1B1A21FF00F0F4B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1800AC6E1B1A223600F0F4B6 /* YKLocationMediaModel.h */,
-				1800AC6F1B1A223600F0F4B6 /* YKLocationMediaModel.m */,
+				183941331B1E05DF0086B537 /* YKLocationMediaModel.h */,
+				183941341B1E05DF0086B537 /* YKLocationMediaModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,7 +485,6 @@
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
 				4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */,
 				42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */,
-				1800AC701B1A223600F0F4B6 /* YKLocationMediaModel.m in Sources */,
 				4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */,
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
 				42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */,
@@ -496,6 +495,7 @@
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
 				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
+				183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
