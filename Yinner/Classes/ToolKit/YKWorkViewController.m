@@ -203,6 +203,9 @@ singleton_implementation(YKWorkViewController)
 
 - (void)playerStop
 {
+    if (self.watchModel) {
+        return;
+    }
     [_recorder stop];
 }
 
@@ -242,13 +245,13 @@ singleton_implementation(YKWorkViewController)
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            
         
+            //覆盖本地文件并且更新数据库
+            [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
             
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            
-            
             
         }];
         
@@ -256,12 +259,26 @@ singleton_implementation(YKWorkViewController)
         [alert addAction:cancel];
         
         [self presentViewController:alert animated:YES completion:nil];
-        
+    
     }
     
     
     //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
+        
+        
+        //保存数据库
+        [self saveDatabaseWithURL:myPathDocs];
+        
+        //设置为已经录制完成
+        self.alreadyMrege = YES;
+        
+        NSLog(@"完成alert操作");
+        
+        //发送更新本地音库的消息
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
+        
+        
         //友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
         
@@ -279,18 +296,7 @@ singleton_implementation(YKWorkViewController)
         
         [self presentViewController:alert animated:YES completion:^{
             
-            [self saveDatabaseWithURL:myPathDocs];
-            
-            //设置为已经录制完成
-            self.alreadyMrege = YES;
-        
-            NSLog(@"完成alert操作");
-            
-            //发送更新本地音库的消息
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
-            
         }];
-        
     }];
 }
 
@@ -385,6 +391,8 @@ singleton_implementation(YKWorkViewController)
     
     //判断是否已经录音完成
     if (self.alreadyMrege) {
+        [_videoPlayer dismiss];
+        [self dismissViewControllerAnimated:YES completion:nil];
         return;
     }
     

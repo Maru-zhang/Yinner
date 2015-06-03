@@ -15,10 +15,26 @@
 @implementation YKLibraryController
 
 #pragma mark - life cycle
+
+- (instancetype)init
+{
+    if (self == [super init]) {
+        
+        //注册接收消息
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewDataSource) name:@"database" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteRepeatDatabaseWithPath:) name:@"removeRepeat" object:nil];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setup];
+    
+    
+    NSLog(@"%@",[[NSDate date] getCurrentTime]);
 
 }
 
@@ -46,9 +62,6 @@
     if (!_mediaArray) {
         _mediaArray = [NSArray array];
     }
-    
-    //添加接收消息
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewDataSource) name:@"database" object:nil];
 
     //第一次加载的时候也要进行一次查询
     [self reloadNewDataSource];
@@ -134,5 +147,19 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"删除";
+}
+
+//删除覆盖掉的数据库
+- (void)deleteRepeatDatabaseWithPath:(NSNotification *)notification
+{
+    NSLog(@"需要覆盖掉的路径为：%@",notification.object);
+    for (NSManagedObject *entity in _mediaArray) {
+        if ([[entity valueForKey:@"name"] isEqualToString:notification.object]) {
+            [[YKCoreDataManager sharedYKCoreDataManager] deleteDataWithEntity:entity];
+            [self reloadNewDataSource];
+            NSLog(@"删除");
+            NSLog(@"时间:%@",[entity valueForKey:@"time"]);
+        }
+    }
 }
 @end

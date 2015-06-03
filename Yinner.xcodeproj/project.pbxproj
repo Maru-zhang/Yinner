@@ -23,6 +23,7 @@
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
 		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
+		42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B5B6E31B1E81600061CF4B /* NSString+FileName.m */; };
 		42C585D91B0AFAF0005BE52E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585D81B0AFAF0005BE52E /* main.m */; };
 		42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585DB1B0AFAF0005BE52E /* AppDelegate.m */; };
 		42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E01B0AFAF0005BE52E /* Main.storyboard */; };
@@ -77,6 +78,8 @@
 		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
 		42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Repeat.m"; sourceTree = "<group>"; };
+		42B5B6E21B1E81600061CF4B /* NSString+FileName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FileName.h"; sourceTree = "<group>"; };
+		42B5B6E31B1E81600061CF4B /* NSString+FileName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FileName.m"; sourceTree = "<group>"; };
 		42C585D31B0AFAF0005BE52E /* Yinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C585D71B0AFAF0005BE52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C585D81B0AFAF0005BE52E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 		4297F8F81B143B7200706B72 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				42B5B6E21B1E81600061CF4B /* NSString+FileName.h */,
+				42B5B6E31B1E81600061CF4B /* NSString+FileName.m */,
 				4297F8FC1B143BD500706B72 /* NSString+File.h */,
 				4297F8FD1B143BD500706B72 /* NSString+File.m */,
 				42F4BD191B1C89F300E23726 /* NSDate+Current.h */,
@@ -484,6 +489,7 @@
 				4297F8F61B143B1B00706B72 /* YKDock.m in Sources */,
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
 				4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */,
+				42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */,
 				42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */,
 				4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */,
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
