@@ -222,16 +222,21 @@ singleton_implementation(YKWorkViewController)
     //创建音轨
     AVMutableCompositionTrack *videoTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
     AVMutableCompositionTrack *audioTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    AVMutableCompositionTrack *bgmTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
     
     //在音轨中插入资源
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
+    [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     
     //创建保存路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *myPathDocs =  [documentsDirectory stringByAppendingPathComponent:@"example.mov"];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
+    
+    
+    NSLog(@"替换的路径为%@",[myPathDocs replaceExtension:@"mp3"]);
     
     //创建输出对象
     AVAssetExportSession *export = [AVAssetExportSession exportSessionWithAsset:composition presetName:AVAssetExportPresetHighestQuality];
@@ -246,6 +251,12 @@ singleton_implementation(YKWorkViewController)
         
         UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
+//
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//        
             //覆盖本地文件并且更新数据库
             [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
@@ -262,6 +273,18 @@ singleton_implementation(YKWorkViewController)
     
     }
     
+//        }];
+//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//            
+//        }];
+//        
+//        [alert addAction:confim];
+//        [alert addAction:cancel];
+//        
+//        [self presentViewController:alert animated:YES completion:nil];
+//    
+//    }
+
     
     //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
@@ -363,6 +386,18 @@ singleton_implementation(YKWorkViewController)
     [[NSFileManager defaultManager] removeRepeatFileWithPath:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
     
     _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:nil];
+    NSError *error = nil;
+    
+    _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:&error];
+    
+    //真机下需要的代码
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *sessionError;
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    if(session == nil)
+        NSLog(@"Error creating session: %@", [sessionError description]);
+    else
+        [session setActive:YES error:nil];
     
     _recorder.delegate = self;
     
@@ -372,6 +407,10 @@ singleton_implementation(YKWorkViewController)
     
     NSLog(@"%@",cachePath);
     
+    //异常处理
+    if (error) {
+        [NSException raise:@"录音失败！" format:@"原因：%@",[error localizedDescription]];
+    }
 }
 
 

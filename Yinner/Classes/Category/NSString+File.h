@@ -11,5 +11,7 @@
 @interface NSString (File)
 
 -(NSString *)fileNameAppend:(NSString *)append;
+- (NSString *)fileNameAppend:(NSString *)append;
+- (NSString *)replaceExtension:(NSString *)extension;
 
 @end

@@ -16,6 +16,7 @@
 #import "NSDate+Current.h"
 #import "NSFileManager+Repeat.h"
 #import "NSString+FileName.h"
+#import "NSString+File.h"
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate>
 

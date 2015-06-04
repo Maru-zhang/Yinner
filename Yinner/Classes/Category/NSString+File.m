@@ -10,7 +10,7 @@
 
 @implementation NSString (File)
 
--(NSString *)fileNameAppend:(NSString *)append
+- (NSString *)fileNameAppend:(NSString *)append
 {
     NSString *name = [self stringByDeletingPathExtension];
     
@@ -19,6 +19,13 @@
     NSString *extension = [self pathExtension];
     
     return [newName stringByAppendingPathExtension:extension];
+}
+
+- (NSString *)replaceExtension:(NSString *)extension
+{
+    NSString *result = [self stringByDeletingPathExtension];
+    
+    return [result stringByAppendingPathExtension:extension];
 }
 
 @end

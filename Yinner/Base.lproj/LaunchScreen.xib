@@ -11,6 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1277ddeb41fb4fd782c9e10a9cf394cd" translatesAutoresizingMaskIntoConstraints="NO" id="UZU-zl-WYA">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launcher" translatesAutoresizingMaskIntoConstraints="NO" id="UZU-zl-WYA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
             </subviews>
@@ -28,5 +29,6 @@
     </objects>
     <resources>
         <image name="1277ddeb41fb4fd782c9e10a9cf394cd" width="375" height="667"/>
+        <image name="launcher" width="375" height="667"/>
     </resources>
 </document>
