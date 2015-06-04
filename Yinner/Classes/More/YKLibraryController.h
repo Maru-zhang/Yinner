@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YKWorkViewController.h"
 #import "YKCoreDataManager.h"
+#import "YKLibraryCell.h"
 
 @interface YKLibraryController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 

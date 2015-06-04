@@ -128,7 +128,7 @@ singleton_implementation(YKWorkViewController)
     
     //添加返回按钮
     _back = [[UIButton alloc] init];
-    _back.backgroundColor = [UIColor redColor];
+    _back.backgroundColor = [UIColor orangeColor];
     [_back setTitle:@"返回" forState:UIControlStateNormal];
     [_back.layer setCornerRadius:20];
     _back.translatesAutoresizingMaskIntoConstraints = NO;
@@ -139,7 +139,7 @@ singleton_implementation(YKWorkViewController)
     
     //添加信息按钮
     _info = [[UIButton alloc] init];
-    _info.backgroundColor = [UIColor redColor];
+    _info.backgroundColor = [UIColor orangeColor];
     [_info setTitle:@"信息" forState:UIControlStateNormal];
     [_info.layer setCornerRadius:20];
     _info.translatesAutoresizingMaskIntoConstraints = NO;
@@ -245,12 +245,6 @@ singleton_implementation(YKWorkViewController)
     export.shouldOptimizeForNetworkUse = YES;
     
     //如果已经存在同名同路径的文件，那么就先把它删除然后再保存
-    if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
-
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
 //    if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
 //
 //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
@@ -261,18 +255,6 @@ singleton_implementation(YKWorkViewController)
             [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
             
-        }];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            
-        }];
-        
-        [alert addAction:confim];
-        [alert addAction:cancel];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-    
-    }
-    
 //        }];
 //        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
 //            
@@ -385,7 +367,6 @@ singleton_implementation(YKWorkViewController)
     //覆盖操作
     [[NSFileManager defaultManager] removeRepeatFileWithPath:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
     
-    _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:nil];
     NSError *error = nil;
     
     _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:&error];

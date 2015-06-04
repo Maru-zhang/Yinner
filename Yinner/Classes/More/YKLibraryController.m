@@ -82,16 +82,17 @@
 {
     static NSString *identifier = @"libCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    YKLibraryCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"YKLibraryCell" owner:nil options:nil] lastObject];
     }
     
     NSManagedObject *entity = _mediaArray[indexPath.row];
     
-    cell.textLabel.text = [entity valueForKey:@"name"];
+//    cell.textLabel.text = [entity valueForKey:@"name"];
+    cell.title.text = [entity valueForKey:@"name"];
     
     
     return cell;

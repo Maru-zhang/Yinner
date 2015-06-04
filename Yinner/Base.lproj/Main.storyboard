@@ -12,6 +12,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f2G-Bp-kij">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="0DT-sn-eNK" kind="relationship" relationship="rootViewController" id="pjL-bC-SRz"/>
@@ -48,10 +52,23 @@
                             <constraint firstItem="Vgs-VG-pNd" firstAttribute="leading" secondItem="enf-5b-t2t" secondAttribute="leading" id="m7H-v9-hoZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eWx-cu-kjs"/>
+                    <navigationItem key="navigationItem" id="eWx-cu-kjs">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xqQ-Dv-HCZ">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <segments>
+                                <segment title="热门"/>
+                                <segment title="附近"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dock" destination="Vgs-VG-pNd" id="OWa-8O-2PU"/>
+                        <outlet property="segmentControl" destination="xqQ-Dv-HCZ" id="kXX-2a-cz8"/>
                         <segue destination="DTn-Hg-dPt" kind="push" identifier="play" id="QYD-qI-hxv"/>
                     </connections>
                 </viewController>
@@ -76,6 +93,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5Pk-Cv-jBL"/>
                                 </constraints>
+                                <color key="barTintColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>

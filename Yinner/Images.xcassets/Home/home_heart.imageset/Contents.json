@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "home_heart.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "1277ddeb41fb4fd782c9e10a9cf394cd.jpg"
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

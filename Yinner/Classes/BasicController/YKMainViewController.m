@@ -14,6 +14,7 @@
 
 @implementation YKMainViewController
 
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,9 +29,8 @@
     
     self.title = @"音控";
     
-    //统一导航栏背景颜色
-//    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    
+    //设置返回的颜色
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 
@@ -52,7 +52,6 @@
 #pragma mark - 初始化图标
 - (void)settingDock
 {
-    
     //添加item
     [_dock addDockItemWithIcon:@"tabbar_home.png" title:@"首页"];
     [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
@@ -75,9 +74,19 @@
     }
     
     //进入主功能界面
-    if (index == 1) {
-        [self performSegueWithIdentifier:@"play" sender:self];
-        return;
+    switch (index) {
+        case 0:
+            self.segmentControl.hidden = NO;
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"play" sender:self];
+            return;
+            break;
+        case 2:
+            self.segmentControl.hidden = YES;
+            break;
+        default:
+            break;
     }
     
     //换成新的视图

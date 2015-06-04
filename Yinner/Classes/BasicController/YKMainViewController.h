@@ -16,5 +16,6 @@
 
 @property (nonatomic,assign) int currentIndex;
 @property (weak, nonatomic) IBOutlet YKDock *dock;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @end
