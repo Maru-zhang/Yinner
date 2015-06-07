@@ -10,4 +10,6 @@
 
 @interface YKSelectButton : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @end

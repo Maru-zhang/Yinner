@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "YKSelectButton.h"
+#import "ReuseFrame.h"
 @interface YKHomeSelectView : UIView
+
+- (void)addChildButtonWithName:(NSString *)name andColor:(UIColor *)color;
 
 @end

@@ -4,10 +4,13 @@
       "idiom" : "universal",
       "scale" : "1x",
       "filename" : "home_list.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "home_list.png"
     },
     {
       "idiom" : "universal",

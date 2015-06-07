@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReuseFrame.h"
+#import "YKHomeSelectView.h"
 
 @interface YKHomeViewController : UIViewController
 
