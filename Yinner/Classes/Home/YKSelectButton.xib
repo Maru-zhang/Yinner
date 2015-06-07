@@ -22,21 +22,34 @@
                     <color key="backgroundColor" red="1" green="0.28034595220000003" blue="0.2582871618" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="74" id="bkO-XJ-bIK"/>
+                        <constraint firstAttribute="width" constant="60" id="CvS-KC-sGF"/>
+                        <constraint firstAttribute="height" constant="60" id="f13-ld-Rsd"/>
                     </constraints>
                     <state key="normal">
+                    <state key="normal" image="home_heart">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="bkO-XJ-bIK"/>
+                            <exclude reference="CvS-KC-sGF"/>
+                            <exclude reference="f13-ld-Rsd"/>
                         </mask>
                     </variation>
                     <variation key="widthClass=compact">
                         <mask key="constraints">
                             <include reference="bkO-XJ-bIK"/>
+                            <include reference="CvS-KC-sGF"/>
+                            <include reference="f13-ld-Rsd"/>
                         </mask>
                     </variation>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="题目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u87-P6-j4B">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -47,6 +60,13 @@
                 <constraint firstAttribute="centerX" secondItem="u87-P6-j4B" secondAttribute="centerX" id="dzB-YS-Gdp"/>
                 <constraint firstAttribute="trailing" secondItem="isr-TD-v2j" secondAttribute="trailing" constant="5" id="oeh-5M-8xh"/>
                 <constraint firstItem="isr-TD-v2j" firstAttribute="top" secondItem="2Yb-Rv-h2j" secondAttribute="top" constant="8" id="qtE-M7-aoO"/>
+                <constraint firstItem="u87-P6-j4B" firstAttribute="top" secondItem="isr-TD-v2j" secondAttribute="bottom" constant="5" id="O5O-t9-4D1"/>
+                <constraint firstItem="u87-P6-j4B" firstAttribute="leading" secondItem="2Yb-Rv-h2j" secondAttribute="leading" constant="21" id="d0y-iY-WAy"/>
+                <constraint firstAttribute="centerX" secondItem="u87-P6-j4B" secondAttribute="centerX" id="dQ2-uL-tuz"/>
+                <constraint firstItem="isr-TD-v2j" firstAttribute="top" secondItem="2Yb-Rv-h2j" secondAttribute="top" constant="12" id="gso-kg-VkN"/>
+                <constraint firstAttribute="bottom" secondItem="u87-P6-j4B" secondAttribute="bottom" constant="2" id="kT2-pd-30e"/>
+                <constraint firstAttribute="centerX" secondItem="isr-TD-v2j" secondAttribute="centerX" id="uur-ns-t2V"/>
+                <constraint firstAttribute="trailing" secondItem="u87-P6-j4B" secondAttribute="trailing" constant="21" id="yLh-p8-7Ac"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -54,6 +74,7 @@
                 <mask key="subviews">
                     <exclude reference="u87-P6-j4B"/>
                     <exclude reference="isr-TD-v2j"/>
+                    <exclude reference="u87-P6-j4B"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="2QR-w8-A2L"/>
@@ -63,12 +84,20 @@
                     <exclude reference="DKE-ni-K7u"/>
                     <exclude reference="b7n-8M-fkP"/>
                     <exclude reference="dzB-YS-Gdp"/>
+                    <exclude reference="gso-kg-VkN"/>
+                    <exclude reference="uur-ns-t2V"/>
+                    <exclude reference="O5O-t9-4D1"/>
+                    <exclude reference="d0y-iY-WAy"/>
+                    <exclude reference="dQ2-uL-tuz"/>
+                    <exclude reference="kT2-pd-30e"/>
+                    <exclude reference="yLh-p8-7Ac"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="u87-P6-j4B"/>
                     <include reference="isr-TD-v2j"/>
+                    <include reference="u87-P6-j4B"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="2QR-w8-A2L"/>
@@ -78,6 +107,13 @@
                     <include reference="DKE-ni-K7u"/>
                     <include reference="b7n-8M-fkP"/>
                     <include reference="dzB-YS-Gdp"/>
+                    <include reference="gso-kg-VkN"/>
+                    <include reference="uur-ns-t2V"/>
+                    <include reference="O5O-t9-4D1"/>
+                    <include reference="d0y-iY-WAy"/>
+                    <include reference="dQ2-uL-tuz"/>
+                    <include reference="kT2-pd-30e"/>
+                    <include reference="yLh-p8-7Ac"/>
                 </mask>
             </variation>
             <connections>
@@ -85,6 +121,10 @@
                 <outlet property="title" destination="u87-P6-j4B" id="LTq-mx-wia"/>
             </connections>
             <point key="canvasLocation" x="170.5" y="127"/>
+            <point key="canvasLocation" x="-94" y="-119"/>
         </view>
     </objects>
+    <resources>
+        <image name="home_heart" width="40" height="40"/>
+    </resources>
 </document>
