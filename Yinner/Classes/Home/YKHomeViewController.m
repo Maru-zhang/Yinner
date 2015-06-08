@@ -29,7 +29,6 @@
 #pragma mark - setup
 - (void)setupView
 {
-    YKHomeSelectView *seletView = [[YKHomeSelectView alloc] initWithFrame:CGRectMake(0, kNavH, KwinW,100)];
     YKHomeSelectView *seletView = [[YKHomeSelectView alloc] initWithFrame:CGRectMake(0,10, KwinW,100)];
     
     seletView.backgroundColor = [UIColor whiteColor];
@@ -39,9 +38,6 @@
     [seletView addChildButtonWithName:@"home_list.png" andColor:[UIColor colorWithRed:0.400 green:1.000 blue:1.000 alpha:1.000] andTitleName:@"频道"];
     [seletView addChildButtonWithName:@"home_rank.png" andColor:[UIColor colorWithRed:0.800 green:0.400 blue:1.000 alpha:1.000] andTitleName:@"排行"];
     
-    [seletView addChildButtonWithName:@"home_heart.png" andColor:[UIColor redColor]];
-    [seletView addChildButtonWithName:@"home_list.png" andColor:[UIColor redColor]];
-    [seletView addChildButtonWithName:@"home_rank.png" andColor:[UIColor redColor]];
     //调整坐标
     [seletView adjustAllChildButton];
     

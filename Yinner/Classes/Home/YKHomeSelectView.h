@@ -11,7 +11,6 @@
 #import "ReuseFrame.h"
 @interface YKHomeSelectView : UIView
 
-- (void)addChildButtonWithName:(NSString *)name andColor:(UIColor *)color;
 - (void)adjustAllChildButton;
 - (void)addChildButtonWithName:(NSString *)name andColor:(UIColor *)color andTitleName:(NSString *)titlename;
 
