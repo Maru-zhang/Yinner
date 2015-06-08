@@ -37,6 +37,9 @@
     button.button.backgroundColor = color;
     //设置圆形
     button.button.layer.cornerRadius = 30;
+    //设置监听
+    [button.button addTarget:self action:@selector(selectButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self addSubview:button];
     
 }
@@ -45,12 +48,19 @@
 {
     NSInteger count = self.subviews.count;
     
-    float Width = KwinW / count;
+    float Width = (KwinW - 10) / count;
     float height = 100;
     
     for (int i = 0; i < count; i++) {
-        UIView *view = self.subviews[i];
+        YKSelectButton *view = self.subviews[i];
         view.frame = CGRectMake(Width * i, 0, Width, height);
+        view.button.tag = i;
     }
+}
+
+#pragma mark - private method
+- (void)selectButtonClick:(UIButton *)btn
+{
+    _itemClick((int)btn.tag);
 }
 @end

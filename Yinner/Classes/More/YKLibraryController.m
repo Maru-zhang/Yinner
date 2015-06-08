@@ -30,12 +30,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+  
     [self setup];
-    
-    
-    NSLog(@"%@",[[NSDate date] getCurrentTime]);
 
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    //给tableview添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_libTableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_libTableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:-kNavH - KstatusH - 44]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_libTableView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_libTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KstatusH + kNavH]];
 }
 
 #pragma mark - public method
@@ -53,10 +61,12 @@
 {
 
     if (!_libTableView) {
-        _libTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavH + KstatusH, KwinW, KwinH - kNavH - KstatusH)];
+        _libTableView = [[UITableView alloc] init];
+        _libTableView.translatesAutoresizingMaskIntoConstraints = NO;
         _libTableView.dataSource = self;
         _libTableView.delegate = self;
         [self.view addSubview:_libTableView];
+
     }
     
     if (!_mediaArray) {
@@ -91,7 +101,6 @@
     
     NSManagedObject *entity = _mediaArray[indexPath.row];
     
-//    cell.textLabel.text = [entity valueForKey:@"name"];
     cell.title.text = [entity valueForKey:@"name"];
     
     

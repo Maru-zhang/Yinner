@@ -27,7 +27,6 @@
 		42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A4A1B1FD94900F6AAAC /* YKLibraryCell.xib */; };
 		42C46A7F1B207F2900F6AAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A7E1B207F2900F6AAAC /* Images.xcassets */; };
 		42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */; };
-		42C46A851B2080AA00F6AAAC /* YKHomeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A841B2080AA00F6AAAC /* YKHomeSelectView.xib */; };
 		42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A871B20814D00F6AAAC /* YKSelectButton.m */; };
 		42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A891B20815F00F6AAAC /* YKSelectButton.xib */; };
 		42C585D91B0AFAF0005BE52E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585D81B0AFAF0005BE52E /* main.m */; };
@@ -91,7 +90,6 @@
 		42C46A7E1B207F2900F6AAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42C46A811B20808F00F6AAAC /* YKHomeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeSelectView.h; sourceTree = "<group>"; };
 		42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeSelectView.m; sourceTree = "<group>"; };
-		42C46A841B2080AA00F6AAAC /* YKHomeSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKHomeSelectView.xib; sourceTree = "<group>"; };
 		42C46A861B20814D00F6AAAC /* YKSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSelectButton.h; sourceTree = "<group>"; };
 		42C46A871B20814D00F6AAAC /* YKSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSelectButton.m; sourceTree = "<group>"; };
 		42C46A891B20815F00F6AAAC /* YKSelectButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKSelectButton.xib; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 			children = (
 				42C46A811B20808F00F6AAAC /* YKHomeSelectView.h */,
 				42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */,
-				42C46A841B2080AA00F6AAAC /* YKHomeSelectView.xib */,
 				42C46A861B20814D00F6AAAC /* YKSelectButton.h */,
 				42C46A871B20814D00F6AAAC /* YKSelectButton.m */,
 				42C46A891B20815F00F6AAAC /* YKSelectButton.xib */,
@@ -474,7 +471,6 @@
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
-				42C46A851B2080AA00F6AAAC /* YKHomeSelectView.xib in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */,

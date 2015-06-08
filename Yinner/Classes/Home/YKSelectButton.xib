@@ -57,13 +57,13 @@
                     <exclude reference="u87-P6-j4B"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="gso-kg-VkN"/>
-                    <exclude reference="uur-ns-t2V"/>
                     <exclude reference="O5O-t9-4D1"/>
                     <exclude reference="d0y-iY-WAy"/>
                     <exclude reference="dQ2-uL-tuz"/>
                     <exclude reference="kT2-pd-30e"/>
                     <exclude reference="yLh-p8-7Ac"/>
+                    <exclude reference="gso-kg-VkN"/>
+                    <exclude reference="uur-ns-t2V"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -72,13 +72,13 @@
                     <include reference="u87-P6-j4B"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="gso-kg-VkN"/>
-                    <include reference="uur-ns-t2V"/>
                     <include reference="O5O-t9-4D1"/>
                     <include reference="d0y-iY-WAy"/>
                     <include reference="dQ2-uL-tuz"/>
                     <include reference="kT2-pd-30e"/>
                     <include reference="yLh-p8-7Ac"/>
+                    <include reference="gso-kg-VkN"/>
+                    <include reference="uur-ns-t2V"/>
                 </mask>
             </variation>
             <connections>

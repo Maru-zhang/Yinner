@@ -11,6 +11,8 @@
 #import "ReuseFrame.h"
 @interface YKHomeSelectView : UIView
 
+@property (nonatomic,copy) void(^itemClick)(int index);
+
 - (void)adjustAllChildButton;
 - (void)addChildButtonWithName:(NSString *)name andColor:(UIColor *)color andTitleName:(NSString *)titlename;
 
