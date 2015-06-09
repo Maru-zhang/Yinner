@@ -13,6 +13,7 @@
 {
     YKHomeSelectView *_seletView;
     UICollectionView *_collectionView;
+    UICollectionReusableView *_reuseableView;
 }
 @end
 
@@ -27,7 +28,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(170, 170);
-    layout.headerReferenceSize = CGSizeMake(300, 100);
+    layout.headerReferenceSize = CGSizeMake(KwinW, 100);
     return [self initWithCollectionViewLayout:layout];
 }
 
@@ -35,17 +36,11 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     [super viewDidLoad];
     
-//    self.view = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    
-//    self.view.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
-    
-//    [self setupView];
-    
-    NSLog(@"%@",_seletView);
-    
+    //注册两个视图，一个是headView一个是Cell
     [self.collectionView registerNib:[UINib nibWithNibName:@"YKBrowseViewCell" bundle:nil] forCellWithReuseIdentifier:identifier];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseIdentifier];
+    
+    [self setupView];
 }
 
 - (void)viewDidLayoutSubviews
@@ -55,12 +50,11 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     
     //给——seletView添加约束
-    
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:100 - self.view.frame.size.height]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:-10]];
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:5]];
-//    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeHeight multiplier:1 constant:100 - _reuseableView.frame.size.height]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeWidth multiplier:1 constant:-16]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:- 10]];
+
 
 }
 
@@ -68,18 +62,16 @@ static NSString *const reuseIdentifier = @"reuseCell";
 - (void)setupView
 {
     
+    //初始化_seletedView
     _seletView = [[YKHomeSelectView alloc] init];
     _seletView.translatesAutoresizingMaskIntoConstraints = NO;
     _seletView.backgroundColor = [UIColor whiteColor];
-    
     //添加子图标
     [_seletView addChildButtonWithName:@"home_heart.png" andColor:[UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000] andTitleName:@"喜爱"];
     [_seletView addChildButtonWithName:@"home_list.png" andColor:[UIColor colorWithRed:0.400 green:1.000 blue:1.000 alpha:1.000] andTitleName:@"频道"];
     [_seletView addChildButtonWithName:@"home_rank.png" andColor:[UIColor colorWithRed:0.800 green:0.400 blue:1.000 alpha:1.000] andTitleName:@"排行"];
-    
     //调整坐标
     [_seletView adjustAllChildButton];
-    
     //防止循环引用
     __weak typeof(self) safeSelf = self;
     _seletView.itemClick = ^(int index)
@@ -87,8 +79,10 @@ static NSString *const reuseIdentifier = @"reuseCell";
         [safeSelf selectButtonWithTag:index];
     };
     
-    [self.view addSubview:_seletView];
-
+    //设置collectionView的背景颜色
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
+    //去掉滚动条
+    self.collectionView.showsVerticalScrollIndicator = NO;
 }
 
 #pragma mark - private method
@@ -113,46 +107,27 @@ static NSString *const reuseIdentifier = @"reuseCell";
 #pragma mark - delegate
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *view = nil;
     
     if (kind == UICollectionElementKindSectionHeader) {
-        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+        _reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
         
-        _seletView = [[YKHomeSelectView alloc] initWithFrame:CGRectMake(5, 0, view.frame.size.width - 5, view.frame.size.height)];
-        _seletView.translatesAutoresizingMaskIntoConstraints = NO;
-        _seletView.backgroundColor = [UIColor whiteColor];
+        //将_selectedView添加到视图中去
+        [_reuseableView addSubview:_seletView];
         
-        //添加子图标
-        [_seletView addChildButtonWithName:@"home_heart.png" andColor:[UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000] andTitleName:@"喜爱"];
-        [_seletView addChildButtonWithName:@"home_list.png" andColor:[UIColor colorWithRed:0.400 green:1.000 blue:1.000 alpha:1.000] andTitleName:@"频道"];
-        [_seletView addChildButtonWithName:@"home_rank.png" andColor:[UIColor colorWithRed:0.800 green:0.400 blue:1.000 alpha:1.000] andTitleName:@"排行"];
-        
-        //调整坐标
-        [_seletView adjustAllChildButton];
-        
-        //防止循环引用
-        __weak typeof(self) safeSelf = self;
-        _seletView.itemClick = ^(int index)
-        {
-            [safeSelf selectButtonWithTag:index];
-        };
-        
-        [view addSubview:_seletView];
     }
     
-//    view.backgroundColor = [UIColor redColor];
     
-    return view;
+    return _reuseableView;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, 10, 0, 10);
+    return UIEdgeInsetsMake(0, 10, 44, 10);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(300, 100);
+    return CGSizeMake(KwinW, 100);
 }
 
 @end
