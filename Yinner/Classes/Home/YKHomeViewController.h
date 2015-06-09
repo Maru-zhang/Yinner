@@ -10,6 +10,6 @@
 #import "ReuseFrame.h"
 #import "YKHomeSelectView.h"
 
-@interface YKHomeViewController : UIViewController
+@interface YKHomeViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @end
