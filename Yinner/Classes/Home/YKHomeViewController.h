@@ -10,6 +10,14 @@
 #import "ReuseFrame.h"
 #import "YKHomeSelectView.h"
 
+@protocol YKHomeControllerDelegate <NSObject>
+
+- (void)homeControllerItemClickAtIndex:(int)index;
+
+@end
+
 @interface YKHomeViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic,strong) id<YKHomeControllerDelegate> delegate;
 
 @end

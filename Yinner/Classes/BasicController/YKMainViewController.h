@@ -12,7 +12,7 @@
 #import "YKPlayViewController.h"
 #import "YKLibraryController.h"
 
-@interface YKMainViewController : UIViewController <UINavigationBarDelegate>
+@interface YKMainViewController : UIViewController <UINavigationBarDelegate,YKHomeControllerDelegate>
 
 @property (nonatomic,assign) int currentIndex;
 @property (weak, nonatomic) IBOutlet YKDock *dock;

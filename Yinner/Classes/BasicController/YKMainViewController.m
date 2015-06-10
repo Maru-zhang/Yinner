@@ -48,6 +48,8 @@
     [self addChildViewController:play];
     [self addChildViewController:more];
     
+    //添加自定义代理方法
+    home.delegate = self;
 }
 
 
@@ -100,6 +102,24 @@
     
     _currentIndex = index;
     
+}
+
+#pragma mark - homevcDelegate
+- (void)homeControllerItemClickAtIndex:(int)index
+{
+    switch (index) {
+        case 0:
+            [self performSegueWithIdentifier:@"favourite" sender:nil];
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"channel" sender:nil];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"rank" sender:nil];
+            break;
+        default:
+            break;
+    }
 }
 
 

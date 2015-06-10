@@ -23,7 +23,6 @@ static NSString *const identifier = @"browseCell";
 static NSString *const reuseIdentifier = @"reuseCell";
 
 #pragma makr - life cycle
-
 - (instancetype)init
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -46,8 +45,6 @@ static NSString *const reuseIdentifier = @"reuseCell";
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    
     
     //给——seletView添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
@@ -88,7 +85,9 @@ static NSString *const reuseIdentifier = @"reuseCell";
 #pragma mark - private method
 - (void)selectButtonWithTag:(int)tag
 {
-    NSLog(@"点击了:%d",tag);
+    if ([_delegate respondsToSelector:@selector(homeControllerItemClickAtIndex:)]) {
+        [_delegate homeControllerItemClickAtIndex:tag];
+    }
 }
 
 #pragma mark - dataSource
