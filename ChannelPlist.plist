@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>喜剧</string>
+		<key>image</key>
+		<string>channel_button_0</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>动漫</string>
+		<key>image</key>
+		<string>channel_button_1</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>剧场</string>
+		<key>image</key>
+		<string>channel_button_2</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>电视</string>
+		<key>image</key>
+		<string>channel_button_3</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>方言</string>
+		<key>image</key>
+		<string>channel_button_4</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>解说</string>
+		<key>image</key>
+		<string>channel_button_5</string>
+	</dict>
+</array>
+</plist>

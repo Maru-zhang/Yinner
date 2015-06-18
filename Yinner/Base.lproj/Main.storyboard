@@ -45,23 +45,42 @@
             <point key="canvasLocation" x="-2062.5" y="738.5"/>
         </scene>
         <!--频道-->
-        <scene sceneID="VSQ-5S-JEj">
+        <scene sceneID="PeV-2k-OjS">
             <objects>
-                <tableViewController id="8nX-3c-gUu" customClass="YKChannelController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wLr-I2-Kcx">
+                <collectionViewController id="h2M-q9-yaj" customClass="YKChannelController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="R6k-82-h9J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b9f-cK-9S2">
+                            <size key="itemSize" width="145" height="98"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="44"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hMi-6X-tIR">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="98"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="8nX-3c-gUu" id="8dx-HW-eMl"/>
-                            <outlet property="delegate" destination="8nX-3c-gUu" id="Pem-FJ-Tca"/>
+                            <outlet property="dataSource" destination="h2M-q9-yaj" id="v7U-4k-Qwa"/>
+                            <outlet property="delegate" destination="h2M-q9-yaj" id="ZN4-RY-0dS"/>
                         </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="频道" id="Gjc-iY-QGS"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HBW-iI-tTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="频道" id="red-Zz-lKB"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trH-4m-LjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1424.5" y="738.5"/>
+            <point key="canvasLocation" x="-1405.5" y="761.5"/>
         </scene>
         <!--排行-->
         <scene sceneID="FVi-fg-DRy">
@@ -128,13 +147,13 @@
                         <outlet property="segmentControl" destination="xqQ-Dv-HCZ" id="kXX-2a-cz8"/>
                         <segue destination="DTn-Hg-dPt" kind="push" identifier="play" id="QYD-qI-hxv"/>
                         <segue destination="BUe-hf-xXl" kind="push" identifier="favourite" id="vqb-Y8-59F"/>
-                        <segue destination="8nX-3c-gUu" kind="push" identifier="channel" id="M41-OL-6yO"/>
                         <segue destination="JHh-3c-5bb" kind="push" identifier="rank" id="k2h-sH-kRX"/>
+                        <segue destination="h2M-q9-yaj" kind="push" identifier="channel" id="60E-ic-NRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfk-3Z-eQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1417.5" y="-179.5"/>
+            <point key="canvasLocation" x="-1405.5" y="-179.5"/>
         </scene>
         <!--素材库-->
         <scene sceneID="frS-aK-sCP">

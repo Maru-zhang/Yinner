@@ -11,6 +11,7 @@
 
 @interface YKHomeViewController ()
 {
+    UICollectionViewFlowLayout *_layout;
     YKHomeSelectView *_seletView;
     UICollectionView *_collectionView;
     UICollectionReusableView *_reuseableView;
@@ -25,10 +26,10 @@ static NSString *const reuseIdentifier = @"reuseCell";
 #pragma makr - life cycle
 - (instancetype)init
 {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(170, 170);
-    layout.headerReferenceSize = CGSizeMake(KwinW, 100);
-    return [self initWithCollectionViewLayout:layout];
+    _layout = [[UICollectionViewFlowLayout alloc] init];
+    _layout.itemSize = CGSizeMake(170, 170);
+    _layout.headerReferenceSize = CGSizeMake(KwinW, 100);
+    return [self initWithCollectionViewLayout:_layout];
 }
 
 - (void)viewDidLoad {
@@ -121,7 +122,10 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(0, 10, 44, 10);
+    
+    CGFloat cellWidth = _layout.itemSize.width;
+    CGFloat spacing = (KwinW - 2 * cellWidth) / 3;
+    return UIEdgeInsetsMake(0, spacing, 44, spacing);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section

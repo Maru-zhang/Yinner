@@ -10,16 +10,19 @@
 		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
 		4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */; };
 		4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */; };
+		425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */; };
 		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
 		426B73C41B188C0800E7EA7E /* example.wav in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C21B188C0800E7EA7E /* example.wav */; };
 		426B73C51B188C0800E7EA7E /* 1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C31B188C0800E7EA7E /* 1.mov */; };
 		426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD601B285B9F00A5DB0E /* YKFavouriteController.m */; };
-		426FCD641B285BCF00A5DB0E /* YKChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD631B285BCF00A5DB0E /* YKChannelController.m */; };
 		426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD661B285BDF00A5DB0E /* YKRankController.m */; };
 		426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD691B2862B400A5DB0E /* YKBrowseTableViewCell.m */; };
 		426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426FCD6A1B2862B400A5DB0E /* YKBrowseTableViewCell.xib */; };
+		4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4275CC381B29646E006B7690 /* YKChannelViewCell.m */; };
+		4275CC3B1B29646E006B7690 /* YKChannelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4275CC391B29646E006B7690 /* YKChannelViewCell.xib */; };
+		4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4275CC3D1B296673006B7690 /* YKChannelController.m */; };
 		4297F8F61B143B1B00706B72 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F31B143B1B00706B72 /* YKDock.m */; };
 		4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F51B143B1B00706B72 /* YKDockItem.m */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
@@ -66,6 +69,7 @@
 		4236B2F11B269DF4005B7D43 /* YKBrowseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseViewCell.h; sourceTree = "<group>"; };
 		4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewCell.m; sourceTree = "<group>"; };
 		4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseViewCell.xib; sourceTree = "<group>"; };
+		425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelPlist.plist; sourceTree = SOURCE_ROOT; };
 		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
@@ -77,13 +81,16 @@
 		426B73C71B1898F100E7EA7E /* ReuseFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReuseFrame.h; path = Other/ReuseFrame.h; sourceTree = "<group>"; };
 		426FCD5F1B285B9F00A5DB0E /* YKFavouriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKFavouriteController.h; sourceTree = "<group>"; };
 		426FCD601B285B9F00A5DB0E /* YKFavouriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKFavouriteController.m; sourceTree = "<group>"; };
-		426FCD621B285BCF00A5DB0E /* YKChannelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChannelController.h; sourceTree = "<group>"; };
-		426FCD631B285BCF00A5DB0E /* YKChannelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChannelController.m; sourceTree = "<group>"; };
 		426FCD651B285BDF00A5DB0E /* YKRankController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKRankController.h; sourceTree = "<group>"; };
 		426FCD661B285BDF00A5DB0E /* YKRankController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKRankController.m; sourceTree = "<group>"; };
 		426FCD681B2862B400A5DB0E /* YKBrowseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseTableViewCell.h; sourceTree = "<group>"; };
 		426FCD691B2862B400A5DB0E /* YKBrowseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseTableViewCell.m; sourceTree = "<group>"; };
 		426FCD6A1B2862B400A5DB0E /* YKBrowseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseTableViewCell.xib; sourceTree = "<group>"; };
+		4275CC371B29646E006B7690 /* YKChannelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChannelViewCell.h; sourceTree = "<group>"; };
+		4275CC381B29646E006B7690 /* YKChannelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChannelViewCell.m; sourceTree = "<group>"; };
+		4275CC391B29646E006B7690 /* YKChannelViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKChannelViewCell.xib; sourceTree = "<group>"; };
+		4275CC3C1B296673006B7690 /* YKChannelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChannelController.h; sourceTree = "<group>"; };
+		4275CC3D1B296673006B7690 /* YKChannelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChannelController.m; sourceTree = "<group>"; };
 		4297F8F21B143B1B00706B72 /* YKDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDock.h; sourceTree = "<group>"; };
 		4297F8F31B143B1B00706B72 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDock.m; sourceTree = "<group>"; };
 		4297F8F41B143B1B00706B72 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDockItem.h; sourceTree = "<group>"; };
@@ -160,6 +167,7 @@
 		1800AC6A1B1A165600F0F4B6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -229,10 +237,10 @@
 			children = (
 				426FCD5F1B285B9F00A5DB0E /* YKFavouriteController.h */,
 				426FCD601B285B9F00A5DB0E /* YKFavouriteController.m */,
-				426FCD621B285BCF00A5DB0E /* YKChannelController.h */,
-				426FCD631B285BCF00A5DB0E /* YKChannelController.m */,
 				426FCD651B285BDF00A5DB0E /* YKRankController.h */,
 				426FCD661B285BDF00A5DB0E /* YKRankController.m */,
+				4275CC3C1B296673006B7690 /* YKChannelController.h */,
+				4275CC3D1B296673006B7690 /* YKChannelController.m */,
 			);
 			name = SubController;
 			sourceTree = "<group>";
@@ -322,6 +330,9 @@
 				426FCD681B2862B400A5DB0E /* YKBrowseTableViewCell.h */,
 				426FCD691B2862B400A5DB0E /* YKBrowseTableViewCell.m */,
 				426FCD6A1B2862B400A5DB0E /* YKBrowseTableViewCell.xib */,
+				4275CC371B29646E006B7690 /* YKChannelViewCell.h */,
+				4275CC381B29646E006B7690 /* YKChannelViewCell.m */,
+				4275CC391B29646E006B7690 /* YKChannelViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -506,6 +517,7 @@
 			files = (
 				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
 				42C46A7F1B207F2900F6AAAC /* Images.xcassets in Resources */,
+				425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */,
 				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
@@ -515,6 +527,7 @@
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */,
 				42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */,
+				4275CC3B1B29646E006B7690 /* YKChannelViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +600,8 @@
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
 				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
 				4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */,
-				426FCD641B285BCF00A5DB0E /* YKChannelController.m in Sources */,
+				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
+				4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
 				183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */,
 			);
