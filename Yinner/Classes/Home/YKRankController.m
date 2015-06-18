@@ -55,6 +55,28 @@
         cell = [cellArray lastObject];
     }
     
+    //设置排名
+    if (indexPath.row == 0) {
+        cell.bester.hidden = NO;
+        cell.bester.image = [UIImage imageNamed:@"home_crown_gold"];
+    }
+    else if (indexPath.row == 1)
+    {
+        cell.bester.hidden = NO;
+        cell.bester.image = [UIImage imageNamed:@"home_crown_silver"];
+    }
+    else if (indexPath.row == 2)
+    {
+        cell.bester.hidden = NO;
+        cell.bester.image = [UIImage imageNamed:@"home_crown_copper"];
+    }
+    else
+    {
+        cell.bester.hidden = YES;
+    }
+
+    cell.rankNum.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
+    
     
     
     return cell;

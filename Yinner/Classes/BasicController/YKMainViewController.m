@@ -18,6 +18,11 @@
 
 
 - (void)viewDidLoad {
+    
+    //主线程休眠，让启动页面延长时间
+
+    [NSThread sleepForTimeInterval:1];
+    
     [super viewDidLoad];
     
     [self cteateAllController];

@@ -11,6 +11,7 @@
 		4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */; };
 		4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */; };
 		425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */; };
+		425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425BD7CF1B32AFA20056FEBD /* Images.xcassets */; };
 		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
@@ -35,7 +36,6 @@
 		42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B5B6E31B1E81600061CF4B /* NSString+FileName.m */; };
 		42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A481B1FD92800F6AAAC /* YKLibraryCell.m */; };
 		42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A4A1B1FD94900F6AAAC /* YKLibraryCell.xib */; };
-		42C46A7F1B207F2900F6AAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A7E1B207F2900F6AAAC /* Images.xcassets */; };
 		42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */; };
 		42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A871B20814D00F6AAAC /* YKSelectButton.m */; };
 		42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A891B20815F00F6AAAC /* YKSelectButton.xib */; };
@@ -70,6 +70,7 @@
 		4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewCell.m; sourceTree = "<group>"; };
 		4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseViewCell.xib; sourceTree = "<group>"; };
 		425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelPlist.plist; sourceTree = SOURCE_ROOT; };
+		425BD7CF1B32AFA20056FEBD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		42C46A471B1FD92800F6AAAC /* YKLibraryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLibraryCell.h; sourceTree = "<group>"; };
 		42C46A481B1FD92800F6AAAC /* YKLibraryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryCell.m; sourceTree = "<group>"; };
 		42C46A4A1B1FD94900F6AAAC /* YKLibraryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKLibraryCell.xib; sourceTree = "<group>"; };
-		42C46A7E1B207F2900F6AAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42C46A811B20808F00F6AAAC /* YKHomeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeSelectView.h; sourceTree = "<group>"; };
 		42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeSelectView.m; sourceTree = "<group>"; };
 		42C46A861B20814D00F6AAAC /* YKSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSelectButton.h; sourceTree = "<group>"; };
@@ -201,6 +201,7 @@
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				425BD7CF1B32AFA20056FEBD /* Images.xcassets */,
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
@@ -360,7 +361,6 @@
 		42C585D51B0AFAF0005BE52E /* Yinner */ = {
 			isa = PBXGroup;
 			children = (
-				42C46A7E1B207F2900F6AAAC /* Images.xcassets */,
 				42656D1D1B157CCC00D2AB4B /* Resource */,
 				42C585FD1B0AFBE2005BE52E /* Other */,
 				42C585FC1B0AFBC2005BE52E /* Classes */,
@@ -516,9 +516,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
-				42C46A7F1B207F2900F6AAAC /* Images.xcassets in Resources */,
 				425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */,
 				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
+				425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */,
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,

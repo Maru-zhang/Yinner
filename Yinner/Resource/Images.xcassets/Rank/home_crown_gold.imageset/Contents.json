@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "home_crown_gold.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "launcher.jpg"
+      "filename" : "home_crown_gold@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "home_crown_gold@3x.png"
     }
   ],
   "info" : {

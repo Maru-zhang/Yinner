@@ -58,7 +58,12 @@ singleton_implementation(YKCoreDataManager)
 #pragma mark - private method
 - (void)insertEntityWithLocationMediaModel:(YKLocationMediaModel *)model
 {
-    NSManagedObject *media = [NSEntityDescription insertNewObjectForEntityForName:@"Media" inManagedObjectContext:_context];
+    [self insertEntityWithLocationMediaModel:model WithEntityName:@"Media"];
+}
+
+- (void)insertEntityWithLocationMediaModel:(YKLocationMediaModel *)model WithEntityName:(NSString *)name
+{
+    NSManagedObject *media = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:_context];
     
     //赋值
     [media setValue:model.cover forKey:@"cover"];

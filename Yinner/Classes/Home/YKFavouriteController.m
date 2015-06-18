@@ -9,19 +9,20 @@
 #import "YKFavouriteController.h"
 
 @interface YKFavouriteController ()
-
+{
+    NSArray *_dataSource;
+}
 @end
 
 @implementation YKFavouriteController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setupSetting];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setupView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +30,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Private Method
+- (void)setupSetting
+{
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    if (_dataSource == nil) {
+        _dataSource = [NSArray array];
+    }
+}
+
+- (void)setupView
+{
+    if (_dataSource.count == 0) {
+        UIImageView *reminderView = [[UIImageView alloc] init];
+        reminderView.alpha = 0.8;
+        reminderView.image = [UIImage imageNamed:@"reminder"];
+        [reminderView setCenter:CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.4)];
+        [reminderView setBounds:CGRectMake(0, 0,325, 325)];
+        [self.view addSubview:reminderView];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

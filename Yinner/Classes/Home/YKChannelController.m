@@ -22,7 +22,6 @@
 static NSString * const reuseIdentifier = @"channelCell";
 
 #pragma mark - Life cycle
-
 - (instancetype)init
 {
     NSLog(@"dsadsadsadsa");

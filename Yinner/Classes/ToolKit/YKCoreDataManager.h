@@ -21,6 +21,7 @@ singleton_interface(YKCoreDataManager)
 
 //插入数据库
 - (void)insertEntityWithLocationMediaModel:(YKLocationMediaModel *)model;
+- (void)insertEntityWithLocationMediaModel:(YKLocationMediaModel *)model WithEntityName:(NSString *)name;
 //查询数据库
 - (void)queryAllDataBase;
 - (NSArray *)queryEntityWithEntityName:(NSString *)name;

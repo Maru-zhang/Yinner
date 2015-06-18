@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface YKBrowseTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *breviaryImage;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *startCount;
+@property (weak, nonatomic) IBOutlet UILabel *commentCount;
+@property (weak, nonatomic) IBOutlet UIImageView *bester;
+@property (weak, nonatomic) IBOutlet UILabel *rankNum;
 
 @end
