@@ -14,8 +14,11 @@
 
 @interface YKMainViewController : UIViewController <UINavigationBarDelegate,YKHomeControllerDelegate>
 
+@property (nonatomic,assign) BOOL isSlidering;
 @property (nonatomic,assign) int currentIndex;
 @property (weak, nonatomic) IBOutlet YKDock *dock;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *personButton;
+
+- (IBAction)personMeno:(id)sender;
 
 @end

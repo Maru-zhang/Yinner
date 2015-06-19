@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="-775.5" y="749.5"/>
         </scene>
-        <!--Main View Controller-->
+        <!--音控-->
         <scene sceneID="ulJ-A8-fyN">
             <objects>
                 <viewController id="0DT-sn-eNK" customClass="YKMainViewController" sceneMemberID="viewController">
@@ -128,23 +128,18 @@
                             <constraint firstItem="Vgs-VG-pNd" firstAttribute="leading" secondItem="enf-5b-t2t" secondAttribute="leading" id="m7H-v9-hoZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eWx-cu-kjs">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xqQ-Dv-HCZ">
-                            <rect key="frame" x="113" y="7" width="150" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <segments>
-                                <segment title="热门"/>
-                                <segment title="附近"/>
-                            </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </segmentedControl>
+                    <navigationItem key="navigationItem" title="音控" id="eWx-cu-kjs">
+                        <barButtonItem key="leftBarButtonItem" image="menu_btn_icon_login" id="pEa-gE-hkz">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="personMeno:" destination="0DT-sn-eNK" id="Nee-jd-0B8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dock" destination="Vgs-VG-pNd" id="OWa-8O-2PU"/>
-                        <outlet property="segmentControl" destination="xqQ-Dv-HCZ" id="kXX-2a-cz8"/>
+                        <outlet property="personButton" destination="pEa-gE-hkz" id="of1-2h-J95"/>
                         <segue destination="DTn-Hg-dPt" kind="push" identifier="play" id="QYD-qI-hxv"/>
                         <segue destination="BUe-hf-xXl" kind="push" identifier="favourite" id="vqb-Y8-59F"/>
                         <segue destination="JHh-3c-5bb" kind="push" identifier="rank" id="k2h-sH-kRX"/>
@@ -228,6 +223,9 @@
             <point key="canvasLocation" x="-193.5" y="-179.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu_btn_icon_login" width="27" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

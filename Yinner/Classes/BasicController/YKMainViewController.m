@@ -12,6 +12,7 @@
 @interface YKMainViewController ()
 {
     UIView *_siderView;
+    UIView *_maskView;
 }
 
 @end
@@ -36,10 +37,6 @@
     [self setupGestureRecognizer];
     
     [self setupSetting];
-    
-    //默认初始化的视图
-    _currentIndex = 2;
-    [self selectDockItemAt:0];
 
 }
 
@@ -54,6 +51,14 @@
     
     //设置状态栏样式
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //设置默认的slider
+    self.isSlidering = NO;
+    
+    //默认初始化的视图
+    _currentIndex = 2;
+    [self selectDockItemAt:0];
+    
 }
 - (void)setupGestureRecognizer
 {
@@ -69,6 +74,8 @@
 
 - (void)showPersonalView
 {
+    self.isSlidering = YES;
+    
     if (_siderView == nil) {
         _siderView = [[[NSBundle mainBundle] loadNibNamed:@"YKPersonnalView" owner:self options:nil] lastObject];
         _siderView.frame = CGRectMake(-200, 0,200,KwinH);
@@ -79,10 +86,13 @@
         self.navigationController.view.frame = CGRectMake(200, 0, KwinW, KwinH);
         _siderView.frame = CGRectMake(0, 0, 200, KwinH);
     }];
+    
 }
 
 - (void)dismissPersonnalView
 {
+    self.isSlidering = NO;
+    
     [UIView animateWithDuration:0.3 animations:^{
         self.navigationController.view.frame = CGRectMake(0, 0, KwinW, KwinH);
         _siderView.frame = CGRectMake(-200, 0, 200, KwinH);
@@ -133,14 +143,14 @@
     //进入主功能界面
     switch (index) {
         case 0:
-            self.segmentControl.hidden = NO;
+        
             break;
         case 1:
             [self performSegueWithIdentifier:@"play" sender:self];
             return;
             break;
         case 2:
-            self.segmentControl.hidden = YES;
+            
             break;
         default:
             break;
@@ -175,5 +185,36 @@
     }
 }
 
+#pragma mark - Get&Set
+- (void)setIsSlidering:(BOOL)isSlidering
+{
+    
+    if (isSlidering) {
+        _maskView = [[UIView alloc] initWithFrame:self.view.frame];
+        _maskView.backgroundColor = [UIColor blackColor];
+        _maskView.alpha = 0.1;
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPersonnalView)];
+        [_maskView addGestureRecognizer:recognizer];
+        [self.navigationController.view addSubview:_maskView];
+    }
+    else
+    {
+        [_maskView removeFromSuperview];
+    }
+    
 
+    
+}
+
+
+- (IBAction)personMeno:(id)sender {
+    
+    if (_isSlidering) {
+        [self dismissPersonnalView];
+    }
+    else
+    {
+        [self showPersonalView];
+    }
+}
 @end
