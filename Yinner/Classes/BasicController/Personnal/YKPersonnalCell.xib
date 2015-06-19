@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personnalCell" rowHeight="68" id="KGk-i7-Jjw" customClass="YKPersonnalCell">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sidebar_icon_home" translatesAutoresizingMaskIntoConstraints="NO" id="GsZ-lh-LTS">
+                        <rect key="frame" x="8" y="11" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fdsdsadsa  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-Tp-QEX">
+                        <rect key="frame" x="56" y="11" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="LeT-fo-8aa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.83898542379999996" green="0.92396446180000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sidebar_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="eux-Np-kON">
+                        <rect key="frame" x="308" y="16" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="Gf8-Po-tUt"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="eux-Np-kON" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="3xI-T5-sA9"/>
+                    <constraint firstItem="GsZ-lh-LTS" firstAttribute="centerY" secondItem="eux-Np-kON" secondAttribute="centerY" id="4hH-aC-s13"/>
+                    <constraint firstItem="CxS-Tp-QEX" firstAttribute="top" secondItem="GsZ-lh-LTS" secondAttribute="top" id="Gp5-ah-77m"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eux-Np-kON" secondAttribute="bottom" constant="5" id="HDr-19-OvB"/>
+                    <constraint firstItem="GsZ-lh-LTS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ke9-XA-vNz"/>
+                    <constraint firstItem="GsZ-lh-LTS" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Neb-yA-aZM"/>
+                    <constraint firstItem="CxS-Tp-QEX" firstAttribute="leading" secondItem="GsZ-lh-LTS" secondAttribute="trailing" constant="28" id="bAh-ck-kjT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eux-Np-kON" secondAttribute="trailing" constant="6" id="eaQ-Ma-wSH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="cellImage" destination="GsZ-lh-LTS" id="zOc-az-jAb"/>
+                <outlet property="cellTitle" destination="CxS-Tp-QEX" id="5Oy-7y-3EG"/>
+            </connections>
+            <point key="canvasLocation" x="327" y="563"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sidebar_arrow" width="8" height="14"/>
+        <image name="sidebar_icon_home" width="20" height="21"/>
+    </resources>
+</document>

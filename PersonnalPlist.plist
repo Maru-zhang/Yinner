@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>首页</string>
+		<key>image</key>
+		<string>sidebar_icon_home</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>好友</string>
+		<key>image</key>
+		<string>sidebar_icon_addfriends</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>消息</string>
+		<key>image</key>
+		<string>sidebar_icon_save</string>
+	</dict>
+</array>
+</plist>

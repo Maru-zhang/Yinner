@@ -7,8 +7,12 @@
 //
 
 #import "YKMainViewController.h"
+#import "ReuseFrame.h"
 
 @interface YKMainViewController ()
+{
+    UIView *_siderView;
+}
 
 @end
 
@@ -29,17 +33,61 @@
  
     [self settingDock];
     
+    [self setupGestureRecognizer];
+    
+    [self setupSetting];
+    
     //默认初始化的视图
     _currentIndex = 2;
     [self selectDockItemAt:0];
-    
-    
+
+}
+
+
+#pragma mark - Private Method
+- (void)setupSetting
+{
     self.title = @"音控";
     
     //设置返回的颜色
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    //设置状态栏样式
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+- (void)setupGestureRecognizer
+{
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] init];
+    UISwipeGestureRecognizer *recognizerleft = [[UISwipeGestureRecognizer alloc] init];
+    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    recognizerleft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [recognizer addTarget:self action:@selector(showPersonalView)];
+    [recognizerleft addTarget:self action:@selector(dismissPersonnalView)];
+    [self.navigationController.view.window addGestureRecognizer:recognizer];
+    [self.navigationController.view.window addGestureRecognizer:recognizerleft];
 }
 
+- (void)showPersonalView
+{
+    if (_siderView == nil) {
+        _siderView = [[[NSBundle mainBundle] loadNibNamed:@"YKPersonnalView" owner:self options:nil] lastObject];
+        _siderView.frame = CGRectMake(-200, 0,200,KwinH);
+        [self.view.window addSubview:_siderView];
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.navigationController.view.frame = CGRectMake(200, 0, KwinW, KwinH);
+        _siderView.frame = CGRectMake(0, 0, 200, KwinH);
+    }];
+}
+
+- (void)dismissPersonnalView
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.navigationController.view.frame = CGRectMake(0, 0, KwinW, KwinH);
+        _siderView.frame = CGRectMake(-200, 0, 200, KwinH);
+    }];
+}
 
 
 #pragma mark - 创建所有的子控制器
