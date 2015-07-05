@@ -34,6 +34,7 @@
     
     self.personnalTable.delegate = self;
     self.personnalTable.dataSource = self;
+    self.personnalTable.allowsSelection = NO;
     
     if (!_dataSource) {
         _dataSource = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"PersonnalPlist" withExtension:@"plist"]];
