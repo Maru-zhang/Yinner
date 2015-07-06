@@ -11,7 +11,7 @@
 
 @interface YKMainViewController ()
 {
-    UIView *_siderView;
+    YKPersonnalView *_siderView;
     UIView *_maskView;
 }
 
@@ -79,6 +79,7 @@
     if (_siderView == nil) {
         _siderView = [[[NSBundle mainBundle] loadNibNamed:@"YKPersonnalView" owner:self options:nil] lastObject];
         _siderView.frame = CGRectMake(-200, 0,200,KwinH);
+        _siderView.delegate = self;
         [self.view.window addSubview:_siderView];
     }
     
@@ -183,6 +184,33 @@
         default:
             break;
     }
+}
+
+#pragma mark - personnalvcDelegate
+- (void)personnalSettingClick
+{
+    [self dismissPersonnalView];
+    
+    [self performSegueWithIdentifier:@"setting" sender:self];
+}
+
+- (void)personnalHomeClick
+{
+    [self dismissPersonnalView];
+}
+
+- (void)personnalFriendClick
+{
+    [self dismissPersonnalView];
+    
+    [self performSegueWithIdentifier:@"friend" sender:self];
+}
+
+- (void)personnalMessageClick
+{
+    [self dismissPersonnalView];
+    
+    [self performSegueWithIdentifier:@"message" sender:self];
 }
 
 #pragma mark - Get&Set

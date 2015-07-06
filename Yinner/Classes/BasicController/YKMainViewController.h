@@ -11,8 +11,9 @@
 #import "YKHomeViewController.h"
 #import "YKPlayViewController.h"
 #import "YKLibraryController.h"
+#import "YKPersonnalView.h"
 
-@interface YKMainViewController : UIViewController <UINavigationBarDelegate,YKHomeControllerDelegate>
+@interface YKMainViewController : UIViewController <UINavigationBarDelegate,YKHomeControllerDelegate,YKPersonnalViewDelegate>
 
 @property (nonatomic,assign) BOOL isSlidering;
 @property (nonatomic,assign) int currentIndex;

@@ -101,6 +101,79 @@
             </objects>
             <point key="canvasLocation" x="-775.5" y="749.5"/>
         </scene>
+        <!--好友-->
+        <scene sceneID="GM1-ge-quI">
+            <objects>
+                <tableViewController id="NHs-y7-2rj" customClass="YKFriendController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="04V-Wy-SNG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oGV-ca-eFD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGV-ca-eFD" id="8RZ-IP-bsI">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NHs-y7-2rj" id="xF4-hL-g9Z"/>
+                            <outlet property="delegate" destination="NHs-y7-2rj" id="pup-Bb-CZm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="好友" id="Pjt-qS-vyN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dW-NS-8je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866.5" y="-2527.5"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="STJ-rF-mQS">
+            <objects>
+                <tableViewController id="WCa-z5-ZrW" customClass="YKMessageController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p16-oW-fd1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cqH-56-tc4">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cqH-56-tc4" id="zDM-Cm-UZx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WCa-z5-ZrW" id="M0w-Nn-tJp"/>
+                            <outlet property="delegate" destination="WCa-z5-ZrW" id="7v1-fx-pi8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="消息" id="em2-HZ-X60"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jkq-j9-WN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866" y="-1750"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="suM-5i-gyx">
+            <objects>
+                <tableViewController id="m4O-5Q-OYf" customClass="YKSettingController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tgj-8x-nHL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="m4O-5Q-OYf" id="Lrh-RZ-J8l"/>
+                            <outlet property="delegate" destination="m4O-5Q-OYf" id="ZRr-q7-gfa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="8xw-C3-Qw3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laJ-BG-ar3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866.5" y="-997.5"/>
+        </scene>
         <!--音控-->
         <scene sceneID="ulJ-A8-fyN">
             <objects>
@@ -144,6 +217,9 @@
                         <segue destination="BUe-hf-xXl" kind="push" identifier="favourite" id="vqb-Y8-59F"/>
                         <segue destination="JHh-3c-5bb" kind="push" identifier="rank" id="k2h-sH-kRX"/>
                         <segue destination="h2M-q9-yaj" kind="push" identifier="channel" id="60E-ic-NRJ"/>
+                        <segue destination="m4O-5Q-OYf" kind="push" identifier="setting" id="M2h-oW-Vta"/>
+                        <segue destination="NHs-y7-2rj" kind="push" identifier="friend" id="pkU-pj-nRo"/>
+                        <segue destination="WCa-z5-ZrW" kind="push" identifier="message" id="CSK-UQ-HPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfk-3Z-eQI" userLabel="First Responder" sceneMemberID="firstResponder"/>

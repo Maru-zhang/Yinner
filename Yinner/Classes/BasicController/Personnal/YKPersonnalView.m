@@ -34,13 +34,48 @@
     
     self.personnalTable.delegate = self;
     self.personnalTable.dataSource = self;
-    self.personnalTable.allowsSelection = NO;
+//    self.personnalTable.allowsSelection = NO;
+    //给每一个按钮设置手势监听事件
+    
+    UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingButtonClick)];
+    self.settingButton.userInteractionEnabled = YES;
+    [self.settingButton addGestureRecognizer:tapSetting];
+    
     
     if (!_dataSource) {
         _dataSource = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"PersonnalPlist" withExtension:@"plist"]];
     }
 }
 
+
+#pragma mark - Private Method
+- (void)settingButtonClick
+{
+    if ([_delegate respondsToSelector:@selector(personnalSettingClick)]) {
+        [_delegate personnalSettingClick];
+    }
+}
+
+- (void)friendButtonClick
+{
+    if ([_delegate respondsToSelector:@selector(personnalFriendClick)]) {
+        [_delegate personnalFriendClick];
+    }
+}
+
+- (void)messageButtonClick
+{
+    if ([_delegate respondsToSelector:@selector(personnalMessageClick)]) {
+        [_delegate personnalMessageClick];
+    }
+}
+
+- (void)homeButtonClick
+{
+    if ([_delegate respondsToSelector:@selector(personnalHomeClick)]) {
+        [_delegate personnalHomeClick];
+    }
+}
 
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -79,6 +114,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击了%ld",indexPath.row);
+    switch (indexPath.row) {
+        case 0:
+            [self homeButtonClick];
+            break;
+        case 1:
+            [self friendButtonClick];
+            break;
+        case 2:
+            [self messageButtonClick];
+            break;
+        default:
+            break;
+    }
 }
 @end
