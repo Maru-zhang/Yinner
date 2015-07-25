@@ -10,18 +10,32 @@
 
 @interface YKPlayViewController ()
 {
-    
+    NSArray *_dataSource;
 }
 @end
 
 @implementation YKPlayViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _listTableView.dataSource = self;
     _listTableView.delegate = self;
     
+    [self setupSetting];
+    
+}
+
+#pragma mark - Private Method
+- (void)setupSetting
+{
+    if (!_dataSource) {
+        
+        NSURL *dataURL = [[NSBundle mainBundle] URLForResource:@"MatterSort" withExtension:@"plist"];
+        
+        _dataSource = [NSArray arrayWithContentsOfURL:dataURL];
+    }
 }
 
 
@@ -34,21 +48,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"playCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    YKPlayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        NSArray *cellArray = [[NSBundle mainBundle] loadNibNamed:@"YKPlayTableViewCell" owner:self options:nil];
+        
+        cell = [cellArray lastObject];
         
     }
     
-    cell.textLabel.text = @"本地素材";
+    NSDictionary *dic = _dataSource[indexPath.row];
+    
+    cell.title.text = [dic objectForKey:@"name"];
+    cell.headImage.image = [UIImage imageNamed:[dic objectForKey:@"image"]];
     
     return cell;
 }

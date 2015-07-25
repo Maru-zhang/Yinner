@@ -13,6 +13,7 @@
 		421A686B1B33F4B2002E249A /* PersonnalPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 421A686A1B33F4B2002E249A /* PersonnalPlist.plist */; };
 		4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */; };
 		4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */; };
+		424AE1A01B5A420900DF35A2 /* MatterSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424AE19F1B5A420900DF35A2 /* MatterSort.plist */; };
 		425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B392C1B4A7940002468F4 /* YKSettingController.m */; };
 		425B39301B4A8149002468F4 /* YKFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B392F1B4A8149002468F4 /* YKFriendController.m */; };
 		425B39331B4A815F002468F4 /* YKMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B39321B4A815F002468F4 /* YKMessageController.m */; };
@@ -52,6 +53,10 @@
 		42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E01B0AFAF0005BE52E /* Main.storyboard */; };
 		42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */; };
 		42C585F31B0AFAF0005BE52E /* YinnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585F21B0AFAF0005BE52E /* YinnerTests.m */; };
+		42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B011B63628E00567F3B /* YKBrowseViewController.m */; };
+		42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */; };
+		42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */; };
+		42D71B0B1B63A67C00567F3B /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B0A1B63A67C00567F3B /* zimu.srt */; };
 		42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F31B17099400247877 /* AVFoundation.framework */; };
 		42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F51B17099D00247877 /* CoreAudio.framework */; };
 		42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */; };
@@ -81,6 +86,7 @@
 		4236B2F11B269DF4005B7D43 /* YKBrowseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseViewCell.h; sourceTree = "<group>"; };
 		4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewCell.m; sourceTree = "<group>"; };
 		4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseViewCell.xib; sourceTree = "<group>"; };
+		424AE19F1B5A420900DF35A2 /* MatterSort.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MatterSort.plist; sourceTree = SOURCE_ROOT; };
 		425B392B1B4A7940002468F4 /* YKSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSettingController.h; sourceTree = "<group>"; };
 		425B392C1B4A7940002468F4 /* YKSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSettingController.m; sourceTree = "<group>"; };
 		425B392E1B4A8149002468F4 /* YKFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKFriendController.h; sourceTree = "<group>"; };
@@ -150,6 +156,12 @@
 		42C585EC1B0AFAF0005BE52E /* YinnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C585F11B0AFAF0005BE52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C585F21B0AFAF0005BE52E /* YinnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinnerTests.m; sourceTree = "<group>"; };
+		42D71B001B63628E00567F3B /* YKBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseViewController.h; sourceTree = "<group>"; };
+		42D71B011B63628E00567F3B /* YKBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewController.m; sourceTree = "<group>"; };
+		42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayTableViewCell.h; sourceTree = "<group>"; };
+		42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayTableViewCell.m; sourceTree = "<group>"; };
+		42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKPlayTableViewCell.xib; sourceTree = "<group>"; };
+		42D71B0A1B63A67C00567F3B /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42E644F31B17099400247877 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42E644F51B17099D00247877 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaModel.xcdatamodel; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 			children = (
 				425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */,
 				421A686A1B33F4B2002E249A /* PersonnalPlist.plist */,
+				424AE19F1B5A420900DF35A2 /* MatterSort.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
+				42D71B0A1B63A67C00567F3B /* zimu.srt */,
 				42A8EE171B1D67E100D34EAD /* DefautCover.jpg */,
 				42656D1E1B157EC200D2AB4B /* example.mov */,
 			);
@@ -250,6 +264,8 @@
 				42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */,
 				42F4BD121B1C54DD00E23726 /* YKCoreDataManager.h */,
 				42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */,
+				42D71B001B63628E00567F3B /* YKBrowseViewController.h */,
+				42D71B011B63628E00567F3B /* YKBrowseViewController.m */,
 			);
 			name = Toolkit;
 			path = ToolKit;
@@ -344,6 +360,7 @@
 			children = (
 				4297F9081B144CF100706B72 /* YKPlayViewController.h */,
 				4297F9091B144CF100706B72 /* YKPlayViewController.m */,
+				42D71B041B638AE900567F3B /* View */,
 				42656D231B1597A300D2AB4B /* Location */,
 			);
 			path = Play;
@@ -464,6 +481,16 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		42D71B041B638AE900567F3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */,
+				42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */,
+				42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +587,7 @@
 				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
 				425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */,
 				421A68691B33F1AC002E249A /* YKPersonnalCell.xib in Resources */,
+				42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */,
 				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
 				42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */,
 				425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */,
@@ -571,6 +599,8 @@
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				421A686B1B33F4B2002E249A /* PersonnalPlist.plist in Resources */,
 				426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */,
+				424AE1A01B5A420900DF35A2 /* MatterSort.plist in Resources */,
+				42D71B0B1B63A67C00567F3B /* zimu.srt in Resources */,
 				42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */,
 				4275CC3B1B29646E006B7690 /* YKChannelViewCell.xib in Resources */,
 			);
@@ -631,6 +661,7 @@
 				425B39331B4A815F002468F4 /* YKMessageController.m in Sources */,
 				42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */,
 				4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */,
+				42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */,
 				426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
@@ -641,6 +672,7 @@
 				42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */,
 				42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */,
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
+				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
 				425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
 				421A68681B33F1AC002E249A /* YKPersonnalCell.m in Sources */,

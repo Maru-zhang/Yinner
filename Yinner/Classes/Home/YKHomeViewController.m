@@ -133,4 +133,13 @@ static NSString *const reuseIdentifier = @"reuseCell";
     return CGSizeMake(KwinW, 100);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"];
+    
+    YKBrowseViewController *browseVC = [YKBrowseViewController browseViewcontrollerWithUrl:url];
+    
+    [self presentViewController:browseVC animated:YES completion:nil];
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YKPlayTableViewCell.h"
 
 @interface YKPlayViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 

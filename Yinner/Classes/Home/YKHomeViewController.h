@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ReuseFrame.h"
 #import "YKHomeSelectView.h"
+#import "YKBrowseViewController.h"
 
 @protocol YKHomeControllerDelegate <NSObject>
 
