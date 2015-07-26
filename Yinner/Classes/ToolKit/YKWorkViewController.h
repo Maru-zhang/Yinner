@@ -17,8 +17,9 @@
 #import "NSFileManager+Repeat.h"
 #import "NSString+FileName.h"
 #import "NSString+File.h"
+#import "ReuseFrame.h"
 
-@interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate>
+@interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate,UITableViewDataSource,UITableViewDelegate>
 
 singleton_interface(YKWorkViewController)
 

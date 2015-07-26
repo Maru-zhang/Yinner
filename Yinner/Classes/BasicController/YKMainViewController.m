@@ -37,7 +37,6 @@
     [self setupGestureRecognizer];
     
     [self setupSetting];
-
 }
 
 

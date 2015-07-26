@@ -8,16 +8,18 @@
 
 #import "YKWorkViewController.h"
 
-#define KWinH [UIScreen mainScreen].bounds.size.height
-#define KwinW [UIScreen mainScreen].bounds.size.width
-
 @interface YKWorkViewController ()
 {
     UIButton *_start;
     UIButton *_back;
     UIButton *_info;
+    UITableView *_subTitle;
     AVAudioRecorder *_recorder;
     NSMutableArray *_locationArray;
+    NSMutableArray *_subTitleArray;
+    NSMutableArray *_subTitleTimeArray;
+    NSTimer *_timeManager;
+    int _currentTime;
 }
 @end
 
@@ -31,6 +33,8 @@ singleton_implementation(YKWorkViewController)
     YKWorkViewController *controller = [YKWorkViewController sharedYKWorkViewController];
     
     controller.videoURL = url;
+    
+    [controller loadSubTitleWithURL:url];
 
     [controller playVideoWithURL:url];
     
@@ -64,7 +68,7 @@ singleton_implementation(YKWorkViewController)
     //back添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:40 - KwinW]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KWinH]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KwinH]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:20]];
     
@@ -73,12 +77,18 @@ singleton_implementation(YKWorkViewController)
     //info添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:40 - KwinW]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KWinH]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:40 - KwinH]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-20]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_info attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-20]];
     
+    //字幕添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(KwinW / 16) * 9 + 20]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-100]];
     
 }
 
@@ -148,6 +158,18 @@ singleton_implementation(YKWorkViewController)
     
     [self.view addSubview:_info];
     
+    //添加字幕视图
+    _subTitle = [[UITableView alloc] init];
+    _subTitle.backgroundColor = [UIColor clearColor];
+    _subTitle.translatesAutoresizingMaskIntoConstraints = NO;
+    _subTitle.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _subTitle.bounces = NO;
+    _subTitle.allowsSelection = NO;
+    _subTitle.dataSource = self;
+    _subTitle.delegate = self;
+    
+    [self.view addSubview:_subTitle];
+    
 }
 
 - (void)setupSetting
@@ -168,6 +190,7 @@ singleton_implementation(YKWorkViewController)
     //设置默认的模式
     self.alreadyMrege = NO;
     self.watchModel = NO;
+    
 }
 
 
@@ -191,7 +214,7 @@ singleton_implementation(YKWorkViewController)
     //完成播放通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStart) name:MPMoviePlayerReadyForDisplayDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStop) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-
+    
     
 }
 
@@ -199,6 +222,15 @@ singleton_implementation(YKWorkViewController)
 {
     [self startAudioRecordWithName:@"test" andDuration:_videoPlayer.duration];
     NSLog(@"素材时间：%lf",_videoPlayer.duration);
+    NSLog(@"素材当前播放时间:%f",_recorder.currentTime);
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:1];
+    NSDateFormatter *fotmatter = [[NSDateFormatter alloc] init];
+    [fotmatter dateFromString:@"HH：mm"];
+    NSString *time = [fotmatter stringFromDate:date];
+    NSLog(@"%@",date);
+    NSLog(@"test:%@",time);
+    
 }
 
 - (void)playerStop
@@ -207,6 +239,107 @@ singleton_implementation(YKWorkViewController)
         return;
     }
     [_recorder stop];
+    
+    [self pauseTimeManager];
+}
+
+
+#pragma mark 关于TimeManager的业务逻辑
+- (void)startTimeManager
+{
+    _timeManager = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeManger) userInfo:nil repeats:YES];
+    
+    [_timeManager fire];
+    
+}
+
+- (void)pauseTimeManager
+{
+    [_timeManager invalidate];
+}
+
+- (void)updateTimeManger
+{
+    NSLog(@"正在播放----------------%f",_recorder.currentTime);
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm:ss"];
+    
+    //计算当前的播放时间
+    double minutesElapsed = floor(_recorder.currentTime / 60);
+    double secondsElapsed = fmod(_recorder.currentTime, 60);
+    NSString *currentTime = [NSString stringWithFormat:@"%02.f:%02.f",minutesElapsed,secondsElapsed];
+
+    //懒加载
+    if (!_currentTime) {
+        _currentTime = 0;
+    }
+    
+    //防止数组越界
+    if ((_currentTime + 1) > _subTitleTimeArray.count) {
+        return;
+    }
+    
+    //判断当前读取的是哪一行字幕
+    if ([_subTitleTimeArray[_currentTime] isEqualToString:currentTime]) {
+        
+        NSLog(@"当前的时间:%@",_subTitleTimeArray[_currentTime]);
+        
+        //把原来的颜色变回来
+        if (_currentTime != 0) {
+            NSIndexPath *preIndex = [NSIndexPath indexPathForRow:_currentTime - 1 inSection:0];
+            
+            UITableViewCell *preCell = [_subTitle cellForRowAtIndexPath:preIndex];
+            
+            preCell.textLabel.textColor = [UIColor whiteColor];
+        }
+        
+        //当前行字幕变色
+        NSIndexPath *index = [NSIndexPath indexPathForRow:_currentTime inSection:0];
+        
+        UITableViewCell *cell = [_subTitle cellForRowAtIndexPath:index];
+        
+        cell.textLabel.textColor = [UIColor orangeColor];
+        
+        _currentTime ++;
+        
+    }
+    
+}
+
+#pragma mark load subtitle
+- (void)loadSubTitleWithURL:(NSURL *)url
+{
+    _subTitleArray = [NSMutableArray array];
+    _subTitleTimeArray = [NSMutableArray array];
+    
+    NSURL *testURL = [[NSBundle mainBundle] URLForResource:@"zimu" withExtension:@"srt"];
+    
+    NSError *error = nil;
+    NSString *sourceString = [NSString stringWithContentsOfURL:testURL encoding:NSUTF8StringEncoding error:&error];
+    
+    NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
+    
+    //加载字幕数组
+    for (int i = 0; i < stringArray.count;i++) {
+        if ((i - 2) % 4 == 0) {
+            [_subTitleArray addObject:stringArray[i]];
+        }
+    }
+    //加载时间数组
+    for (int i = 0; i < stringArray.count;i++) {
+        if ((i - 1) % 4 == 0) {
+            
+            NSString *temp = stringArray[i];
+            
+            NSString *result = [temp substringWithRange:NSMakeRange(3, 5)];
+            
+            [_subTitleTimeArray addObject:result];
+        }
+    }
+    
+    NSLog(@"测试：%@",stringArray);
+    NSLog(@"时间测试:%@",_subTitleTimeArray);
 }
 
 #pragma mark mrege video&audio
@@ -327,7 +460,7 @@ singleton_implementation(YKWorkViewController)
 - (void)startButtonClick
 {
     _start.selected ? [_start setSelected:NO] : [_start setSelected:YES];
-    _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ?[_videoPlayer pause],[_recorder pause]: [_videoPlayer play],[_recorder record];
+    _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ?[self onPlayerPause]: [self onPlayerStart];
     [self setWatchModel:NO];
     
 }
@@ -340,7 +473,26 @@ singleton_implementation(YKWorkViewController)
 
 - (void)infoButtonClick
 {
+    [_timeManager invalidate];
+}
+
+#pragma mark 播放状态逻辑
+- (void)onPlayerPause
+{
+    [_videoPlayer pause];
     
+    [_recorder pause];
+    
+    [self pauseTimeManager];
+}
+
+- (void)onPlayerStart
+{
+    [_videoPlayer play];
+    
+    [_recorder record];
+    
+    [self startTimeManager];
 }
 
 #pragma mark audio record
@@ -449,5 +601,39 @@ singleton_implementation(YKWorkViewController)
 {
     NSLog(@"出错");
 }
+
+#pragma mark - <TableView DataSource>
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _subTitleArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"subtitleCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    
+    //设置透明
+    cell.backgroundColor = [UIColor clearColor];
+    //设置字体颜色
+    cell.textLabel.textColor = [UIColor whiteColor];
+    //设置居中
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.text = _subTitleArray[indexPath.row];
+    
+    return cell;
+}
+#pragma mark - <TableView Delegate>
 
 @end

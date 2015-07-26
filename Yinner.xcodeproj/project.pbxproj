@@ -40,6 +40,7 @@
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
 		4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKLibraryController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
+		42A28A791B64465600F390EF /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42A28A781B64465600F390EF /* zimu.srt */; };
 		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
 		42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B5B6E31B1E81600061CF4B /* NSString+FileName.m */; };
@@ -56,7 +57,6 @@
 		42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B011B63628E00567F3B /* YKBrowseViewController.m */; };
 		42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */; };
 		42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */; };
-		42D71B0B1B63A67C00567F3B /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B0A1B63A67C00567F3B /* zimu.srt */; };
 		42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F31B17099400247877 /* AVFoundation.framework */; };
 		42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F51B17099D00247877 /* CoreAudio.framework */; };
 		42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */; };
@@ -133,6 +133,7 @@
 		4297F90C1B144CFB00706B72 /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryController.m; sourceTree = "<group>"; };
 		4297F90E1B144D0700706B72 /* YKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeViewController.h; sourceTree = "<group>"; };
 		4297F90F1B144D0700706B72 /* YKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeViewController.m; sourceTree = "<group>"; };
+		42A28A781B64465600F390EF /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
 		42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Repeat.m"; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayTableViewCell.h; sourceTree = "<group>"; };
 		42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayTableViewCell.m; sourceTree = "<group>"; };
 		42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKPlayTableViewCell.xib; sourceTree = "<group>"; };
-		42D71B0A1B63A67C00567F3B /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42E644F31B17099400247877 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42E644F51B17099D00247877 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaModel.xcdatamodel; sourceTree = "<group>"; };
@@ -236,11 +236,11 @@
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				42A28A781B64465600F390EF /* zimu.srt */,
 				425BD7CF1B32AFA20056FEBD /* Images.xcassets */,
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
-				42D71B0A1B63A67C00567F3B /* zimu.srt */,
 				42A8EE171B1D67E100D34EAD /* DefautCover.jpg */,
 				42656D1E1B157EC200D2AB4B /* example.mov */,
 			);
@@ -592,6 +592,7 @@
 				42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */,
 				425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */,
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
+				42A28A791B64465600F390EF /* zimu.srt in Resources */,
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
 				4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */,
@@ -600,7 +601,6 @@
 				421A686B1B33F4B2002E249A /* PersonnalPlist.plist in Resources */,
 				426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */,
 				424AE1A01B5A420900DF35A2 /* MatterSort.plist in Resources */,
-				42D71B0B1B63A67C00567F3B /* zimu.srt in Resources */,
 				42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */,
 				4275CC3B1B29646E006B7690 /* YKChannelViewCell.xib in Resources */,
 			);
