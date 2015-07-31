@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YKWorkViewController.h"
+#import "YKBrowseViewController.h"
 #import "YKCoreDataManager.h"
 #import "YKLibraryCell.h"
 

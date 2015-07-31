@@ -123,11 +123,10 @@
     
     NSURL *url = [NSURL fileURLWithPath:urlString];
     
-    YKWorkViewController *player = [YKWorkViewController WorkViewControllerWithURL:url];
+    YKBrowseViewController *player = [YKBrowseViewController browseViewcontrollerWithUrl:url];
     
     [self presentViewController:player animated:YES completion:nil];
     
-    player.watchModel = YES;
     
 }
 

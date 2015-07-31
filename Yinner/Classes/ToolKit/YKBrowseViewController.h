@@ -17,7 +17,6 @@ singleton_interface(YKBrowseViewController)
 
 @property (nonatomic,strong) NSURL *videoURL;
 @property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
-@property (nonatomic,strong) UITableView *tableView;
 
 + (YKBrowseViewController *)browseViewcontrollerWithUrl:(NSURL *)url;
 

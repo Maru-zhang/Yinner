@@ -16,7 +16,7 @@
     UITableView *_subTitle;
     AVAudioRecorder *_recorder;
     NSMutableArray *_locationArray;
-    NSMutableArray *_subTitleArray;
+    NSMutableDictionary *_subTitleArray;
     NSMutableArray *_subTitleTimeArray;
     NSTimer *_timeManager;
     int _currentTime;
@@ -49,6 +49,7 @@ singleton_implementation(YKWorkViewController)
     [self setupSetting];
     //初始化视图
     [self setupView];
+    
 }
 
 #pragma mark - autolayout
@@ -163,8 +164,8 @@ singleton_implementation(YKWorkViewController)
     _subTitle.backgroundColor = [UIColor clearColor];
     _subTitle.translatesAutoresizingMaskIntoConstraints = NO;
     _subTitle.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _subTitle.bounces = NO;
     _subTitle.allowsSelection = NO;
+    _subTitle.showsVerticalScrollIndicator = NO;
     _subTitle.dataSource = self;
     _subTitle.delegate = self;
     
@@ -280,37 +281,31 @@ singleton_implementation(YKWorkViewController)
         return;
     }
     
+    //滚动
+    NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
+    
+    [_subTitle scrollToRowAtIndexPath:toIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+
     //判断当前读取的是哪一行字幕
-    if ([_subTitleTimeArray[_currentTime] isEqualToString:currentTime]) {
+    if ([_subTitleTimeArray containsObject:currentTime]) {
         
-        NSLog(@"当前的时间:%@",_subTitleTimeArray[_currentTime]);
+        //获取当前字幕的index
+        NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
         
-        //把原来的颜色变回来
-        if (_currentTime != 0) {
-            NSIndexPath *preIndex = [NSIndexPath indexPathForRow:_currentTime - 1 inSection:0];
-            
-            UITableViewCell *preCell = [_subTitle cellForRowAtIndexPath:preIndex];
-            
-            preCell.textLabel.textColor = [UIColor whiteColor];
-        }
+        _currentTime = (int)index;
         
         //当前行字幕变色
-        NSIndexPath *index = [NSIndexPath indexPathForRow:_currentTime inSection:0];
-        
-        UITableViewCell *cell = [_subTitle cellForRowAtIndexPath:index];
-        
-        cell.textLabel.textColor = [UIColor orangeColor];
-        
-        _currentTime ++;
-        
+        [_subTitle reloadData];
     }
+    
     
 }
 
 #pragma mark load subtitle
 - (void)loadSubTitleWithURL:(NSURL *)url
 {
-    _subTitleArray = [NSMutableArray array];
+    _subTitleArray = [NSMutableDictionary dictionary];
     _subTitleTimeArray = [NSMutableArray array];
     
     NSURL *testURL = [[NSBundle mainBundle] URLForResource:@"zimu" withExtension:@"srt"];
@@ -320,12 +315,6 @@ singleton_implementation(YKWorkViewController)
     
     NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
     
-    //加载字幕数组
-    for (int i = 0; i < stringArray.count;i++) {
-        if ((i - 2) % 4 == 0) {
-            [_subTitleArray addObject:stringArray[i]];
-        }
-    }
     //加载时间数组
     for (int i = 0; i < stringArray.count;i++) {
         if ((i - 1) % 4 == 0) {
@@ -336,6 +325,20 @@ singleton_implementation(YKWorkViewController)
             
             [_subTitleTimeArray addObject:result];
         }
+    }
+    
+    NSMutableArray *temp = [NSMutableArray array];
+    
+    //加载字幕数组临时
+    for (int i = 0; i < stringArray.count;i++) {
+        if ((i - 2) % 4 == 0) {
+            [temp addObject:stringArray[i]];
+        }
+    }
+    
+    //加载字幕字典
+    for (int i = 0; i < _subTitleTimeArray.count; i++) {
+        [_subTitleArray setObject:temp[i] forKey:_subTitleTimeArray[i]];
     }
     
     NSLog(@"测试：%@",stringArray);
@@ -595,6 +598,9 @@ singleton_implementation(YKWorkViewController)
     
     //开始合成
     [self mregeWithVideo:_videoURL andAudio:_audioURL];
+    
+    //关闭Timer
+    [self pauseTimeManager];
 }
 
 - (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
@@ -621,16 +627,23 @@ singleton_implementation(YKWorkViewController)
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        //设置透明
+        cell.backgroundColor = [UIColor clearColor];
+        //设置居中
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
     }
     
-    
-    //设置透明
-    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.text = [_subTitleArray objectForKey:_subTitleTimeArray[indexPath.row]];
     //设置字体颜色
     cell.textLabel.textColor = [UIColor whiteColor];
-    //设置居中
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.text = _subTitleArray[indexPath.row];
+    //设置当前所到的字幕
+    if (indexPath.row == _currentTime) {
+        
+        cell.textLabel.textColor = [UIColor yellowColor];
+        
+    }
     
     return cell;
 }

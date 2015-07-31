@@ -9,7 +9,10 @@
 #import "YKBrowseViewController.h"
 
 @interface YKBrowseViewController ()
-
+{
+    UITableView *_tableView;
+    UIButton *_testButton;
+}
 @end
 
 @implementation YKBrowseViewController
@@ -25,6 +28,22 @@ singleton_implementation(YKBrowseViewController)
     
     //初始化设置
     [self setupSetting];
+}
+
+#pragma mark - Autolaout
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    //给评论区添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
+
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
+    
 }
 
 #pragma mark - 工厂方法
@@ -48,10 +67,15 @@ singleton_implementation(YKBrowseViewController)
     self.view.backgroundColor = [UIColor whiteColor];
     
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, KwinW * (9/16), KwinW, KwinH - KwinW * (9 / 16))];
+        
+        _tableView = [[UITableView alloc] init];
+        
+        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
         
         [self.view addSubview:_tableView];
+        
     }
+    
 }
 
 - (void)setupSetting
