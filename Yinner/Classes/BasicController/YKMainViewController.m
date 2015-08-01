@@ -61,41 +61,51 @@
 }
 - (void)setupGestureRecognizer
 {
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] init];
-    UISwipeGestureRecognizer *recognizerleft = [[UISwipeGestureRecognizer alloc] init];
-    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    recognizerleft.direction = UISwipeGestureRecognizerDirectionLeft;
-    [recognizer addTarget:self action:@selector(showPersonalView)];
-    [recognizerleft addTarget:self action:@selector(dismissPersonnalView)];
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
+    UIPanGestureRecognizer *recognizerleft = [[UIPanGestureRecognizer alloc] init];
+//    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
+//    recognizerleft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [recognizer addTarget:self action:@selector(showPersonalView:)];
+    [recognizerleft addTarget:self action:@selector(dismissPersonnalView:)];
     [self.navigationController.view.window addGestureRecognizer:recognizer];
     [self.navigationController.view.window addGestureRecognizer:recognizerleft];
 }
 
-- (void)showPersonalView
+- (void)showPersonalView:(UIPanGestureRecognizer *)pan
 {
     self.isSlidering = YES;
     
     if (_siderView == nil) {
         _siderView = [[[NSBundle mainBundle] loadNibNamed:@"YKPersonnalView" owner:self options:nil] lastObject];
-        _siderView.frame = CGRectMake(-200, 0,200,KwinH);
+        _siderView.center = CGPointMake(125, KwinH * 0.5);
+        _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.7, 0.7);
         _siderView.delegate = self;
         [self.view.window addSubview:_siderView];
+        [self.view.window sendSubviewToBack:_siderView];
+        //创建背景界面
+        UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+        bgImageView.image = [UIImage imageNamed:@"sidebar_bg"];
+        [self.view.window insertSubview:bgImageView belowSubview:_siderView];
     }
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.navigationController.view.frame = CGRectMake(200, 0, KwinW, KwinH);
-        _siderView.frame = CGRectMake(0, 0, 200, KwinH);
+        self.navigationController.view.center = CGPointMake((KwinW / 2) + 200, KwinH / 2);
+        self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
+        _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
     }];
+    
+    NSLog(@"%@",NSStringFromCGPoint([pan translationInView:self.view.window]));
     
 }
 
-- (void)dismissPersonnalView
+- (void)dismissPersonnalView:(UIPanGestureRecognizer *)pan
 {
     self.isSlidering = NO;
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.navigationController.view.frame = CGRectMake(0, 0, KwinW, KwinH);
-        _siderView.frame = CGRectMake(-200, 0, 200, KwinH);
+        self.navigationController.view.center = CGPointMake(KwinW / 2, KwinH / 2);
+        self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.7, 0.7);
     }];
 }
 
@@ -188,26 +198,26 @@
 #pragma mark - personnalvcDelegate
 - (void)personnalSettingClick
 {
-    [self dismissPersonnalView];
+    [self dismissPersonnalView:nil];
     
     [self performSegueWithIdentifier:@"setting" sender:self];
 }
 
 - (void)personnalHomeClick
 {
-    [self dismissPersonnalView];
+    [self dismissPersonnalView:nil];
 }
 
 - (void)personnalFriendClick
 {
-    [self dismissPersonnalView];
+    [self dismissPersonnalView:nil];
     
     [self performSegueWithIdentifier:@"friend" sender:self];
 }
 
 - (void)personnalMessageClick
 {
-    [self dismissPersonnalView];
+    [self dismissPersonnalView:nil];
     
     [self performSegueWithIdentifier:@"message" sender:self];
 }
@@ -220,7 +230,7 @@
         _maskView = [[UIView alloc] initWithFrame:self.view.frame];
         _maskView.backgroundColor = [UIColor blackColor];
         _maskView.alpha = 0.1;
-        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPersonnalView)];
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPersonnalView:)];
         [_maskView addGestureRecognizer:recognizer];
         [self.navigationController.view addSubview:_maskView];
     }
@@ -229,7 +239,6 @@
         [_maskView removeFromSuperview];
     }
     
-
     
 }
 
@@ -237,11 +246,11 @@
 - (IBAction)personMeno:(id)sender {
     
     if (_isSlidering) {
-        [self dismissPersonnalView];
+        [self dismissPersonnalView:nil];
     }
     else
     {
-        [self showPersonalView];
+        [self showPersonalView:nil];
     }
 }
 @end

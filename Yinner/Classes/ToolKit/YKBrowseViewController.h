@@ -10,8 +10,9 @@
 #import <KRVideoPlayer/KRVideoPlayerController.h>
 #import "Singleton.h"
 #import "ReuseFrame.h"
+#import "YKCommentTableViewCell.h"
 
-@interface YKBrowseViewController : UIViewController
+@interface YKBrowseViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 singleton_interface(YKBrowseViewController)
 

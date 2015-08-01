@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -11,9 +11,6 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sidebar_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RGv-RG-6Vk">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgT-ho-4zZ" userLabel="粉丝数">
                     <rect key="frame" x="72" y="151" width="10" height="21"/>
                     <constraints>
@@ -88,18 +85,15 @@
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="RGv-RG-6Vk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Ym-D6-zVV"/>
                 <constraint firstItem="V3k-mY-WZ0" firstAttribute="leading" secondItem="Lkc-u9-CVK" secondAttribute="trailing" constant="5" id="3eP-e5-eMk"/>
-                <constraint firstAttribute="bottom" secondItem="RGv-RG-6Vk" secondAttribute="bottom" id="3nf-Hd-Bbx"/>
                 <constraint firstItem="bZd-0J-kdf" firstAttribute="top" secondItem="qkJ-rV-CEj" secondAttribute="bottom" constant="86" id="4dR-Fx-ALy"/>
                 <constraint firstItem="xgT-ho-4zZ" firstAttribute="leading" secondItem="OYA-uC-DkD" secondAttribute="trailing" constant="14" id="7K9-hZ-JCF"/>
                 <constraint firstItem="qkJ-rV-CEj" firstAttribute="baseline" secondItem="xgT-ho-4zZ" secondAttribute="baseline" id="7ls-Eh-3dJ"/>
                 <constraint firstItem="bZd-0J-kdf" firstAttribute="trailing" secondItem="hdQ-a3-D6D" secondAttribute="trailing" id="85W-3F-J6m"/>
                 <constraint firstItem="Lkc-u9-CVK" firstAttribute="leading" secondItem="OYA-uC-DkD" secondAttribute="leading" id="9Fa-WK-W17"/>
                 <constraint firstAttribute="centerX" secondItem="LED-VV-5bY" secondAttribute="centerX" id="AV2-y7-3Uf"/>
-                <constraint firstAttribute="trailing" secondItem="RGv-RG-6Vk" secondAttribute="trailing" id="FkB-Yk-QdC"/>
                 <constraint firstItem="xgT-ho-4zZ" firstAttribute="top" secondItem="LED-VV-5bY" secondAttribute="bottom" constant="26" id="M5q-vc-cji"/>
                 <constraint firstItem="hdQ-a3-D6D" firstAttribute="leading" secondItem="qkJ-rV-CEj" secondAttribute="trailing" constant="14" id="MWf-Gm-gu9"/>
                 <constraint firstItem="PxN-cI-Z3T" firstAttribute="baseline" secondItem="V3k-mY-WZ0" secondAttribute="baseline" id="NDt-uo-4ag"/>
@@ -115,7 +109,6 @@
                 <constraint firstItem="qkJ-rV-CEj" firstAttribute="leading" secondItem="xgT-ho-4zZ" secondAttribute="trailing" constant="28" id="i1B-h7-Ome"/>
                 <constraint firstItem="OYA-uC-DkD" firstAttribute="top" secondItem="LED-VV-5bY" secondAttribute="bottom" constant="26" id="kKb-Y6-cUd"/>
                 <constraint firstItem="PxN-cI-Z3T" firstAttribute="firstBaseline" secondItem="V3k-mY-WZ0" secondAttribute="firstBaseline" id="pXP-vC-Xuj"/>
-                <constraint firstItem="RGv-RG-6Vk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tv4-wG-De6"/>
                 <constraint firstItem="LED-VV-5bY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="w2g-VW-af0"/>
                 <constraint firstAttribute="bottom" secondItem="he3-ik-PkK" secondAttribute="bottom" constant="16" id="zEo-VF-z1y"/>
             </constraints>
@@ -132,7 +125,6 @@
         </view>
     </objects>
     <resources>
-        <image name="sidebar_bg" width="320" height="568"/>
         <image name="sidebar_icon_apps" width="27" height="22"/>
         <image name="sidebar_icon_set" width="25" height="25"/>
         <image name="touxiang" width="231" height="230"/>
