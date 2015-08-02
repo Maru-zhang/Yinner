@@ -107,7 +107,6 @@
         _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
     }];
     
-
 }
 
 - (void)dismissPersonnalView:(UIPanGestureRecognizer *)pan
@@ -119,6 +118,7 @@
         self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
         _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.7, 0.7);
     }];
+    
 }
 
 - (void)onPanGuestureRecginizer:(UIPanGestureRecognizer *)pan
@@ -304,7 +304,8 @@
             _maskView = [[UIView alloc] initWithFrame:self.view.frame];
             _maskView.backgroundColor = [UIColor blackColor];
             _maskView.alpha = 0.2;
-            [_maskView addGestureRecognizer:_pan];
+            UIPanGestureRecognizer *backPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanGuestureRecginizer:)];
+            [_maskView addGestureRecognizer:backPan];
         }
         [self.navigationController.view addSubview:_maskView];
     }
