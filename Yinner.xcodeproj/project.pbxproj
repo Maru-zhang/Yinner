@@ -42,6 +42,7 @@
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
 		4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKLibraryController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
+		42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D3C1B6EFD060029EC0F /* YKPersonInfoController.m */; };
 		42A28A791B64465600F390EF /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42A28A781B64465600F390EF /* zimu.srt */; };
 		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
@@ -138,6 +139,8 @@
 		4297F90C1B144CFB00706B72 /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryController.m; sourceTree = "<group>"; };
 		4297F90E1B144D0700706B72 /* YKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeViewController.h; sourceTree = "<group>"; };
 		4297F90F1B144D0700706B72 /* YKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeViewController.m; sourceTree = "<group>"; };
+		42A15D3B1B6EFD060029EC0F /* YKPersonInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPersonInfoController.h; sourceTree = "<group>"; };
+		42A15D3C1B6EFD060029EC0F /* YKPersonInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPersonInfoController.m; sourceTree = "<group>"; };
 		42A28A781B64465600F390EF /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
@@ -317,18 +320,18 @@
 		42764AA51B33CE14007A4F9E /* Personnal */ = {
 			isa = PBXGroup;
 			children = (
+				42BB757D1B6DE98D00BADD5C /* View */,
 				42764AA61B33CE54007A4F9E /* YKPersonnalView.h */,
 				42764AA71B33CE54007A4F9E /* YKPersonnalView.m */,
 				42764AA91B33CE65007A4F9E /* YKPersonnalView.xib */,
-				421A68651B33F1AC002E249A /* YKPersonnalCell.h */,
-				421A68661B33F1AC002E249A /* YKPersonnalCell.m */,
-				421A68671B33F1AC002E249A /* YKPersonnalCell.xib */,
 				425B392B1B4A7940002468F4 /* YKSettingController.h */,
 				425B392C1B4A7940002468F4 /* YKSettingController.m */,
 				425B392E1B4A8149002468F4 /* YKFriendController.h */,
 				425B392F1B4A8149002468F4 /* YKFriendController.m */,
 				425B39311B4A815F002468F4 /* YKMessageController.h */,
 				425B39321B4A815F002468F4 /* YKMessageController.m */,
+				42A15D3B1B6EFD060029EC0F /* YKPersonInfoController.h */,
+				42A15D3C1B6EFD060029EC0F /* YKPersonInfoController.m */,
 			);
 			path = Personnal;
 			sourceTree = "<group>";
@@ -380,6 +383,16 @@
 				42656D231B1597A300D2AB4B /* Location */,
 			);
 			path = Play;
+			sourceTree = "<group>";
+		};
+		42BB757D1B6DE98D00BADD5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				421A68651B33F1AC002E249A /* YKPersonnalCell.h */,
+				421A68661B33F1AC002E249A /* YKPersonnalCell.m */,
+				421A68671B33F1AC002E249A /* YKPersonnalCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		42C46A461B1FD8F500F6AAAC /* View */ = {
@@ -699,6 +712,7 @@
 				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
 				4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */,
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
+				42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */,
 				4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
 				183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */,
