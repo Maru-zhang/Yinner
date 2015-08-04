@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/KRVideoPlayer"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/KRVideoPlayer"
-OTHER_LDFLAGS = -ObjC -l"Pods-KRVideoPlayer" -framework "MediaPlayer" -framework "UIKit"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/KRVideoPlayer" "${PODS_ROOT}/Headers/Public/MJRefresh"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/KRVideoPlayer" -isystem "${PODS_ROOT}/Headers/Public/MJRefresh"
+OTHER_LDFLAGS = -ObjC -l"Pods-KRVideoPlayer" -l"Pods-MJRefresh" -framework "MediaPlayer" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

@@ -1,1 +1,2 @@
 pod "KRVideoPlayer"
+pod "MJRefresh"

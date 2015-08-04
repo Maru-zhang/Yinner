@@ -1,10 +1,13 @@
 PODS:
   - KRVideoPlayer (1.0.1)
+  - MJRefresh (2.3.2)
 
 DEPENDENCIES:
   - KRVideoPlayer
+  - MJRefresh
 
 SPEC CHECKSUMS:
   KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
+  MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
 
 COCOAPODS: 0.34.4

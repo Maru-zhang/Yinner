@@ -51,7 +51,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeHeight multiplier:1 constant:100 - _reuseableView.frame.size.height]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeWidth multiplier:1 constant:-16]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:- 10]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:-10]];
 
 
 }
@@ -78,12 +78,38 @@ static NSString *const reuseIdentifier = @"reuseCell";
     };
     
     //设置collectionView的背景颜色
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.950 alpha:1.000];
     //去掉滚动条
     self.collectionView.showsVerticalScrollIndicator = NO;
+    
+    //添加下拉刷新
+    MJRefreshHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [self loadNewData];
+    }];
+    
+    header.ignoredScrollViewContentInsetTop = 20;
+    
+    self.collectionView.header = header;
+    
 }
 
 #pragma mark - private method
+
+- (void)loadNewData
+{
+    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.collectionView reloadData];
+        
+        // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+        [self.collectionView.header endRefreshing];
+    });
+}
+
+
+
 - (void)selectButtonWithTag:(int)tag
 {
     if ([_delegate respondsToSelector:@selector(homeControllerItemClickAtIndex:)]) {

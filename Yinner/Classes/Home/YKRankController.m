@@ -30,7 +30,25 @@
 #pragma mark - Private method
 - (void)setup
 {
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        
+        [self loadNewData];
+    }];
     
+    [self.tableView.header beginRefreshing];
+}
+
+#pragma mark Load New Data
+- (void)loadNewData
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+        [self.tableView.header endRefreshing];
+    });
 }
 
 

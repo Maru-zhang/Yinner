@@ -10,6 +10,7 @@
 #import "ReuseFrame.h"
 #import "YKHomeSelectView.h"
 #import "YKBrowseViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 @protocol YKHomeControllerDelegate <NSObject>
 

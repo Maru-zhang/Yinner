@@ -11,6 +11,7 @@
 #import "Singleton.h"
 #import "ReuseFrame.h"
 #import "YKCommentTableViewCell.h"
+#import "YKBrowseAuthorInfoView.h"
 
 @interface YKBrowseViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 

@@ -12,6 +12,7 @@
 {
     UITableView *_tableView;
     UIButton *_testButton;
+    YKBrowseAuthorInfoView *_infoView;
 }
 @end
 
@@ -36,13 +37,22 @@ singleton_implementation(YKBrowseViewController)
     [super viewDidLayoutSubviews];
     
     //给评论区添加约束
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9 + 110]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:5]];
 
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-5]];
+    
+    //给信息区添加约束
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9 + 10]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-5]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:5]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:-self.view.frame.size.height + 90]];
     
 }
 
@@ -64,7 +74,7 @@ singleton_implementation(YKBrowseViewController)
 #pragma mark - Private Method
 - (void)setupView
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.877 alpha:1.000];
     
     if (!_tableView) {
         
@@ -76,6 +86,13 @@ singleton_implementation(YKBrowseViewController)
         
         [self.view addSubview:_tableView];
         
+    }
+    
+    if (!_infoView) {
+        _infoView = [[[NSBundle mainBundle] loadNibNamed:@"YKBrowseAuthorInfoView" owner:self options:nil] lastObject];
+        _infoView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self.view addSubview:_infoView];
     }
     
 }

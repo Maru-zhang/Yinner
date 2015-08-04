@@ -47,6 +47,8 @@
 		42A15D441B70329E0029EC0F /* YKMessageSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D431B70329E0029EC0F /* YKMessageSettingController.m */; };
 		42A15D471B7032D10029EC0F /* TKSuggestSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D461B7032D10029EC0F /* TKSuggestSettingController.m */; };
 		42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D491B7032E40029EC0F /* YKAboutSettingController.m */; };
+		42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */; };
+		42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */; };
 		42A28A791B64465600F390EF /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42A28A781B64465600F390EF /* zimu.srt */; };
 		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
@@ -153,6 +155,9 @@
 		42A15D461B7032D10029EC0F /* TKSuggestSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSuggestSettingController.m; sourceTree = "<group>"; };
 		42A15D481B7032E40029EC0F /* YKAboutSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAboutSettingController.h; sourceTree = "<group>"; };
 		42A15D491B7032E40029EC0F /* YKAboutSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAboutSettingController.m; sourceTree = "<group>"; };
+		42A15D4B1B703A470029EC0F /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
+		42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
+		42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
 		42A28A781B64465600F390EF /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
@@ -298,6 +303,9 @@
 				426F87831B6B14D600624E1B /* YKCommentTableViewCell.h */,
 				426F87841B6B14D600624E1B /* YKCommentTableViewCell.m */,
 				426F87851B6B14D600624E1B /* YKCommentTableViewCell.xib */,
+				42A15D4B1B703A470029EC0F /* YKBrowseAuthorInfoView.h */,
+				42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */,
+				42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -653,6 +661,7 @@
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
 				4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */,
+				42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 				426F87871B6B14D600624E1B /* YKCommentTableViewCell.xib in Resources */,
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
@@ -722,6 +731,7 @@
 				42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */,
 				42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */,
 				426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */,
+				42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
 				426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */,

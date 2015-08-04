@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YKBrowseTableViewCell.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface YKRankController : UITableViewController
 

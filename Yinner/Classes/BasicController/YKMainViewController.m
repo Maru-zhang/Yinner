@@ -44,8 +44,14 @@
     [super viewDidAppear:animated];
     
     [self setupGestureRecognizer];
+    
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+}
 
 #pragma mark - Private Method
 - (void)setupSetting
@@ -67,10 +73,6 @@
     
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-}
 
 - (void)setupGestureRecognizer
 {

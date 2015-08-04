@@ -65,6 +65,8 @@
         _libTableView.translatesAutoresizingMaskIntoConstraints = NO;
         _libTableView.dataSource = self;
         _libTableView.delegate = self;
+        //防止出现偏移
+        self.automaticallyAdjustsScrollViewInsets = NO;
         [self.view addSubview:_libTableView];
 
     }

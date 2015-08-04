@@ -52,7 +52,9 @@ static NSString * const reuseIdentifier = @"channelCell";
         _dataSource = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"ChannelPlist" withExtension:@"plist"]];
     }
 
+
 }
+
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
