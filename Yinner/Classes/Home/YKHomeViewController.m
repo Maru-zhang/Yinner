@@ -83,14 +83,35 @@ static NSString *const reuseIdentifier = @"reuseCell";
     self.collectionView.showsVerticalScrollIndicator = NO;
     
     //添加下拉刷新
-    MJRefreshHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
         [self loadNewData];
     }];
     
+    //加载图片
+    NSMutableArray *idleImages = [NSMutableArray array];
+    for (NSUInteger i = 1; i<=60; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd", i]];
+        [idleImages addObject:image];
+    }
+    [header setImages:idleImages forState:MJRefreshStateIdle];
+    
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    NSMutableArray *refreshingImages = [NSMutableArray array];
+    for (NSUInteger i = 1; i<=3; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd", i]];
+        [refreshingImages addObject:image];
+    }
+    [header setImages:refreshingImages forState:MJRefreshStatePulling];
+    
+    // 设置正在刷新状态的动画图片
+    [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    
+    //设置刷新提示的Inset
     header.ignoredScrollViewContentInsetTop = 20;
     
     self.collectionView.header = header;
+    
+    [self.collectionView.header beginRefreshing];
     
 }
 
