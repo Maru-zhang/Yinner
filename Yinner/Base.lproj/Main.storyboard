@@ -115,6 +115,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="好友" id="Pjt-qS-vyN"/>
+                    <connections>
+                        <segue destination="XMb-F6-vbS" kind="push" identifier="chat" id="MX9-1P-BQd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dW-NS-8je" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +149,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkq-j9-WN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-866" y="-1750"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="yCn-fv-O3c">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" id="Ku3-dC-8pE" customClass="YKLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Uw-ET-lag"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nxi-gU-Cny"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VyR-ZF-8rK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Log_BG" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-eV-Vjh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login_account" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-GA-Fhz">
+                                <rect key="frame" x="50" y="147" width="40" height="40"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login_password" translatesAutoresizingMaskIntoConstraints="NO" id="CQA-0v-du3">
+                                <rect key="frame" x="50" y="215" width="40" height="40"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-nb-vTq" userLabel="password">
+                                <rect key="frame" x="121" y="220" width="203" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="join" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="账号/邮箱" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQf-le-WDo" userLabel="account">
+                                <rect key="frame" x="121" y="152" width="203" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-aS-rjF">
+                                <rect key="frame" x="89" y="298" width="30" height="30"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButton:" destination="Ku3-dC-8pE" eventType="touchUpInside" id="4H9-lz-85Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-Aa-VFY">
+                                <rect key="frame" x="250" y="298" width="30" height="30"/>
+                                <state key="normal" title="登陆">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="Ku3-dC-8pE" eventType="touchUpInside" id="R8I-xQ-GrT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="account" destination="YQf-le-WDo" id="73i-gH-5tX"/>
+                        <outlet property="password" destination="iMi-nb-vTq" id="A6q-n5-LGe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Gi-RE-1Wk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.5" y="702.5"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="eJe-TU-qzA">
+            <objects>
+                <tableViewController storyboardIdentifier="chat" id="XMb-F6-vbS" customClass="YKChatViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qO8-iY-SJC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                        <connections>
+                            <outlet property="dataSource" destination="XMb-F6-vbS" id="0qV-rg-bFf"/>
+                            <outlet property="delegate" destination="XMb-F6-vbS" id="cOh-Nb-mKh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="f7Z-Jz-0dp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wxi-Nn-sBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266.5" y="-2527.5"/>
         </scene>
         <!--设置-->
         <scene sceneID="suM-5i-gyx">
@@ -345,21 +432,18 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="setting_btn_quit" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-kE-ht8">
                                                     <rect key="frame" x="0.0" y="1" width="375" height="43"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="退出" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMa-xg-cji">
-                                                    <rect key="frame" x="166" y="10" width="42" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="1C0-na-q93"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="退出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGL-8x-PPI">
+                                                    <rect key="frame" x="166" y="12" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="bMa-xg-cji" secondAttribute="centerX" id="9Jo-gO-c2v"/>
                                                 <constraint firstItem="Dds-kE-ht8" firstAttribute="leading" secondItem="Wz2-vL-SGO" secondAttribute="leading" id="A9l-ht-o7M"/>
                                                 <constraint firstItem="Dds-kE-ht8" firstAttribute="top" secondItem="Wz2-vL-SGO" secondAttribute="top" id="Ko0-wM-B9Q"/>
-                                                <constraint firstAttribute="centerY" secondItem="bMa-xg-cji" secondAttribute="centerY" id="dRL-6M-APv"/>
+                                                <constraint firstAttribute="centerY" secondItem="KGL-8x-PPI" secondAttribute="centerY" id="Kt4-Fb-flp"/>
+                                                <constraint firstAttribute="centerX" secondItem="KGL-8x-PPI" secondAttribute="centerX" id="sog-tQ-fKc"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dds-kE-ht8" secondAttribute="trailing" id="tcE-zE-SXZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dds-kE-ht8" secondAttribute="bottom" id="yX8-50-28a"/>
                                             </constraints>
@@ -375,6 +459,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="8xw-C3-Qw3"/>
+                    <connections>
+                        <segue destination="Ku3-dC-8pE" kind="modal" identifier="exit-login" id="eEz-Rj-ZiS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laJ-BG-ar3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -764,6 +851,7 @@
                         <segue destination="m4O-5Q-OYf" kind="push" identifier="setting" id="M2h-oW-Vta"/>
                         <segue destination="NHs-y7-2rj" kind="push" identifier="friend" id="pkU-pj-nRo"/>
                         <segue destination="WCa-z5-ZrW" kind="push" identifier="message" id="CSK-UQ-HPd"/>
+                        <segue destination="Ku3-dC-8pE" kind="modal" identifier="login" id="Ur2-tt-UVL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfk-3Z-eQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -788,6 +876,7 @@
                                     <constraint firstAttribute="height" constant="44" id="5Pk-Cv-jBL"/>
                                 </constraints>
                                 <color key="barTintColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="83" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -844,6 +933,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Log_BG" width="375" height="667"/>
+        <image name="Login_account" width="256" height="256"/>
+        <image name="Login_password" width="256" height="256"/>
         <image name="MainButton" width="60" height="60"/>
         <image name="menu_btn_icon_login" width="27" height="27"/>
         <image name="setting_btn_quit" width="305" height="50"/>
@@ -860,4 +952,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ur2-tt-UVL"/>
+    </inferredMetricsTieBreakers>
 </document>

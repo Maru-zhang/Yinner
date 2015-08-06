@@ -49,6 +49,14 @@
 		42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D491B7032E40029EC0F /* YKAboutSettingController.m */; };
 		42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */; };
 		42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */; };
+		42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC11B7088650029EC0F /* MobileCoreServices.framework */; };
+		42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC31B7088710029EC0F /* CFNetwork.framework */; };
+		42A15DC61B7088DC0029EC0F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC51B7088DC0029EC0F /* libstdc++.6.0.9.dylib */; };
+		42A15DC81B7088F20029EC0F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC71B7088F20029EC0F /* libsqlite3.dylib */; };
+		42A15DCA1B7088FE0029EC0F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC91B7088FE0029EC0F /* libxml2.dylib */; };
+		42A15DCC1B70890B0029EC0F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DCB1B70890B0029EC0F /* libiconv.dylib */; };
+		42A15DCE1B7089160029EC0F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DCD1B7089160029EC0F /* libz.dylib */; };
+		42A15DD01B7089220029EC0F /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DCF1B7089220029EC0F /* libresolv.dylib */; };
 		42A28A791B64465600F390EF /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42A28A781B64465600F390EF /* zimu.srt */; };
 		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
@@ -72,6 +80,9 @@
 		42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */; };
 		42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4BD151B1C597400E23726 /* CoreData.framework */; };
 		42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */; };
+		42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF56121B719D6300C7781D /* YKLoginViewController.m */; };
+		42FF561A1B72DB8500C7781D /* NSString+Valid.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF56191B72DB8400C7781D /* NSString+Valid.m */; };
+		42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF561C1B72E36E00C7781D /* YKChatViewController.m */; };
 		597978221B5EC40915C43DEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D911E37F7CBA5D8373180423 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +107,7 @@
 		4236B2F21B269DF4005B7D43 /* YKBrowseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewCell.m; sourceTree = "<group>"; };
 		4236B2F31B269DF4005B7D43 /* YKBrowseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseViewCell.xib; sourceTree = "<group>"; };
 		424AE19F1B5A420900DF35A2 /* MatterSort.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MatterSort.plist; sourceTree = SOURCE_ROOT; };
+		424BA59E1B70914500BCA0FE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		425B392B1B4A7940002468F4 /* YKSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSettingController.h; sourceTree = "<group>"; };
 		425B392C1B4A7940002468F4 /* YKSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSettingController.m; sourceTree = "<group>"; };
 		425B392E1B4A8149002468F4 /* YKFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKFriendController.h; sourceTree = "<group>"; };
@@ -158,6 +170,14 @@
 		42A15D4B1B703A470029EC0F /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
 		42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
 		42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
+		42A15DC11B7088650029EC0F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		42A15DC31B7088710029EC0F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		42A15DC51B7088DC0029EC0F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		42A15DC71B7088F20029EC0F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		42A15DC91B7088FE0029EC0F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		42A15DCB1B70890B0029EC0F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		42A15DCD1B7089160029EC0F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		42A15DCF1B7089220029EC0F /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		42A28A781B64465600F390EF /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
 		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
@@ -195,6 +215,13 @@
 		42F4BD151B1C597400E23726 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		42F4BD191B1C89F300E23726 /* NSDate+Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Current.h"; sourceTree = "<group>"; };
 		42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Current.m"; sourceTree = "<group>"; };
+		42FF56111B719D6300C7781D /* YKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLoginViewController.h; sourceTree = "<group>"; };
+		42FF56121B719D6300C7781D /* YKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLoginViewController.m; sourceTree = "<group>"; };
+		42FF56171B71C42700C7781D /* ReuseKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReuseKey.h; sourceTree = "<group>"; };
+		42FF56181B72DB8400C7781D /* NSString+Valid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Valid.h"; sourceTree = "<group>"; };
+		42FF56191B72DB8400C7781D /* NSString+Valid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Valid.m"; sourceTree = "<group>"; };
+		42FF561B1B72E36E00C7781D /* YKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChatViewController.h; sourceTree = "<group>"; };
+		42FF561C1B72E36E00C7781D /* YKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChatViewController.m; sourceTree = "<group>"; };
 		D911E37F7CBA5D8373180423 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F073887A5EC671A59ED481CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +232,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A15DD01B7089220029EC0F /* libresolv.dylib in Frameworks */,
+				42A15DCE1B7089160029EC0F /* libz.dylib in Frameworks */,
+				42A15DCC1B70890B0029EC0F /* libiconv.dylib in Frameworks */,
+				42A15DCA1B7088FE0029EC0F /* libxml2.dylib in Frameworks */,
+				42A15DC81B7088F20029EC0F /* libsqlite3.dylib in Frameworks */,
+				42A15DC61B7088DC0029EC0F /* libstdc++.6.0.9.dylib in Frameworks */,
+				42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */,
+				42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */,
 				42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */,
 				42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */,
 				42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */,
@@ -333,6 +368,8 @@
 				4297F8F31B143B1B00706B72 /* YKDock.m */,
 				4297F8F41B143B1B00706B72 /* YKDockItem.h */,
 				4297F8F51B143B1B00706B72 /* YKDockItem.m */,
+				42FF56111B719D6300C7781D /* YKLoginViewController.h */,
+				42FF56121B719D6300C7781D /* YKLoginViewController.m */,
 			);
 			path = BasicController;
 			sourceTree = "<group>";
@@ -368,6 +405,8 @@
 				42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */,
 				42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */,
 				42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */,
+				42FF56181B72DB8400C7781D /* NSString+Valid.h */,
+				42FF56191B72DB8400C7781D /* NSString+Valid.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -417,6 +456,8 @@
 				42A15D461B7032D10029EC0F /* TKSuggestSettingController.m */,
 				42A15D481B7032E40029EC0F /* YKAboutSettingController.h */,
 				42A15D491B7032E40029EC0F /* YKAboutSettingController.m */,
+				42FF561B1B72E36E00C7781D /* YKChatViewController.h */,
+				42FF561C1B72E36E00C7781D /* YKChatViewController.m */,
 			);
 			name = SubVC;
 			sourceTree = "<group>";
@@ -542,6 +583,8 @@
 				42C585DA1B0AFAF0005BE52E /* AppDelegate.h */,
 				42C585DB1B0AFAF0005BE52E /* AppDelegate.m */,
 				42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */,
+				424BA59E1B70914500BCA0FE /* PrefixHeader.pch */,
+				42FF56171B71C42700C7781D /* ReuseKey.h */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -559,6 +602,14 @@
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42A15DCF1B7089220029EC0F /* libresolv.dylib */,
+				42A15DCD1B7089160029EC0F /* libz.dylib */,
+				42A15DCB1B70890B0029EC0F /* libiconv.dylib */,
+				42A15DC91B7088FE0029EC0F /* libxml2.dylib */,
+				42A15DC71B7088F20029EC0F /* libsqlite3.dylib */,
+				42A15DC51B7088DC0029EC0F /* libstdc++.6.0.9.dylib */,
+				42A15DC31B7088710029EC0F /* CFNetwork.framework */,
+				42A15DC11B7088650029EC0F /* MobileCoreServices.framework */,
 				42F4BD151B1C597400E23726 /* CoreData.framework */,
 				42E644F51B17099D00247877 /* CoreAudio.framework */,
 				42E644F31B17099400247877 /* AVFoundation.framework */,
@@ -732,6 +783,7 @@
 				42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */,
 				426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */,
 				42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */,
+				42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
 				426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */,
@@ -739,6 +791,7 @@
 				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
 				42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */,
 				42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */,
+				42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */,
 				42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */,
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
@@ -753,6 +806,7 @@
 				42A15D471B7032D10029EC0F /* TKSuggestSettingController.m in Sources */,
 				4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */,
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
+				42FF561A1B72DB8500C7781D /* NSString+Valid.m in Sources */,
 				42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */,
 				4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
@@ -882,8 +936,14 @@
 			baseConfigurationReference = F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
 				INFOPLIST_FILE = Yinner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Yinner/Classes/Lib/EaseMobSDK/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -893,8 +953,14 @@
 			baseConfigurationReference = F073887A5EC671A59ED481CE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
 				INFOPLIST_FILE = Yinner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Yinner/Classes/Lib/EaseMobSDK/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

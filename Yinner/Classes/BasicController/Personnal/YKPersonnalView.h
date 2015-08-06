@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *worksNum;
 @property (weak, nonatomic) IBOutlet UITableView *personnalTable;
 @property (weak, nonatomic) IBOutlet UILabel *settingButton;
+@property (weak, nonatomic) IBOutlet UILabel *rewardsButton;
 
 @end

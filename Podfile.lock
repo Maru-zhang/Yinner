@@ -1,12 +1,19 @@
 PODS:
+  - EaseMobSDK (2.1.9)
   - KRVideoPlayer (1.0.1)
   - MJRefresh (2.3.2)
 
 DEPENDENCIES:
+  - EaseMobSDK (from `https://github.com/easemob/sdk-ios-cocoapods.git`)
   - KRVideoPlayer
   - MJRefresh
 
+EXTERNAL SOURCES:
+  EaseMobSDK:
+    :git: https://github.com/easemob/sdk-ios-cocoapods.git
+
 SPEC CHECKSUMS:
+  EaseMobSDK: 8c183382c6afbc09bd0d86bb2b3f1f5386a29c42
   KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
   MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
 

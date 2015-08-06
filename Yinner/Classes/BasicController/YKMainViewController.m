@@ -8,6 +8,7 @@
 
 #import "YKMainViewController.h"
 #import "ReuseFrame.h"
+#import "YKLoginViewController.h"
 
 @interface YKMainViewController ()
 {
@@ -37,6 +38,7 @@
     [self settingDock];
     
     [self setupSetting];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,6 +46,8 @@
     [super viewDidAppear:animated];
     
     [self setupGestureRecognizer];
+    
+    [self displayLoginController];
     
 }
 
@@ -71,6 +75,21 @@
     _currentIndex = 2;
     [self selectDockItemAt:0];
     
+}
+
+- (void)displayLoginController
+{
+    //判断是否自动登录
+    BOOL isAutoLoginEnabled = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+    
+    if (isAutoLoginEnabled) {
+        
+        return;
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"login" sender:self];
+    }
 }
 
 

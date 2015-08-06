@@ -8,6 +8,7 @@
 
 #import "YKPersonnalView.h"
 #import "YKPersonnalCell.h"
+#import "YKLoginViewController.h"
 
 @interface YKPersonnalView ()
 {
@@ -42,6 +43,11 @@
     [self.settingButton addGestureRecognizer:tapSetting];
     
     
+    UITapGestureRecognizer *tapRewards = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rewardsButtonClick)];
+    self.rewardsButton.userInteractionEnabled = YES;
+    [self.rewardsButton addGestureRecognizer:tapRewards];
+    
+    
     if (!_dataSource) {
         _dataSource = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"PersonnalPlist" withExtension:@"plist"]];
     }
@@ -49,6 +55,26 @@
 
 
 #pragma mark - Private Method
+- (void)rewardsButtonClick
+{
+    EMError *logoffError = nil;
+    //退出登陆
+    NSDictionary *info = [[EaseMob sharedInstance].chatManager logoffWithUnbindDeviceToken:YES error:&logoffError];
+    
+    if (!logoffError && info) {
+        NSLog(@"登出成功！");
+        
+        
+        YKLoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"loginVC"];
+        
+        self.window.rootViewController = loginVC;
+
+        
+        
+    }
+}
+
+
 - (void)settingButtonClick
 {
     if ([_delegate respondsToSelector:@selector(personnalSettingClick)]) {

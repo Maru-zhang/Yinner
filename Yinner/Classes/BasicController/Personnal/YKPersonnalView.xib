@@ -68,6 +68,7 @@
                 <outlet property="fansNum" destination="xgT-ho-4zZ" id="sTR-H4-Wv8"/>
                 <outlet property="headImage" destination="LED-VV-5bY" id="O3E-bZ-3W4"/>
                 <outlet property="personnalTable" destination="bZd-0J-kdf" id="Et0-fw-fzS"/>
+                <outlet property="rewardsButton" destination="V3k-mY-WZ0" id="NPM-Hn-rvU"/>
                 <outlet property="settingButton" destination="PxN-cI-Z3T" id="KFq-Ks-vz1"/>
                 <outlet property="worksNum" destination="hdQ-a3-D6D" id="yL5-dv-XgW"/>
             </connections>

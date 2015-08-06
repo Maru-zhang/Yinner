@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-EaseMobSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-KRVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A0049D73983BC1A9561F5485</key>
+		<key>1536C169C1F984CC3175D8B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BEE335264D5CBD637AE617F1</key>
+		<key>432EB2B80F5C611E1F5DCD53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E005D4C029509098F315AD12</key>
+		<key>66290DE24B0435F39D283132</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F69A4AD2796444A461D03042</key>
+		<key>66679FF9CAB213D6038753A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFBA40857ED6AF43711E8DDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,6 +6,12 @@
 // project.
 
 
+// EaseMobSDK
+#define COCOAPODS_POD_AVAILABLE_EaseMobSDK
+#define COCOAPODS_VERSION_MAJOR_EaseMobSDK 2
+#define COCOAPODS_VERSION_MINOR_EaseMobSDK 1
+#define COCOAPODS_VERSION_PATCH_EaseMobSDK 9
+
 // KRVideoPlayer
 #define COCOAPODS_POD_AVAILABLE_KRVideoPlayer
 #define COCOAPODS_VERSION_MAJOR_KRVideoPlayer 1
