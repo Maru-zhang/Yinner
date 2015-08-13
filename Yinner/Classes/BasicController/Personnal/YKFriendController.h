@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YKFriendController : UITableViewController
+@interface YKFriendController : UITableViewController 
 
 @end

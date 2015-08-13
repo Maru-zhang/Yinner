@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YKMessageController : UITableViewController
+@interface YKMessageController : UITableViewController <EMChatManagerDelegate>
 
 @end

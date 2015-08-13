@@ -109,19 +109,155 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="NHs-y7-2rj" id="xF4-hL-g9Z"/>
                             <outlet property="delegate" destination="NHs-y7-2rj" id="pup-Bb-CZm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="好友" id="Pjt-qS-vyN"/>
+                    <navigationItem key="navigationItem" title="好友" id="Pjt-qS-vyN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yKE-eQ-gOb">
+                            <connections>
+                                <segue destination="zVq-4v-KNn" kind="push" id="mnR-vD-dAH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="XMb-F6-vbS" kind="push" identifier="chat" id="MX9-1P-BQd"/>
+                        <segue destination="C7Z-kS-5De" kind="push" id="z35-g3-fNy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dW-NS-8je" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-866.5" y="-2527.5"/>
+        </scene>
+        <!--添加好友-->
+        <scene sceneID="6d6-jN-DgZ">
+            <objects>
+                <tableViewController id="zVq-4v-KNn" customClass="YKSearchFriendController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iU0-q2-igG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="siC-re-hhJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <connections>
+                            <outlet property="dataSource" destination="zVq-4v-KNn" id="Yas-Q0-Gf7"/>
+                            <outlet property="delegate" destination="zVq-4v-KNn" id="h1R-4L-Spt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加好友" id="t8q-qC-jjz">
+                        <barButtonItem key="rightBarButtonItem" title="添加" id="J4B-VR-cBm">
+                            <connections>
+                                <action selector="searchClick:" destination="zVq-4v-KNn" id="dnx-Of-YLa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="siC-re-hhJ" id="hrl-vf-vPe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPC-nW-D7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="-3243"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Dqt-iG-jP5">
+            <objects>
+                <viewController storyboardIdentifier="chat" id="C7Z-kS-5De" customClass="YKChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GAU-Sx-h8I"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3L-3I-fhf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C8p-rR-vGF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ue-Ia-ePk">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbV-MO-Slr">
+                                        <rect key="frame" x="339" y="8" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="f7b-0j-bWv"/>
+                                            <constraint firstAttribute="height" constant="33" id="ta5-DY-e0p"/>
+                                        </constraints>
+                                        <state key="normal" image="chatBar_more_face">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2V-6h-4An">
+                                        <rect key="frame" x="3" y="8" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="0GG-mI-Lcc"/>
+                                            <constraint firstAttribute="height" constant="33" id="qgX-SI-QcX"/>
+                                        </constraints>
+                                        <state key="normal" image="chatBar_record">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxk-Mv-7Vs">
+                                        <rect key="frame" x="40" y="5" width="295" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="295" id="FL8-PE-Z9K"/>
+                                            <constraint firstAttribute="height" constant="40" id="wzq-gM-NAv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="C7Z-kS-5De" id="4Cy-25-V8Y"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Z2V-6h-4An" firstAttribute="leading" secondItem="9Ue-Ia-ePk" secondAttribute="leading" constant="3" id="5I4-6a-HTp"/>
+                                    <constraint firstAttribute="centerY" secondItem="Bxk-Mv-7Vs" secondAttribute="centerY" id="9r6-Kh-84D"/>
+                                    <constraint firstAttribute="centerY" secondItem="NbV-MO-Slr" secondAttribute="centerY" id="GeF-HU-oFp"/>
+                                    <constraint firstAttribute="height" constant="50" id="IyM-PI-Ef5"/>
+                                    <constraint firstAttribute="trailing" secondItem="NbV-MO-Slr" secondAttribute="trailing" constant="3" id="KZ4-la-OEH"/>
+                                    <constraint firstAttribute="centerX" secondItem="Bxk-Mv-7Vs" secondAttribute="centerX" id="Xsb-O2-woh"/>
+                                    <constraint firstAttribute="centerY" secondItem="Z2V-6h-4An" secondAttribute="centerY" id="aQx-rj-Eou"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8SE-yd-ss9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="C7Z-kS-5De" id="P2r-rN-18m"/>
+                                    <outlet property="delegate" destination="C7Z-kS-5De" id="DtA-Yl-ebt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8SE-yd-ss9" firstAttribute="top" secondItem="GAU-Sx-h8I" secondAttribute="bottom" id="7Z9-tC-jZI"/>
+                            <constraint firstItem="9Ue-Ia-ePk" firstAttribute="top" secondItem="8SE-yd-ss9" secondAttribute="bottom" id="Hcg-Px-Zxd"/>
+                            <constraint firstItem="9Ue-Ia-ePk" firstAttribute="leading" secondItem="C8p-rR-vGF" secondAttribute="leading" id="KbD-BY-xci"/>
+                            <constraint firstItem="D3L-3I-fhf" firstAttribute="top" secondItem="9Ue-Ia-ePk" secondAttribute="bottom" id="Xmt-aM-eLf"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ue-Ia-ePk" secondAttribute="trailing" id="YqR-l7-HdY"/>
+                            <constraint firstAttribute="trailing" secondItem="8SE-yd-ss9" secondAttribute="trailing" id="ZX3-OT-Oci"/>
+                            <constraint firstAttribute="bottom" secondItem="9Ue-Ia-ePk" secondAttribute="bottom" id="b0J-cK-kac"/>
+                            <constraint firstItem="8SE-yd-ss9" firstAttribute="leading" secondItem="C8p-rR-vGF" secondAttribute="leading" id="edj-FS-ceH"/>
+                            <constraint firstItem="9Ue-Ia-ePk" firstAttribute="leading" secondItem="C8p-rR-vGF" secondAttribute="leading" id="evj-Bs-KPd"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ue-Ia-ePk" secondAttribute="trailing" id="s53-3h-O6C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Muz-UA-VH6"/>
+                    <connections>
+                        <outlet property="faceButton" destination="NbV-MO-Slr" id="nni-yu-Wf5"/>
+                        <outlet property="inputView" destination="Bxk-Mv-7Vs" id="I5p-w1-ZBG"/>
+                        <outlet property="recoderButton" destination="Z2V-6h-4An" id="X9d-Kh-8e5"/>
+                        <outlet property="tableView" destination="8SE-yd-ss9" id="2gV-cT-97Z"/>
+                        <outlet property="viewBotttomLayout" destination="b0J-cK-kac" id="Ok6-L5-hPA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3e-Zy-j6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-296.5" y="-2527.5"/>
         </scene>
         <!--消息-->
         <scene sceneID="STJ-rF-mQS">
@@ -213,26 +349,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gi-RE-1Wk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-74.5" y="702.5"/>
-        </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="eJe-TU-qzA">
-            <objects>
-                <tableViewController storyboardIdentifier="chat" id="XMb-F6-vbS" customClass="YKChatViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qO8-iY-SJC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
-                        <connections>
-                            <outlet property="dataSource" destination="XMb-F6-vbS" id="0qV-rg-bFf"/>
-                            <outlet property="delegate" destination="XMb-F6-vbS" id="cOh-Nb-mKh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="f7Z-Jz-0dp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wxi-Nn-sBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-266.5" y="-2527.5"/>
         </scene>
         <!--设置-->
         <scene sceneID="suM-5i-gyx">
@@ -465,7 +581,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laJ-BG-ar3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866.5" y="-1006.5"/>
+            <point key="canvasLocation" x="-866.5" y="-994.5"/>
         </scene>
         <!--个人资料-->
         <scene sceneID="x3N-1h-cez">
@@ -610,7 +726,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IC-gM-Iv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.5" y="-1003.5"/>
+            <point key="canvasLocation" x="-386.5" y="-994.5"/>
         </scene>
         <!--播放设置-->
         <scene sceneID="xUe-oG-7JK">
@@ -677,7 +793,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4b-mb-csR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.5" y="-1720.5"/>
+            <point key="canvasLocation" x="-378.5" y="-1750.5"/>
         </scene>
         <!--消息设置-->
         <scene sceneID="a7E-o6-H7F">
@@ -756,7 +872,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gda-kM-uN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43.5" y="-1720.5"/>
+            <point key="canvasLocation" x="47.5" y="-1750.5"/>
         </scene>
         <!--意见反馈-->
         <scene sceneID="al4-KG-q6F">
@@ -784,7 +900,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmb-Ao-tFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454.5" y="-1720.5"/>
+            <point key="canvasLocation" x="478.5" y="-1750.5"/>
         </scene>
         <!--关于Yinner-->
         <scene sceneID="9kB-Yn-bgE">
@@ -803,7 +919,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoS-Jv-ngR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878.5" y="-1720.5"/>
+            <point key="canvasLocation" x="918.5" y="-1750.5"/>
         </scene>
         <!--音控-->
         <scene sceneID="ulJ-A8-fyN">
@@ -911,7 +1027,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrT-l1-Sf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-831.5" y="-179.5"/>
+            <point key="canvasLocation" x="-866.5" y="-179.5"/>
         </scene>
         <!--本地素材-->
         <scene sceneID="upk-Is-uKC">
@@ -929,7 +1045,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0l-TB-wBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193.5" y="-179.5"/>
+            <point key="canvasLocation" x="-386.5" y="-179.5"/>
         </scene>
     </scenes>
     <resources>
@@ -937,6 +1053,8 @@
         <image name="Login_account" width="256" height="256"/>
         <image name="Login_password" width="256" height="256"/>
         <image name="MainButton" width="60" height="60"/>
+        <image name="chatBar_more_face" width="56" height="56"/>
+        <image name="chatBar_record" width="30" height="30"/>
         <image name="menu_btn_icon_login" width="27" height="27"/>
         <image name="setting_btn_quit" width="305" height="50"/>
         <image name="setting_icon_agreement" width="60" height="50"/>
@@ -953,6 +1071,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ur2-tt-UVL"/>
+        <segue reference="eEz-Rj-ZiS"/>
     </inferredMetricsTieBreakers>
 </document>

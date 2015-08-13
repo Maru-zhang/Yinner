@@ -8,6 +8,9 @@
 
 #import "YKFriendController.h"
 #import "YKChatViewController.h"
+#import "YKContactTableViewCell.h"
+#import "YKContactModel.h"
+#import "YKContactTableViewCell.h"
 
 @interface YKFriendController ()
 {
@@ -32,7 +35,6 @@
 #pragma mark - Private Method
 - (void)setupView
 {
-//    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AliCry"]];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
 }
 
@@ -48,7 +50,7 @@
         } onQueue:nil];
         
         _buddyList = [[EaseMob sharedInstance].chatManager buddyList];
-        
+
     }
 
 }
@@ -70,16 +72,17 @@
 {
     static NSString *identifer = @"buddyCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    YKContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     
     if (!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifer];
+        cell = [YKContactTableViewCell contactTableviewCell];
     }
     
     EMBuddy *buddy = _buddyList[indexPath.row];
     
-    cell.textLabel.text = buddy.username;
+    
+    cell.name.text = buddy.username;
     
     
     return cell;
@@ -88,9 +91,18 @@
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YKChatViewController *chatVC =  [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"chat"];
+    YKContactTableViewCell *cell = (YKContactTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    YKChatViewController *chatVC = [YKChatViewController chatViewControllerWithChatter:cell.name.text conversationType:eConversationTypeChat];
     
     [self.navigationController pushViewController:chatVC animated:YES];
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 49;
+}
+
 
 @end

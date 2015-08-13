@@ -32,6 +32,8 @@
     
     [[EaseMob sharedInstance] registerSDKWithAppKey:@"easemob-demo#chatdemoui" apnsCertName:apnsCertName];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    //自动获取好友列表
+    [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

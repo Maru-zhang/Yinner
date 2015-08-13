@@ -9,6 +9,9 @@
 #import "YKMessageController.h"
 
 @interface YKMessageController ()
+{
+    NSMutableArray *_dataSource;
+}
 
 @end
 
@@ -19,6 +22,13 @@
     [super viewDidLoad];
     
     [self setupView];
+    
+    [self setupSetting];
+}
+
+- (void)dealloc
+{
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
 }
 
 #pragma mark - Private Method
@@ -28,69 +38,68 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 0;
+
+
+#pragma mark - Private Method
+- (void)setupSetting
+{
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 0;
-}
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+#pragma mark - EaseMob Delegate
+- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message
+{
+    NSMutableArray *array = [NSMutableArray array];
     
-    // Configure the cell...
+    NSDictionary *dic = [NSDictionary dictionary];
+    
+    [dic setValue:username forKey:@"name"];
+    [dic setValue:message forKey:@"message"];
+    
+    [array addObject:dic];
+    
+    _dataSource = array;
+    
+    [self.tableView reloadData];
+    
+    NSLog(@"好友请求来自%@",username);
+}
+
+#pragma mark - TableVIew Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (_dataSource) {
+        return _dataSource.count;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifer = @"messageCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    
+    if (!cell) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifer];
+    }
+    
+    
+    NSDictionary *dic = _dataSource[indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"来自%@的好友请求！",[dic objectForKey:@"name"]];
     
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

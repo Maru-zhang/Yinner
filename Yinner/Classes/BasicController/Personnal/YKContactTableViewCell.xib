@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buddyCell" id="KGk-i7-Jjw" customClass="YKContactTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="bwU-Up-gRr">
+                        <rect key="frame" x="2" y="2" width="46" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="GJX-3E-BEZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="86880362" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdq-ig-HjW">
+                        <rect key="frame" x="56" y="5" width="176" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="176" id="fBh-Fs-KHb"/>
+                            <constraint firstAttribute="height" constant="21" id="jRD-V5-jc9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卧槽，你在干嘛？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVI-y4-9qp">
+                        <rect key="frame" x="56" y="28" width="195" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ewF-KE-bpP"/>
+                            <constraint firstAttribute="width" constant="195" id="uR2-SS-yvT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13：10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-uO-PSb">
+                        <rect key="frame" x="270" y="6" width="42" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="OWf-9u-FSk"/>
+                            <constraint firstAttribute="height" constant="19" id="aYO-9a-gkS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bwU-Up-gRr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="6mV-0r-Wse"/>
+                    <constraint firstAttribute="bottom" secondItem="FVI-y4-9qp" secondAttribute="bottom" id="DE7-G1-nWm"/>
+                    <constraint firstItem="ByS-uO-PSb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="QAq-9Z-0Ue"/>
+                    <constraint firstItem="bwU-Up-gRr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="fAh-re-sPg"/>
+                    <constraint firstAttribute="bottom" secondItem="bwU-Up-gRr" secondAttribute="bottom" constant="2" id="jlH-ZE-vAY"/>
+                    <constraint firstItem="Rdq-ig-HjW" firstAttribute="leading" secondItem="bwU-Up-gRr" secondAttribute="trailing" constant="8" id="lHC-cu-lNE"/>
+                    <constraint firstAttribute="trailing" secondItem="ByS-uO-PSb" secondAttribute="trailing" constant="8" id="lPG-M2-Uds"/>
+                    <constraint firstItem="FVI-y4-9qp" firstAttribute="leading" secondItem="bwU-Up-gRr" secondAttribute="trailing" constant="8" id="qSN-H0-H13"/>
+                    <constraint firstItem="Rdq-ig-HjW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ymf-pJ-CHd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headImage" destination="bwU-Up-gRr" id="nhk-EO-0yB"/>
+                <outlet property="lastMessage" destination="FVI-y4-9qp" id="IEr-Jy-0yh"/>
+                <outlet property="lastTime" destination="ByS-uO-PSb" id="vd5-fO-V2y"/>
+                <outlet property="name" destination="Rdq-ig-HjW" id="w7Y-Sa-PkB"/>
+            </connections>
+            <point key="canvasLocation" x="364" y="515"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="touxiang" width="231" height="230"/>
+    </resources>
+</document>
