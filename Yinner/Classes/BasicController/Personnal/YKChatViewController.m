@@ -55,6 +55,12 @@
     [super viewWillAppear:animated];
     
     [self scrollViewtoBottom];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)dealloc
@@ -80,7 +86,7 @@
     //设置分离器样式
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //设置背景颜色
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
 }
 
@@ -171,35 +177,16 @@
     
     if (!cell) {
         
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"YKChatViewCell" owner:self options:nil] lastObject];
+        cell = [[YKChatViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     EMMessage *message = _dataSource[indexPath.row];
     
-    EMTextMessageBody *body = [message.messageBodies lastObject];
+    [cell loadEMMessage:message];
     
-//    cell.textLabel.text = body.text;
-//    
-//    if ([message.from isEqualToString:self.chatter]) {
-//        
-//        cell.textLabel.textAlignment = NSTextAlignmentLeft;
-//    }
-//    else
-//    {
-//        cell.textLabel.textAlignment = NSTextAlignmentRight;
-//    }
-    
-    cell.content.text = body.text;
-    
-    cell.bgImageWidth.constant = cell.content.frame.size.width + 50;
-    
-    NSLog(@"%lf",cell.content.frame.size.width);
-    
-    
-    
-
     return cell;
 }
+
 
 #pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

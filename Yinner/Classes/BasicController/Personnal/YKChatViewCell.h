@@ -10,10 +10,11 @@
 
 @interface YKChatViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *headImage;
-@property (weak, nonatomic) IBOutlet UILabel *content;
-@property (weak, nonatomic) IBOutlet UIImageView *bgImage;
+@property (nonatomic,strong) UIImageView *headImage;
+@property (nonatomic,strong) UIImageView *bubbleView;
+@property (nonatomic,strong) UILabel *content;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgImageWidth;
+- (void)loadEMMessage:(EMMessage *)message;
+
 
 @end
