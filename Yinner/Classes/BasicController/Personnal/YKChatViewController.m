@@ -5,9 +5,10 @@
 //  Created by Maru on 15/8/6.
 //  Copyright (c) 2015年 Alloc. All rights reserved.
 //
-
 #import "YKChatViewController.h"
 #import "YKChatViewCell.h"
+#import "NSString+Size.h"
+#import "ReuseFrame.h"
 
 @interface YKChatViewController ()
 {
@@ -192,6 +193,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EMMessage *message = _dataSource[indexPath.row];
+    
+    EMTextMessageBody *body = [message.messageBodies lastObject];
+    
+    NSString *content = body.text;
+    
+    CGSize size = [content textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    CGSize single = [@"a" textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return (44 + size.height - single.height);
 }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
+		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
 		420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420495071B7C78C100FD3150 /* YKContactTableViewCell.m */; };
 		4204950A1B7C78C100FD3150 /* YKContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420495081B7C78C100FD3150 /* YKContactTableViewCell.xib */; };
 		4204950D1B7C7BC900FD3150 /* YKContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4204950C1B7C7BC900FD3150 /* YKContactModel.m */; };
@@ -107,6 +108,8 @@
 /* Begin PBXFileReference section */
 		183941331B1E05DF0086B537 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		183941341B1E05DF0086B537 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		420495061B7C78C100FD3150 /* YKContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKContactTableViewCell.h; sourceTree = "<group>"; };
 		420495071B7C78C100FD3150 /* YKContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKContactTableViewCell.m; sourceTree = "<group>"; };
 		420495081B7C78C100FD3150 /* YKContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 				42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */,
 				42FF56181B72DB8400C7781D /* NSString+Valid.h */,
 				42FF56191B72DB8400C7781D /* NSString+Valid.m */,
+				42046FB11B8075BD0042BDD7 /* NSString+Size.h */,
+				42046FB21B8075BD0042BDD7 /* NSString+Size.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -851,6 +856,7 @@
 				4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */,
 				421A68681B33F1AC002E249A /* YKPersonnalCell.m in Sources */,
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
+				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
 				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,

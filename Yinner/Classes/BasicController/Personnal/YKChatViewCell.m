@@ -6,23 +6,7 @@
 //  Copyright (c) 2015年 Alloc. All rights reserved.
 //
 #import "ReuseFrame.h"
-
-#define KheadMarginTop 10
-#define KheadMarginLeft 10
-#define KheadHeight 30
-#define KheadWidth 30
-
-#define KbubbleMarginTop 10
-#define KbubbleMarginLeft 5
-#define KbubbleHeight 30
-#define KbubbleWidth 200
-
-#define KcontentWidth 180
-#define KcontentLeft 5
-#define KcontentTop 5
-
-#define ChatContentFont [UIFont systemFontOfSize:14] //内容字体
-
+#import "NSString+Size.h"
 #import "YKChatViewCell.h"
 
 @implementation YKChatViewCell
@@ -46,6 +30,10 @@
 #pragma mark - Public Method
 - (void)loadEMMessage:(EMMessage *)message
 {
+    
+    
+    CGSize singleLineSize = [@"a" textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+    
     //判断是不是自己发送的 YES是自己发的,然后进行相关设置
     if ([message.to isEqualToString:message.conversationChatter]) {
         
@@ -58,14 +46,14 @@
         NSString *contentStr = contentBody.text;
         
         //设置文本内容
-        //NSStringDrawingTruncatesLastVisibleLine如果文本内容超出指定的矩形限制，文本将被截去并在最后一个字符后加上省略号。 如果指定了NSStringDrawingUsesLineFragmentOrigin选项，则该选项被忽略 NSStringDrawingUsesFontLeading计算行高时使用行间距。（译者注：字体大小+行间距=行高
-        CGRect tempRect = [contentStr boundingRectWithSize:CGSizeMake(KcontentWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:ChatContentFont forKey:NSFontAttributeName] context:nil];
-        CGSize contentSize = tempRect.size;
+        CGSize tempRect = [contentStr textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+        CGSize contentSize = tempRect;
+        
         
         //设置气泡frame
         UIImage *bubble = [UIImage imageNamed:@"chatto_bg_normal"];
-        _bubbleView.image = [bubble stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.5];
-        _bubbleView.frame = CGRectMake(KwinW - KheadMarginLeft - KheadWidth - KbubbleMarginLeft - (contentSize.width + 20), KbubbleMarginTop, contentSize.width + 20, KbubbleHeight);
+        _bubbleView.image = [bubble stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.9];
+        _bubbleView.frame = CGRectMake(KwinW - KheadMarginLeft - KheadWidth - KbubbleMarginLeft - (contentSize.width + 20), KbubbleMarginTop, contentSize.width + 10, KbubbleHeight + contentSize.height - singleLineSize.height);
         
         //设置lable的frame
         _content.center = _bubbleView.center;
@@ -85,17 +73,18 @@
         NSString *contentStr = contentBody.text;
         
         //设置文本内容
-        //NSStringDrawingTruncatesLastVisibleLine如果文本内容超出指定的矩形限制，文本将被截去并在最后一个字符后加上省略号。 如果指定了NSStringDrawingUsesLineFragmentOrigin选项，则该选项被忽略 NSStringDrawingUsesFontLeading计算行高时使用行间距。（译者注：字体大小+行间距=行高
-        CGRect tempRect = [contentStr boundingRectWithSize:CGSizeMake(KcontentWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:ChatContentFont forKey:NSFontAttributeName] context:nil];
-        CGSize contentSize = tempRect.size;
+        CGSize tempRect = [contentStr textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByClipping];
+        CGSize contentSize = tempRect;
+        
+        NSLog(@"==========%f",tempRect.height);
         
         //设置气泡frame
         UIImage *bubble = [UIImage imageNamed:@"chatfrom_bg_normal"];
-        _bubbleView.image = [bubble stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.5];
-        _bubbleView.frame = CGRectMake(KheadMarginLeft + KheadWidth + KbubbleMarginLeft, KbubbleMarginTop, contentSize.width + 10, KbubbleHeight);
+        _bubbleView.image = [bubble stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.9];
+        _bubbleView.frame = CGRectMake(KheadMarginLeft + KheadWidth + KbubbleMarginLeft, KbubbleMarginTop, contentSize.width + 10, KbubbleHeight + contentSize.height - singleLineSize.height);
         
         //设置lable的frame
-        _content.center = _bubbleView.center;
+        _content.center = CGPointMake(_bubbleView.center.x + 4, _bubbleView.center.y);
         _content.bounds = CGRectMake(0, 0, contentSize.width, contentSize.height);
         
         //赋值内容
@@ -139,6 +128,7 @@
         
         _content = [[UILabel alloc] init];
         _content.backgroundColor = [UIColor clearColor];
+        _content.numberOfLines = 0;
         UIFont *font = [UIFont systemFontOfSize:13];
         _content.font = font;
         [self addSubview:_content];
