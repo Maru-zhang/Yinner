@@ -7,6 +7,8 @@
 //
 
 #import "YKMessageController.h"
+#import "ReuseKey.h"
+#import "YKApplyRequestCell.h"
 
 @interface YKMessageController ()
 {
@@ -21,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadDataSource];
+    
     [self setupView];
     
     [self setupSetting];
@@ -29,6 +33,8 @@
 - (void)dealloc
 {
     [[EaseMob sharedInstance].chatManager removeDelegate:self];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KNotification_ReloadData object:nil];
 }
 
 #pragma mark - Private Method
@@ -44,29 +50,79 @@
 - (void)setupSetting
 {
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataSource) name:KNotification_ReloadData object:nil];
+}
+
+- (void)loadDataSource
+{
+    if (!_dataSource) {
+        
+        _dataSource = [NSMutableArray array];
+    }
+    
+    //本地化加载好友请求
+    NSMutableArray *requestArray = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
+    
+    if (requestArray) {
+        
+        _dataSource = requestArray;
+        
+        [self.tableView reloadData];
+        
+    }
+}
+
+#pragma mark 同意和拒绝操作
+- (void)acceptRequestWithTig:(UIButton *)btn
+{
+    EMError *error = nil;
+    
+    NSDictionary *dic = _dataSource[btn.tag];
+    
+    NSString *name = [dic objectForKey:@"username"];
+    
+    [[EaseMob sharedInstance].chatManager acceptBuddyRequest:name error:&error];
+    
+    if (error) {
+        NSLog(@"%@",error);
+    };
+    
+    NSLog(@"%ld",btn.tag);
+    
+    NSMutableArray *data = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
+    
+    [data removeObject:dic];
+    
+    [self loadDataSource];
+}
+
+- (void)rejectRequestWithTig:(UIButton *)btn
+{
+    EMError *error = nil;
+    
+    NSDictionary *dic = _dataSource[btn.tag];
+    
+    NSString *name = [dic objectForKey:@"username"];
+    
+    [[EaseMob sharedInstance].chatManager rejectBuddyRequest:name reason:nil error:&error];
+    
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    
+    NSMutableArray *data = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
+    
+    [data removeObject:dic];
+    
+    [self loadDataSource];
 }
 
 
 #pragma mark - EaseMob Delegate
-- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message
-{
-    NSMutableArray *array = [NSMutableArray array];
-    
-    NSDictionary *dic = [NSDictionary dictionary];
-    
-    [dic setValue:username forKey:@"name"];
-    [dic setValue:message forKey:@"message"];
-    
-    [array addObject:dic];
-    
-    _dataSource = array;
-    
-    [self.tableView reloadData];
-    
-    NSLog(@"好友请求来自%@",username);
-}
 
-#pragma mark - TableVIew Delegate
+
+#pragma mark - TableVIew DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -87,19 +143,32 @@
 {
     static NSString *identifer = @"messageCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    YKApplyRequestCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     
     if (!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifer];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"YKApplyRequestCell" owner:self options:nil] lastObject];
     }
     
     
     NSDictionary *dic = _dataSource[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"来自%@的好友请求！",[dic objectForKey:@"name"]];
+    cell.name.text = [dic objectForKey:@"username"];
+    cell.message.text = [dic objectForKey:@"message"];
     
+    cell.acceptButton.tag = indexPath.row;
+    cell.rejectButton.tag = indexPath.row;
+    
+    [cell.acceptButton addTarget:self action:@selector(acceptRequestWithTig:) forControlEvents:UIControlEventTouchUpInside];
+
     return cell;
+}
+
+
+#pragma mark - Table View Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
 }
 
 @end

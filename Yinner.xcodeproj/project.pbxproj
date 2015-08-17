@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
 		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
+		420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */; };
+		420473381B8188EE00EEFA57 /* YKApplyRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420473361B8188EE00EEFA57 /* YKApplyRequestCell.xib */; };
 		420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420495071B7C78C100FD3150 /* YKContactTableViewCell.m */; };
 		4204950A1B7C78C100FD3150 /* YKContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420495081B7C78C100FD3150 /* YKContactTableViewCell.xib */; };
 		4204950D1B7C7BC900FD3150 /* YKContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4204950C1B7C7BC900FD3150 /* YKContactModel.m */; };
@@ -110,6 +112,9 @@
 		183941341B1E05DF0086B537 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		420473341B8188EE00EEFA57 /* YKApplyRequestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKApplyRequestCell.h; sourceTree = "<group>"; };
+		420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKApplyRequestCell.m; sourceTree = "<group>"; };
+		420473361B8188EE00EEFA57 /* YKApplyRequestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKApplyRequestCell.xib; sourceTree = "<group>"; };
 		420495061B7C78C100FD3150 /* YKContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKContactTableViewCell.h; sourceTree = "<group>"; };
 		420495071B7C78C100FD3150 /* YKContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKContactTableViewCell.m; sourceTree = "<group>"; };
 		420495081B7C78C100FD3150 /* YKContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -517,6 +522,9 @@
 				420495081B7C78C100FD3150 /* YKContactTableViewCell.xib */,
 				4204950F1B7C8C7500FD3150 /* YKChatViewCell.h */,
 				420495101B7C8C7500FD3150 /* YKChatViewCell.m */,
+				420473341B8188EE00EEFA57 /* YKApplyRequestCell.h */,
+				420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */,
+				420473361B8188EE00EEFA57 /* YKApplyRequestCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -763,6 +771,7 @@
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
 				4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */,
 				42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */,
+				420473381B8188EE00EEFA57 /* YKApplyRequestCell.xib in Resources */,
 				4204950A1B7C78C100FD3150 /* YKContactTableViewCell.xib in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 				426F87871B6B14D600624E1B /* YKCommentTableViewCell.xib in Resources */,
@@ -822,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */,
 				42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */,
 				4297F8F61B143B1B00706B72 /* YKDock.m in Sources */,
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,

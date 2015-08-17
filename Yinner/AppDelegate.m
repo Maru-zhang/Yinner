@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 #import "YKMainViewController.h"
 #import "YKLoginViewController.h"
+#import "ReuseKey.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <EMChatManagerBuddyDelegate>
 
 @end
 
@@ -34,6 +35,11 @@
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     //自动获取好友列表
     [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
+    
+    //添加代理
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
+
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -70,6 +76,33 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
     [[EaseMob sharedInstance] applicationWillTerminate:application];
+}
+
+#pragma mark - EMChatManagerDelegate
+- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message
+{
+    NSMutableArray *requestArray = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
+    
+    if (!requestArray) {
+        
+        requestArray = [NSMutableArray array];
+    }
+    
+    //如果其中包含该请求那么就返回
+    if ([requestArray containsObject:@{@"username" : username,@"message" : message}]) {
+        return;
+    }
+    
+    NSDictionary *dic = @{@"username" : username,@"message" : message};
+    
+    [requestArray addObject:dic];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:requestArray forKey:KfriendRequest];
+    
+    //注册通知
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:KNotification_ReloadData object:nil]];
+    
+    NSLog(@"%@",username);
 }
 
 @end

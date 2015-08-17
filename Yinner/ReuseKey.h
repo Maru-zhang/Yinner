@@ -15,3 +15,7 @@
 #define KuserAccount @"userAccount"
 #define KuserPassword @"userPassword"
 
+
+//好友请求相关
+#define KfriendRequest @"friendRequest"
+#define KNotification_ReloadData @"Notification_ReloadData"
