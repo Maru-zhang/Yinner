@@ -7,8 +7,16 @@
 //
 
 #import "YKPersonInfoController.h"
+#import "ReuseFrame.h"
+
+#define KPickerH 227
 
 @interface YKPersonInfoController ()
+{
+    NSArray *_ProvincesAndCities;
+    NSArray *_cityArray;//城市的数组
+    UIView *_maskView;
+}
 
 @end
 
@@ -19,19 +27,56 @@
     [super viewDidLoad];
     
     [self setupSetting];
+    
+    [self setupView];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
 }
 
 
 #pragma mark - Private Method
 - (void)setupSetting
 {
+    //加载所有数据
+    if (!_ProvincesAndCities) {
+        
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"ProvincesAndCities" withExtension:@"plist"];
+        _ProvincesAndCities = [NSArray arrayWithContentsOfURL:url];
+    }
     
+    //加载城市数组
+    if (!_cityArray) {
+        
+        NSDictionary *cities = _ProvincesAndCities[0];
+        _cityArray = [cities objectForKey:@"Cities"];
+    }
+}
+
+- (void)setupView
+{
+    //懒加载遮罩层
+    if (!_maskView) {
+        
+        _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KwinW, 378)];
+        
+        _maskView.backgroundColor = [UIColor grayColor];
+        
+        _maskView.alpha = 0.6;
+        
+        [self.view addSubview:_maskView];
+        
+        _maskView.hidden = YES;
+    }
 }
 
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
         
         UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         
@@ -95,6 +140,24 @@
         
         [self presentViewController:actionSheet animated:YES completion:nil];
         
+    }
+    
+    //地区选择
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        
+        _pickerCell.frame = CGRectMake(0, KwinH, KwinW, KPickerH);
+        
+        _pickerCell.hidden = NO;
+        
+        _maskView.hidden = NO;
+        
+        //选择器出现动画
+        [UIView animateWithDuration:0.2 animations:^{
+
+            _pickerCell.frame = CGRectMake(0, 378, KwinW, KPickerH);
+            
+            NSLog(@"%@",NSStringFromCGRect(_pickerCell.frame));
+        }];
     }
 }
 
@@ -186,4 +249,91 @@
     
 }
 
+#pragma mark - PickerView DataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (component == 0) {
+        
+        return _ProvincesAndCities.count;
+    }
+    else
+    {
+        return _cityArray.count;
+    }
+}
+
+#pragma mark - UIPickerViewDelegate
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    if (component == 0) {
+        
+        NSDictionary *dic = _ProvincesAndCities[row];
+        
+        NSString *Provinces = [dic objectForKey:@"State"];
+        
+        return Provinces;
+    }
+    else
+    {
+        NSDictionary *dic = _cityArray[row];
+        
+        NSString *cityName = [dic objectForKey:@"city"];
+        
+        return cityName;
+    }
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (component == 0) {
+        
+        NSDictionary *cities = _ProvincesAndCities[row];
+        _cityArray = [cities objectForKey:@"Cities"];
+        
+        //重新加载
+        [_picker reloadComponent:1];
+    }
+}
+
+
+#pragma mark - Event Hander
+- (IBAction)confirm:(id)sender {
+    
+    _maskView.hidden = YES;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        _pickerCell.frame = CGRectMake(0, KwinH, KwinW, 227);
+        
+    }];
+    
+    //相关结果处理
+    NSInteger provincesIndex = [_picker selectedRowInComponent:0];
+    NSInteger cityIndex = [_picker selectedRowInComponent:1];
+    
+    NSString *province = [_ProvincesAndCities[provincesIndex] objectForKey:@"State"];
+    NSString *city = [_cityArray[cityIndex] objectForKey:@"city"];
+    NSString *result = [NSString stringWithFormat:@"%@%@",province,city];
+    
+    _areaLable.text = result;
+    
+}
+
+- (IBAction)cancel:(id)sender {
+    
+    _maskView.hidden = YES;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        _pickerCell.frame = CGRectMake(0, KwinH, KwinW, 227);
+        
+    }];
+}
 @end

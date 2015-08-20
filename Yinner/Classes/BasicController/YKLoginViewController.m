@@ -10,9 +10,12 @@
 #import "ReuseKey.h"
 #import "YKMainViewController.h"
 #import "NSString+Valid.h"
+#import "YKActivityIndicatorView.h"
 
 @interface YKLoginViewController ()
-
+{
+    YKActivityIndicatorView *_indicator;
+}
 @end
 
 @implementation YKLoginViewController
@@ -23,6 +26,8 @@
     [super viewDidLoad];
     
     [self setupSetting];
+    
+    [self setupView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +51,16 @@
         self.account.text = account;
         self.password.text = password;
     }
+}
+
+-(void)setupView
+{
+    
+    if (!_indicator) {
+        
+         _indicator = [[YKActivityIndicatorView alloc] initWithFrame:self.view.frame];
+    }
+
 }
 
 - (void)judgeValid
@@ -132,6 +147,9 @@
 
 - (IBAction)loginButton:(id)sender {
     
+    //出现菊花界面
+    [self.view addSubview:_indicator];
+    
     //有效值判断
     [self judgeValid];
     
@@ -152,6 +170,9 @@
             [[EaseMob sharedInstance].chatManager fetchMyGroupsListWithError:nil];
             //自动获取好友列表
             [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
+            
+            //使菊花界面消失
+            [_indicator removeFromSuperview];
             
             
             //退出登陆控制器

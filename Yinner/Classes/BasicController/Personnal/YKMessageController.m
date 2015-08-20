@@ -94,6 +94,9 @@
     
     [data removeObject:dic];
     
+    //重新存储
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:KfriendRequest];
+    
     [self loadDataSource];
 }
 
@@ -114,6 +117,9 @@
     NSMutableArray *data = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
     
     [data removeObject:dic];
+    
+    //重新存储
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:KfriendRequest];
     
     [self loadDataSource];
 }

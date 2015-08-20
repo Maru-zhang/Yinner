@@ -81,8 +81,25 @@
     
     EMBuddy *buddy = _buddyList[indexPath.row];
     
+    //获取有关会话
+    EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:buddy.username
+                                                                               conversationType:eConversationTypeChat];
+    //获取最新的消息
+    EMMessage *message = conversation.latestMessage;
+    EMTextMessageBody *body = [message.messageBodies lastObject];
     
+    //获取时间
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSinceNow:message.timestamp];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"HH:mm";
+    NSString *str = [formatter stringFromDate:date];
+    
+    //赋值
     cell.name.text = buddy.username;
+    cell.lastMessage.text = body.text;
+    cell.lastTime.text = str;
+    
+    NSLog(@"%lld",message.timestamp);
     
     
     return cell;

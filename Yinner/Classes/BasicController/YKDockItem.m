@@ -27,7 +27,7 @@
         [self setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
         
         //设置图片
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView.contentMode = UIViewContentModeCenter;
         self.adjustsImageWhenHighlighted = NO;
         
     }

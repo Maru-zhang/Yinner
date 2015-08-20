@@ -57,21 +57,7 @@
 #pragma mark - Private Method
 - (void)rewardsButtonClick
 {
-    EMError *logoffError = nil;
-    //退出登陆
-    NSDictionary *info = [[EaseMob sharedInstance].chatManager logoffWithUnbindDeviceToken:YES error:&logoffError];
-    
-    if (!logoffError && info) {
-        NSLog(@"登出成功！");
-        
-        
-        YKLoginViewController *loginVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"loginVC"];
-        
-        self.window.rootViewController = loginVC;
 
-        
-        
-    }
 }
 
 

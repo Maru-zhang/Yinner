@@ -41,6 +41,7 @@
     
     if ([title isEqualToString:@""]) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.adjustsImageWhenHighlighted = NO;
         [btn setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(dockItemClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
@@ -99,8 +100,7 @@
     if (_itemClickBlock) {
         _itemClickBlock((int)dockItem.tag);
     }
-    
-    
+
     
 }
 

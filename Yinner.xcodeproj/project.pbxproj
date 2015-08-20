@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
+		420291481B82E7CD00AC1B01 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */; };
 		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
 		420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */; };
 		420473381B8188EE00EEFA57 /* YKApplyRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420473361B8188EE00EEFA57 /* YKApplyRequestCell.xib */; };
@@ -33,8 +34,6 @@
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
 		426B73C41B188C0800E7EA7E /* example.wav in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C21B188C0800E7EA7E /* example.wav */; };
 		426B73C51B188C0800E7EA7E /* 1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C31B188C0800E7EA7E /* 1.mov */; };
-		426F87861B6B14D600624E1B /* YKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426F87841B6B14D600624E1B /* YKCommentTableViewCell.m */; };
-		426F87871B6B14D600624E1B /* YKCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426F87851B6B14D600624E1B /* YKCommentTableViewCell.xib */; };
 		426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD601B285B9F00A5DB0E /* YKFavouriteController.m */; };
 		426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD661B285BDF00A5DB0E /* YKRankController.m */; };
 		426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426FCD691B2862B400A5DB0E /* YKBrowseTableViewCell.m */; };
@@ -58,8 +57,6 @@
 		42A15D441B70329E0029EC0F /* YKMessageSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D431B70329E0029EC0F /* YKMessageSettingController.m */; };
 		42A15D471B7032D10029EC0F /* TKSuggestSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D461B7032D10029EC0F /* TKSuggestSettingController.m */; };
 		42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D491B7032E40029EC0F /* YKAboutSettingController.m */; };
-		42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */; };
-		42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */; };
 		42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC11B7088650029EC0F /* MobileCoreServices.framework */; };
 		42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC31B7088710029EC0F /* CFNetwork.framework */; };
 		42A15DC61B7088DC0029EC0F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC51B7088DC0029EC0F /* libstdc++.6.0.9.dylib */; };
@@ -91,6 +88,11 @@
 		42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */; };
 		42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4BD151B1C597400E23726 /* CoreData.framework */; };
 		42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */; };
+		42FCF2121B858135005C108E /* YKActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */; };
+		42FCF2131B858135005C108E /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */; };
+		42FCF2141B858135005C108E /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */; };
+		42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF2101B858135005C108E /* YKCommentTableViewCell.m */; };
+		42FCF2161B858135005C108E /* YKCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42FCF2111B858135005C108E /* YKCommentTableViewCell.xib */; };
 		42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF56121B719D6300C7781D /* YKLoginViewController.m */; };
 		42FF561A1B72DB8500C7781D /* NSString+Valid.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF56191B72DB8400C7781D /* NSString+Valid.m */; };
 		42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FF561C1B72E36E00C7781D /* YKChatViewController.m */; };
@@ -110,6 +112,7 @@
 /* Begin PBXFileReference section */
 		183941331B1E05DF0086B537 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		183941341B1E05DF0086B537 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ProvincesAndCities.plist; path = ../ProvincesAndCities.plist; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		420473341B8188EE00EEFA57 /* YKApplyRequestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKApplyRequestCell.h; sourceTree = "<group>"; };
@@ -152,9 +155,6 @@
 		426B73C21B188C0800E7EA7E /* example.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = example.wav; sourceTree = "<group>"; };
 		426B73C31B188C0800E7EA7E /* 1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 1.mov; sourceTree = "<group>"; };
 		426B73C71B1898F100E7EA7E /* ReuseFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReuseFrame.h; path = Other/ReuseFrame.h; sourceTree = "<group>"; };
-		426F87831B6B14D600624E1B /* YKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCommentTableViewCell.h; sourceTree = "<group>"; };
-		426F87841B6B14D600624E1B /* YKCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCommentTableViewCell.m; sourceTree = "<group>"; };
-		426F87851B6B14D600624E1B /* YKCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKCommentTableViewCell.xib; sourceTree = "<group>"; };
 		426FCD5F1B285B9F00A5DB0E /* YKFavouriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKFavouriteController.h; sourceTree = "<group>"; };
 		426FCD601B285B9F00A5DB0E /* YKFavouriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKFavouriteController.m; sourceTree = "<group>"; };
 		426FCD651B285BDF00A5DB0E /* YKRankController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKRankController.h; sourceTree = "<group>"; };
@@ -197,9 +197,6 @@
 		42A15D461B7032D10029EC0F /* TKSuggestSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSuggestSettingController.m; sourceTree = "<group>"; };
 		42A15D481B7032E40029EC0F /* YKAboutSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAboutSettingController.h; sourceTree = "<group>"; };
 		42A15D491B7032E40029EC0F /* YKAboutSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAboutSettingController.m; sourceTree = "<group>"; };
-		42A15D4B1B703A470029EC0F /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
-		42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
-		42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
 		42A15DC11B7088650029EC0F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		42A15DC31B7088710029EC0F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		42A15DC51B7088DC0029EC0F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
@@ -245,6 +242,14 @@
 		42F4BD151B1C597400E23726 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		42F4BD191B1C89F300E23726 /* NSDate+Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Current.h"; sourceTree = "<group>"; };
 		42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Current.m"; sourceTree = "<group>"; };
+		42FCF20A1B858135005C108E /* YKActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKActivityIndicatorView.h; sourceTree = "<group>"; };
+		42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKActivityIndicatorView.m; sourceTree = "<group>"; };
+		42FCF20C1B858135005C108E /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
+		42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
+		42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
+		42FCF20F1B858135005C108E /* YKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCommentTableViewCell.h; sourceTree = "<group>"; };
+		42FCF2101B858135005C108E /* YKCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCommentTableViewCell.m; sourceTree = "<group>"; };
+		42FCF2111B858135005C108E /* YKCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKCommentTableViewCell.xib; sourceTree = "<group>"; };
 		42FF56111B719D6300C7781D /* YKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLoginViewController.h; sourceTree = "<group>"; };
 		42FF56121B719D6300C7781D /* YKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLoginViewController.m; sourceTree = "<group>"; };
 		42FF56171B71C42700C7781D /* ReuseKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReuseKey.h; sourceTree = "<group>"; };
@@ -290,6 +295,7 @@
 		1800AC6A1B1A165600F0F4B6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */,
 				425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */,
 				421A686A1B33F4B2002E249A /* PersonnalPlist.plist */,
 				424AE19F1B5A420900DF35A2 /* MatterSort.plist */,
@@ -374,14 +380,16 @@
 		426F877F1B6B133800624E1B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				426F87831B6B14D600624E1B /* YKCommentTableViewCell.h */,
-				426F87841B6B14D600624E1B /* YKCommentTableViewCell.m */,
-				426F87851B6B14D600624E1B /* YKCommentTableViewCell.xib */,
-				42A15D4B1B703A470029EC0F /* YKBrowseAuthorInfoView.h */,
-				42A15D4C1B703A470029EC0F /* YKBrowseAuthorInfoView.m */,
-				42A15D4E1B703A620029EC0F /* YKBrowseAuthorInfoView.xib */,
+				42FCF20A1B858135005C108E /* YKActivityIndicatorView.h */,
+				42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */,
+				42FCF20C1B858135005C108E /* YKBrowseAuthorInfoView.h */,
+				42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */,
+				42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */,
+				42FCF20F1B858135005C108E /* YKCommentTableViewCell.h */,
+				42FCF2101B858135005C108E /* YKCommentTableViewCell.m */,
+				42FCF2111B858135005C108E /* YKCommentTableViewCell.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		426FCD5E1B285B6600A5DB0E /* SubController */ = {
@@ -760,6 +768,9 @@
 				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
 				425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */,
 				421A68691B33F1AC002E249A /* YKPersonnalCell.xib in Resources */,
+				42FCF2161B858135005C108E /* YKCommentTableViewCell.xib in Resources */,
+				42FCF2141B858135005C108E /* YKBrowseAuthorInfoView.xib in Resources */,
+				420291481B82E7CD00AC1B01 /* ProvincesAndCities.plist in Resources */,
 				42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */,
 				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
 				42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */,
@@ -770,11 +781,9 @@
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
 				42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */,
 				4236B2F51B269DF4005B7D43 /* YKBrowseViewCell.xib in Resources */,
-				42A15D4F1B703A620029EC0F /* YKBrowseAuthorInfoView.xib in Resources */,
 				420473381B8188EE00EEFA57 /* YKApplyRequestCell.xib in Resources */,
 				4204950A1B7C78C100FD3150 /* YKContactTableViewCell.xib in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
-				426F87871B6B14D600624E1B /* YKCommentTableViewCell.xib in Resources */,
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				421A686B1B33F4B2002E249A /* PersonnalPlist.plist in Resources */,
 				426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */,
@@ -843,8 +852,8 @@
 				42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */,
 				42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */,
 				426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */,
-				42A15D4D1B703A470029EC0F /* YKBrowseAuthorInfoView.m in Sources */,
 				4204950D1B7C7BC900FD3150 /* YKContactModel.m in Sources */,
+				42FCF2131B858135005C108E /* YKBrowseAuthorInfoView.m in Sources */,
 				42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
@@ -861,6 +870,7 @@
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
 				425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */,
+				42FCF2121B858135005C108E /* YKActivityIndicatorView.m in Sources */,
 				42A15D441B70329E0029EC0F /* YKMessageSettingController.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
 				4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */,
@@ -875,12 +885,12 @@
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
 				42FF561A1B72DB8500C7781D /* NSString+Valid.m in Sources */,
 				42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */,
+				42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */,
 				4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
 				42A15D411B70245A0029EC0F /* YKPlaySettingController.m in Sources */,
 				183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */,
 				425B39301B4A8149002468F4 /* YKFriendController.m in Sources */,
-				426F87861B6B14D600624E1B /* YKCommentTableViewCell.m in Sources */,
 				421A3ADB1B7A1DD900E62D9A /* YKSearchFriendController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
