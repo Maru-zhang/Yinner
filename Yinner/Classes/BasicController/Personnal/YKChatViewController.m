@@ -74,7 +74,7 @@
 - (void)setupView
 {
     //设置标题
-    self.title = [NSString stringWithFormat:@"与%@的聊天中...",self.chatter];
+    self.title = [NSString stringWithFormat:@"%@",self.chatter];
     
     //设置圆角
     [_inputView.layer setCornerRadius:10];
@@ -134,16 +134,13 @@
     
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     
-    _viewBotttomLayout.constant = keyboardSize.height;
+    [UIView animateWithDuration:0.1 animations:^{
     
-    //必须用这种方法来实现自动布局的动画
-    [self.view setNeedsUpdateConstraints];
-    
-    [UIView animateWithDuration:0.2 animations:^{
+        _viewBotttomLayout.constant = keyboardSize.height;
         
         [self.view layoutIfNeeded];
     }];
-    
+
     //滚动到最下方
     [self scrollViewtoBottom];
 }

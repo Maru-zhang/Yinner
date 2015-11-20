@@ -14,8 +14,21 @@
 
 @interface YKLoginViewController ()
 {
+    CGFloat _originWidth;
+    CGFloat _originLeftOneX;
+    CGFloat _originLeftTwoX;
+    CGFloat _originRightOneX;
+    CGFloat _originRightTwoX;
+    
     YKActivityIndicatorView *_indicator;
 }
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginButtonWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *accountX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *acountInputX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordInputX;
+
 @end
 
 @implementation YKLoginViewController
@@ -28,7 +41,16 @@
     [self setupSetting];
     
     [self setupView];
+    
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [self setupAnimation];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,14 +75,75 @@
     }
 }
 
--(void)setupView
+- (void)setupView
 {
     
     if (!_indicator) {
         
          _indicator = [[YKActivityIndicatorView alloc] initWithFrame:self.view.frame];
     }
+    
+    //设置圆角
+    self.loginButton.layer.cornerRadius = 10;
+    self.loginButton.layer.masksToBounds = YES;
+    
+    //设置原始constant
+    _originWidth = self.loginButtonWidth.constant;
+    _originLeftOneX = self.accountX.constant;
+    _originLeftTwoX = self.passwordX.constant;
+    _originRightOneX = self.acountInputX.constant;
+    _originRightTwoX = self.passwordInputX.constant;
+    
+    self.loginButtonWidth.constant = 0;
+    self.accountX.constant = -50;
+    self.passwordX.constant = - 50;
+    self.acountInputX.constant = -300;
+    self.passwordInputX.constant = -300;
+    
+    //设置透明
+    self.forgetButton.hidden = YES;
+    self.registerButton.hidden = YES;
+    
+}
 
+- (void)setupAnimation {
+    
+    [UIView animateWithDuration:1
+                          delay:0
+         usingSpringWithDamping:1
+          initialSpringVelocity:0.7
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+                         
+                         self.accountX.constant = _originLeftOneX;
+                         self.passwordX.constant = _originLeftTwoX;
+                         self.acountInputX.constant = _originRightOneX;
+                         self.passwordInputX.constant = _originRightTwoX;
+                         
+                         [self.view layoutIfNeeded];
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+
+    [UIView animateWithDuration:0.8
+                          delay:0
+         usingSpringWithDamping:0.3
+          initialSpringVelocity:1
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+                         
+                         self.loginButtonWidth.constant = _originWidth;
+
+                         self.forgetButton.hidden = NO;
+                         self.registerButton.hidden = NO;
+                         
+                         [self.view layoutIfNeeded];
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
 }
 
 - (void)judgeValid
@@ -99,6 +182,27 @@
         
         return;
     }
+}
+
+- (void)showAlertViewWithMessage:(NSString *)message {
+    
+    //使菊花消失
+    [_indicator removeFromSuperview];
+    
+    //弹出提示框
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * __nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+    
+    [alertVC addAction:confirm];
+    
+    [self presentViewController:alertVC animated:YES completion:^{
+        
+    }];
 }
 
 
@@ -179,6 +283,13 @@
             [self dismissViewControllerAnimated:YES completion:^{
                 
             }];
+            
+        }else if (error.errorCode == EMErrorServerTimeout) {
+            [self showAlertViewWithMessage:@"连接超时！"];
+        }else if (error.errorCode == EMErrorServerNotReachable) {
+            [self showAlertViewWithMessage:@"无法连接至服务器！"];
+        }else if (error.errorCode == EMErrorServerAuthenticationFailure) {
+            [self showAlertViewWithMessage:@"获取token失败！"];
         }
     } onQueue:nil];
     
@@ -187,11 +298,19 @@
     [[NSUserDefaults standardUserDefaults] setObject:password forKey:KuserPassword];
 }
 
+- (IBAction)forgetButton:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 
 #pragma mark - <UITextFiled Delegate>
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     return YES;
 }
+
 
 @end

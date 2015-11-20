@@ -2,13 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "tabbar_profile_selected.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "tabbar_profile_selected@2x.png"
+      "filename" : "Login-BG.png"
     },
     {
       "idiom" : "universal",

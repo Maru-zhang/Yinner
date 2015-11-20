@@ -28,7 +28,6 @@
 		425B39301B4A8149002468F4 /* YKFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B392F1B4A8149002468F4 /* YKFriendController.m */; };
 		425B39331B4A815F002468F4 /* YKMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B39321B4A815F002468F4 /* YKMessageController.m */; };
 		425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */; };
-		425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425BD7CF1B32AFA20056FEBD /* Images.xcassets */; };
 		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
@@ -79,6 +78,7 @@
 		42C585E21B0AFAF0005BE52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E01B0AFAF0005BE52E /* Main.storyboard */; };
 		42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */; };
 		42C585F31B0AFAF0005BE52E /* YinnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C585F21B0AFAF0005BE52E /* YinnerTests.m */; };
+		42D67D6A1BB2ACB200B1C81D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D67D691BB2ACB200B1C81D /* Images.xcassets */; };
 		42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B011B63628E00567F3B /* YKBrowseViewController.m */; };
 		42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */; };
 		42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */; };
@@ -145,7 +145,6 @@
 		425B39311B4A815F002468F4 /* YKMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMessageController.h; sourceTree = "<group>"; };
 		425B39321B4A815F002468F4 /* YKMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMessageController.m; sourceTree = "<group>"; };
 		425BD7CD1B3277B10056FEBD /* ChannelPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChannelPlist.plist; sourceTree = SOURCE_ROOT; };
-		425BD7CF1B32AFA20056FEBD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
@@ -229,6 +228,7 @@
 		42C585EC1B0AFAF0005BE52E /* YinnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C585F11B0AFAF0005BE52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C585F21B0AFAF0005BE52E /* YinnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YinnerTests.m; sourceTree = "<group>"; };
+		42D67D691BB2ACB200B1C81D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42D71B001B63628E00567F3B /* YKBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseViewController.h; sourceTree = "<group>"; };
 		42D71B011B63628E00567F3B /* YKBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseViewController.m; sourceTree = "<group>"; };
 		42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayTableViewCell.h; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				42A28A781B64465600F390EF /* zimu.srt */,
-				425BD7CF1B32AFA20056FEBD /* Images.xcassets */,
+				42D67D691BB2ACB200B1C81D /* Images.xcassets */,
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
 				426B73C21B188C0800E7EA7E /* example.wav */,
 				426B73C31B188C0800E7EA7E /* 1.mov */,
@@ -766,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
+				42D67D6A1BB2ACB200B1C81D /* Images.xcassets in Resources */,
 				425BD7CE1B3277B10056FEBD /* ChannelPlist.plist in Resources */,
 				421A68691B33F1AC002E249A /* YKPersonnalCell.xib in Resources */,
 				42FCF2161B858135005C108E /* YKCommentTableViewCell.xib in Resources */,
@@ -774,7 +775,6 @@
 				42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */,
 				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
 				42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */,
-				425BD7D01B32AFA20056FEBD /* Images.xcassets in Resources */,
 				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
 				42A28A791B64465600F390EF /* zimu.srt in Resources */,
 				4294A3471B735749009C86B6 /* YKChatMessageCell.xib in Resources */,
@@ -1014,6 +1014,7 @@
 			baseConfigurationReference = F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
 				INFOPLIST_FILE = Yinner/Info.plist;
@@ -1031,6 +1032,7 @@
 			baseConfigurationReference = F073887A5EC671A59ED481CE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
 				INFOPLIST_FILE = Yinner/Info.plist;
