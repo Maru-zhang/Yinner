@@ -27,7 +27,7 @@
     
     if (self) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_background.png"]];
-        self.alpha = 0.8;
+        self.alpha = 1;
         self.backgroundColor = [UIColor whiteColor];
     }
     
