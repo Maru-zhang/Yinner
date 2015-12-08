@@ -11,5 +11,6 @@
 
 
 #import "EaseMob.h"
+#import "UITableView+EmptyData.h"
 
 #endif

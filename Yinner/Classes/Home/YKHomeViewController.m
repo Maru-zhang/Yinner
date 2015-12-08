@@ -51,7 +51,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeHeight multiplier:1 constant:100 - _reuseableView.frame.size.height]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeWidth multiplier:1 constant:-16]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:-10]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
 
 
 }
@@ -70,7 +70,8 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [_seletView addChildButtonWithName:@"home_rank.png" andColor:[UIColor colorWithRed:0.800 green:0.400 blue:1.000 alpha:1.000] andTitleName:@"排行"];
     //调整坐标
     [_seletView adjustAllChildButton];
-    //防止循环引用
+    
+    
     __weak typeof(self) safeSelf = self;
     _seletView.itemClick = ^(int index)
     {
@@ -105,9 +106,6 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     // 设置正在刷新状态的动画图片
     [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
-    
-    //设置刷新提示的Inset
-    header.ignoredScrollViewContentInsetTop = 20;
     
     self.collectionView.header = header;
     
@@ -177,7 +175,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(KwinW, 100);
+    return CGSizeMake(KwinW, 110);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

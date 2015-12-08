@@ -84,4 +84,8 @@
 {
     return 70;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
+}
 @end

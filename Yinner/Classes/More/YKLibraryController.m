@@ -82,10 +82,7 @@
 #pragma mark - datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    if (!_mediaArray) {
-        return 0;
-    }
+    [tableView tableViewDisplayWithEmptyMsg:@"暂时没有本地的配音哦~" ifNecessaryForDataCount:_mediaArray.count];
     
     return _mediaArray.count;
 }
@@ -121,8 +118,6 @@
     
     NSString *urlString = [entity valueForKey:@"url"];
     
-    NSLog(@"%@",urlString);
-    
     NSURL *url = [NSURL fileURLWithPath:urlString];
     
     YKBrowseViewController *player = [YKBrowseViewController browseViewcontrollerWithUrl:url];
@@ -130,6 +125,10 @@
     [self presentViewController:player animated:YES completion:nil];
     
     
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
 }
 
 //左滑删除

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183941351B1E05DF0086B537 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 183941341B1E05DF0086B537 /* YKLocationMediaModel.m */; };
+		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
 		420291481B82E7CD00AC1B01 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */; };
 		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
 		420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */; };
@@ -112,6 +113,8 @@
 /* Begin PBXFileReference section */
 		183941331B1E05DF0086B537 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		183941341B1E05DF0086B537 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		420120631C15AB8C0024A79E /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
+		420120641C15AB8C0024A79E /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
 		420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ProvincesAndCities.plist; path = ../ProvincesAndCities.plist; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 		4297F8F81B143B7200706B72 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				420120631C15AB8C0024A79E /* UITableView+EmptyData.h */,
+				420120641C15AB8C0024A79E /* UITableView+EmptyData.m */,
 				421A3AD61B7852B800E62D9A /* UIImage+Image.h */,
 				421A3AD71B7852B800E62D9A /* UIImage+Image.m */,
 				42B5B6E21B1E81600061CF4B /* NSString+FileName.h */,
@@ -876,6 +881,7 @@
 				4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */,
 				421A68681B33F1AC002E249A /* YKPersonnalCell.m in Sources */,
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
+				420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */,
 				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
