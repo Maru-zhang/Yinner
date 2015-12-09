@@ -177,4 +177,12 @@
     return 55;
 }
 
+#pragma mark - Action
+- (IBAction)closeClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+
 @end

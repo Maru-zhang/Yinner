@@ -16,18 +16,6 @@
 
 #pragma mark - life cycle
 
-- (instancetype)init
-{
-    if (self == [super init]) {
-        
-        //注册接收消息
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewDataSource) name:@"database" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteRepeatDatabaseWithPath:) name:@"removeRepeat" object:nil];
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
   
@@ -46,6 +34,11 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_libTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KstatusH + kNavH]];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"database" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"removeRepeat" object:nil];
+}
+
 #pragma mark - public method
 - (void)reloadNewDataSource
 {
@@ -59,6 +52,13 @@
 #pragma mark - private method
 - (void)setup
 {
+    
+    //注册接收消息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNewDataSource) name:@"database" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteRepeatDatabaseWithPath:) name:@"removeRepeat" object:nil];
+
+    self.libTableView.delegate = self;
+    self.libTableView.dataSource = self;
 
     if (!_libTableView) {
         _libTableView = [[UITableView alloc] init];
@@ -77,6 +77,8 @@
 
     //第一次加载的时候也要进行一次查询
     [self reloadNewDataSource];
+    
+    
 }
 
 #pragma mark - datasource

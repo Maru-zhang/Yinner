@@ -17,14 +17,28 @@
     YKPersonnalView *_siderView;
     UIView *_maskView;
     CGPoint _beginPoint;
-    int _currentIndex;
 }
 @property (nonatomic,assign) BOOL isSlidering;
 @end
 @implementation YKTabbarController
 
+
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self settingDock];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self setupGestureRecognizer];
+}
+
+#pragma mark - 初始化图标
+- (void)settingDock
+{
     
     _dock = [[YKDock alloc] initWithFrame:self.tabBar.frame];
     //添加item
@@ -32,18 +46,8 @@
     [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
     [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"音库"];
     [self.view addSubview:_dock];
-}
 
-#pragma mark - 初始化图标
-- (void)settingDock
-{
-    //添加item
-    [_dock addDockItemWithIcon:@"tabbar_home.png" title:@"首页"];
-    [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
-    [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"音库"];
-    
     __weak typeof(self) weakSelf = self;
-    
     //监听按钮的点击
     _dock.itemClickBlock = ^(int index)
     {
@@ -55,36 +59,7 @@
 #pragma mark 选中的方法
 - (void)selectDockItemAt:(int)index
 {
-    NSLog(@"%d 子视图的数量 %ld",index,self.view.subviews.count);
-    if (_currentIndex == index) {
-        return;
-    }
-    
-    //进入主功能界面
-    switch (index) {
-        case 0:
-            
-            break;
-        case 1:
-            [self performSegueWithIdentifier:@"play" sender:self];
-            return;
-            break;
-        case 2:
-            
-            break;
-        default:
-            break;
-    }
-    
-    //换成新的视图
-    UIView *view = [self.childViewControllers[index] view];
-    [self.view addSubview:view];
-    
-    //调整位置
-    [self.view bringSubviewToFront:_dock];
-    
-    _currentIndex = index;
-    
+    self.selectedIndex = index;
 }
 
 - (void)setupGestureRecognizer
@@ -117,8 +92,8 @@
     self.isSlidering = YES;
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.navigationController.view.center = CGPointMake((KwinW / 2) + 200, KwinH / 2);
-        self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
+        self.view.center = CGPointMake((KwinW / 2) + 200, KwinH / 2);
+        self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
         _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
     }];
     
@@ -129,8 +104,8 @@
     self.isSlidering = NO;
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.navigationController.view.center = CGPointMake(KwinW / 2, KwinH / 2);
-        self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        self.view.center = CGPointMake(KwinW / 2, KwinH / 2);
+        self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
         _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.7, 0.7);
     }];
     
@@ -147,10 +122,10 @@
     CGFloat instance = [pan locationInView:self.view.window].x - _beginPoint.x;
     
     //判断是否需要进行动画
-    if (instance > 0 && self.navigationController.view.center.x == (KwinW / 2) + 200) {
+    if (instance > 0 && self.view.center.x == (KwinW / 2) + 200) {
         return;
     }
-    else if(instance < 0 && self.navigationController.view.center.x == (KwinW / 2))
+    else if(instance < 0 && self.view.center.x == (KwinW / 2))
     {
         return;
     }
@@ -166,15 +141,15 @@
     {
         [UIView animateWithDuration:0.3 animations:^{
             
-            self.navigationController.view.center = CGPointMake((KwinW / 2) + instance, KwinH / 2);
-            self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1 - 0.2 * (instance / 200), 1 - 0.2 * (instance / 200));
+            self.view.center = CGPointMake((KwinW / 2) + instance, KwinH / 2);
+            self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1 - 0.2 * (instance / 200), 1 - 0.2 * (instance / 200));
             _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.7 + 0.3 * (instance / 200), 0.7 + 0.3 * (instance / 200));
         }];
     }
     else if (instance > -200 && instance < 0)
     {
-        self.navigationController.view.center = CGPointMake((KwinW / 2) + instance + 200, KwinH / 2);
-        self.navigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8 + 0.2 * (-instance / 200), 0.8 + 0.2 * (-instance / 200));
+        self.view.center = CGPointMake((KwinW / 2) + instance + 200, KwinH / 2);
+        self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8 + 0.2 * (-instance / 200), 0.8 + 0.2 * (-instance / 200));
         _siderView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1 - 0.3 * (-instance / 200), 1 - 0.3 * (-instance / 200));
     }
     
@@ -193,6 +168,58 @@
     NSLog(@"起始位置%@",NSStringFromCGPoint(_beginPoint));
     NSLog(@"当前位置%@",NSStringFromCGPoint([pan locationInView:self.view.window]));
     NSLog(@"%f",instance);
+}
+
+
+#pragma mark - personnalvcDelegate
+- (void)personnalSettingClick
+{
+    [self dismissPersonnalView:_pan];
+    
+    [self performSegueWithIdentifier:@"setting" sender:self];
+}
+
+- (void)personnalHomeClick
+{
+    [self dismissPersonnalView:_pan];
+}
+
+- (void)personnalFriendClick
+{
+    [self dismissPersonnalView:_pan];
+    
+    [self performSegueWithIdentifier:@"friend" sender:self];
+}
+
+- (void)personnalMessageClick
+{
+    [self dismissPersonnalView:_pan];
+    
+    [self performSegueWithIdentifier:@"message" sender:self];
+}
+
+#pragma mark - Get&Set
+- (void)setIsSlidering:(BOOL)isSlidering
+{
+    
+    if (isSlidering) {
+        
+        if(!_maskView)
+        {
+            _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+            _maskView.backgroundColor = [UIColor blackColor];
+            _maskView.alpha = 0.2;
+            UIPanGestureRecognizer *backPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanGuestureRecginizer:)];
+            [_maskView addGestureRecognizer:backPan];
+        }
+        [self.view addSubview:_maskView];
+    }
+    else
+    {
+        [_maskView removeFromSuperview];
+    }
+    
+    
 }
 
 

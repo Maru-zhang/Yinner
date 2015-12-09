@@ -126,8 +126,19 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (void)selectButtonWithTag:(int)tag
 {
-    if ([_delegate respondsToSelector:@selector(homeControllerItemClickAtIndex:)]) {
-        [_delegate homeControllerItemClickAtIndex:tag];
+    switch (tag) {
+        case 0:
+            [self performSegueWithIdentifier:@"favourite" sender:nil];
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"channel" sender:nil];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"rank" sender:nil];
+            break;
+            
+        default:
+            break;
     }
 }
 

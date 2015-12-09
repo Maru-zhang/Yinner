@@ -19,7 +19,6 @@
 #define KstatusW [[UIApplication sharedApplication] statusBarFrame].size.width
 #define KstatusH [[UIApplication sharedApplication] statusBarFrame].size.height
 
-//chatCellDefine
 #define KheadMarginTop 10
 #define KheadMarginLeft 5
 #define KheadHeight 30
