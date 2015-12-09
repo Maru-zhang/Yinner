@@ -336,6 +336,7 @@
         <scene sceneID="ZUV-l5-MdK">
             <objects>
                 <tabBarController id="2Y3-Dc-omg" customClass="YKTabbarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OhG-5Y-SRu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="4eO-lM-OUf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

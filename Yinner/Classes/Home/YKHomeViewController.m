@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Alloc. All rights reserved.
 //
 
+#define kItemSize CGSizeMake(170,170)
+
 #import "YKHomeViewController.h"
 #import "YKBrowseViewCell.h"
 
@@ -24,13 +26,6 @@ static NSString *const identifier = @"browseCell";
 static NSString *const reuseIdentifier = @"reuseCell";
 
 #pragma makr - life cycle
-- (instancetype)init
-{
-    _layout = [[UICollectionViewFlowLayout alloc] init];
-    _layout.itemSize = CGSizeMake(170, 170);
-    _layout.headerReferenceSize = CGSizeMake(KwinW, 100);
-    return [self initWithCollectionViewLayout:_layout];
-}
 
 - (void)viewDidLoad {
     
@@ -167,9 +162,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    
-    CGFloat cellWidth = _layout.itemSize.width;
-    CGFloat spacing = (KwinW - 2 * cellWidth) / 3;
+    CGFloat spacing = (KwinW - 2 * kItemSize.width) / 3;
     return UIEdgeInsetsMake(0, spacing, 44, spacing);
 }
 
@@ -185,6 +178,10 @@ static NSString *const reuseIdentifier = @"reuseCell";
     YKBrowseViewController *browseVC = [YKBrowseViewController browseViewcontrollerWithUrl:url];
     
     [self presentViewController:browseVC animated:YES completion:nil];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return kItemSize;
 }
 
 @end

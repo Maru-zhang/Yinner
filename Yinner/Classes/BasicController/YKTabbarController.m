@@ -17,6 +17,7 @@
     YKPersonnalView *_siderView;
     UIView *_maskView;
     CGPoint _beginPoint;
+    int _currentIndex;
 }
 @property (nonatomic,assign) BOOL isSlidering;
 @end
