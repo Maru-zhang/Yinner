@@ -7,13 +7,12 @@
 //
 
 #import "YKMessageController.h"
-#import "ReuseKey.h"
 #import "YKApplyRequestCell.h"
+#import "UITableView+EmptyData.h"
 
 @interface YKMessageController ()
-{
-    NSMutableArray *_dataSource;
-}
+
+@property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end
 
@@ -56,17 +55,12 @@
 
 - (void)loadDataSource
 {
-    if (!_dataSource) {
-        
-        _dataSource = [NSMutableArray array];
-    }
-    
     //本地化加载好友请求
     NSMutableArray *requestArray = [[NSUserDefaults standardUserDefaults] objectForKey:KfriendRequest];
     
     if (requestArray) {
         
-        _dataSource = requestArray;
+        [self.dataSource addObjectsFromArray:requestArray];
         
         [self.tableView reloadData];
         
@@ -129,20 +123,10 @@
 
 
 #pragma mark - TableVIew DataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_dataSource) {
-        return _dataSource.count;
-    }
-    else
-    {
-        return 0;
-    }
+    [tableView tableViewDisplayWithEmptyMsg:@"暂时没有任何消息哦~" ifNecessaryForDataCount:self.dataSource.count];
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -182,6 +166,14 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+#pragma mark - Property
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 
 

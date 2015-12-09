@@ -1,11 +1,13 @@
 PODS:
   - EaseMobSDK (2.1.9)
   - KRVideoPlayer (1.0.1)
+  - MBProgressHUD (0.9.1)
   - MJRefresh (2.3.2)
 
 DEPENDENCIES:
   - EaseMobSDK (from `https://github.com/easemob/sdk-ios-cocoapods.git`)
   - KRVideoPlayer
+  - MBProgressHUD (~> 0.9.1)
   - MJRefresh
 
 EXTERNAL SOURCES:
@@ -13,8 +15,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/easemob/sdk-ios-cocoapods.git
 
 SPEC CHECKSUMS:
-  EaseMobSDK: 8c183382c6afbc09bd0d86bb2b3f1f5386a29c42
+  EaseMobSDK: cc8415cb99a65debf4711fa2c9c349fd5c843299
   KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.39.0

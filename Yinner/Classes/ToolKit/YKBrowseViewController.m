@@ -29,6 +29,13 @@ singleton_implementation(YKBrowseViewController)
     
     //初始化设置
     [self setupSetting];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self playVideoWithURL:self.videoURL];
 }
 
 #pragma mark - Autolaout
@@ -62,8 +69,6 @@ singleton_implementation(YKBrowseViewController)
     YKBrowseViewController *browseVC = [YKBrowseViewController sharedYKBrowseViewController];
     
     browseVC.videoURL = url;
-    
-    [browseVC playVideoWithURL:url];
     
     [browseVC.videoPlayer showWorkButton];
     

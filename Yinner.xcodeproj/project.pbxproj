@@ -50,7 +50,6 @@
 		4297F8F61B143B1B00706B72 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F31B143B1B00706B72 /* YKDock.m */; };
 		4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F51B143B1B00706B72 /* YKDockItem.m */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
-		4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9001B143D3700706B72 /* YKMainViewController.m */; };
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
 		4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKLibraryController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
@@ -188,8 +187,6 @@
 		4297F8F51B143B1B00706B72 /* YKDockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YKDockItem.m; path = ../YKDockItem.m; sourceTree = "<group>"; };
 		4297F8FC1B143BD500706B72 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		4297F8FD1B143BD500706B72 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
-		4297F8FF1B143D3700706B72 /* YKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMainViewController.h; sourceTree = "<group>"; };
-		4297F9001B143D3700706B72 /* YKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMainViewController.m; sourceTree = "<group>"; };
 		4297F9081B144CF100706B72 /* YKPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayViewController.h; sourceTree = "<group>"; };
 		4297F9091B144CF100706B72 /* YKPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayViewController.m; sourceTree = "<group>"; };
 		4297F90B1B144CFB00706B72 /* YKLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLibraryController.h; sourceTree = "<group>"; };
@@ -450,8 +447,6 @@
 			children = (
 				420120791C17DFBC0024A79E /* Dock */,
 				42764AA51B33CE14007A4F9E /* Personnal */,
-				4297F8FF1B143D3700706B72 /* YKMainViewController.h */,
-				4297F9001B143D3700706B72 /* YKMainViewController.m */,
 				42FF56111B719D6300C7781D /* YKLoginViewController.h */,
 				42FF56121B719D6300C7781D /* YKLoginViewController.m */,
 				420120661C168A650024A79E /* YKTabbarController.h */,
@@ -736,6 +731,7 @@
 				42C585D01B0AFAF0005BE52E /* Frameworks */,
 				42C585D11B0AFAF0005BE52E /* Resources */,
 				0CC8FA2513C3F8A66B383E24 /* Copy Pods Resources */,
+				A90ABFF1CAF433CC277A5C46 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -874,6 +870,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A90ABFF1CAF433CC277A5C46 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -903,7 +914,6 @@
 				420120681C168A650024A79E /* YKTabbarController.m in Sources */,
 				420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */,
 				426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */,
-				4297F9011B143D3700706B72 /* YKMainViewController.m in Sources */,
 				42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */,
 				42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */,
 				42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */,

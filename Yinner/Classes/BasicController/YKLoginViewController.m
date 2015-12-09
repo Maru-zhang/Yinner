@@ -8,7 +8,6 @@
 
 #import "YKLoginViewController.h"
 #import "ReuseKey.h"
-#import "YKMainViewController.h"
 #import "NSString+Valid.h"
 #import "YKActivityIndicatorView.h"
 

@@ -88,4 +88,12 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [UIView new];
 }
+
+#pragma mark - Action
+- (IBAction)closeClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 @end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,11 +14,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-ML-28B">
                         <rect key="frame" x="8" y="32" width="202" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="Ek9-vg-dkC"/>
                         </constraints>
@@ -27,6 +29,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-7z-TOv">
                         <rect key="frame" x="273" y="17" width="47" height="22"/>
+                        <animations/>
                         <color key="backgroundColor" red="1" green="0.1397029179" blue="0.1103659832" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="47" id="bQO-N2-mAU"/>
@@ -38,6 +41,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f1-wG-Cxg">
                         <rect key="frame" x="218" y="17" width="47" height="22"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="47" id="GY6-ej-jTc"/>
@@ -49,14 +53,16 @@
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-Cq-SyG">
                         <rect key="frame" x="8" y="3" width="73" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="73" id="HmH-cp-gXt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="P6m-Cq-SyG" firstAttribute="leading" secondItem="Y1f-ML-28B" secondAttribute="leading" id="U5h-Ro-w2U"/>
                     <constraint firstAttribute="bottomMargin" secondItem="7f1-wG-Cxg" secondAttribute="bottom" constant="7" id="V66-oc-8Gx"/>
@@ -72,6 +78,7 @@
                     <constraint firstItem="7f1-wG-Cxg" firstAttribute="leading" secondItem="Y1f-ML-28B" secondAttribute="trailing" constant="8" symbolic="YES" id="vva-iS-NVv"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="acceptButton" destination="7f1-wG-Cxg" id="ltT-G0-3fG"/>
                 <outlet property="message" destination="Y1f-ML-28B" id="6iS-4b-lzx"/>

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "YKMainViewController.h"
 #import "YKLoginViewController.h"
 #import "ReuseKey.h"
 
@@ -38,17 +37,6 @@
     
     //添加代理
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
-    
-
-    
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    YKMainViewController *mainController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    
-    self.window.rootViewController = mainController;
-    
-    [self.window makeKeyAndVisible];
     
     return YES;
 }

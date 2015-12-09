@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableFooterView" contentMode="redraw" id="siC-re-hhJ">
+                        <searchBar key="tableFooterView" contentMode="redraw" placeholder="输入好友的账号" id="siC-re-hhJ">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
@@ -348,11 +348,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="NdD-ww-ud0" kind="relationship" relationship="viewControllers" id="8Ti-d7-kpR"/>
-                        <segue destination="fEP-yK-gR0" kind="relationship" relationship="viewControllers" id="loM-fg-ulM"/>
                         <segue destination="slf-yD-Fu3" kind="relationship" relationship="viewControllers" id="Xe0-JO-V4r"/>
                         <segue destination="ONr-q4-IR0" kind="modal" identifier="setting" id="e9Y-0z-uZw"/>
                         <segue destination="Ihd-Sy-XZe" kind="modal" identifier="message" id="lFn-fk-y66"/>
                         <segue destination="kj7-wJ-v3x" kind="modal" identifier="friend" id="uLR-eu-mor"/>
+                        <segue destination="fEP-yK-gR0" kind="modal" identifier="play" id="CgC-k3-LdX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mF-md-S4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1446,7 +1446,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" text="搜索素材的名称关键字" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-Wh-xuY">
+                            <searchBar contentMode="redraw" placeholder="搜索素材的名称关键字" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-Wh-xuY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -1482,7 +1482,14 @@
                             <constraint firstItem="DxT-wc-9AQ" firstAttribute="leading" secondItem="zY5-xR-PxM" secondAttribute="leading" id="xYR-XC-ohr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="素材库" id="eOc-19-FHC"/>
+                    <navigationItem key="navigationItem" title="素材库" id="eOc-19-FHC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9iK-a2-KD7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeClick:" destination="DTn-Hg-dPt" id="ihy-lm-bWb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="listTableView" destination="DxT-wc-9AQ" id="jGQ-Dd-eAz"/>
                         <segue destination="ras-kd-GiC" kind="push" identifier="location" id="30X-qL-avY"/>

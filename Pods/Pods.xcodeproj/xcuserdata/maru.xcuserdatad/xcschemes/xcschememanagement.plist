@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>KRVideoPlayer-KRVideoPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KRVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-EaseMobSDK.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-KRVideoPlayer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MJRefresh.xcscheme</key>
+		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,26 +37,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1536C169C1F984CC3175D8B4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>432EB2B80F5C611E1F5DCD53</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>66290DE24B0435F39D283132</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>66679FF9CAB213D6038753A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7DF7BD9F7CD81922DC3BEE5FFB1FE163</key>
 		<dict>
 			<key>primary</key>
@@ -68,11 +48,6 @@
 			<true/>
 		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AFBA40857ED6AF43711E8DDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

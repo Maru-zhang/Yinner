@@ -59,7 +59,20 @@
 #pragma mark 选中的方法
 - (void)selectDockItemAt:(int)index
 {
-    self.selectedIndex = index;
+    switch (index) {
+        case 0:
+            self.selectedIndex = 0;
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"play" sender:nil];
+            break;
+        case 2:
+            self.selectedIndex = 1;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)setupGestureRecognizer

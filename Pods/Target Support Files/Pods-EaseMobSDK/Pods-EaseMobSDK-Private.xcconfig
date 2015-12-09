@@ -1,6 +1,0 @@
-#include "Pods-EaseMobSDK.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/EaseMobSDK" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EaseMobSDK" "${PODS_ROOT}/Headers/Public/KRVideoPlayer" "${PODS_ROOT}/Headers/Public/MJRefresh"
-LIBRARY_SEARCH_PATHS = ${PODS_EASEMOBSDK_LIBRARY_SEARCH_PATHS}
-OTHER_LDFLAGS = ${PODS_EASEMOBSDK_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}

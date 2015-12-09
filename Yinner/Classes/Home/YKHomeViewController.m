@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 Alloc. All rights reserved.
 //
 
-#define kItemSize CGSizeMake(170,170)
-
 #import "YKHomeViewController.h"
 #import "YKBrowseViewCell.h"
 
@@ -17,7 +15,12 @@
     YKHomeSelectView *_seletView;
     UICollectionView *_collectionView;
     UICollectionReusableView *_reuseableView;
+    CGSize kItemSize;
 }
+
+@property (nonatomic, strong) KRVideoPlayerController *videoController;
+
+
 @end
 
 @implementation YKHomeViewController
@@ -26,6 +29,20 @@ static NSString *const identifier = @"browseCell";
 static NSString *const reuseIdentifier = @"reuseCell";
 
 #pragma makr - life cycle
+
+- (void)playVideoWithURL:(NSURL *)url
+{
+    if (!self.videoController) {
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width*(9.0/16.0))];
+        __weak typeof(self)weakSelf = self;
+        [self.videoController setDimissCompleteBlock:^{
+            weakSelf.videoController = nil;
+        }];
+        [self.videoController showInWindow];
+    }
+    self.videoController.contentURL = url;
+}
 
 - (void)viewDidLoad {
     
@@ -38,6 +55,13 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self setupView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSURL *videoURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
+    [self playVideoWithURL:videoURL];
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -47,13 +71,17 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeHeight multiplier:1 constant:100 - _reuseableView.frame.size.height]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeWidth multiplier:1 constant:-16]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
-
-
 }
 
 #pragma mark - setup
 - (void)setupView
 {
+    
+    if (IS_IPHONE_5) {
+        kItemSize = CGSizeMake(140, 140);
+    }else {
+        kItemSize = CGSizeMake(170, 170);
+    }
     
     //初始化_seletedView
     _seletView = [[YKHomeSelectView alloc] init];
