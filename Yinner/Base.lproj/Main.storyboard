@@ -88,7 +88,6 @@
         <!--Item-->
         <scene sceneID="EFQ-AS-aia">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3q-4k-Uis" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="NdD-ww-ud0" customClass="YKNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Id1-7H-Tbh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NHE-mQ-Nv9">
@@ -100,6 +99,7 @@
                         <segue destination="PfQ-T3-Ef7" kind="relationship" relationship="rootViewController" id="MyJ-Dc-cOD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3q-4k-Uis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2518" y="-2508"/>
         </scene>
@@ -298,8 +298,8 @@
                                     <constraint firstAttribute="centerY" secondItem="Z2V-6h-4An" secondAttribute="centerY" id="aQx-rj-Eou"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8SE-yd-ss9">
-                                <rect key="frame" x="0.0" y="64" width="320" height="553"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8SE-yd-ss9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -560,8 +560,8 @@
                                     <action selector="forgetButton:" destination="Ku3-dC-8pE" eventType="touchUpInside" id="1Zv-vN-3vo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-Aa-VFY">
-                                <rect key="frame" x="67" y="286" width="256" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-Aa-VFY">
+                                <rect key="frame" x="40.5" y="286" width="256" height="36"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.1397029179" blue="0.1103659832" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -866,12 +866,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="setting_btn_quit" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-kE-ht8">
-                                                    <rect key="frame" x="0.0" y="1" width="375" height="43"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_btn_quit" translatesAutoresizingMaskIntoConstraints="NO" id="Dds-kE-ht8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="退出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGL-8x-PPI">
-                                                    <rect key="frame" x="166" y="12" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGL-8x-PPI">
+                                                    <rect key="frame" x="143" y="12" width="34" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1097,8 +1097,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="226.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleAspectFit" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="230" translatesAutoresizingMaskIntoConstraints="NO" id="hJ4-Gu-7O1">
-                                                    <rect key="frame" x="0.0" y="33" width="375" height="180"/>
+                                                <pickerView contentMode="scaleAspectFit" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="230" translatesAutoresizingMaskIntoConstraints="NO" id="hJ4-Gu-7O1">
+                                                    <rect key="frame" x="0.0" y="33" width="320" height="180"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
@@ -1121,8 +1121,8 @@
                                                         <action selector="cancel:" destination="5eI-Fe-hev" eventType="touchUpInside" id="jil-2w-cbI"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-a6-IkQ">
-                                                    <rect key="frame" x="308" y="2" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-a6-IkQ">
+                                                    <rect key="frame" x="253" y="2" width="46" height="30"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="LOI-f9-4gV"/>

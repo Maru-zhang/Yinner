@@ -17,7 +17,4 @@
 - (void)showInWindow;
 - (void)dismiss;
 
-//extension
-- (void)hidenWorkButton;
-- (void)showWorkButton;
 @end

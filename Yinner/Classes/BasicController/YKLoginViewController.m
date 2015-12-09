@@ -251,7 +251,10 @@
 - (IBAction)loginButton:(id)sender {
     
     //出现菊花界面
-    [self.view addSubview:_indicator];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeDeterminate;
+    hud.labelText = @"正在登陆...";
+    [hud show:YES];
     
     //有效值判断
     [self judgeValid];
@@ -275,7 +278,7 @@
             [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
             
             //使菊花界面消失
-            [_indicator removeFromSuperview];
+            [hud hide:YES];
             
             
             //退出登陆控制器

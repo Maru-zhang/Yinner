@@ -7,6 +7,7 @@
 //
 
 #import "YKBrowseViewController.h"
+#import "KRVideoPlayerController+Hidden.h"
 
 @interface YKBrowseViewController ()
 {
@@ -32,11 +33,14 @@ singleton_implementation(YKBrowseViewController)
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [self playVideoWithURL:self.videoURL];
+    
+    [self.videoPlayer hiddenCloseButton];
 }
+
 
 #pragma mark - Autolaout
 - (void)viewDidLayoutSubviews
@@ -44,22 +48,66 @@ singleton_implementation(YKBrowseViewController)
     [super viewDidLayoutSubviews];
     
     //给评论区添加约束
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9 + 110]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1
+                                                           constant:KwinW / 16 * 9 + 110]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1
+                                                           constant:0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1
+                                                           constant:5]];
 
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1
+                                                           constant:-5]];
     
     //给信息区添加约束
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:KwinW / 16 * 9 + 10]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1
+                                                           constant:KwinW / 16 * 9 + 10]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView
+                                                          attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1
+                                                           constant:-5]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:5]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView
+                                                          attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1
+                                                           constant:5]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:-self.view.frame.size.height + 90]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_infoView
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:1
+                                                           constant:-self.view.frame.size.height + 90]];
     
 }
 
@@ -69,8 +117,6 @@ singleton_implementation(YKBrowseViewController)
     YKBrowseViewController *browseVC = [YKBrowseViewController sharedYKBrowseViewController];
     
     browseVC.videoURL = url;
-    
-    [browseVC.videoPlayer showWorkButton];
     
     return browseVC;
     

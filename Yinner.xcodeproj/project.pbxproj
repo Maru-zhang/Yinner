@@ -11,6 +11,7 @@
 		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
 		420120681C168A650024A79E /* YKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120671C168A650024A79E /* YKTabbarController.m */; };
 		420120781C17DFB70024A79E /* YKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120771C17DFB70024A79E /* YKNavigationController.m */; };
+		420120801C1813230024A79E /* KRVideoPlayerController+Hidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */; };
 		420291481B82E7CD00AC1B01 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */; };
 		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
 		420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */; };
@@ -121,6 +122,9 @@
 		420120761C17DFB70024A79E /* YKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKNavigationController.h; sourceTree = "<group>"; };
 		420120771C17DFB70024A79E /* YKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKNavigationController.m; sourceTree = "<group>"; };
 		4201207A1C17E0D80024A79E /* UIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIConstant.h; sourceTree = "<group>"; };
+		4201207E1C1813230024A79E /* KRVideoPlayerController+Hidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KRVideoPlayerController+Hidden.h"; sourceTree = "<group>"; };
+		4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KRVideoPlayerController+Hidden.m"; sourceTree = "<group>"; };
+		420120811C18218E0024A79E /* DebugConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugConstant.h; sourceTree = "<group>"; };
 		420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ProvincesAndCities.plist; path = ../ProvincesAndCities.plist; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 		420120741C17DC8A0024A79E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				420120811C18218E0024A79E /* DebugConstant.h */,
 				426B73C71B1898F100E7EA7E /* ReuseFrame.h */,
 				42FF56171B71C42700C7781D /* ReuseKey.h */,
 				4201207A1C17E0D80024A79E /* UIConstant.h */,
@@ -496,6 +501,8 @@
 				42FF56191B72DB8400C7781D /* NSString+Valid.m */,
 				42046FB11B8075BD0042BDD7 /* NSString+Size.h */,
 				42046FB21B8075BD0042BDD7 /* NSString+Size.m */,
+				4201207E1C1813230024A79E /* KRVideoPlayerController+Hidden.h */,
+				4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -771,6 +778,7 @@
 				TargetAttributes = {
 					42C585D21B0AFAF0005BE52E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 678WD436L9;
 					};
 					42C585EB1B0AFAF0005BE52E = {
 						CreatedOnToolsVersion = 6.1;
@@ -930,6 +938,7 @@
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
 				420120781C17DFB70024A79E /* YKNavigationController.m in Sources */,
 				420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */,
+				420120801C1813230024A79E /* KRVideoPlayerController+Hidden.m in Sources */,
 				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
@@ -1070,6 +1079,8 @@
 			baseConfigurationReference = F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
@@ -1080,6 +1091,7 @@
 					"$(PROJECT_DIR)/Yinner/Classes/Lib/EaseMobSDK/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1088,6 +1100,8 @@
 			baseConfigurationReference = F073887A5EC671A59ED481CE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
@@ -1098,6 +1112,7 @@
 					"$(PROJECT_DIR)/Yinner/Classes/Lib/EaseMobSDK/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

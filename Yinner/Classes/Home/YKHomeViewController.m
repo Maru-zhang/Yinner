@@ -17,10 +17,6 @@
     UICollectionReusableView *_reuseableView;
     CGSize kItemSize;
 }
-
-@property (nonatomic, strong) KRVideoPlayerController *videoController;
-
-
 @end
 
 @implementation YKHomeViewController
@@ -29,21 +25,6 @@ static NSString *const identifier = @"browseCell";
 static NSString *const reuseIdentifier = @"reuseCell";
 
 #pragma makr - life cycle
-
-- (void)playVideoWithURL:(NSURL *)url
-{
-    if (!self.videoController) {
-        CGFloat width = [UIScreen mainScreen].bounds.size.width;
-        self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width*(9.0/16.0))];
-        __weak typeof(self)weakSelf = self;
-        [self.videoController setDimissCompleteBlock:^{
-            weakSelf.videoController = nil;
-        }];
-        [self.videoController showInWindow];
-    }
-    self.videoController.contentURL = url;
-}
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -58,8 +39,6 @@ static NSString *const reuseIdentifier = @"reuseCell";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSURL *videoURL = [NSURL URLWithString:@"http://krtv.qiniudn.com/150522nextapp"];
-    [self playVideoWithURL:videoURL];
 }
 
 - (void)viewDidLayoutSubviews

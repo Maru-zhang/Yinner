@@ -23,6 +23,7 @@
 
 singleton_interface(YKWorkViewController)
 
+/** 观看模式 */
 @property (nonatomic) BOOL watchModel;
 @property (nonatomic) BOOL alreadyMrege;
 @property (nonatomic,strong) NSURL *audioURL;

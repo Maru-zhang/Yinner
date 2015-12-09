@@ -6,15 +6,11 @@
 //  Copyright (c) 2015年 Alloc. All rights reserved.
 //
 
-#ifndef Yinner_PrefixHeader_pch
-#define Yinner_PrefixHeader_pch
 
-
+#import "DebugConstant.h"
 #import "EaseMob.h"
 #import "UITableView+EmptyData.h"
 #import "ReuseFrame.h"
 #import "ReuseKey.h"
 #import "UIConstant.h"
-
-
-#endif
+#import <MBProgressHUD/MBProgressHUD.h>

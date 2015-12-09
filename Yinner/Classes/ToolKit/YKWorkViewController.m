@@ -7,6 +7,7 @@
 //
 
 #import "YKWorkViewController.h"
+#import "KRVideoPlayerController+Hidden.h"
 
 @interface YKWorkViewController ()
 {
@@ -34,10 +35,6 @@ singleton_implementation(YKWorkViewController)
     
     controller.videoURL = url;
     
-    [controller loadSubTitleWithURL:url];
-
-    [controller playVideoWithURL:url];
-    
     return controller;
 }
 
@@ -49,6 +46,16 @@ singleton_implementation(YKWorkViewController)
     [self setupSetting];
     //初始化视图
     [self setupView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self loadSubTitleWithURL:self.videoURL];
+    
+    [self playVideoWithURL:self.videoURL];
+    
+    [self.videoPlayer hiddenControlButton];
     
 }
 
@@ -108,14 +115,14 @@ singleton_implementation(YKWorkViewController)
     
     NSLog(@"开始设置");
     if (watchModel) {
-        [_videoPlayer showWorkButton];
+        [self.videoPlayer hiddenCloseButton];
         _start.hidden = YES;
         _back.hidden =YES;
         _info.hidden = YES;
     }
     else
     {
-        [_videoPlayer hidenWorkButton];
+        [self.videoPlayer hiddenControlButton];
         _start.hidden = NO;
         _back.hidden = NO;
         _info.hidden = NO;
@@ -380,29 +387,9 @@ singleton_implementation(YKWorkViewController)
     export.outputFileType = AVFileTypeQuickTimeMovie;
     export.shouldOptimizeForNetworkUse = YES;
     
-    //如果已经存在同名同路径的文件，那么就先把它删除然后再保存
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:myPathDocs]) {
-//
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已经配音过该素材是否需要覆盖" preferredStyle:UIAlertControllerStyleAlert];
-//        
-//        UIAlertAction *confim = [UIAlertAction actionWithTitle:@"覆盖" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        
-            //覆盖本地文件并且更新数据库
-            [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
-            
-//        }];
-//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            
-//        }];
-//        
-//        [alert addAction:confim];
-//        [alert addAction:cancel];
-//        
-//        [self presentViewController:alert animated:YES completion:nil];
-//    
-//    }
-
+    //覆盖本地文件并且更新数据库
+    [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
     
     //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
@@ -419,7 +406,6 @@ singleton_implementation(YKWorkViewController)
         //发送更新本地音库的消息
         [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
         
-        
         //友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
         
@@ -435,9 +421,13 @@ singleton_implementation(YKWorkViewController)
         [alert addAction:confirm];
         [alert addAction:cancel];
         
-        [self presentViewController:alert animated:YES completion:^{
-            
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            [self presentViewController:alert animated:YES completion:^{
+                
+            }];
+        });
+        
     }];
 }
 
