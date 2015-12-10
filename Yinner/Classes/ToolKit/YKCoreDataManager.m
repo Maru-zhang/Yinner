@@ -93,7 +93,7 @@ singleton_implementation(YKCoreDataManager)
     NSArray *result = [_context executeFetchRequest:request error:&error];
     
     for (NSManagedObject *entity in result) {
-        NSLog(@"name:%@",[entity valueForKey:@"name"]);
+        NSLog(@"name:%@",[entity valueForKey:@"url"]);
     }
 }
 

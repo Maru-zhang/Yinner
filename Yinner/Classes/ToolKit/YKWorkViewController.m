@@ -403,9 +403,6 @@ singleton_implementation(YKWorkViewController)
         
         NSLog(@"完成alert操作");
         
-        //发送更新本地音库的消息
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"database" object:nil];
-        
         //友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
         

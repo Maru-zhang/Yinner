@@ -370,12 +370,44 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ge4-A1-WWt" kind="relationship" relationship="rootViewController" id="Pg6-SD-SPS"/>
+                        <segue destination="cGO-8B-OLF" kind="relationship" relationship="rootViewController" id="bGU-oL-IzJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVF-mc-BbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2518" y="-1094"/>
+        </scene>
+        <!--音库-->
+        <scene sceneID="AJZ-Rc-4Ox">
+            <objects>
+                <tableViewController id="cGO-8B-OLF" customClass="YKLibraryController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OK8-ai-vFd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fio-BT-gYT">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fio-BT-gYT" id="Esg-V1-HU2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cGO-8B-OLF" id="27c-99-sOp"/>
+                            <outlet property="delegate" destination="cGO-8B-OLF" id="r68-sn-AqI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="音库" id="qgB-1A-QRb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzk-uI-RBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2064" y="-1094"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X0A-Fy-pMy">
@@ -411,26 +443,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="if8-C8-XGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2518" y="-1848"/>
-        </scene>
-        <!--音库-->
-        <scene sceneID="wEm-I3-WqB">
-            <objects>
-                <viewController id="ge4-A1-WWt" customClass="YKLibraryController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JUH-B1-8As"/>
-                        <viewControllerLayoutGuide type="bottom" id="TzN-Tm-GWN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aYc-oT-Asj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="音库" id="JLR-Jx-q7p"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GRC-B8-Cn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2026" y="-1094"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Seb-0k-Iqm">

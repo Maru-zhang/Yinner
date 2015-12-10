@@ -12,6 +12,10 @@
 		420120681C168A650024A79E /* YKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120671C168A650024A79E /* YKTabbarController.m */; };
 		420120781C17DFB70024A79E /* YKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120771C17DFB70024A79E /* YKNavigationController.m */; };
 		420120801C1813230024A79E /* KRVideoPlayerController+Hidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */; };
+		420120C91C192B970024A79E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120C41C192B970024A79E /* SVIndefiniteAnimatedView.m */; };
+		420120CA1C192B970024A79E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 420120C61C192B970024A79E /* SVProgressHUD.bundle */; };
+		420120CB1C192B970024A79E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120C81C192B970024A79E /* SVProgressHUD.m */; };
+		420120CE1C1933EC0024A79E /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120CD1C1933EC0024A79E /* YKLibraryController.m */; };
 		420291481B82E7CD00AC1B01 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */; };
 		42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 42046FB21B8075BD0042BDD7 /* NSString+Size.m */; };
 		420473371B8188EE00EEFA57 /* YKApplyRequestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 420473351B8188EE00EEFA57 /* YKApplyRequestCell.m */; };
@@ -52,7 +56,6 @@
 		4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F51B143B1B00706B72 /* YKDockItem.m */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
-		4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90C1B144CFB00706B72 /* YKLibraryController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
 		42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D3C1B6EFD060029EC0F /* YKPersonInfoController.m */; };
 		42A15D411B70245A0029EC0F /* YKPlaySettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D401B70245A0029EC0F /* YKPlaySettingController.m */; };
@@ -125,6 +128,14 @@
 		4201207E1C1813230024A79E /* KRVideoPlayerController+Hidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KRVideoPlayerController+Hidden.h"; sourceTree = "<group>"; };
 		4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KRVideoPlayerController+Hidden.m"; sourceTree = "<group>"; };
 		420120811C18218E0024A79E /* DebugConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugConstant.h; sourceTree = "<group>"; };
+		420120C31C192B970024A79E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		420120C41C192B970024A79E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		420120C51C192B970024A79E /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		420120C61C192B970024A79E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		420120C71C192B970024A79E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		420120C81C192B970024A79E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		420120CC1C1933EC0024A79E /* YKLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKLibraryController.h; path = Model/YKLibraryController.h; sourceTree = "<group>"; };
+		420120CD1C1933EC0024A79E /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YKLibraryController.m; path = Model/YKLibraryController.m; sourceTree = "<group>"; };
 		420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ProvincesAndCities.plist; path = ../ProvincesAndCities.plist; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
@@ -193,8 +204,6 @@
 		4297F8FD1B143BD500706B72 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		4297F9081B144CF100706B72 /* YKPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayViewController.h; sourceTree = "<group>"; };
 		4297F9091B144CF100706B72 /* YKPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayViewController.m; sourceTree = "<group>"; };
-		4297F90B1B144CFB00706B72 /* YKLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLibraryController.h; sourceTree = "<group>"; };
-		4297F90C1B144CFB00706B72 /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryController.m; sourceTree = "<group>"; };
 		4297F90E1B144D0700706B72 /* YKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKHomeViewController.h; sourceTree = "<group>"; };
 		4297F90F1B144D0700706B72 /* YKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKHomeViewController.m; sourceTree = "<group>"; };
 		42A15D3B1B6EFD060029EC0F /* YKPersonInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPersonInfoController.h; sourceTree = "<group>"; };
@@ -363,6 +372,19 @@
 			path = Dock;
 			sourceTree = "<group>";
 		};
+		420120C21C192B970024A79E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				420120C31C192B970024A79E /* SVIndefiniteAnimatedView.h */,
+				420120C41C192B970024A79E /* SVIndefiniteAnimatedView.m */,
+				420120C51C192B970024A79E /* SVProgressHUD-Prefix.pch */,
+				420120C61C192B970024A79E /* SVProgressHUD.bundle */,
+				420120C71C192B970024A79E /* SVProgressHUD.h */,
+				420120C81C192B970024A79E /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		4204950E1B7C89FE00FD3150 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +397,7 @@
 		42656D1B1B157C2E00D2AB4B /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				420120C21C192B970024A79E /* SVProgressHUD */,
 			);
 			name = ThirdLib;
 			path = Lib;
@@ -523,8 +546,8 @@
 			children = (
 				42C46A461B1FD8F500F6AAAC /* View */,
 				1800AC6D1B1A21FF00F0F4B6 /* Model */,
-				4297F90B1B144CFB00706B72 /* YKLibraryController.h */,
-				4297F90C1B144CFB00706B72 /* YKLibraryController.m */,
+				420120CC1C1933EC0024A79E /* YKLibraryController.h */,
+				420120CD1C1933EC0024A79E /* YKLibraryController.m */,
 			);
 			name = Library;
 			path = More;
@@ -831,6 +854,7 @@
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				421A686B1B33F4B2002E249A /* PersonnalPlist.plist in Resources */,
+				420120CA1C192B970024A79E /* SVProgressHUD.bundle in Resources */,
 				426FCD6C1B2862B400A5DB0E /* YKBrowseTableViewCell.xib in Resources */,
 				424AE1A01B5A420900DF35A2 /* MatterSort.plist in Resources */,
 				42C46A8A1B20815F00F6AAAC /* YKSelectButton.xib in Resources */,
@@ -918,13 +942,16 @@
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
 				426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */,
+				420120CE1C1933EC0024A79E /* YKLibraryController.m in Sources */,
 				420495121B7C8C7500FD3150 /* YKChatViewCell.m in Sources */,
+				420120C91C192B970024A79E /* SVIndefiniteAnimatedView.m in Sources */,
 				420120681C168A650024A79E /* YKTabbarController.m in Sources */,
 				420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */,
 				426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */,
 				42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */,
 				42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */,
 				42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */,
+				420120CB1C192B970024A79E /* SVProgressHUD.m in Sources */,
 				421A3AD81B7852B800E62D9A /* UIImage+Image.m in Sources */,
 				42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */,
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
@@ -942,7 +969,6 @@
 				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
-				4297F90D1B144CFB00706B72 /* YKLibraryController.m in Sources */,
 				42A15D471B7032D10029EC0F /* TKSuggestSettingController.m in Sources */,
 				4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */,
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,

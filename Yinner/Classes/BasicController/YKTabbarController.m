@@ -61,12 +61,14 @@
 {
     switch (index) {
         case 0:
+            _pan.enabled = YES;
             self.selectedIndex = 0;
             break;
         case 1:
             [self performSegueWithIdentifier:@"play" sender:nil];
             break;
         case 2:
+            _pan.enabled = NO;
             self.selectedIndex = 1;
             break;
             

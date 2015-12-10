@@ -251,11 +251,8 @@
 - (IBAction)loginButton:(id)sender {
     
     //出现菊花界面
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeDeterminate;
-    hud.labelText = @"正在登陆...";
-    [hud show:YES];
-    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+
     //有效值判断
     [self judgeValid];
     
@@ -267,7 +264,6 @@
         
         if (!error) {
             NSLog(@"登陆成功！");
-            
             //设置自动登陆
             [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
             //从数据库获取数据
@@ -278,9 +274,8 @@
             [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
             
             //使菊花界面消失
-            [hud hide:YES];
-            
-            
+            [SVProgressHUD dismiss];
+  
             //退出登陆控制器
             [self dismissViewControllerAnimated:YES completion:^{
                 

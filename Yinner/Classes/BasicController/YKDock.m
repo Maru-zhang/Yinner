@@ -100,8 +100,6 @@
     if (_itemClickBlock) {
         _itemClickBlock((int)dockItem.tag);
     }
-
-    
 }
 
 #pragma mark - 重写selectedIndex的set方法

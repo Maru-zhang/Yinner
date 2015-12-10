@@ -44,19 +44,19 @@
         //确定退出操作
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
             
-            EMError *logoffError = nil;
-            //退出登陆
-            NSDictionary *info = [[EaseMob sharedInstance].chatManager logoffWithUnbindDeviceToken:YES error:&logoffError];
+            [SVProgressHUD showWithStatus:@"正在注销..." maskType:SVProgressHUDMaskTypeBlack];
             
-            if (!logoffError && info) {
-                NSLog(@"登出成功！");
+            //退出登陆
+            [[[EaseMob sharedInstance]chatManager] asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
                 
                 [self performSegueWithIdentifier:@"exit-login" sender:self];
                 
-                [self.navigationController popToRootViewControllerAnimated:NO];
+                [SVProgressHUD dismiss];
                 
-            }
-            
+            } onQueue:nil];
+
         }];
         
         //取消操作
