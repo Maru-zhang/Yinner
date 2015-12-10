@@ -1,4 +1,4 @@
-//
+    //
 //  YKLocLibController.m
 //  Yinner
 //
@@ -10,10 +10,11 @@
 #import "YKCoreDataManager.h"
 #import "YKLibraryCell.h"
 #import "UITableView+EmptyData.h"
+#import "YKBrowseViewController.h"
 
 @interface YKLibraryController ()
 
-@property (nonatomic,assign) NSMutableArray *dataSource;
+@property (nonatomic,assign) NSArray *dataSource;
 
 @end
 
@@ -24,12 +25,12 @@
     [super viewDidLoad];
     
     [self setupSetting];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
     [self reloadNewDataSource];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)dealloc {
@@ -48,7 +49,7 @@
 {
     YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
     
-    self.dataSource = (NSMutableArray *)[manager queryEntityWithEntityName:@"Media"];
+    self.dataSource = [manager queryEntityWithEntityName:@"Media"];
 
     [self.tableView reloadData];
 }
@@ -123,6 +124,17 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    YKBrowseViewController *vc = [YKBrowseViewController browseViewcontrollerWithUrl:[NSURL URLWithString:[MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"]]];
+    
+    debugLog(@"%@",[NSURL URLWithString:[MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"]]);
+    
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
@@ -132,9 +144,9 @@
 }
 
 #pragma mark - Property
-- (NSMutableArray *)dataSource {
+- (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = [NSMutableArray array];
+        _dataSource = [NSArray array];
     }
     return _dataSource;
 }

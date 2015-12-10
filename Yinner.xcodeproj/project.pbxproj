@@ -94,7 +94,6 @@
 		42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */; };
 		42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4BD151B1C597400E23726 /* CoreData.framework */; };
 		42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */; };
-		42FCF2121B858135005C108E /* YKActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */; };
 		42FCF2131B858135005C108E /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */; };
 		42FCF2141B858135005C108E /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */; };
 		42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF2101B858135005C108E /* YKCommentTableViewCell.m */; };
@@ -136,6 +135,7 @@
 		420120C81C192B970024A79E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		420120CC1C1933EC0024A79E /* YKLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKLibraryController.h; path = Model/YKLibraryController.h; sourceTree = "<group>"; };
 		420120CD1C1933EC0024A79E /* YKLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YKLibraryController.m; path = Model/YKLibraryController.m; sourceTree = "<group>"; };
+		420120CF1C1941DF0024A79E /* LGConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGConstant.h; sourceTree = "<group>"; };
 		420291471B82E7CD00AC1B01 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ProvincesAndCities.plist; path = ../ProvincesAndCities.plist; sourceTree = "<group>"; };
 		42046FB11B8075BD0042BDD7 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		42046FB21B8075BD0042BDD7 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
@@ -262,8 +262,6 @@
 		42F4BD151B1C597400E23726 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		42F4BD191B1C89F300E23726 /* NSDate+Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Current.h"; sourceTree = "<group>"; };
 		42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Current.m"; sourceTree = "<group>"; };
-		42FCF20A1B858135005C108E /* YKActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKActivityIndicatorView.h; sourceTree = "<group>"; };
-		42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKActivityIndicatorView.m; sourceTree = "<group>"; };
 		42FCF20C1B858135005C108E /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
 		42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
 		42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
@@ -348,6 +346,7 @@
 				426B73C71B1898F100E7EA7E /* ReuseFrame.h */,
 				42FF56171B71C42700C7781D /* ReuseKey.h */,
 				4201207A1C17E0D80024A79E /* UIConstant.h */,
+				420120CF1C1941DF0024A79E /* LGConstant.h */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -445,8 +444,6 @@
 		426F877F1B6B133800624E1B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				42FCF20A1B858135005C108E /* YKActivityIndicatorView.h */,
-				42FCF20B1B858135005C108E /* YKActivityIndicatorView.m */,
 				42FCF20C1B858135005C108E /* YKBrowseAuthorInfoView.h */,
 				42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */,
 				42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */,
@@ -714,8 +711,8 @@
 			children = (
 				42C585DA1B0AFAF0005BE52E /* AppDelegate.h */,
 				42C585DB1B0AFAF0005BE52E /* AppDelegate.m */,
-				42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */,
 				424BA59E1B70914500BCA0FE /* PrefixHeader.pch */,
+				42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -957,7 +954,6 @@
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
 				425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */,
-				42FCF2121B858135005C108E /* YKActivityIndicatorView.m in Sources */,
 				42A15D441B70329E0029EC0F /* YKMessageSettingController.m in Sources */,
 				4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */,
 				4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */,

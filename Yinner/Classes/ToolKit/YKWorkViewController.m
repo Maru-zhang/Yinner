@@ -9,6 +9,9 @@
 #import "YKWorkViewController.h"
 #import "KRVideoPlayerController+Hidden.h"
 
+
+typedef void(^mergeMediaComplete)();
+
 @interface YKWorkViewController ()
 {
     UIButton *_start;
@@ -203,7 +206,7 @@ singleton_implementation(YKWorkViewController)
 
 
 
-#pragma mark - private method
+#pragma mark - Private Method
 - (void)playVideoWithURL:(NSURL *)url
 {
     if (!_videoPlayer) {
@@ -353,33 +356,38 @@ singleton_implementation(YKWorkViewController)
 }
 
 #pragma mark mrege video&audio
-- (void)mregeWithVideo:(NSURL *)videoURL andAudio:(NSURL *)audioURL
+- (void)mregeWithVideo:(NSURL *)videoURL andAudio:(NSURL *)audioURL completion:(mergeMediaComplete)completion
 {
     
     AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
     AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
     
-    //合成器
+    // 合成器
     AVMutableComposition *composition = [[AVMutableComposition alloc] init];
     
-    //创建音轨
+    // 创建音轨
     AVMutableCompositionTrack *videoTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
     AVMutableCompositionTrack *audioTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
     AVMutableCompositionTrack *bgmTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
     
-    //在音轨中插入资源
+    // 在音轨中插入资源
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     
+    bool yes = YES;
+    // 是否存在该文件夹，如果不存在，那么创建
+    if (![[NSFileManager defaultManager] fileExistsAtPath:MY_MEDIA_DIR isDirectory:&yes]) {
+        debugLog(@"新建文件夹");
+        [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+
     //创建保存路径
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *myPathDocs =  [documentsDirectory stringByAppendingPathComponent:@"example.mov"];
+    NSString *myPathDocs =  [MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
     
-    
-    NSLog(@"替换的路径为%@",[myPathDocs replaceExtension:@"mp3"]);
+    debugLog(@"%@",[url filePathURL]);
     
     //创建输出对象
     AVAssetExportSession *export = [AVAssetExportSession exportSessionWithAsset:composition presetName:AVAssetExportPresetHighestQuality];
@@ -394,36 +402,11 @@ singleton_implementation(YKWorkViewController)
     //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
         
-        
-        //保存数据库
+        // 保存数据库
         [self saveDatabaseWithURL:myPathDocs];
         
-        //设置为已经录制完成
-        self.alreadyMrege = YES;
-        
-        NSLog(@"完成alert操作");
-        
-        //友情提示框
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
-        
-        //添加按钮
-        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"去看看" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-            
-        }];
-        
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"待会再看" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-            
-        }];
-        
-        [alert addAction:confirm];
-        [alert addAction:cancel];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-            [self presentViewController:alert animated:YES completion:^{
-                
-            }];
-        });
+        // 合成完毕之后的操作
+        completion();
         
     }];
 }
@@ -584,7 +567,32 @@ singleton_implementation(YKWorkViewController)
     NSLog(@"audioURL:%@",_audioURL);
     
     //开始合成
-    [self mregeWithVideo:_videoURL andAudio:_audioURL];
+    [self mregeWithVideo:_videoURL andAudio:_audioURL completion:^{
+        //设置为已经录制完成
+        self.alreadyMrege = YES;
+        
+        //友情提示框
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
+        
+        //添加按钮
+        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"去看看" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            
+        }];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"待会再看" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+        }];
+        
+        [alert addAction:confirm];
+        [alert addAction:cancel];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self presentViewController:alert animated:YES completion:^{
+                
+            }];
+        });
+    }];
     
     //关闭Timer
     [self pauseTimeManager];
@@ -634,6 +642,7 @@ singleton_implementation(YKWorkViewController)
     
     return cell;
 }
+
 #pragma mark - <TableView Delegate>
 
 

@@ -49,11 +49,10 @@
             //退出登陆
             [[[EaseMob sharedInstance]chatManager] asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [SVProgressHUD dismiss];
                 
                 [self performSegueWithIdentifier:@"exit-login" sender:self];
                 
-                [SVProgressHUD dismiss];
                 
             } onQueue:nil];
 

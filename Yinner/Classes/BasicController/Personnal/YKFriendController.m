@@ -11,6 +11,7 @@
 #import "YKContactTableViewCell.h"
 #import "YKContactModel.h"
 #import "YKContactTableViewCell.h"
+#import "UITableView+EmptyData.h"
 
 @interface YKFriendController ()
 {
@@ -57,14 +58,10 @@
 
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    
+    [tableView tableViewDisplayWithEmptyMsg:@"还没有好友哦~" ifNecessaryForDataCount:_buddyList.count];
     return _buddyList.count;
 }
 
@@ -119,6 +116,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 49;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
 }
 
 #pragma mark - Action

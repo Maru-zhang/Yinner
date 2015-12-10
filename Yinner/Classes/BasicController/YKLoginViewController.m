@@ -9,7 +9,6 @@
 #import "YKLoginViewController.h"
 #import "ReuseKey.h"
 #import "NSString+Valid.h"
-#import "YKActivityIndicatorView.h"
 
 @interface YKLoginViewController ()
 {
@@ -18,8 +17,6 @@
     CGFloat _originLeftTwoX;
     CGFloat _originRightOneX;
     CGFloat _originRightTwoX;
-    
-    YKActivityIndicatorView *_indicator;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginButtonWidth;
@@ -76,11 +73,6 @@
 
 - (void)setupView
 {
-    
-    if (!_indicator) {
-        
-         _indicator = [[YKActivityIndicatorView alloc] initWithFrame:self.view.frame];
-    }
     
     //设置圆角
     self.loginButton.layer.cornerRadius = 10;
@@ -184,9 +176,6 @@
 }
 
 - (void)showAlertViewWithMessage:(NSString *)message {
-    
-    //使菊花消失
-    [_indicator removeFromSuperview];
     
     //弹出提示框
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];

@@ -28,6 +28,8 @@
     [super viewDidLoad];
     
     [self settingDock];
+    
+    [self setupView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -37,6 +39,12 @@
 }
 
 #pragma mark - 初始化图标
+
+- (void)setupView {
+    
+    [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
+}
+
 - (void)settingDock
 {
     
