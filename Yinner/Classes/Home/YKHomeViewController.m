@@ -8,7 +8,10 @@
 
 #import "YKHomeViewController.h"
 #import "YKBrowseViewCell.h"
-
+#import "YKBrowseListOperator.h"
+#import "YKBrowseVideoModel.h"
+#import "SDWebImageManager.h"
+#import "UIImageView+WebCache.h"
 @interface YKHomeViewController ()
 {
     UICollectionViewFlowLayout *_layout;
@@ -17,11 +20,15 @@
     UICollectionReusableView *_reuseableView;
     CGSize kItemSize;
 }
+/** 当前的页码 */
+@property (nonatomic,assign) NSNumber *currentPage;
+/** 数据源 */
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end
 
 @implementation YKHomeViewController
 
-static NSString *const identifier = @"browseCell";
+static NSString *const identifier      = @"browseCell";
 static NSString *const reuseIdentifier = @"reuseCell";
 
 #pragma makr - life cycle
@@ -87,7 +94,11 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     //添加下拉刷新
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
-        [self loadNewData];
+        [self loadNewDataWithSetup:YES];
+    }];
+    
+    self.collectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self loadNewDataWithSetup:NO];
     }];
     
     //加载图片
@@ -115,18 +126,38 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
 }
 
-#pragma mark - private method
-
-- (void)loadNewData
+#pragma mark - Private Method
+- (void)loadNewDataWithSetup:(BOOL)setup
 {
-    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    YKBrowseListOperator *operator = [[YKBrowseListOperator alloc] init];
+    
+    __weak typeof(self) weakself = self;
+    
+    [operator getWithSuccessHander:^(id responseObject) {
+        
+        // 如果是初始化那么就清空
+        if (setup) {
+            [weakself.dataSource removeAllObjects];
+        }
+        
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        [weakself.dataSource addObjectsFromArray:[YKBrowseItem mj_objectArrayWithKeyValuesArray:dic[@"data"]]];
+        
         // 刷新表格
-        [self.collectionView reloadData];
+        [weakself.collectionView reloadData];
         
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [self.collectionView.header endRefreshing];
-    });
+        [weakself.collectionView.header endRefreshing];
+        [weakself.collectionView.footer endRefreshing];
+    } andFailHander:^(NSError *error) {
+        debugLog(@"%@",[error description]);
+        // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+        [weakself.collectionView.header endRefreshing];
+        [weakself.collectionView.footer endRefreshing];
+    }];
+    
 }
 
 
@@ -152,12 +183,20 @@ static NSString *const reuseIdentifier = @"reuseCell";
 #pragma mark - dataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return self.dataSource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     YKBrowseViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    YKBrowseItem *item = self.dataSource[indexPath.row];
+    
+    cell.browseTitle.text = item.title;
+    cell.browseComment.text = [NSString stringWithFormat:@"%ld",(long)item.comment_count];
+    cell.browseFavourite.text = [NSString stringWithFormat:@"%ld",(long)item.good_count];
+    [cell.browseImage sd_setImageWithURL:[NSURL URLWithString:item.image]];
+    
     
     return cell;
 }
@@ -200,6 +239,21 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return kItemSize;
+}
+
+#pragma mark - Property
+- (NSNumber *)currentPage {
+    if (!_currentPage) {
+        _currentPage = [NSNumber numberWithInt:1];
+    }
+    return _currentPage;
+}
+
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 
 @end

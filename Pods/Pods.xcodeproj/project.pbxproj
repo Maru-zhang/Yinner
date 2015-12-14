@@ -7,88 +7,108 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09D04A9AB71B5A4FE9175F80496EA5FD /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD117ECF0C7B92EA3A9C14AAB5FE757 /* UIScrollView+MJRefresh.m */; };
-		0C74157B507EF5B152D633AD150F523F /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		133B30495D945B737235B107AAE7DAAB /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D155A5731A06700DB40F3B707F547 /* MJRefreshHeader.m */; };
-		15AE43A9BF33F1CC52CA737F0619146B /* kr-video-player-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F45FB672C825A252024846D9BFCED8B /* kr-video-player-pause@2x.png */; };
-		1705EFC408BCBCE9C090940B33FF869D /* kr-video-player-shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BBA95DABC92D2B873A0C1C7FC2191F /* kr-video-player-shrinkscreen@2x.png */; };
-		1BA3D9FB5D5145BF698C941C0F843518 /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657CB539E71F48B57D7AA1833935817 /* MJRefreshBackGifFooter.m */; };
-		200CA5D919CC71EA6A769541C92716D3 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC74522B66C1DF17367F8475DB15962 /* MJRefreshBackStateFooter.m */; };
-		221DB72678389716898D67007F0410A2 /* kr-video-player-fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0080F9FA54ADCF507558CAF64CFFDA8F /* kr-video-player-fullscreen@2x.png */; };
-		2280D55B18C853A6AA3AE9565EE91F19 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBCF0FBC1E68F714FD04B7BA5FB7AE /* UIView+MJExtension.m */; };
-		26DD7A9FC3AFF0DB792FED97D84B982A /* kr-video-player-fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DA54B70F6046BCCAB9BDB97C1EE338 /* kr-video-player-fullscreen@3x.png */; };
-		2894369EF8D702DF360B6763B36E8444 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 650F3956044F60B2936E5E28ED77C156 /* MJRefreshAutoFooter.m */; };
-		2989492A1A182744E36FD61DF1746D94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */; };
-		444602F3A422E5EC1DA8EF2A3DFA01EB /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C5CED9C8067E912D53936FAC21F0CD /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44F50504254959A81B2E96AD6261B2A9 /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BA7DCC77B0857A24050758D7A3337C95 /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47C70D9848024E79B63027F3F2AD9687 /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7D308A22B1F1A2C98F01ED656B4955 /* KRVideoPlayerControlView.m */; };
-		507BBDC404381663399480C1B153BB6B /* kr-video-player-shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B1B5655CC769B8E5723E2C625AA939 /* kr-video-player-shrinkscreen@3x.png */; };
-		52E75DFC421F6B69861033126A826984 /* kr-video-player-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4616B11222E1471337C2DDD94A212DD2 /* kr-video-player-close@2x.png */; };
-		585CDAC34F08FB220FF26FF55CA899B7 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8DFAF88CA7F3B5DCCDEF5AA4937ACE /* MJRefreshGifHeader.m */; };
-		5CBFDC026AAED77902F3CAC48A96FE69 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5852EF90606168B0AC6196C093B32571 /* MJRefreshStateHeader.m */; };
-		5D8E353884BDCAB98C5B7BC47EA2230B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */; };
-		5EB4F27B76513AE918BA5AE0868E87C8 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = A633F6332363CFA77EDB251F6CDDC5F7 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FBA673E534DD7485FD75764258C8046 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA63F60E474C63AF138427EB154F61E /* MJRefreshAutoStateFooter.m */; };
-		686821A810A0CE2891969ACDC46AE6F0 /* kr-video-player-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5083832BF056C7A9C11B78A4837D908E /* kr-video-player-play@2x.png */; };
-		68A32896B1516A33C075F95336B02172 /* KRVideoPlayerControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2FD430FECC786B78638AF29C3D57F2 /* KRVideoPlayerControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CF9B693754B004AD7FB2F8A6C0C8F36 /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BD10DD7FFE96F1FB00B23D838D06C0BD /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E80858B842657D04234289E938017AC /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4FB7BC94E2CD10ABFA68CBA12FB7FB /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EE360D085C7EDD97B0A48A415012D37 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A35B562D0D85B1C13530FC70C6AC0D8E /* MJRefreshFooter.m */; };
-		70D801E0B95C23BCC270E4EC8659D463 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F8E6596C8D7FD5DEB30D2618365A8F /* CoreGraphics.framework */; };
-		77F797A5A72065EE7351CF41728C2EC3 /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E76A2FBA20533858B7FDB3054660F1 /* UIView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82FC12F67E83874B93592218E9FB4CA0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFE529F3E2FA06DE359F59D70890BE5 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		84A837C46EE6D78BD5BE924478C48AF1 /* kr-video-player-play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A8A724501A624862D2BFA1A9F6E161 /* kr-video-player-play@3x.png */; };
-		8F68B37533C5AC9C8588BD0449D32673 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D14B4BDC754E1FB38F76AFF88D0EFB /* MJRefresh-dummy.m */; };
-		904EC3379A9E226064CB03DC1ACA2EEA /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = DD745FC452EE0E48400288E4E02907BB /* UIScrollView+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		922ACEFE37E22A36A6F0209742B7B51A /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8E15D342FA02B6F3FA28C8DC08CE8B /* MJRefreshConst.m */; };
-		9230119085130B273ECF20F076081DA1 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C868A31B02CE870E0EAE97F469C6F /* MJRefreshComponent.m */; };
-		932430D4A2289A39BE7C50EEAA60246A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 587E2D902B87F3B93ADB431579BACA2D /* UIScrollView+MJExtension.m */; };
-		9BF8D708AC9892125B0AA4E540361FF8 /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA5D2365F37DF9E84159BB2621532C4 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A89B33DBDA4E99005E1F1BDB95A296CC /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F25AA0A45DCDA455D057C4C5761CAE /* MJRefreshBackFooter.m */; };
-		ABCF819C8629C906BD9BB22EE48AB7C6 /* kr-video-player-point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52BCC22221F5318FE3B485B998F924A9 /* kr-video-player-point@2x.png */; };
-		B19CA8B0FD349AEAD2D5A1C6B46AF47D /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A18614F6B60D8444BC488F74DFE875 /* MJRefreshNormalHeader.m */; };
-		B5A8A60810B99D763E3A3F076F63509D /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E42830DB95DE874D0AD5496CAD66BB6 /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B82F7DC936D6DDD49620061A23F33BCD /* kr-video-player-close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A2182A9A8FFF13AE18AF7AC19686B6 /* kr-video-player-close@3x.png */; };
-		B9B44F1EDC36C095666CA0AE98371C09 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 435AD20C8B80696447AEA35A314D874C /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCF6C8E89F659800C78921CAF434D5D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1C8BB294820C8AB1FABED8F6C7D3BA /* UIKit.framework */; };
-		C1DAA515EEE44666FC7C3CCAB35036F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */; };
-		C23457240C40DD49936A1D1B20D3FE46 /* KRVideoPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF73B41DB9AB9D89EF148F2D37BBA08 /* KRVideoPlayer-dummy.m */; };
-		C66A994F14BA080776BB3E2AD8CC55B4 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 133002BD3830C92E97D379BC712033FB /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C67F32FF951D1979EF0E6B4ADED5E8A8 /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = A39825A1542965D5E7F658850A915FA0 /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C96BEA91C527C8327A80E54E635ACD1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */; };
-		D054768D94E678B8A0D7F2AB4FF45E54 /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B0EEE5368EDA3EDE81820B400D6389 /* MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D26673F54A8ED0795BD2A1FDD3291455 /* kr-video-player-pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A09560709CBC13918FB782C0B3197BA /* kr-video-player-pause@3x.png */; };
-		D595C17C62C58E80EEC6F9EBCCF4050A /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC79A5998290A46BF558F719F6562D5 /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA8BAA5F8E5949555BC8B94E309E23D8 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7593DDCCF0E3DAF4A291D855799956 /* MJRefreshAutoGifFooter.m */; };
-		DF8EED9AB1FC41C6F885A908F5F9F513 /* kr-video-player-point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC315B2BABC6CD8BACFC54069BD4FC08 /* kr-video-player-point@3x.png */; };
-		E0529B7C623EB5752662665A05DAAFBA /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F0039EBD2F00014204E5C600C887F934 /* MJRefreshAutoNormalFooter.m */; };
-		E77B8AC75202699F09F423762007254A /* KRVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7674B73218219148D41D2D5564D5CDD9 /* KRVideoPlayerController.m */; };
-		EA03AF12E0E3E8ADC50DA70F2C5BF39E /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BF27C7A1EC8A2305253F697F8CECF3 /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE2299D933657A221DAC6CF386D1BD9C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A8D49973D352E792BA452B1F165BCC /* MediaPlayer.framework */; };
-		EFCDCCD66269CA908494B11E024DC736 /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F82F7A53788A322CA1AB2D02A3A3E45 /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0A23E00CC752FEB2D5818ABCD7E96DE /* KRVideoPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = DD66718ED6D87905FB782D22DBEF3179 /* KRVideoPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0D01ED940723EED434E4EF4BCFF53F9 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A11A4E06257A71604264DA44E61624 /* MJRefreshBackNormalFooter.m */; };
-		F432A374A040EBAB69C9EABC6C4D699A /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = E0AC7D26EA2FC3FDF7444BFD666D8A7E /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F58455418F190BC37D1FD19EA3EA5B01 /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C9EED801ECB9A2606167E18D3E7766D /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7B852F0917A6D6540DAB54F736D681B /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 88506547FC63AEC7C2E8F00880111B57 /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC214077677D4F02E03C6C85F774E028 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA75DE814F6DE3136F119209F0D49674 /* MBProgressHUD-dummy.m */; };
-		FF1FEB28260D52C222E2F87FBBC05277 /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE22CAA9056BF8D9C882C023747133 /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09D04A9AB71B5A4FE9175F80496EA5FD /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BE13F68D549D30681F47A79006551CD9 /* UIScrollView+MJRefresh.m */; };
+		0AFABD28B2E5C3292603A36599055EA7 /* MJDictionaryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5615018563BE7BAD8377D5B27E791056 /* MJDictionaryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C2B33BE64F0CF1C6ED2B2200953568E /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A752AE83375A751CDEDCF5AEE5C86D5 /* MJExtensionConst.m */; };
+		10B5AA3FFC425BAFB7A81C4B1C19CC1A /* NSObject+MJCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E299F35FAB38C9C714D7DAA7B4D89DA /* NSObject+MJCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11BD5AE4F92EFD5DB5772947204A678C /* NSObject+MJKeyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D66292D7A114F1691E6F27DEBCF64B5F /* NSObject+MJKeyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		133B30495D945B737235B107AAE7DAAB /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DA731F7F6A8ADAA275481DC9CB7AEC /* MJRefreshHeader.m */; };
+		14F67635944C4C8A9A87FDD7CD101A2A /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F09BABADCC56FBB35B974E55FF6C5A3 /* NSObject+MJCoding.m */; };
+		15AE43A9BF33F1CC52CA737F0619146B /* kr-video-player-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EF79BF0A0E4852A14148781E64D1EB /* kr-video-player-pause@2x.png */; };
+		1705EFC408BCBCE9C090940B33FF869D /* kr-video-player-shrinkscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FAF5A82FC6E589A5DE9F44B14BF929 /* kr-video-player-shrinkscreen@2x.png */; };
+		1BA3D9FB5D5145BF698C941C0F843518 /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07723571FE18DF695BA4F4E29F052AC9 /* MJRefreshBackGifFooter.m */; };
+		200CA5D919CC71EA6A769541C92716D3 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAA2B968DFB83B770252A955D92DC5 /* MJRefreshBackStateFooter.m */; };
+		221DB72678389716898D67007F0410A2 /* kr-video-player-fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D97A942297F5F868065A5586F70E28E /* kr-video-player-fullscreen@2x.png */; };
+		2280D55B18C853A6AA3AE9565EE91F19 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EABF9719E1C5DBF8A4FF76CC1BD2201B /* UIView+MJExtension.m */; };
+		26DD7A9FC3AFF0DB792FED97D84B982A /* kr-video-player-fullscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 630A09D8D3BD6ECF9BE3B5681787121B /* kr-video-player-fullscreen@3x.png */; };
+		2894369EF8D702DF360B6763B36E8444 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 019255870BF0242C72C5E0D059A20113 /* MJRefreshAutoFooter.m */; };
+		28D5E64861C74DB483E72DE4E35E4AA0 /* NSObject+MJClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 9696E40B950F29A0F118728FA9BA54C6 /* NSObject+MJClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EDB111B41EBA9F2B002DAD15CB26687 /* MJExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = A861637D74B9650DF199D6D313E688E2 /* MJExtensionConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CAB03CE944BBD5BD312744F4DC4ED0A /* NSObject+MJProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 225E5BB49568F1F51EEA170D7FB78E19 /* NSObject+MJProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		444602F3A422E5EC1DA8EF2A3DFA01EB /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B41F89C5CBE9258653C784962D16009 /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44F50504254959A81B2E96AD6261B2A9 /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = F2DEAFC6E96C2858D65D4976FB82CEEE /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47C70D9848024E79B63027F3F2AD9687 /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF117CC64401FA6600AD070B6C291A56 /* KRVideoPlayerControlView.m */; };
+		507BBDC404381663399480C1B153BB6B /* kr-video-player-shrinkscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428BC3F93F5319BD7808164C98818AA3 /* kr-video-player-shrinkscreen@3x.png */; };
+		52E75DFC421F6B69861033126A826984 /* kr-video-player-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0427943DE0D7B208E11EDCF5F51C269 /* kr-video-player-close@2x.png */; };
+		583FC02FF9E1982D4BCDD906F6D598D8 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
+		585CDAC34F08FB220FF26FF55CA899B7 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1446456B60B606F981627E899A02CE79 /* MJRefreshGifHeader.m */; };
+		5AAE735467790D2DA2615BD662F24B76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */; };
+		5CB847381DE56E2B338F95A8FC79E620 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9714B17B7292BACE6F09FA72C8D960DE /* NSObject+MJProperty.m */; };
+		5CBFDC026AAED77902F3CAC48A96FE69 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 918D25BB2A2FB7C714B88B0196C1E4CC /* MJRefreshStateHeader.m */; };
+		5E6AD069AEFAE5E8E3538B532F09674E /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E2779D24FE6CE476E2E600E94282F067 /* NSObject+MJClass.m */; };
+		5FBA673E534DD7485FD75764258C8046 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E7DB5C4923D32F7D4EFE412EBE33A4 /* MJRefreshAutoStateFooter.m */; };
+		61D3D263146EF150595EAD54ACEEAC4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */; };
+		630E7EB6AA410EB4E3F0AE39B187CF52 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BE3D4A942192440E9C47477D20304 /* MJPropertyType.m */; };
+		686821A810A0CE2891969ACDC46AE6F0 /* kr-video-player-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36AC0C0366F38C0CA3091F0448724936 /* kr-video-player-play@2x.png */; };
+		68A32896B1516A33C075F95336B02172 /* KRVideoPlayerControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 82B8EFED60779EE95A2F6F45EE1701F8 /* KRVideoPlayerControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CF9B693754B004AD7FB2F8A6C0C8F36 /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4041F4B181CB216E2C3396B48CC074 /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E80858B842657D04234289E938017AC /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1645196FFDD855DA1A5CFCDD8D4483AD /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EE360D085C7EDD97B0A48A415012D37 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 629889560508741CB7C15D3E2498CCBD /* MJRefreshFooter.m */; };
+		764A917183297280E7F02642D7C8047C /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 525DE0372DECA9CA05D594D26B0EC56A /* MJPropertyKey.m */; };
+		77F797A5A72065EE7351CF41728C2EC3 /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = D63DC367F5694C56D3865487BFFCB7B2 /* UIView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84A837C46EE6D78BD5BE924478C48AF1 /* kr-video-player-play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CD35A4B7AB2B65DEE88E55A1402B40 /* kr-video-player-play@3x.png */; };
+		8B6B4FB5A92E1EEDAFC98E6DD1E81CA7 /* MJDictionaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F860E71BAB997DE6E28D82AF3A2700 /* MJDictionaryCache.m */; };
+		8F68B37533C5AC9C8588BD0449D32673 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B83E0458E6A043890819556D5C708F /* MJRefresh-dummy.m */; };
+		904EC3379A9E226064CB03DC1ACA2EEA /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB5D2B516EF2E9454CEC499344B0407 /* UIScrollView+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		922ACEFE37E22A36A6F0209742B7B51A /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A1FEBB028E596E378F017BFD0DA84 /* MJRefreshConst.m */; };
+		9230119085130B273ECF20F076081DA1 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C8560704671F3EC92D341267AF997DC8 /* MJRefreshComponent.m */; };
+		932430D4A2289A39BE7C50EEAA60246A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 60845F1CE1B2DB75792951A190F6F431 /* UIScrollView+MJExtension.m */; };
+		9734B73DB91553CC9279C5DEF98B973F /* MJPropertyKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 218F11E8BDACF2258487DD5404DBDC19 /* MJPropertyKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BF8D708AC9892125B0AA4E540361FF8 /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = C64F63636618FBF2679031A3763AEF34 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A044BDEEC463D3CB278C383FA8BABEC6 /* MJProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C28985AB6DB0FDDFF6F8A588698764 /* MJProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A89B33DBDA4E99005E1F1BDB95A296CC /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B6E43B9736E1C33D112B3D4F5928A3 /* MJRefreshBackFooter.m */; };
+		ABCF819C8629C906BD9BB22EE48AB7C6 /* kr-video-player-point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7A932B8B42919726DD39EEF1449FA6 /* kr-video-player-point@2x.png */; };
+		B19CA8B0FD349AEAD2D5A1C6B46AF47D /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 197537D3312E171DCB3E2AE1E6D76B02 /* MJRefreshNormalHeader.m */; };
+		B5A8A60810B99D763E3A3F076F63509D /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 20B6472D2F0AE8BD1E9B2AA72B0C6EBC /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B82F7DC936D6DDD49620061A23F33BCD /* kr-video-player-close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5370274F4B701F26D9FFD7D5BF2D8A9E /* kr-video-player-close@3x.png */; };
+		B9B44F1EDC36C095666CA0AE98371C09 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = F07906F8EA992B7966CB97D49B7D6C67 /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCF6C8E89F659800C78921CAF434D5D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BA6E09E4D1597BC6654A539CDE9F7A /* UIKit.framework */; };
+		BFE1D87E9D4D58C95CEAF1737F70C956 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA2359DE9879F495F7DA0BD122E1A71 /* MJFoundation.m */; };
+		C1DAA515EEE44666FC7C3CCAB35036F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */; };
+		C23457240C40DD49936A1D1B20D3FE46 /* KRVideoPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E9DAB84FD2658529BC4FE682CDA52C /* KRVideoPlayer-dummy.m */; };
+		C3E942A24436AFAE47C0F265F0CA369A /* MJExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4971EDC26F434C77BF5146F8F7A5B3D0 /* MJExtension-dummy.m */; };
+		C3EB1AF50203F4E383BB02AA9EAA2539 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 698FAA00975B400DE53C762012E2FF12 /* NSObject+MJKeyValue.m */; };
+		C66A994F14BA080776BB3E2AD8CC55B4 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D2E521783F0BD7F8845351DC00649A /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C67F32FF951D1979EF0E6B4ADED5E8A8 /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5FF4879A8B6D2BB9C81AD9422C70FC /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C96BEA91C527C8327A80E54E635ACD1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */; };
+		D054768D94E678B8A0D7F2AB4FF45E54 /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = CEBF70599EDE02F10B6B75AFDD18EBA2 /* MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D26673F54A8ED0795BD2A1FDD3291455 /* kr-video-player-pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3CFBB488FDBFEFC6A6DC4AC867A27E /* kr-video-player-pause@3x.png */; };
+		D34140627AA9906F84A524AB1A22748E /* MJPropertyType.h in Headers */ = {isa = PBXBuildFile; fileRef = D83091CE68045D49F17D66210803B5AF /* MJPropertyType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4110838F297CB76E9BFABBC1463004B /* NSString+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = DB96BFC8EBD8F56AD4ED50CBD1A42FAD /* NSString+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D595C17C62C58E80EEC6F9EBCCF4050A /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ABBF1EF989DB0471E0FBD5F28EB341C /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA8BAA5F8E5949555BC8B94E309E23D8 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F90BD5BC455144294F4FDF39E3730143 /* MJRefreshAutoGifFooter.m */; };
+		DAD5C4333A7FA2DECFF4BEA4F17FEC6B /* MJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = D2471C3363DAF3F0070CD4E678831CA7 /* MJFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBC399A4B8E6521B2A885EA52612BFB0 /* MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 412B7B3FDAB15E7C6D6BBF48FD1788C9 /* MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF8EED9AB1FC41C6F885A908F5F9F513 /* kr-video-player-point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2C042E5495FB0CE56B7860E82172D0 /* kr-video-player-point@3x.png */; };
+		E0529B7C623EB5752662665A05DAAFBA /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7EE34995A0FA695E780C2FE9E20EE /* MJRefreshAutoNormalFooter.m */; };
+		E5FDED1F3CFC60D892F02046B8F4FB91 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 398B4AFA95BB2B0F54EC03CEDD9D2288 /* MJProperty.m */; };
+		E77B8AC75202699F09F423762007254A /* KRVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16464C6126F035BAA07F055FF195744A /* KRVideoPlayerController.m */; };
+		E9FF6786EDCF303B455D928C19A94B23 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E94239E8712BC758ED12FF21624FDFFA /* NSString+MJExtension.m */; };
+		EA03AF12E0E3E8ADC50DA70F2C5BF39E /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 102AA05C8F32F57917EDD8BB1DFFF5DA /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE2299D933657A221DAC6CF386D1BD9C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD9729877DA6CE408E763BDB9CC4372 /* MediaPlayer.framework */; };
+		EFCDCCD66269CA908494B11E024DC736 /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8D21BFFB3C955DD137002A1DC84861 /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0A23E00CC752FEB2D5818ABCD7E96DE /* KRVideoPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = B2218563F69A9C848D2C5F61517103DE /* KRVideoPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0D01ED940723EED434E4EF4BCFF53F9 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 12452A77711D33626FB10140C1922508 /* MJRefreshBackNormalFooter.m */; };
+		F432A374A040EBAB69C9EABC6C4D699A /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B77B25FD31172DED168A88809783574 /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F58455418F190BC37D1FD19EA3EA5B01 /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = ACC8A0BB3C09F6F483D7E6233A965470 /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7B852F0917A6D6540DAB54F736D681B /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = CE20B8D19B122B866266C6FB9B1BA0EC /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF1FEB28260D52C222E2F87FBBC05277 /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = A759E01A365917B1DD4FF31086E33F39 /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0887F2E747F4ED153496CDADBB9A4EAB /* PBXContainerItemProxy */ = {
+		246CFD24EF28DD87B157A672D83E551E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8BEF0DFF860C02FDB264264226C116DD;
 			remoteInfo = KRVideoPlayer;
 		};
-		4C562106AFD68B69F5D3FA5A7BF1FDA7 /* PBXContainerItemProxy */ = {
+		47FFA73B52413DB1D485356C3B5CC415 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8F74D9EA91F4C43190670066BAC37D44;
-			remoteInfo = MJRefresh;
+			remoteGlobalIDString = B23B3D15FFC0FC9893968F478086D58D;
+			remoteInfo = MJExtension;
 		};
 		87517EC648BF3302FFED9BA02DB8F213 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -97,188 +117,208 @@
 			remoteGlobalIDString = 7DF7BD9F7CD81922DC3BEE5FFB1FE163;
 			remoteInfo = "KRVideoPlayer-KRVideoPlayer";
 		};
-		F9F4DA2F727E0422BEE78EDD0AF08C69 /* PBXContainerItemProxy */ = {
+		ECFC53A64F8C2AFB818FE16D1D04F02F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FE2F1D7B9D9FCEA148517E4657B243F4;
-			remoteInfo = MBProgressHUD;
+			remoteGlobalIDString = 8F74D9EA91F4C43190670066BAC37D44;
+			remoteInfo = MJRefresh;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0080F9FA54ADCF507558CAF64CFFDA8F /* kr-video-player-fullscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-fullscreen@2x.png"; path = "Pod/Assets/kr-video-player-fullscreen@2x.png"; sourceTree = "<group>"; };
-		03134281263872A380CA42293CD6FBBC /* EMCommandMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCommandMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMCommandMessageBody.h; sourceTree = "<group>"; };
-		03579632BBB0D2B473C69E43EFBF231D /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMNetworkMonitorDefs.h; path = EaseMobSDK/include/Utility/EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
-		047B0001D1C2FBC04CCFB7EB88E5132E /* EMChatCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatCommand.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatCommand.h; sourceTree = "<group>"; };
-		056AEAD11C23F32097FDAC3E2F79FDC5 /* EMChatManagerLoginDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerLoginDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerLoginDelegate.h; sourceTree = "<group>"; };
-		057623C347EF09E4C494C76315104B10 /* EMTextMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMTextMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMTextMessageBody.h; sourceTree = "<group>"; };
-		05D14B4BDC754E1FB38F76AFF88D0EFB /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
-		06D19EBFFD13050C6DE4EACFAA6DCC49 /* EMChatFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatFile.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatFile.h; sourceTree = "<group>"; };
-		06F25AA0A45DCDA455D057C4C5761CAE /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
-		0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRVideoPlayer.xcconfig; sourceTree = "<group>"; };
-		0BCFCFD17CC7322BF7E98DADDCAA3288 /* IOpenGLView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IOpenGLView.h; path = EaseMobSDK/include/CallService/EMCallManager/types/IOpenGLView.h; sourceTree = "<group>"; };
-		0C40DFC7C790142C21E05A0CBDEDAEE5 /* IChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/IChatManagerDelegate.h; sourceTree = "<group>"; };
-		0E8A902BC073B916FA5F9988C28F30D2 /* EMCallServiceDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallServiceDefs.h; path = EaseMobSDK/include/CallService/EMCallManager/EMCallServiceDefs.h; sourceTree = "<group>"; };
-		0E8DFAF88CA7F3B5DCCDEF5AA4937ACE /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
-		0FF1A36883CB718E9F80C270AAA2B387 /* IChatManagerConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerConversation.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerConversation.h; sourceTree = "<group>"; };
+		019255870BF0242C72C5E0D059A20113 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
+		05C28985AB6DB0FDDFF6F8A588698764 /* MJProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJProperty.h; path = MJExtension/MJProperty.h; sourceTree = "<group>"; };
+		07723571FE18DF695BA4F4E29F052AC9 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		07EF79BF0A0E4852A14148781E64D1EB /* kr-video-player-pause@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-pause@2x.png"; path = "Pod/Assets/kr-video-player-pause@2x.png"; sourceTree = "<group>"; };
+		09E7DB5C4923D32F7D4EFE412EBE33A4 /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		0CC3CDA217540DDAF731379415614C42 /* EaseMob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMob.h; path = EaseMobSDK/include/EaseMobClientSDKLite/EaseMob.h; sourceTree = "<group>"; };
+		0DD7EE34995A0FA695E780C2FE9E20EE /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		0DFF9A7BA09FBC674882541441192174 /* EMBuddy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMBuddy.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMBuddy.h; sourceTree = "<group>"; };
+		1020A3F7FC7E6DD7C1DD342CC8F39BB6 /* IDeviceManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManagerDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/IDeviceManagerDelegate.h; sourceTree = "<group>"; };
+		102AA05C8F32F57917EDD8BB1DFFF5DA /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefresh/Base/MJRefreshHeader.h; sourceTree = "<group>"; };
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		1145BBDFD62680C72B48DB25A0B0CF23 /* IChatManagerSettingOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerSettingOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerSettingOptions.h; sourceTree = "<group>"; };
-		1226D2DFAC770ABBF6CEFEA6880EA3DC /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallManagerCallDelegate.h; path = EaseMobSDK/include/CallService/EMCallManager/delegates/EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
-		133002BD3830C92E97D379BC712033FB /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
-		144AD0FC9C8882DF37E2DFA97E07C3EE /* IChatManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerBase.h; sourceTree = "<group>"; };
-		14BBA95DABC92D2B873A0C1C7FC2191F /* kr-video-player-shrinkscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-shrinkscreen@2x.png"; path = "Pod/Assets/kr-video-player-shrinkscreen@2x.png"; sourceTree = "<group>"; };
-		184D6A4414D17EC69F8D1C468BD06AA6 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		1A03496F7C19F8F28BA1A716C708189B /* IChatManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManager.h; path = EaseMobSDK/include/ChatService/EMChatManager/IChatManager.h; sourceTree = "<group>"; };
-		1C9EED801ECB9A2606167E18D3E7766D /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
-		1DDEC2B3F648A50F66D9548C538EB193 /* IChatManagerChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerChatroom.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerChatroom.h; sourceTree = "<group>"; };
-		1F09F85CF93C9E68E4326B3E1D5D9B01 /* EMRobot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMRobot.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMRobot.h; sourceTree = "<group>"; };
-		1F193D3FEA039CABED8205E126E8370D /* IDeviceManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManagerDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/IDeviceManagerDelegate.h; sourceTree = "<group>"; };
-		227A8A98F0737543A16A0D16D1020F7E /* EMBuddy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMBuddy.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMBuddy.h; sourceTree = "<group>"; };
-		23B45CB511308D38024AC501A0961389 /* IDeviceManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManagerBase.h; path = EaseMobSDK/include/Utility/EMDeviceManager/internal/IDeviceManagerBase.h; sourceTree = "<group>"; };
+		11ABA307D365CF08C83D700C8AFEB8EF /* EMChatVoice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatVoice.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatVoice.h; sourceTree = "<group>"; };
+		12452A77711D33626FB10140C1922508 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		1363218D10E29DBAB5041067FF00A64F /* MJExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJExtension.xcconfig; sourceTree = "<group>"; };
+		1446456B60B606F981627E899A02CE79 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		14F83AC0169C2EF8553F548C98CB8BB4 /* IChatManagerLogin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerLogin.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerLogin.h; sourceTree = "<group>"; };
+		156E430D7D312195ED4960C03225175A /* EMChatText.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatText.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatText.h; sourceTree = "<group>"; };
+		1645196FFDD855DA1A5CFCDD8D4483AD /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		16464C6126F035BAA07F055FF195744A /* KRVideoPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KRVideoPlayerController.m; path = Pod/Classes/KRVideoPlayerController.m; sourceTree = "<group>"; };
+		16D94799107BA2C281981E27CC6FCCCB /* commonDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = commonDefs.h; path = EaseMobSDK/include/Utility/commonDefs.h; sourceTree = "<group>"; };
+		17D6074EE14860F7DF6124932A86B16D /* ICallManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManager.h; path = EaseMobSDK/include/CallService/EMCallManager/ICallManager.h; sourceTree = "<group>"; };
+		17E9AF591A11B15EA6F2FE3F208E233B /* EMCallSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallSession.h; path = EaseMobSDK/include/CallService/EMCallManager/types/EMCallSession.h; sourceTree = "<group>"; };
+		197537D3312E171DCB3E2AE1E6D76B02 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		1B367FCA84D2388DACFF24218DE2B1D5 /* EMImageMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMImageMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMImageMessageBody.h; sourceTree = "<group>"; };
+		1BDAFEDE8D0198A75E6388EE77F78665 /* EaseMobHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMobHeaders.h; path = EaseMobSDK/include/EaseMobClientSDK/EaseMobHeaders.h; sourceTree = "<group>"; };
+		1E3B9231224044B577B6F1740C74C4B2 /* IChatManagerSettingOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerSettingOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerSettingOptions.h; sourceTree = "<group>"; };
+		1F3A179CA6E951531DA4585C5C592361 /* EMDeviceManagerNetworkDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerNetworkDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerNetworkDelegate.h; sourceTree = "<group>"; };
+		20B6472D2F0AE8BD1E9B2AA72B0C6EBC /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		20E9DAB84FD2658529BC4FE682CDA52C /* KRVideoPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KRVideoPlayer-dummy.m"; sourceTree = "<group>"; };
+		20F0FEDEBC3411040964A4E034C6080B /* OpenGLView20.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenGLView20.h; path = EaseMobSDK/include/CallService/EMCallManager/types/OpenGLView20.h; sourceTree = "<group>"; };
+		218F11E8BDACF2258487DD5404DBDC19 /* MJPropertyKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJPropertyKey.h; path = MJExtension/MJPropertyKey.h; sourceTree = "<group>"; };
+		225E5BB49568F1F51EEA170D7FB78E19 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJProperty.h"; path = "MJExtension/NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		234E432F1DBBF506047D18E8C8E7BBC3 /* EMChatManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMChatManagerDefs.h; sourceTree = "<group>"; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		27C8212C364FB93F14EF0F0FCC79C33A /* EMChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerDelegate.h; sourceTree = "<group>"; };
-		29691BBA5C5A8765D41B069726B4D250 /* EMChatManagerDelegateBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegateBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerDelegateBase.h; sourceTree = "<group>"; };
-		2DEF430C414E918AF3A60289984FFCE9 /* EMCursorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCursorResult.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMCursorResult.h; sourceTree = "<group>"; };
-		30A8D49973D352E792BA452B1F165BCC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
-		32F8E6596C8D7FD5DEB30D2618365A8F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		33E76A2FBA20533858B7FDB3054660F1 /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
-		340242921686F3D0866BCDA762FB5C10 /* EMChatVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatVideo.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatVideo.h; sourceTree = "<group>"; };
-		35C4BB13772CD0A1C32B2B50D1A80366 /* IDeviceManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManager.h; path = EaseMobSDK/include/Utility/EMDeviceManager/IDeviceManager.h; sourceTree = "<group>"; };
+		2A8C559618774F37ABA0B7512818F02C /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallManagerCallDelegate.h; path = EaseMobSDK/include/CallService/EMCallManager/delegates/EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
+		2B77E6770913E4012ABA252559519197 /* EMChatManagerLoginDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerLoginDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerLoginDelegate.h; sourceTree = "<group>"; };
+		2C58D9930CDE88A1686439A43006303C /* EaseMob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMob.h; path = EaseMobSDK/include/EaseMobClientSDK/EaseMob.h; sourceTree = "<group>"; };
+		30F10C49E8BAAD669ABF030034C84278 /* IDeviceManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManager.h; path = EaseMobSDK/include/Utility/EMDeviceManager/IDeviceManager.h; sourceTree = "<group>"; };
+		31D23F8BC61B5C0A83BC053792DEE1F2 /* IChatManagerRobot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerRobot.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerRobot.h; sourceTree = "<group>"; };
+		345DE42294B446C3F6ADE1581D44CF70 /* libEaseMobClientSDKLite_arm64.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_arm64.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_arm64.a; sourceTree = "<group>"; };
+		36AC0C0366F38C0CA3091F0448724936 /* kr-video-player-play@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-play@2x.png"; path = "Pod/Assets/kr-video-player-play@2x.png"; sourceTree = "<group>"; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38E92803567838526EE14D45493EA00D /* IEMChatCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatCryptor.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatCryptor.h; sourceTree = "<group>"; };
-		3CEE22CAA9056BF8D9C882C023747133 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoFooter.h; path = MJRefresh/Base/MJRefreshAutoFooter.h; sourceTree = "<group>"; };
-		3F965A866939245CBEE2F75E9E75D1CB /* EMChatManagerUtilDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerUtilDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerUtilDelegate.h; sourceTree = "<group>"; };
-		3FD031440D245FA14B1191C152AA52EE /* EMImageMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMImageMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMImageMessageBody.h; sourceTree = "<group>"; };
-		406278CA2C1AEE6368481F12B370F940 /* EMVideoMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVideoMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMVideoMessageBody.h; sourceTree = "<group>"; };
-		41DBF42F71923DB2916E44C82EF97A6D /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		435AD20C8B80696447AEA35A314D874C /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		439CD0184197AA11AC989AA03D18A139 /* EMError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMError.h; path = EaseMobSDK/include/Utility/ErrorManager/EMError.h; sourceTree = "<group>"; };
-		4616B11222E1471337C2DDD94A212DD2 /* kr-video-player-close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-close@2x.png"; path = "Pod/Assets/kr-video-player-close@2x.png"; sourceTree = "<group>"; };
-		4801DAADFB527491CDA6EBC58F5FC584 /* libEaseMobClientSDKLite_x86_64.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_x86_64.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_x86_64.a; sourceTree = "<group>"; };
-		4B7593DDCCF0E3DAF4A291D855799956 /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
-		4BF73B41DB9AB9D89EF148F2D37BBA08 /* KRVideoPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KRVideoPlayer-dummy.m"; sourceTree = "<group>"; };
-		4D8431DE82CEF5FD65B4B6AC23675C79 /* EaseMob.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = EaseMob.bundle; path = EaseMobSDK/resources/EaseMob.bundle; sourceTree = "<group>"; };
-		4E4FB7BC94E2CD10ABFA68CBA12FB7FB /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		396750992308E35DC382D880953F61C9 /* EMDeviceManagerDelegateBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDelegateBase.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerDelegateBase.h; sourceTree = "<group>"; };
+		398B4AFA95BB2B0F54EC03CEDD9D2288 /* MJProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJProperty.m; path = MJExtension/MJProperty.m; sourceTree = "<group>"; };
+		3A752AE83375A751CDEDCF5AEE5C86D5 /* MJExtensionConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJExtensionConst.m; path = MJExtension/MJExtensionConst.m; sourceTree = "<group>"; };
+		3D352B5E24419AB8C0C717EE86C92605 /* EMGroupManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMGroupManagerDefs.h; sourceTree = "<group>"; };
+		3D97A942297F5F868065A5586F70E28E /* kr-video-player-fullscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-fullscreen@2x.png"; path = "Pod/Assets/kr-video-player-fullscreen@2x.png"; sourceTree = "<group>"; };
+		3E297F03973B54686C3E415FB5930FA8 /* EMDeviceManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDefs.h; path = EaseMobSDK/include/Utility/EMDeviceManager/EMDeviceManagerDefs.h; sourceTree = "<group>"; };
+		3E2C042E5495FB0CE56B7860E82172D0 /* kr-video-player-point@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-point@3x.png"; path = "Pod/Assets/kr-video-player-point@3x.png"; sourceTree = "<group>"; };
+		3EC6EDC0AED2B057E1625AD33C66D060 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallManagerDelegate.h; path = EaseMobSDK/include/CallService/EMCallManager/delegates/EMCallManagerDelegate.h; sourceTree = "<group>"; };
+		3F09BABADCC56FBB35B974E55FF6C5A3 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJCoding.m"; path = "MJExtension/NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		412B7B3FDAB15E7C6D6BBF48FD1788C9 /* MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJExtension.h; path = MJExtension/MJExtension.h; sourceTree = "<group>"; };
+		41D69FD571413A9FD21E5DEA7BA481F6 /* IChatManagerEncryption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerEncryption.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerEncryption.h; sourceTree = "<group>"; };
+		428BC3F93F5319BD7808164C98818AA3 /* kr-video-player-shrinkscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-shrinkscreen@3x.png"; path = "Pod/Assets/kr-video-player-shrinkscreen@3x.png"; sourceTree = "<group>"; };
+		42A3B0A18AC6CB8B6D514D9652E4176E /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
+		4971EDC26F434C77BF5146F8F7A5B3D0 /* MJExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJExtension-dummy.m"; sourceTree = "<group>"; };
+		4AEFE3B0BB49C87E0C6EAF26D450F6F5 /* IEMChatCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatCryptor.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatCryptor.h; sourceTree = "<group>"; };
+		4B77B25FD31172DED168A88809783574 /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
+		4E0F0500081B6FC7D40504210E5F1C50 /* EMReceipt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMReceipt.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMReceipt.h; sourceTree = "<group>"; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		5083832BF056C7A9C11B78A4837D908E /* kr-video-player-play@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-play@2x.png"; path = "Pod/Assets/kr-video-player-play@2x.png"; sourceTree = "<group>"; };
-		51571AA4657325BAA63D597C1B912F35 /* EMReceiptBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMReceiptBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMReceiptBase.h; sourceTree = "<group>"; };
-		52A8A724501A624862D2BFA1A9F6E161 /* kr-video-player-play@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-play@3x.png"; path = "Pod/Assets/kr-video-player-play@3x.png"; sourceTree = "<group>"; };
-		52BCC22221F5318FE3B485B998F924A9 /* kr-video-player-point@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-point@2x.png"; path = "Pod/Assets/kr-video-player-point@2x.png"; sourceTree = "<group>"; };
-		5852EF90606168B0AC6196C093B32571 /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
-		587E2D902B87F3B93ADB431579BACA2D /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
-		59D14290E9B1AF2026EDD23D8B4CAD71 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		59F4F3CB3D0CAD147E1D644906ED26C9 /* KRVideoPlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRVideoPlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AD4A0FF0E68B20CE09FED9B80ADD079 /* EMPushNotificationOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushNotificationOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMPushNotificationOptions.h; sourceTree = "<group>"; };
-		5AFBCF0FBC1E68F714FD04B7BA5FB7AE /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
-		5BDD2469F986EA1DBB4929FCE51EB10A /* IChatManagerChat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerChat.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerChat.h; sourceTree = "<group>"; };
-		5DC3379F95686F24E0E7537186C22A9D /* IChatManagerGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerGroup.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerGroup.h; sourceTree = "<group>"; };
-		6174909524D54CCC1BBFB8D01174CACC /* EMGroupManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMGroupManagerDefs.h; sourceTree = "<group>"; };
-		6483383A650F7F290329C917590EF5E6 /* EMReceipt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMReceipt.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMReceipt.h; sourceTree = "<group>"; };
-		650F3956044F60B2936E5E28ED77C156 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
-		6657CB539E71F48B57D7AA1833935817 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
-		66597137F58B92D19FB6F42692E647E8 /* ICallManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManager.h; path = EaseMobSDK/include/CallService/EMCallManager/ICallManager.h; sourceTree = "<group>"; };
-		6785F1F2EE836BAC9ADAF9BF78A6AF48 /* EMLocationMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMLocationMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMLocationMessageBody.h; sourceTree = "<group>"; };
+		5137F0A8CC698AF5BEE4E7FE363DE6AF /* libEaseMobClientSDKLite_armv7s.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_armv7s.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_armv7s.a; sourceTree = "<group>"; };
+		525DE0372DECA9CA05D594D26B0EC56A /* MJPropertyKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJPropertyKey.m; path = MJExtension/MJPropertyKey.m; sourceTree = "<group>"; };
+		5370274F4B701F26D9FFD7D5BF2D8A9E /* kr-video-player-close@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-close@3x.png"; path = "Pod/Assets/kr-video-player-close@3x.png"; sourceTree = "<group>"; };
+		53BA6E09E4D1597BC6654A539CDE9F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		53ED9CF6143B24E712119B9E06199BB1 /* IChatImageOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatImageOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IChatImageOptions.h; sourceTree = "<group>"; };
+		556FBF5B486A55669F1BA9D0DCD14F5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5615018563BE7BAD8377D5B27E791056 /* MJDictionaryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJDictionaryCache.h; path = MJExtension/MJDictionaryCache.h; sourceTree = "<group>"; };
+		5A5FFC50E49F596553D58D5693B52199 /* ICallManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManagerBase.h; path = EaseMobSDK/include/CallService/EMCallManager/internal/ICallManagerBase.h; sourceTree = "<group>"; };
+		5A6C11CAA657FB50E6EA8EC30F549060 /* IChatManagerPushNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerPushNotification.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerPushNotification.h; sourceTree = "<group>"; };
+		5E299F35FAB38C9C714D7DAA7B4D89DA /* NSObject+MJCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJCoding.h"; path = "MJExtension/NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		5E61E89F979168A555BA5691472C48E1 /* EMGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroup.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMGroup.h; sourceTree = "<group>"; };
+		6080218F29C5B31F26A0A33D53B61CCF /* EMChatImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatImage.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatImage.h; sourceTree = "<group>"; };
+		60845F1CE1B2DB75792951A190F6F431 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		61FAA2B968DFB83B770252A955D92DC5 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		62104FE0FBFDA724FDA80D8BDAF2DA90 /* libEaseMobClientSDKLite_x86_64.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_x86_64.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_x86_64.a; sourceTree = "<group>"; };
+		629889560508741CB7C15D3E2498CCBD /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
+		630A09D8D3BD6ECF9BE3B5681787121B /* kr-video-player-fullscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-fullscreen@3x.png"; path = "Pod/Assets/kr-video-player-fullscreen@3x.png"; sourceTree = "<group>"; };
+		63ED4F668324FDEE21B30454CB142843 /* EMVoiceMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVoiceMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMVoiceMessageBody.h; sourceTree = "<group>"; };
+		64F398E172CD315E6B7A1D27CD844938 /* EMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMFileMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMFileMessageBody.h; sourceTree = "<group>"; };
+		66B15C994868C842C9BE0FA439FEF809 /* IChatManagerChat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerChat.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerChat.h; sourceTree = "<group>"; };
+		67DABFCAD2D296302DDFF2DAEBF84D35 /* EMDeviceManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerDelegate.h; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		692A31C231F5B416BA1F2338F1A1E8AA /* EMChatManagerChatDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerChatDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerChatDelegate.h; sourceTree = "<group>"; };
-		6C640A600D1C74C98F5F2563941F7078 /* EMCallSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallSession.h; path = EaseMobSDK/include/CallService/EMCallManager/types/EMCallSession.h; sourceTree = "<group>"; };
-		6CC79A5998290A46BF558F719F6562D5 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
-		6DD117ECF0C7B92EA3A9C14AAB5FE757 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
-		72BECBFBFD8124C6E82A281A4C86DD3B /* EMChatVoice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatVoice.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatVoice.h; sourceTree = "<group>"; };
-		73AAB14A1386C98A4B3704FBDF2B51FF /* EMChatLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatLocation.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatLocation.h; sourceTree = "<group>"; };
-		7674B73218219148D41D2D5564D5CDD9 /* KRVideoPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KRVideoPlayerController.m; path = Pod/Classes/KRVideoPlayerController.m; sourceTree = "<group>"; };
-		773BF9B4FEB32585C75CDE9C3364B519 /* EMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMFileMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMFileMessageBody.h; sourceTree = "<group>"; };
-		7AA30F30D094EF727FEEF651F605185D /* EMDeviceManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDefs.h; path = EaseMobSDK/include/Utility/EMDeviceManager/EMDeviceManagerDefs.h; sourceTree = "<group>"; };
-		7B6D155A5731A06700DB40F3B707F547 /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
-		7C0B73484FCCEDE43C75D9C5B473AAD8 /* EaseMob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMob.h; path = EaseMobSDK/include/EaseMobClientSDK/EaseMob.h; sourceTree = "<group>"; };
-		7D1C868A31B02CE870E0EAE97F469C6F /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
-		7EC7BEE9EEBCD6751AED80E313061F6B /* libKRVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKRVideoPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F45FB672C825A252024846D9BFCED8B /* kr-video-player-pause@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-pause@2x.png"; path = "Pod/Assets/kr-video-player-pause@2x.png"; sourceTree = "<group>"; };
-		7F915B0B52C1BC3DDDD2F34E68D4C55E /* EMDeviceManagerDelegateBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDelegateBase.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerDelegateBase.h; sourceTree = "<group>"; };
-		7FCE319DB9FE2B8A8E804C83289DAE92 /* IChatManagerBuddy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerBuddy.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerBuddy.h; sourceTree = "<group>"; };
-		8175DE1D193A57229BD2B91C4D2F7B02 /* EMChatManagerEncryptionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerEncryptionDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerEncryptionDelegate.h; sourceTree = "<group>"; };
-		85B1B5655CC769B8E5723E2C625AA939 /* kr-video-player-shrinkscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-shrinkscreen@3x.png"; path = "Pod/Assets/kr-video-player-shrinkscreen@3x.png"; sourceTree = "<group>"; };
-		88506547FC63AEC7C2E8F00880111B57 /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
-		8914BF441E8BEC303695B9123A2A8B1C /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
-		89BF4E90AF4FC22C6B0A08A9AB461F9D /* IChatManagerUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerUtil.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerUtil.h; sourceTree = "<group>"; };
-		8A9EAD0AB8795DC2806B7B72B0BEFFA0 /* IEMMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMMessageBody.h; sourceTree = "<group>"; };
-		8BA9C21FC4098F0932FA44911FFAACF0 /* IEMChatObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatObject.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatObject.h; sourceTree = "<group>"; };
-		8DF2A366DD98C58487A34B41296E812A /* IEMChatFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatFile.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatFile.h; sourceTree = "<group>"; };
-		8E42830DB95DE874D0AD5496CAD66BB6 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
-		9025BC110236413468F20B2D61FC81A6 /* libEaseMobClientSDKLite_arm64.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_arm64.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_arm64.a; sourceTree = "<group>"; };
-		904EE2D2F2F04CD40881EDD60602B45E /* libEaseMobClientSDKLite_armv7s.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_armv7s.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_armv7s.a; sourceTree = "<group>"; };
-		90B8C6A422404CA2FB819624D3C49382 /* IChatImageOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatImageOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IChatImageOptions.h; sourceTree = "<group>"; };
-		924F26AC55A3EC3B898478CF5170FE8E /* EaseMobHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMobHeaders.h; path = EaseMobSDK/include/EaseMobClientSDKLite/EaseMobHeaders.h; sourceTree = "<group>"; };
-		95C5CED9C8067E912D53936FAC21F0CD /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		698FAA00975B400DE53C762012E2FF12 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJKeyValue.m"; path = "MJExtension/NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		6AA4DB9C2EC3408AA3D99A73ED436767 /* libMJExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ABBF1EF989DB0471E0FBD5F28EB341C /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		6AD9729877DA6CE408E763BDB9CC4372 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		6BC93BF57733E266D92CADA1D6E7B7F5 /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
+		6D13808164BB1E96FDEFB2F968AE4ED0 /* EMChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerDelegate.h; sourceTree = "<group>"; };
+		70360C8F56D9F9CB01ED1668602AD155 /* IChatManagerChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerChatroom.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerChatroom.h; sourceTree = "<group>"; };
+		7197FA4471B09CD5B187BF077027044D /* IEMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMFileMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMFileMessageBody.h; sourceTree = "<group>"; };
+		71CD35A4B7AB2B65DEE88E55A1402B40 /* kr-video-player-play@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-play@3x.png"; path = "Pod/Assets/kr-video-player-play@3x.png"; sourceTree = "<group>"; };
+		71E8FE5AE0C6B5E74EF311EE404059BE /* MJRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.xcconfig; sourceTree = "<group>"; };
+		72B3DF69A90A42EDDCD98D089A09D363 /* MJExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJExtension-prefix.pch"; sourceTree = "<group>"; };
+		72D2E521783F0BD7F8845351DC00649A /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		733FFE4870D3C514F818A36EF141B9EE /* EMChatManagerChatDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerChatDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerChatDelegate.h; sourceTree = "<group>"; };
+		7B41F89C5CBE9258653C784962D16009 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		7FE4FEFFBAD6DB222C847504B9D6F3C6 /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMNetworkMonitorDefs.h; path = EaseMobSDK/include/Utility/EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
+		80F3E8107C087A4B60BDA4CFE0CE0A6E /* EMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMConversation.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMConversation.h; sourceTree = "<group>"; };
+		82B8EFED60779EE95A2F6F45EE1701F8 /* KRVideoPlayerControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KRVideoPlayerControlView.h; path = Pod/Classes/KRVideoPlayerControlView.h; sourceTree = "<group>"; };
+		832F7C9BB5A64A6964CFD5594ABFBCB0 /* EaseMob+CallService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EaseMob+CallService.h"; path = "EaseMobSDK/include/CallService/EMCallManager/EaseMob+CallService.h"; sourceTree = "<group>"; };
+		855728B15E3744BE18DCC5A43639FE26 /* EMGroupStyleSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupStyleSetting.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMGroupStyleSetting.h; sourceTree = "<group>"; };
+		85AF6B59504BF5771AA48775E51E18D8 /* EMChatFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatFile.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatFile.h; sourceTree = "<group>"; };
+		85FAF5A82FC6E589A5DE9F44B14BF929 /* kr-video-player-shrinkscreen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-shrinkscreen@2x.png"; path = "Pod/Assets/kr-video-player-shrinkscreen@2x.png"; sourceTree = "<group>"; };
+		875D4283D368B8C8413DD7B83C035D9D /* libKRVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKRVideoPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8AEBF95F9F4A26F78DA27A00FAF7AE /* EMTextMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMTextMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMTextMessageBody.h; sourceTree = "<group>"; };
+		8E49134D76B183C36262E01904077D60 /* EMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroom.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatroom.h; sourceTree = "<group>"; };
+		8E5BE3D4A942192440E9C47477D20304 /* MJPropertyType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJPropertyType.m; path = MJExtension/MJPropertyType.m; sourceTree = "<group>"; };
+		8F85A84D88D349449214C21507D313F0 /* EMRobot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMRobot.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMRobot.h; sourceTree = "<group>"; };
+		918D25BB2A2FB7C714B88B0196C1E4CC /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
+		9280DF2AD182202BB8147250B15FC298 /* IOpenGLView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IOpenGLView.h; path = EaseMobSDK/include/CallService/EMCallManager/types/IOpenGLView.h; sourceTree = "<group>"; };
+		929B1CDCCB23A114A66EE391D3F0329C /* libEaseMobClientSDKLite_i386.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_i386.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_i386.a; sourceTree = "<group>"; };
+		92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRVideoPlayer.xcconfig; sourceTree = "<group>"; };
+		94F860E71BAB997DE6E28D82AF3A2700 /* MJDictionaryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJDictionaryCache.m; path = MJExtension/MJDictionaryCache.m; sourceTree = "<group>"; };
+		9696E40B950F29A0F118728FA9BA54C6 /* NSObject+MJClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJClass.h"; path = "MJExtension/NSObject+MJClass.h"; sourceTree = "<group>"; };
+		9714B17B7292BACE6F09FA72C8D960DE /* NSObject+MJProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJProperty.m"; path = "MJExtension/NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		9807E2C0D4A3E3F908F74878B8B11A05 /* EaseMob.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = EaseMob.bundle; path = EaseMobSDK/resources/EaseMob.bundle; sourceTree = "<group>"; };
+		98B29EEE9F730279EAAF586EB44C4F50 /* EMChatManagerUtilDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerUtilDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerUtilDelegate.h; sourceTree = "<group>"; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		9A09560709CBC13918FB782C0B3197BA /* kr-video-player-pause@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-pause@3x.png"; path = "Pod/Assets/kr-video-player-pause@3x.png"; sourceTree = "<group>"; };
-		9A55361993CDEAD4FC8A460F94EF5FC2 /* EMDeviceManagerNetworkDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerNetworkDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerNetworkDelegate.h; sourceTree = "<group>"; };
-		9DFE529F3E2FA06DE359F59D70890BE5 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		9F063094EB36393EBEB8EDBD681AE6EE /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F2FA807694D9E8F124E4B8C8744252F /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallManagerDelegate.h; path = EaseMobSDK/include/CallService/EMCallManager/delegates/EMCallManagerDelegate.h; sourceTree = "<group>"; };
-		9F82F7A53788A322CA1AB2D02A3A3E45 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
-		A071111BC7E3AA183BAFF5571F853A3A /* EaseMobHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMobHeaders.h; path = EaseMobSDK/include/EaseMobClientSDK/EaseMobHeaders.h; sourceTree = "<group>"; };
-		A1A18614F6B60D8444BC488F74DFE875 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		9D8D21BFFB3C955DD137002A1DC84861 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		9FB5D2B516EF2E9454CEC499344B0407 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		9FDD3D17DDC1BDD8B0B1222A5C687AF5 /* IChatManagerGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerGroup.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerGroup.h; sourceTree = "<group>"; };
+		A0AACCA4FE838B4CCFAA2A605EBA9A91 /* IChatManagerUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerUtil.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerUtil.h; sourceTree = "<group>"; };
+		A11F727EF92C26F305669C05C2D27E66 /* IEMChatProgressDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatProgressDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatProgressDelegate.h; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		A2D4EBF133AD80BEAEA84846B869E313 /* EMChatManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMChatManagerDefs.h; sourceTree = "<group>"; };
-		A35B562D0D85B1C13530FC70C6AC0D8E /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
-		A39825A1542965D5E7F658850A915FA0 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
-		A633F6332363CFA77EDB251F6CDDC5F7 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		A6CB5F63448DD104F696BFA206FB72BF /* libEaseMobClientSDKLite_armv7.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_armv7.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_armv7.a; sourceTree = "<group>"; };
-		A980808E37B40AA16990D4054BB5D2D4 /* EMChatManagerPushNotificationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerPushNotificationDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerPushNotificationDelegate.h; sourceTree = "<group>"; };
-		A9C53B55E89A3235E9E4FB4B4E7A3D5F /* EMDeviceManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMDeviceManagerDelegate.h; path = EaseMobSDK/include/Utility/EMDeviceManager/delegates/internal/EMDeviceManagerDelegate.h; sourceTree = "<group>"; };
-		AA02D4D849527BC701E6255D6D8FE349 /* IChatManagerEncryption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerEncryption.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerEncryption.h; sourceTree = "<group>"; };
-		AAA5D2365F37DF9E84159BB2621532C4 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
-		AB27125CA8413C3B5B58BEA95B900826 /* EMChatImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatImage.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatImage.h; sourceTree = "<group>"; };
-		AC315B2BABC6CD8BACFC54069BD4FC08 /* kr-video-player-point@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-point@3x.png"; path = "Pod/Assets/kr-video-player-point@3x.png"; sourceTree = "<group>"; };
-		B076B5EDEA043480091B43F956D5E4E1 /* IEMFileMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMFileMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMFileMessageBody.h; sourceTree = "<group>"; };
-		B1BF27C7A1EC8A2305253F697F8CECF3 /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefresh/Base/MJRefreshHeader.h; sourceTree = "<group>"; };
-		B25545AD6C9D800867C42693D5FC4037 /* libEaseMobClientSDKLite_i386.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_i386.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_i386.a; sourceTree = "<group>"; };
-		B2DA54B70F6046BCCAB9BDB97C1EE338 /* kr-video-player-fullscreen@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-fullscreen@3x.png"; path = "Pod/Assets/kr-video-player-fullscreen@3x.png"; sourceTree = "<group>"; };
-		B3E890B3029B619D695AA80BC9F2C562 /* ICallManagerCall.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManagerCall.h; path = EaseMobSDK/include/CallService/EMCallManager/internal/ICallManagerCall.h; sourceTree = "<group>"; };
-		B4C93A82ADFA4F7242EDE2276507E21A /* EMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatroom.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatroom.h; sourceTree = "<group>"; };
-		B59FEC39F861518B9C94B634013F7413 /* EMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMConversation.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMConversation.h; sourceTree = "<group>"; };
+		A759E01A365917B1DD4FF31086E33F39 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoFooter.h; path = MJRefresh/Base/MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		A861637D74B9650DF199D6D313E688E2 /* MJExtensionConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJExtensionConst.h; path = MJExtension/MJExtensionConst.h; sourceTree = "<group>"; };
+		ACC8A0BB3C09F6F483D7E6233A965470 /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		AE2EC31196DFE932A150391E902965A1 /* EMCallServiceDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCallServiceDefs.h; path = EaseMobSDK/include/CallService/EMCallManager/EMCallServiceDefs.h; sourceTree = "<group>"; };
+		B1B0562125E073BA8CD8FC7957C2CB06 /* IChatManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerBase.h; sourceTree = "<group>"; };
+		B1E6BFBA7C90844E8B8A387743A41AA3 /* EMErrorDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMErrorDefs.h; path = EaseMobSDK/include/Utility/ErrorManager/EMErrorDefs.h; sourceTree = "<group>"; };
+		B2218563F69A9C848D2C5F61517103DE /* KRVideoPlayerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KRVideoPlayerController.h; path = Pod/Classes/KRVideoPlayerController.h; sourceTree = "<group>"; };
+		B421D1A6F92DFA19443619BA669C57A3 /* EMChatManagerDelegateBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerDelegateBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerDelegateBase.h; sourceTree = "<group>"; };
+		B4EB381E135C768300944BC30440F8F4 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B9F796ED23548ADB973AE2BAE8A9C5 /* EMLocationMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMLocationMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMLocationMessageBody.h; sourceTree = "<group>"; };
+		B7DA731F7F6A8ADAA275481DC9CB7AEC /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BA7DCC77B0857A24050758D7A3337C95 /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
-		BCCA6027B218A30BEBCEF2D26076AB0F /* EMGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroup.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMGroup.h; sourceTree = "<group>"; };
-		BD10DD7FFE96F1FB00B23D838D06C0BD /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
-		BDF78F491365574619A69D2728962F55 /* EMErrorDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMErrorDefs.h; path = EaseMobSDK/include/Utility/ErrorManager/EMErrorDefs.h; sourceTree = "<group>"; };
-		BE1C8BB294820C8AB1FABED8F6C7D3BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C02AED73C5025C6C9A1B6D7AEA71FE73 /* MJRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.xcconfig; sourceTree = "<group>"; };
-		C321EC5A70C3BC27BC66DCB40F77E5BA /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
-		C686ED53CADEA75FA56CC0EC4BFE6349 /* IChatManagerRobot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerRobot.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerRobot.h; sourceTree = "<group>"; };
-		C71FB27CEA1FEF7F3CDCC621CB77DC1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA633FAF4154BD31286ADB07544E1084 /* IChatManagerLogin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerLogin.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerLogin.h; sourceTree = "<group>"; };
-		CAC74522B66C1DF17367F8475DB15962 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
-		CC2FD430FECC786B78638AF29C3D57F2 /* KRVideoPlayerControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KRVideoPlayerControlView.h; path = Pod/Classes/KRVideoPlayerControlView.h; sourceTree = "<group>"; };
-		CD8E15D342FA02B6F3FA28C8DC08CE8B /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
-		D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D3A2182A9A8FFF13AE18AF7AC19686B6 /* kr-video-player-close@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-close@3x.png"; path = "Pod/Assets/kr-video-player-close@3x.png"; sourceTree = "<group>"; };
-		D41D092B0C9E5056E230906029454037 /* EMVoiceMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVoiceMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMVoiceMessageBody.h; sourceTree = "<group>"; };
-		D577BBE504204A0B67018999E2A2C04F /* EMChatText.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatText.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatText.h; sourceTree = "<group>"; };
-		D6F9B0D1A2B67A1A216591DE478BBA5D /* EMChatManagerGroupDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerGroupDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerGroupDelegate.h; sourceTree = "<group>"; };
-		DA75DE814F6DE3136F119209F0D49674 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		DD66718ED6D87905FB782D22DBEF3179 /* KRVideoPlayerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KRVideoPlayerController.h; path = Pod/Classes/KRVideoPlayerController.h; sourceTree = "<group>"; };
-		DD745FC452EE0E48400288E4E02907BB /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
-		DFC58D557A3BD2D7044DEC8B4C32BF1F /* EaseMob+CallService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EaseMob+CallService.h"; path = "EaseMobSDK/include/CallService/EMCallManager/EaseMob+CallService.h"; sourceTree = "<group>"; };
-		E04CE63BBB0F48CBB033EE5B95A01410 /* IEMChatProgressDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatProgressDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatProgressDelegate.h; sourceTree = "<group>"; };
-		E0AC7D26EA2FC3FDF7444BFD666D8A7E /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
-		E5F747D1658BC2EBD68E1AD661D68B0A /* ICallManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManagerBase.h; path = EaseMobSDK/include/CallService/EMCallManager/internal/ICallManagerBase.h; sourceTree = "<group>"; };
-		E64D9D4FA541EEB32CEFB33980C4F9FE /* EMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessage.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMMessage.h; sourceTree = "<group>"; };
-		E6A11A4E06257A71604264DA44E61624 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
-		E7FA29650657C70E1E48C39053BFF34F /* EMPushManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMPushManagerDefs.h; sourceTree = "<group>"; };
-		EEA63F60E474C63AF138427EB154F61E /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
-		EEB7220D9159EE7DF64C68CEC35F4E6A /* EaseMob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMob.h; path = EaseMobSDK/include/EaseMobClientSDKLite/EaseMob.h; sourceTree = "<group>"; };
-		F0039EBD2F00014204E5C600C887F934 /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
-		F2AE3978713FC24FF31C7CC7F83DE591 /* EMGroupStyleSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMGroupStyleSetting.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMGroupStyleSetting.h; sourceTree = "<group>"; };
-		F2B0EEE5368EDA3EDE81820B400D6389 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
-		F8324E8A871EB46949D6D0ED6EA6FCE8 /* IChatManagerPushNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerPushNotification.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerPushNotification.h; sourceTree = "<group>"; };
-		FA8B69610DD5F155E3C1641A6E61BB26 /* commonDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = commonDefs.h; path = EaseMobSDK/include/Utility/commonDefs.h; sourceTree = "<group>"; };
-		FAC3000F2EDF25CAF63E3F9B2E04F864 /* KRVideoPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRVideoPlayer-prefix.pch"; sourceTree = "<group>"; };
-		FC2627875FF267F50B6535CE94388B63 /* OpenGLView20.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenGLView20.h; path = EaseMobSDK/include/CallService/EMCallManager/types/OpenGLView20.h; sourceTree = "<group>"; };
-		FC9701229954018102607A9647329C5E /* EMChatManagerBuddyDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerBuddyDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerBuddyDelegate.h; sourceTree = "<group>"; };
-		FD7D308A22B1F1A2C98F01ED656B4955 /* KRVideoPlayerControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KRVideoPlayerControlView.m; path = Pod/Classes/KRVideoPlayerControlView.m; sourceTree = "<group>"; };
-		FFC939EAD311A0B97438536FA6C93DA8 /* EMChatManagerChatroomDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerChatroomDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerChatroomDelegate.h; sourceTree = "<group>"; };
+		BAA2359DE9879F495F7DA0BD122E1A71 /* MJFoundation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJFoundation.m; path = MJExtension/MJFoundation.m; sourceTree = "<group>"; };
+		BAB6F5A41EA952140C41D5423FBF773B /* IChatManagerBuddy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerBuddy.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerBuddy.h; sourceTree = "<group>"; };
+		BB4041F4B181CB216E2C3396B48CC074 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		BB9A124733E9F88D04540B6C3F58B945 /* EMCommandMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCommandMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMCommandMessageBody.h; sourceTree = "<group>"; };
+		BC9DD4930BA0AB68E4B0CB75885DE008 /* EMChatManagerBuddyDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerBuddyDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerBuddyDelegate.h; sourceTree = "<group>"; };
+		BE13F68D549D30681F47A79006551CD9 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		BE3CFBB488FDBFEFC6A6DC4AC867A27E /* kr-video-player-pause@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-pause@3x.png"; path = "Pod/Assets/kr-video-player-pause@3x.png"; sourceTree = "<group>"; };
+		C2D59A679756FEB4DC373B983C287D9F /* EMError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMError.h; path = EaseMobSDK/include/Utility/ErrorManager/EMError.h; sourceTree = "<group>"; };
+		C53A1FEBB028E596E378F017BFD0DA84 /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
+		C5405E2BFA1624D090F5403A7DB3CED2 /* IDeviceManagerBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IDeviceManagerBase.h; path = EaseMobSDK/include/Utility/EMDeviceManager/internal/IDeviceManagerBase.h; sourceTree = "<group>"; };
+		C5B37EEFB4B56C3B60C3135CE08D0D18 /* EMCursorResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMCursorResult.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMCursorResult.h; sourceTree = "<group>"; };
+		C64F63636618FBF2679031A3763AEF34 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		C807CF16D5009E558BE08C4BD4619CCA /* libEaseMobClientSDKLite_armv7.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libEaseMobClientSDKLite_armv7.a; path = EaseMobSDK/lib/libEaseMobClientSDKLite_armv7.a; sourceTree = "<group>"; };
+		C8560704671F3EC92D341267AF997DC8 /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
+		C87F7ED6B0E45D2792D8314D526AC83C /* ICallManagerCall.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ICallManagerCall.h; path = EaseMobSDK/include/CallService/EMCallManager/internal/ICallManagerCall.h; sourceTree = "<group>"; };
+		C8B83E0458E6A043890819556D5C708F /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
+		CB5FF4879A8B6D2BB9C81AD9422C70FC /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		CE20B8D19B122B866266C6FB9B1BA0EC /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		CEBF70599EDE02F10B6B75AFDD18EBA2 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
+		D0427943DE0D7B208E11EDCF5F51C269 /* kr-video-player-close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-close@2x.png"; path = "Pod/Assets/kr-video-player-close@2x.png"; sourceTree = "<group>"; };
+		D13C77CEEBA8C0BB258D806458F7C9CE /* IChatManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManager.h; path = EaseMobSDK/include/ChatService/EMChatManager/IChatManager.h; sourceTree = "<group>"; };
+		D2471C3363DAF3F0070CD4E678831CA7 /* MJFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJFoundation.h; path = MJExtension/MJFoundation.h; sourceTree = "<group>"; };
+		D487F8EC5556C208CB3DFE3243DACED2 /* KRVideoPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRVideoPlayer-prefix.pch"; sourceTree = "<group>"; };
+		D546D168A51A665268C24891D95B8571 /* IEMMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMMessageBody.h; sourceTree = "<group>"; };
+		D63DC367F5694C56D3865487BFFCB7B2 /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
+		D66292D7A114F1691E6F27DEBCF64B5F /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJKeyValue.h"; path = "MJExtension/NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		D83091CE68045D49F17D66210803B5AF /* MJPropertyType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJPropertyType.h; path = MJExtension/MJPropertyType.h; sourceTree = "<group>"; };
+		D8FD9F0C0D522215EC1A6B2FB75A6708 /* IEMChatObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatObject.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatObject.h; sourceTree = "<group>"; };
+		DA861D24E979D16E18E29AA3F10A3DFE /* EMReceiptBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMReceiptBase.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMReceiptBase.h; sourceTree = "<group>"; };
+		DB10E5E662770F41CB7ECDC1CE3F6F60 /* EMChatManagerChatroomDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerChatroomDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerChatroomDelegate.h; sourceTree = "<group>"; };
+		DB96BFC8EBD8F56AD4ED50CBD1A42FAD /* NSString+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MJExtension.h"; path = "MJExtension/NSString+MJExtension.h"; sourceTree = "<group>"; };
+		DE57B53A67FF8151E57F1E6762F83FEF /* KRVideoPlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRVideoPlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2779D24FE6CE476E2E600E94282F067 /* NSObject+MJClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MJClass.m"; path = "MJExtension/NSObject+MJClass.m"; sourceTree = "<group>"; };
+		E2B6E43B9736E1C33D112B3D4F5928A3 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
+		E3530E0DE5F603BCDB2CFA1EB4F8495A /* EMPushNotificationOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushNotificationOptions.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMPushNotificationOptions.h; sourceTree = "<group>"; };
+		E4C0140B18A36E2ED3AC537AFF136113 /* EaseMobHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EaseMobHeaders.h; path = EaseMobSDK/include/EaseMobClientSDKLite/EaseMobHeaders.h; sourceTree = "<group>"; };
+		E8D75A756B623E115AE782AAEA20BA68 /* EMChatVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatVideo.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatVideo.h; sourceTree = "<group>"; };
+		E94239E8712BC758ED12FF21624FDFFA /* NSString+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MJExtension.m"; path = "MJExtension/NSString+MJExtension.m"; sourceTree = "<group>"; };
+		EA7A932B8B42919726DD39EEF1449FA6 /* kr-video-player-point@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "kr-video-player-point@2x.png"; path = "Pod/Assets/kr-video-player-point@2x.png"; sourceTree = "<group>"; };
+		EABF9719E1C5DBF8A4FF76CC1BD2201B /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		EAC6F9BBDB1BD0937C7F455FD85D1E88 /* EMChatManagerGroupDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerGroupDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerGroupDelegate.h; sourceTree = "<group>"; };
+		EC5CA42E5820B2533E7B4B837F7C8941 /* IEMChatFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IEMChatFile.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/IEMChatFile.h; sourceTree = "<group>"; };
+		ED314CB0CC725AC5D13D6148FC5C7B0A /* EMPushManagerDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMPushManagerDefs.h; path = EaseMobSDK/include/ChatService/EMChatManager/EMPushManagerDefs.h; sourceTree = "<group>"; };
+		EE9EBC31EC1D8FF3C087D0E6A888BE26 /* IChatManagerConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerConversation.h; path = EaseMobSDK/include/ChatService/EMChatManager/internal/IChatManagerConversation.h; sourceTree = "<group>"; };
+		EF117CC64401FA6600AD070B6C291A56 /* KRVideoPlayerControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KRVideoPlayerControlView.m; path = Pod/Classes/KRVideoPlayerControlView.m; sourceTree = "<group>"; };
+		EFDC381B1DF362EFE99EB4BCF98CDB08 /* EMChatCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatCommand.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatCommand.h; sourceTree = "<group>"; };
+		F07906F8EA992B7966CB97D49B7D6C67 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		F2DEAFC6E96C2858D65D4976FB82CEEE /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
+		F5C1E624E589D15E5E384BD709CB757A /* EMChatManagerPushNotificationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerPushNotificationDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerPushNotificationDelegate.h; sourceTree = "<group>"; };
+		F7411CB9D8B9DA947AD56CF0B5605FCA /* EMChatLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatLocation.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMChatLocation.h; sourceTree = "<group>"; };
+		F90BD5BC455144294F4FDF39E3730143 /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		F93B932A19C60BA99C4CD2EB086C0A0C /* EMVideoMessageBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMVideoMessageBody.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMVideoMessageBody.h; sourceTree = "<group>"; };
+		FB6DE3645546B80359C9665A1D901F8F /* EMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMMessage.h; path = EaseMobSDK/include/ChatService/EMChatManager/types/EMMessage.h; sourceTree = "<group>"; };
+		FBB74304ED5CDA702F564273F2DF89D9 /* IChatManagerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IChatManagerDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/IChatManagerDelegate.h; sourceTree = "<group>"; };
+		FE609F895103A09DEF86311D4BCE72DB /* EMChatManagerEncryptionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EMChatManagerEncryptionDelegate.h; path = EaseMobSDK/include/ChatService/EMChatManager/delegates/internal/EMChatManagerEncryptionDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,20 +339,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		614EDC1A3AC86763000FB4C30A448A5E /* Frameworks */ = {
+		5529ED5F391B1F2873EE57E07B0B466E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D8E353884BDCAB98C5B7BC47EA2230B /* Foundation.framework in Frameworks */,
+				5AAE735467790D2DA2615BD662F24B76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E81C08F5CCC0A5FBFF4559E2173164C7 /* Frameworks */ = {
+		5A6B1E07912E48C49E2E6E59701001AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D801E0B95C23BCC270E4EC8659D463 /* CoreGraphics.framework in Frameworks */,
-				2989492A1A182744E36FD61DF1746D94 /* Foundation.framework in Frameworks */,
+				61D3D263146EF150595EAD54ACEEAC4F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,261 +374,187 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		1027F24CC2E772F1904C30A9739536BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84A5FA54C3F0881F81CA2950E89FC1B9 /* iOS */,
+				345DE42294B446C3F6ADE1581D44CF70 /* libEaseMobClientSDKLite_arm64.a */,
+				C807CF16D5009E558BE08C4BD4619CCA /* libEaseMobClientSDKLite_armv7.a */,
+				5137F0A8CC698AF5BEE4E7FE363DE6AF /* libEaseMobClientSDKLite_armv7s.a */,
+				929B1CDCCB23A114A66EE391D3F0329C /* libEaseMobClientSDKLite_i386.a */,
+				62104FE0FBFDA724FDA80D8BDAF2DA90 /* libEaseMobClientSDKLite_x86_64.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1DC5E04696926E2FE9DAE277F1427C36 /* KRVideoPlayer */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD66718ED6D87905FB782D22DBEF3179 /* KRVideoPlayerController.h */,
-				7674B73218219148D41D2D5564D5CDD9 /* KRVideoPlayerController.m */,
-				CC2FD430FECC786B78638AF29C3D57F2 /* KRVideoPlayerControlView.h */,
-				FD7D308A22B1F1A2C98F01ED656B4955 /* KRVideoPlayerControlView.m */,
-				F93B1876961E81C63231CDD484A082F9 /* Resources */,
-				F0F07DC53310DCD9126DD6506D4505F1 /* Support Files */,
-			);
-			path = KRVideoPlayer;
-			sourceTree = "<group>";
-		};
-		248649AACC7695A4E99F2A464B537F84 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9025BC110236413468F20B2D61FC81A6 /* libEaseMobClientSDKLite_arm64.a */,
-				A6CB5F63448DD104F696BFA206FB72BF /* libEaseMobClientSDKLite_armv7.a */,
-				904EE2D2F2F04CD40881EDD60602B45E /* libEaseMobClientSDKLite_armv7s.a */,
-				B25545AD6C9D800867C42693D5FC4037 /* libEaseMobClientSDKLite_i386.a */,
-				4801DAADFB527491CDA6EBC58F5FC584 /* libEaseMobClientSDKLite_x86_64.a */,
+				4CEEB38D696D774E6FE751FF8568973B /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5739FA42466D2564DBDA7133774B7E31 /* Pods */ = {
+		173B58E93F47E660CF21F3E58CCC7D2B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8D00593E2CC4B1E311195617F3DD6D64 /* EaseMobSDK */,
-				1DC5E04696926E2FE9DAE277F1427C36 /* KRVideoPlayer */,
-				7E00D7561A1E612F08B24DAB3135B5E5 /* MBProgressHUD */,
-				6CC82AF404132103D05502BD0EB6898F /* MJRefresh */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		68E1627CB9CF3CD9E55D2DC0B0252407 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C321EC5A70C3BC27BC66DCB40F77E5BA /* MJRefresh.bundle */,
+				D0427943DE0D7B208E11EDCF5F51C269 /* kr-video-player-close@2x.png */,
+				5370274F4B701F26D9FFD7D5BF2D8A9E /* kr-video-player-close@3x.png */,
+				3D97A942297F5F868065A5586F70E28E /* kr-video-player-fullscreen@2x.png */,
+				630A09D8D3BD6ECF9BE3B5681787121B /* kr-video-player-fullscreen@3x.png */,
+				07EF79BF0A0E4852A14148781E64D1EB /* kr-video-player-pause@2x.png */,
+				BE3CFBB488FDBFEFC6A6DC4AC867A27E /* kr-video-player-pause@3x.png */,
+				36AC0C0366F38C0CA3091F0448724936 /* kr-video-player-play@2x.png */,
+				71CD35A4B7AB2B65DEE88E55A1402B40 /* kr-video-player-play@3x.png */,
+				EA7A932B8B42919726DD39EEF1449FA6 /* kr-video-player-point@2x.png */,
+				3E2C042E5495FB0CE56B7860E82172D0 /* kr-video-player-point@3x.png */,
+				85FAF5A82FC6E589A5DE9F44B14BF929 /* kr-video-player-shrinkscreen@2x.png */,
+				428BC3F93F5319BD7808164C98818AA3 /* kr-video-player-shrinkscreen@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		6CC82AF404132103D05502BD0EB6898F /* MJRefresh */ = {
+		175D93A8B85BD124539E153B361D06A6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F2B0EEE5368EDA3EDE81820B400D6389 /* MJRefresh.h */,
-				3CEE22CAA9056BF8D9C882C023747133 /* MJRefreshAutoFooter.h */,
-				650F3956044F60B2936E5E28ED77C156 /* MJRefreshAutoFooter.m */,
-				9F82F7A53788A322CA1AB2D02A3A3E45 /* MJRefreshAutoGifFooter.h */,
-				4B7593DDCCF0E3DAF4A291D855799956 /* MJRefreshAutoGifFooter.m */,
-				AAA5D2365F37DF9E84159BB2621532C4 /* MJRefreshAutoNormalFooter.h */,
-				F0039EBD2F00014204E5C600C887F934 /* MJRefreshAutoNormalFooter.m */,
-				133002BD3830C92E97D379BC712033FB /* MJRefreshAutoStateFooter.h */,
-				EEA63F60E474C63AF138427EB154F61E /* MJRefreshAutoStateFooter.m */,
-				8E42830DB95DE874D0AD5496CAD66BB6 /* MJRefreshBackFooter.h */,
-				06F25AA0A45DCDA455D057C4C5761CAE /* MJRefreshBackFooter.m */,
-				BD10DD7FFE96F1FB00B23D838D06C0BD /* MJRefreshBackGifFooter.h */,
-				6657CB539E71F48B57D7AA1833935817 /* MJRefreshBackGifFooter.m */,
-				4E4FB7BC94E2CD10ABFA68CBA12FB7FB /* MJRefreshBackNormalFooter.h */,
-				E6A11A4E06257A71604264DA44E61624 /* MJRefreshBackNormalFooter.m */,
-				1C9EED801ECB9A2606167E18D3E7766D /* MJRefreshBackStateFooter.h */,
-				CAC74522B66C1DF17367F8475DB15962 /* MJRefreshBackStateFooter.m */,
-				E0AC7D26EA2FC3FDF7444BFD666D8A7E /* MJRefreshComponent.h */,
-				7D1C868A31B02CE870E0EAE97F469C6F /* MJRefreshComponent.m */,
-				88506547FC63AEC7C2E8F00880111B57 /* MJRefreshConst.h */,
-				CD8E15D342FA02B6F3FA28C8DC08CE8B /* MJRefreshConst.m */,
-				BA7DCC77B0857A24050758D7A3337C95 /* MJRefreshFooter.h */,
-				A35B562D0D85B1C13530FC70C6AC0D8E /* MJRefreshFooter.m */,
-				6CC79A5998290A46BF558F719F6562D5 /* MJRefreshGifHeader.h */,
-				0E8DFAF88CA7F3B5DCCDEF5AA4937ACE /* MJRefreshGifHeader.m */,
-				B1BF27C7A1EC8A2305253F697F8CECF3 /* MJRefreshHeader.h */,
-				7B6D155A5731A06700DB40F3B707F547 /* MJRefreshHeader.m */,
-				A39825A1542965D5E7F658850A915FA0 /* MJRefreshNormalHeader.h */,
-				A1A18614F6B60D8444BC488F74DFE875 /* MJRefreshNormalHeader.m */,
-				95C5CED9C8067E912D53936FAC21F0CD /* MJRefreshStateHeader.h */,
-				5852EF90606168B0AC6196C093B32571 /* MJRefreshStateHeader.m */,
-				435AD20C8B80696447AEA35A314D874C /* UIScrollView+MJExtension.h */,
-				587E2D902B87F3B93ADB431579BACA2D /* UIScrollView+MJExtension.m */,
-				DD745FC452EE0E48400288E4E02907BB /* UIScrollView+MJRefresh.h */,
-				6DD117ECF0C7B92EA3A9C14AAB5FE757 /* UIScrollView+MJRefresh.m */,
-				33E76A2FBA20533858B7FDB3054660F1 /* UIView+MJExtension.h */,
-				5AFBCF0FBC1E68F714FD04B7BA5FB7AE /* UIView+MJExtension.m */,
-				68E1627CB9CF3CD9E55D2DC0B0252407 /* Resources */,
-				761739D1CEF0618212FEDF11FFD1C12D /* Support Files */,
-			);
-			path = MJRefresh;
-			sourceTree = "<group>";
-		};
-		761739D1CEF0618212FEDF11FFD1C12D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C02AED73C5025C6C9A1B6D7AEA71FE73 /* MJRefresh.xcconfig */,
-				05D14B4BDC754E1FB38F76AFF88D0EFB /* MJRefresh-dummy.m */,
-				8914BF441E8BEC303695B9123A2A8B1C /* MJRefresh-prefix.pch */,
+				71E8FE5AE0C6B5E74EF311EE404059BE /* MJRefresh.xcconfig */,
+				C8B83E0458E6A043890819556D5C708F /* MJRefresh-dummy.m */,
+				6BC93BF57733E266D92CADA1D6E7B7F5 /* MJRefresh-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MJRefresh";
 			sourceTree = "<group>";
 		};
-		7927BDE1DFF8E3A67EDD92C8CA189D29 /* Support Files */ = {
+		1DAB7AE98F5502D479647E6E63E8B715 /* KRVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				41DBF42F71923DB2916E44C82EF97A6D /* MBProgressHUD.xcconfig */,
-				DA75DE814F6DE3136F119209F0D49674 /* MBProgressHUD-dummy.m */,
-				184D6A4414D17EC69F8D1C468BD06AA6 /* MBProgressHUD-prefix.pch */,
+				B2218563F69A9C848D2C5F61517103DE /* KRVideoPlayerController.h */,
+				16464C6126F035BAA07F055FF195744A /* KRVideoPlayerController.m */,
+				82B8EFED60779EE95A2F6F45EE1701F8 /* KRVideoPlayerControlView.h */,
+				EF117CC64401FA6600AD070B6C291A56 /* KRVideoPlayerControlView.m */,
+				173B58E93F47E660CF21F3E58CCC7D2B /* Resources */,
+				A277AB0FE9462B9ADA6A739917231F8A /* Support Files */,
+			);
+			path = KRVideoPlayer;
+			sourceTree = "<group>";
+		};
+		29CC2BAA881E9DDCDB984DECF2156F7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42A3B0A18AC6CB8B6D514D9652E4176E /* MJRefresh.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2F7605A9A9F65B322A3E382B9B141C1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE57B53A67FF8151E57F1E6762F83FEF /* KRVideoPlayer.bundle */,
+				875D4283D368B8C8413DD7B83C035D9D /* libKRVideoPlayer.a */,
+				6AA4DB9C2EC3408AA3D99A73ED436767 /* libMJExtension.a */,
+				B4EB381E135C768300944BC30440F8F4 /* libMJRefresh.a */,
+				556FBF5B486A55669F1BA9D0DCD14F5C /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31DB2B5FD83D4A05E544E41B8222E255 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF70599EDE02F10B6B75AFDD18EBA2 /* MJRefresh.h */,
+				A759E01A365917B1DD4FF31086E33F39 /* MJRefreshAutoFooter.h */,
+				019255870BF0242C72C5E0D059A20113 /* MJRefreshAutoFooter.m */,
+				9D8D21BFFB3C955DD137002A1DC84861 /* MJRefreshAutoGifFooter.h */,
+				F90BD5BC455144294F4FDF39E3730143 /* MJRefreshAutoGifFooter.m */,
+				C64F63636618FBF2679031A3763AEF34 /* MJRefreshAutoNormalFooter.h */,
+				0DD7EE34995A0FA695E780C2FE9E20EE /* MJRefreshAutoNormalFooter.m */,
+				72D2E521783F0BD7F8845351DC00649A /* MJRefreshAutoStateFooter.h */,
+				09E7DB5C4923D32F7D4EFE412EBE33A4 /* MJRefreshAutoStateFooter.m */,
+				20B6472D2F0AE8BD1E9B2AA72B0C6EBC /* MJRefreshBackFooter.h */,
+				E2B6E43B9736E1C33D112B3D4F5928A3 /* MJRefreshBackFooter.m */,
+				BB4041F4B181CB216E2C3396B48CC074 /* MJRefreshBackGifFooter.h */,
+				07723571FE18DF695BA4F4E29F052AC9 /* MJRefreshBackGifFooter.m */,
+				1645196FFDD855DA1A5CFCDD8D4483AD /* MJRefreshBackNormalFooter.h */,
+				12452A77711D33626FB10140C1922508 /* MJRefreshBackNormalFooter.m */,
+				ACC8A0BB3C09F6F483D7E6233A965470 /* MJRefreshBackStateFooter.h */,
+				61FAA2B968DFB83B770252A955D92DC5 /* MJRefreshBackStateFooter.m */,
+				4B77B25FD31172DED168A88809783574 /* MJRefreshComponent.h */,
+				C8560704671F3EC92D341267AF997DC8 /* MJRefreshComponent.m */,
+				CE20B8D19B122B866266C6FB9B1BA0EC /* MJRefreshConst.h */,
+				C53A1FEBB028E596E378F017BFD0DA84 /* MJRefreshConst.m */,
+				F2DEAFC6E96C2858D65D4976FB82CEEE /* MJRefreshFooter.h */,
+				629889560508741CB7C15D3E2498CCBD /* MJRefreshFooter.m */,
+				6ABBF1EF989DB0471E0FBD5F28EB341C /* MJRefreshGifHeader.h */,
+				1446456B60B606F981627E899A02CE79 /* MJRefreshGifHeader.m */,
+				102AA05C8F32F57917EDD8BB1DFFF5DA /* MJRefreshHeader.h */,
+				B7DA731F7F6A8ADAA275481DC9CB7AEC /* MJRefreshHeader.m */,
+				CB5FF4879A8B6D2BB9C81AD9422C70FC /* MJRefreshNormalHeader.h */,
+				197537D3312E171DCB3E2AE1E6D76B02 /* MJRefreshNormalHeader.m */,
+				7B41F89C5CBE9258653C784962D16009 /* MJRefreshStateHeader.h */,
+				918D25BB2A2FB7C714B88B0196C1E4CC /* MJRefreshStateHeader.m */,
+				F07906F8EA992B7966CB97D49B7D6C67 /* UIScrollView+MJExtension.h */,
+				60845F1CE1B2DB75792951A190F6F431 /* UIScrollView+MJExtension.m */,
+				9FB5D2B516EF2E9454CEC499344B0407 /* UIScrollView+MJRefresh.h */,
+				BE13F68D549D30681F47A79006551CD9 /* UIScrollView+MJRefresh.m */,
+				D63DC367F5694C56D3865487BFFCB7B2 /* UIView+MJExtension.h */,
+				EABF9719E1C5DBF8A4FF76CC1BD2201B /* UIView+MJExtension.m */,
+				29CC2BAA881E9DDCDB984DECF2156F7F /* Resources */,
+				175D93A8B85BD124539E153B361D06A6 /* Support Files */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		3B64B0CEC21FA97E5E9FA8D688FCDA88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D759F78FF2FC2BE6EA6A97E113891C87 /* EaseMobSDK */,
+				1DAB7AE98F5502D479647E6E63E8B715 /* KRVideoPlayer */,
+				F31FB56166D650DE4874129D0594A831 /* MJExtension */,
+				31DB2B5FD83D4A05E544E41B8222E255 /* MJRefresh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4CEEB38D696D774E6FE751FF8568973B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				92F5EFE35632D42BCEEAD5AF93C99CE7 /* Foundation.framework */,
+				6AD9729877DA6CE408E763BDB9CC4372 /* MediaPlayer.framework */,
+				53BA6E09E4D1597BC6654A539CDE9F7A /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		589F43D30313DFD26DEACB2B39F9B36C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1363218D10E29DBAB5041067FF00A64F /* MJExtension.xcconfig */,
+				4971EDC26F434C77BF5146F8F7A5B3D0 /* MJExtension-dummy.m */,
+				72B3DF69A90A42EDDCD98D089A09D363 /* MJExtension-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MBProgressHUD";
+			path = "../Target Support Files/MJExtension";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				5739FA42466D2564DBDA7133774B7E31 /* Pods */,
-				8C6D1D4786A025F7EC00F95D591B5614 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				3B64B0CEC21FA97E5E9FA8D688FCDA88 /* Pods */,
+				2F7605A9A9F65B322A3E382B9B141C1C /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E00D7561A1E612F08B24DAB3135B5E5 /* MBProgressHUD */ = {
+		A277AB0FE9462B9ADA6A739917231F8A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A633F6332363CFA77EDB251F6CDDC5F7 /* MBProgressHUD.h */,
-				9DFE529F3E2FA06DE359F59D70890BE5 /* MBProgressHUD.m */,
-				7927BDE1DFF8E3A67EDD92C8CA189D29 /* Support Files */,
+				93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */,
+				20E9DAB84FD2658529BC4FE682CDA52C /* KRVideoPlayer-dummy.m */,
+				D487F8EC5556C208CB3DFE3243DACED2 /* KRVideoPlayer-prefix.pch */,
 			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		84A5FA54C3F0881F81CA2950E89FC1B9 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				32F8E6596C8D7FD5DEB30D2618365A8F /* CoreGraphics.framework */,
-				D1846411A6D773D6C412B861A91EDC6F /* Foundation.framework */,
-				30A8D49973D352E792BA452B1F165BCC /* MediaPlayer.framework */,
-				BE1C8BB294820C8AB1FABED8F6C7D3BA /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8C6D1D4786A025F7EC00F95D591B5614 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				59F4F3CB3D0CAD147E1D644906ED26C9 /* KRVideoPlayer.bundle */,
-				7EC7BEE9EEBCD6751AED80E313061F6B /* libKRVideoPlayer.a */,
-				9F063094EB36393EBEB8EDBD681AE6EE /* libMBProgressHUD.a */,
-				59D14290E9B1AF2026EDD23D8B4CAD71 /* libMJRefresh.a */,
-				C71FB27CEA1FEF7F3CDCC621CB77DC1C /* libPods.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8D00593E2CC4B1E311195617F3DD6D64 /* EaseMobSDK */ = {
-			isa = PBXGroup;
-			children = (
-				FA8B69610DD5F155E3C1641A6E61BB26 /* commonDefs.h */,
-				7C0B73484FCCEDE43C75D9C5B473AAD8 /* EaseMob.h */,
-				EEB7220D9159EE7DF64C68CEC35F4E6A /* EaseMob.h */,
-				DFC58D557A3BD2D7044DEC8B4C32BF1F /* EaseMob+CallService.h */,
-				A071111BC7E3AA183BAFF5571F853A3A /* EaseMobHeaders.h */,
-				924F26AC55A3EC3B898478CF5170FE8E /* EaseMobHeaders.h */,
-				227A8A98F0737543A16A0D16D1020F7E /* EMBuddy.h */,
-				1226D2DFAC770ABBF6CEFEA6880EA3DC /* EMCallManagerCallDelegate.h */,
-				9F2FA807694D9E8F124E4B8C8744252F /* EMCallManagerDelegate.h */,
-				0E8A902BC073B916FA5F9988C28F30D2 /* EMCallServiceDefs.h */,
-				6C640A600D1C74C98F5F2563941F7078 /* EMCallSession.h */,
-				047B0001D1C2FBC04CCFB7EB88E5132E /* EMChatCommand.h */,
-				06D19EBFFD13050C6DE4EACFAA6DCC49 /* EMChatFile.h */,
-				AB27125CA8413C3B5B58BEA95B900826 /* EMChatImage.h */,
-				73AAB14A1386C98A4B3704FBDF2B51FF /* EMChatLocation.h */,
-				FC9701229954018102607A9647329C5E /* EMChatManagerBuddyDelegate.h */,
-				692A31C231F5B416BA1F2338F1A1E8AA /* EMChatManagerChatDelegate.h */,
-				FFC939EAD311A0B97438536FA6C93DA8 /* EMChatManagerChatroomDelegate.h */,
-				A2D4EBF133AD80BEAEA84846B869E313 /* EMChatManagerDefs.h */,
-				27C8212C364FB93F14EF0F0FCC79C33A /* EMChatManagerDelegate.h */,
-				29691BBA5C5A8765D41B069726B4D250 /* EMChatManagerDelegateBase.h */,
-				8175DE1D193A57229BD2B91C4D2F7B02 /* EMChatManagerEncryptionDelegate.h */,
-				D6F9B0D1A2B67A1A216591DE478BBA5D /* EMChatManagerGroupDelegate.h */,
-				056AEAD11C23F32097FDAC3E2F79FDC5 /* EMChatManagerLoginDelegate.h */,
-				A980808E37B40AA16990D4054BB5D2D4 /* EMChatManagerPushNotificationDelegate.h */,
-				3F965A866939245CBEE2F75E9E75D1CB /* EMChatManagerUtilDelegate.h */,
-				B4C93A82ADFA4F7242EDE2276507E21A /* EMChatroom.h */,
-				D577BBE504204A0B67018999E2A2C04F /* EMChatText.h */,
-				340242921686F3D0866BCDA762FB5C10 /* EMChatVideo.h */,
-				72BECBFBFD8124C6E82A281A4C86DD3B /* EMChatVoice.h */,
-				03134281263872A380CA42293CD6FBBC /* EMCommandMessageBody.h */,
-				B59FEC39F861518B9C94B634013F7413 /* EMConversation.h */,
-				2DEF430C414E918AF3A60289984FFCE9 /* EMCursorResult.h */,
-				7AA30F30D094EF727FEEF651F605185D /* EMDeviceManagerDefs.h */,
-				A9C53B55E89A3235E9E4FB4B4E7A3D5F /* EMDeviceManagerDelegate.h */,
-				7F915B0B52C1BC3DDDD2F34E68D4C55E /* EMDeviceManagerDelegateBase.h */,
-				9A55361993CDEAD4FC8A460F94EF5FC2 /* EMDeviceManagerNetworkDelegate.h */,
-				439CD0184197AA11AC989AA03D18A139 /* EMError.h */,
-				BDF78F491365574619A69D2728962F55 /* EMErrorDefs.h */,
-				773BF9B4FEB32585C75CDE9C3364B519 /* EMFileMessageBody.h */,
-				BCCA6027B218A30BEBCEF2D26076AB0F /* EMGroup.h */,
-				6174909524D54CCC1BBFB8D01174CACC /* EMGroupManagerDefs.h */,
-				F2AE3978713FC24FF31C7CC7F83DE591 /* EMGroupStyleSetting.h */,
-				3FD031440D245FA14B1191C152AA52EE /* EMImageMessageBody.h */,
-				6785F1F2EE836BAC9ADAF9BF78A6AF48 /* EMLocationMessageBody.h */,
-				E64D9D4FA541EEB32CEFB33980C4F9FE /* EMMessage.h */,
-				03579632BBB0D2B473C69E43EFBF231D /* EMNetworkMonitorDefs.h */,
-				E7FA29650657C70E1E48C39053BFF34F /* EMPushManagerDefs.h */,
-				5AD4A0FF0E68B20CE09FED9B80ADD079 /* EMPushNotificationOptions.h */,
-				6483383A650F7F290329C917590EF5E6 /* EMReceipt.h */,
-				51571AA4657325BAA63D597C1B912F35 /* EMReceiptBase.h */,
-				1F09F85CF93C9E68E4326B3E1D5D9B01 /* EMRobot.h */,
-				057623C347EF09E4C494C76315104B10 /* EMTextMessageBody.h */,
-				406278CA2C1AEE6368481F12B370F940 /* EMVideoMessageBody.h */,
-				D41D092B0C9E5056E230906029454037 /* EMVoiceMessageBody.h */,
-				66597137F58B92D19FB6F42692E647E8 /* ICallManager.h */,
-				E5F747D1658BC2EBD68E1AD661D68B0A /* ICallManagerBase.h */,
-				B3E890B3029B619D695AA80BC9F2C562 /* ICallManagerCall.h */,
-				90B8C6A422404CA2FB819624D3C49382 /* IChatImageOptions.h */,
-				1A03496F7C19F8F28BA1A716C708189B /* IChatManager.h */,
-				144AD0FC9C8882DF37E2DFA97E07C3EE /* IChatManagerBase.h */,
-				7FCE319DB9FE2B8A8E804C83289DAE92 /* IChatManagerBuddy.h */,
-				5BDD2469F986EA1DBB4929FCE51EB10A /* IChatManagerChat.h */,
-				1DDEC2B3F648A50F66D9548C538EB193 /* IChatManagerChatroom.h */,
-				0FF1A36883CB718E9F80C270AAA2B387 /* IChatManagerConversation.h */,
-				0C40DFC7C790142C21E05A0CBDEDAEE5 /* IChatManagerDelegate.h */,
-				AA02D4D849527BC701E6255D6D8FE349 /* IChatManagerEncryption.h */,
-				5DC3379F95686F24E0E7537186C22A9D /* IChatManagerGroup.h */,
-				CA633FAF4154BD31286ADB07544E1084 /* IChatManagerLogin.h */,
-				F8324E8A871EB46949D6D0ED6EA6FCE8 /* IChatManagerPushNotification.h */,
-				C686ED53CADEA75FA56CC0EC4BFE6349 /* IChatManagerRobot.h */,
-				1145BBDFD62680C72B48DB25A0B0CF23 /* IChatManagerSettingOptions.h */,
-				89BF4E90AF4FC22C6B0A08A9AB461F9D /* IChatManagerUtil.h */,
-				35C4BB13772CD0A1C32B2B50D1A80366 /* IDeviceManager.h */,
-				23B45CB511308D38024AC501A0961389 /* IDeviceManagerBase.h */,
-				1F193D3FEA039CABED8205E126E8370D /* IDeviceManagerDelegate.h */,
-				38E92803567838526EE14D45493EA00D /* IEMChatCryptor.h */,
-				8DF2A366DD98C58487A34B41296E812A /* IEMChatFile.h */,
-				8BA9C21FC4098F0932FA44911FFAACF0 /* IEMChatObject.h */,
-				E04CE63BBB0F48CBB033EE5B95A01410 /* IEMChatProgressDelegate.h */,
-				B076B5EDEA043480091B43F956D5E4E1 /* IEMFileMessageBody.h */,
-				8A9EAD0AB8795DC2806B7B72B0BEFFA0 /* IEMMessageBody.h */,
-				0BCFCFD17CC7322BF7E98DADDCAA3288 /* IOpenGLView.h */,
-				FC2627875FF267F50B6535CE94388B63 /* OpenGLView20.h */,
-				248649AACC7695A4E99F2A464B537F84 /* Frameworks */,
-				DD3FD1258C468F2230E90C072B90B1F9 /* Resources */,
-			);
-			path = EaseMobSDK;
+			name = "Support Files";
+			path = "../Target Support Files/KRVideoPlayer";
 			sourceTree = "<group>";
 		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
@@ -607,42 +572,136 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		DD3FD1258C468F2230E90C072B90B1F9 /* Resources */ = {
+		D759F78FF2FC2BE6EA6A97E113891C87 /* EaseMobSDK */ = {
 			isa = PBXGroup;
 			children = (
-				4D8431DE82CEF5FD65B4B6AC23675C79 /* EaseMob.bundle */,
+				16D94799107BA2C281981E27CC6FCCCB /* commonDefs.h */,
+				2C58D9930CDE88A1686439A43006303C /* EaseMob.h */,
+				0CC3CDA217540DDAF731379415614C42 /* EaseMob.h */,
+				832F7C9BB5A64A6964CFD5594ABFBCB0 /* EaseMob+CallService.h */,
+				1BDAFEDE8D0198A75E6388EE77F78665 /* EaseMobHeaders.h */,
+				E4C0140B18A36E2ED3AC537AFF136113 /* EaseMobHeaders.h */,
+				0DFF9A7BA09FBC674882541441192174 /* EMBuddy.h */,
+				2A8C559618774F37ABA0B7512818F02C /* EMCallManagerCallDelegate.h */,
+				3EC6EDC0AED2B057E1625AD33C66D060 /* EMCallManagerDelegate.h */,
+				AE2EC31196DFE932A150391E902965A1 /* EMCallServiceDefs.h */,
+				17E9AF591A11B15EA6F2FE3F208E233B /* EMCallSession.h */,
+				EFDC381B1DF362EFE99EB4BCF98CDB08 /* EMChatCommand.h */,
+				85AF6B59504BF5771AA48775E51E18D8 /* EMChatFile.h */,
+				6080218F29C5B31F26A0A33D53B61CCF /* EMChatImage.h */,
+				F7411CB9D8B9DA947AD56CF0B5605FCA /* EMChatLocation.h */,
+				BC9DD4930BA0AB68E4B0CB75885DE008 /* EMChatManagerBuddyDelegate.h */,
+				733FFE4870D3C514F818A36EF141B9EE /* EMChatManagerChatDelegate.h */,
+				DB10E5E662770F41CB7ECDC1CE3F6F60 /* EMChatManagerChatroomDelegate.h */,
+				234E432F1DBBF506047D18E8C8E7BBC3 /* EMChatManagerDefs.h */,
+				6D13808164BB1E96FDEFB2F968AE4ED0 /* EMChatManagerDelegate.h */,
+				B421D1A6F92DFA19443619BA669C57A3 /* EMChatManagerDelegateBase.h */,
+				FE609F895103A09DEF86311D4BCE72DB /* EMChatManagerEncryptionDelegate.h */,
+				EAC6F9BBDB1BD0937C7F455FD85D1E88 /* EMChatManagerGroupDelegate.h */,
+				2B77E6770913E4012ABA252559519197 /* EMChatManagerLoginDelegate.h */,
+				F5C1E624E589D15E5E384BD709CB757A /* EMChatManagerPushNotificationDelegate.h */,
+				98B29EEE9F730279EAAF586EB44C4F50 /* EMChatManagerUtilDelegate.h */,
+				8E49134D76B183C36262E01904077D60 /* EMChatroom.h */,
+				156E430D7D312195ED4960C03225175A /* EMChatText.h */,
+				E8D75A756B623E115AE782AAEA20BA68 /* EMChatVideo.h */,
+				11ABA307D365CF08C83D700C8AFEB8EF /* EMChatVoice.h */,
+				BB9A124733E9F88D04540B6C3F58B945 /* EMCommandMessageBody.h */,
+				80F3E8107C087A4B60BDA4CFE0CE0A6E /* EMConversation.h */,
+				C5B37EEFB4B56C3B60C3135CE08D0D18 /* EMCursorResult.h */,
+				3E297F03973B54686C3E415FB5930FA8 /* EMDeviceManagerDefs.h */,
+				67DABFCAD2D296302DDFF2DAEBF84D35 /* EMDeviceManagerDelegate.h */,
+				396750992308E35DC382D880953F61C9 /* EMDeviceManagerDelegateBase.h */,
+				1F3A179CA6E951531DA4585C5C592361 /* EMDeviceManagerNetworkDelegate.h */,
+				C2D59A679756FEB4DC373B983C287D9F /* EMError.h */,
+				B1E6BFBA7C90844E8B8A387743A41AA3 /* EMErrorDefs.h */,
+				64F398E172CD315E6B7A1D27CD844938 /* EMFileMessageBody.h */,
+				5E61E89F979168A555BA5691472C48E1 /* EMGroup.h */,
+				3D352B5E24419AB8C0C717EE86C92605 /* EMGroupManagerDefs.h */,
+				855728B15E3744BE18DCC5A43639FE26 /* EMGroupStyleSetting.h */,
+				1B367FCA84D2388DACFF24218DE2B1D5 /* EMImageMessageBody.h */,
+				B7B9F796ED23548ADB973AE2BAE8A9C5 /* EMLocationMessageBody.h */,
+				FB6DE3645546B80359C9665A1D901F8F /* EMMessage.h */,
+				7FE4FEFFBAD6DB222C847504B9D6F3C6 /* EMNetworkMonitorDefs.h */,
+				ED314CB0CC725AC5D13D6148FC5C7B0A /* EMPushManagerDefs.h */,
+				E3530E0DE5F603BCDB2CFA1EB4F8495A /* EMPushNotificationOptions.h */,
+				4E0F0500081B6FC7D40504210E5F1C50 /* EMReceipt.h */,
+				DA861D24E979D16E18E29AA3F10A3DFE /* EMReceiptBase.h */,
+				8F85A84D88D349449214C21507D313F0 /* EMRobot.h */,
+				8D8AEBF95F9F4A26F78DA27A00FAF7AE /* EMTextMessageBody.h */,
+				F93B932A19C60BA99C4CD2EB086C0A0C /* EMVideoMessageBody.h */,
+				63ED4F668324FDEE21B30454CB142843 /* EMVoiceMessageBody.h */,
+				17D6074EE14860F7DF6124932A86B16D /* ICallManager.h */,
+				5A5FFC50E49F596553D58D5693B52199 /* ICallManagerBase.h */,
+				C87F7ED6B0E45D2792D8314D526AC83C /* ICallManagerCall.h */,
+				53ED9CF6143B24E712119B9E06199BB1 /* IChatImageOptions.h */,
+				D13C77CEEBA8C0BB258D806458F7C9CE /* IChatManager.h */,
+				B1B0562125E073BA8CD8FC7957C2CB06 /* IChatManagerBase.h */,
+				BAB6F5A41EA952140C41D5423FBF773B /* IChatManagerBuddy.h */,
+				66B15C994868C842C9BE0FA439FEF809 /* IChatManagerChat.h */,
+				70360C8F56D9F9CB01ED1668602AD155 /* IChatManagerChatroom.h */,
+				EE9EBC31EC1D8FF3C087D0E6A888BE26 /* IChatManagerConversation.h */,
+				FBB74304ED5CDA702F564273F2DF89D9 /* IChatManagerDelegate.h */,
+				41D69FD571413A9FD21E5DEA7BA481F6 /* IChatManagerEncryption.h */,
+				9FDD3D17DDC1BDD8B0B1222A5C687AF5 /* IChatManagerGroup.h */,
+				14F83AC0169C2EF8553F548C98CB8BB4 /* IChatManagerLogin.h */,
+				5A6C11CAA657FB50E6EA8EC30F549060 /* IChatManagerPushNotification.h */,
+				31D23F8BC61B5C0A83BC053792DEE1F2 /* IChatManagerRobot.h */,
+				1E3B9231224044B577B6F1740C74C4B2 /* IChatManagerSettingOptions.h */,
+				A0AACCA4FE838B4CCFAA2A605EBA9A91 /* IChatManagerUtil.h */,
+				30F10C49E8BAAD669ABF030034C84278 /* IDeviceManager.h */,
+				C5405E2BFA1624D090F5403A7DB3CED2 /* IDeviceManagerBase.h */,
+				1020A3F7FC7E6DD7C1DD342CC8F39BB6 /* IDeviceManagerDelegate.h */,
+				4AEFE3B0BB49C87E0C6EAF26D450F6F5 /* IEMChatCryptor.h */,
+				EC5CA42E5820B2533E7B4B837F7C8941 /* IEMChatFile.h */,
+				D8FD9F0C0D522215EC1A6B2FB75A6708 /* IEMChatObject.h */,
+				A11F727EF92C26F305669C05C2D27E66 /* IEMChatProgressDelegate.h */,
+				7197FA4471B09CD5B187BF077027044D /* IEMFileMessageBody.h */,
+				D546D168A51A665268C24891D95B8571 /* IEMMessageBody.h */,
+				9280DF2AD182202BB8147250B15FC298 /* IOpenGLView.h */,
+				20F0FEDEBC3411040964A4E034C6080B /* OpenGLView20.h */,
+				1027F24CC2E772F1904C30A9739536BD /* Frameworks */,
+				E323B4D1298AF8BA14088FB008372E05 /* Resources */,
+			);
+			path = EaseMobSDK;
+			sourceTree = "<group>";
+		};
+		E323B4D1298AF8BA14088FB008372E05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9807E2C0D4A3E3F908F74878B8B11A05 /* EaseMob.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		F0F07DC53310DCD9126DD6506D4505F1 /* Support Files */ = {
+		F31FB56166D650DE4874129D0594A831 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
-				0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */,
-				4BF73B41DB9AB9D89EF148F2D37BBA08 /* KRVideoPlayer-dummy.m */,
-				FAC3000F2EDF25CAF63E3F9B2E04F864 /* KRVideoPlayer-prefix.pch */,
+				5615018563BE7BAD8377D5B27E791056 /* MJDictionaryCache.h */,
+				94F860E71BAB997DE6E28D82AF3A2700 /* MJDictionaryCache.m */,
+				412B7B3FDAB15E7C6D6BBF48FD1788C9 /* MJExtension.h */,
+				A861637D74B9650DF199D6D313E688E2 /* MJExtensionConst.h */,
+				3A752AE83375A751CDEDCF5AEE5C86D5 /* MJExtensionConst.m */,
+				D2471C3363DAF3F0070CD4E678831CA7 /* MJFoundation.h */,
+				BAA2359DE9879F495F7DA0BD122E1A71 /* MJFoundation.m */,
+				05C28985AB6DB0FDDFF6F8A588698764 /* MJProperty.h */,
+				398B4AFA95BB2B0F54EC03CEDD9D2288 /* MJProperty.m */,
+				218F11E8BDACF2258487DD5404DBDC19 /* MJPropertyKey.h */,
+				525DE0372DECA9CA05D594D26B0EC56A /* MJPropertyKey.m */,
+				D83091CE68045D49F17D66210803B5AF /* MJPropertyType.h */,
+				8E5BE3D4A942192440E9C47477D20304 /* MJPropertyType.m */,
+				9696E40B950F29A0F118728FA9BA54C6 /* NSObject+MJClass.h */,
+				E2779D24FE6CE476E2E600E94282F067 /* NSObject+MJClass.m */,
+				5E299F35FAB38C9C714D7DAA7B4D89DA /* NSObject+MJCoding.h */,
+				3F09BABADCC56FBB35B974E55FF6C5A3 /* NSObject+MJCoding.m */,
+				D66292D7A114F1691E6F27DEBCF64B5F /* NSObject+MJKeyValue.h */,
+				698FAA00975B400DE53C762012E2FF12 /* NSObject+MJKeyValue.m */,
+				225E5BB49568F1F51EEA170D7FB78E19 /* NSObject+MJProperty.h */,
+				9714B17B7292BACE6F09FA72C8D960DE /* NSObject+MJProperty.m */,
+				DB96BFC8EBD8F56AD4ED50CBD1A42FAD /* NSString+MJExtension.h */,
+				E94239E8712BC758ED12FF21624FDFFA /* NSString+MJExtension.m */,
+				589F43D30313DFD26DEACB2B39F9B36C /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/KRVideoPlayer";
-			sourceTree = "<group>";
-		};
-		F93B1876961E81C63231CDD484A082F9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4616B11222E1471337C2DDD94A212DD2 /* kr-video-player-close@2x.png */,
-				D3A2182A9A8FFF13AE18AF7AC19686B6 /* kr-video-player-close@3x.png */,
-				0080F9FA54ADCF507558CAF64CFFDA8F /* kr-video-player-fullscreen@2x.png */,
-				B2DA54B70F6046BCCAB9BDB97C1EE338 /* kr-video-player-fullscreen@3x.png */,
-				7F45FB672C825A252024846D9BFCED8B /* kr-video-player-pause@2x.png */,
-				9A09560709CBC13918FB782C0B3197BA /* kr-video-player-pause@3x.png */,
-				5083832BF056C7A9C11B78A4837D908E /* kr-video-player-play@2x.png */,
-				52A8A724501A624862D2BFA1A9F6E161 /* kr-video-player-play@3x.png */,
-				52BCC22221F5318FE3B485B998F924A9 /* kr-video-player-point@2x.png */,
-				AC315B2BABC6CD8BACFC54069BD4FC08 /* kr-video-player-point@3x.png */,
-				14BBA95DABC92D2B873A0C1C7FC2191F /* kr-video-player-shrinkscreen@2x.png */,
-				85B1B5655CC769B8E5723E2C625AA939 /* kr-video-player-shrinkscreen@3x.png */,
-			);
-			name = Resources;
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,6 +733,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CE23E179CD1F0088209DFA18D08F79F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AFABD28B2E5C3292603A36599055EA7 /* MJDictionaryCache.h in Headers */,
+				DBC399A4B8E6521B2A885EA52612BFB0 /* MJExtension.h in Headers */,
+				2EDB111B41EBA9F2B002DAD15CB26687 /* MJExtensionConst.h in Headers */,
+				DAD5C4333A7FA2DECFF4BEA4F17FEC6B /* MJFoundation.h in Headers */,
+				A044BDEEC463D3CB278C383FA8BABEC6 /* MJProperty.h in Headers */,
+				9734B73DB91553CC9279C5DEF98B973F /* MJPropertyKey.h in Headers */,
+				D34140627AA9906F84A524AB1A22748E /* MJPropertyType.h in Headers */,
+				28D5E64861C74DB483E72DE4E35E4AA0 /* NSObject+MJClass.h in Headers */,
+				10B5AA3FFC425BAFB7A81C4B1C19CC1A /* NSObject+MJCoding.h in Headers */,
+				11BD5AE4F92EFD5DB5772947204A678C /* NSObject+MJKeyValue.h in Headers */,
+				3CAB03CE944BBD5BD312744F4DC4ED0A /* NSObject+MJProperty.h in Headers */,
+				D4110838F297CB76E9BFABBC1463004B /* NSString+MJExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CB1A47A167D8B5C28A8E979BBCC242E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -683,36 +761,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF1C003613925663F17E023C73AF519C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EB4F27B76513AE918BA5AE0868E87C8 /* MBProgressHUD.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0D09DD266652B7FB61550AC1DA9E0962 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5E547C44A75903CF5FE45BEFF98A622 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				A0B66E5B3E1D25D77E010C79B67F5A7B /* Sources */,
-				614EDC1A3AC86763000FB4C30A448A5E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				106BC62468CA097C206D33482AAAFF16 /* PBXTargetDependency */,
-				836636FC8271DFEA18E1EA402F96A4F6 /* PBXTargetDependency */,
-				AA9D2A13C37C100FDE559D0CBC56587E /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = C71FB27CEA1FEF7F3CDCC621CB77DC1C /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		7DF7BD9F7CD81922DC3BEE5FFB1FE163 /* KRVideoPlayer-KRVideoPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E37A83E6D980363F68FC6E52F557C694 /* Build configuration list for PBXNativeTarget "KRVideoPlayer-KRVideoPlayer" */;
@@ -727,7 +778,7 @@
 			);
 			name = "KRVideoPlayer-KRVideoPlayer";
 			productName = "KRVideoPlayer-KRVideoPlayer";
-			productReference = 59F4F3CB3D0CAD147E1D644906ED26C9 /* KRVideoPlayer.bundle */;
+			productReference = DE57B53A67FF8151E57F1E6762F83FEF /* KRVideoPlayer.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		8BEF0DFF860C02FDB264264226C116DD /* KRVideoPlayer */ = {
@@ -745,7 +796,7 @@
 			);
 			name = KRVideoPlayer;
 			productName = KRVideoPlayer;
-			productReference = 7EC7BEE9EEBCD6751AED80E313061F6B /* libKRVideoPlayer.a */;
+			productReference = 875D4283D368B8C8413DD7B83C035D9D /* libKRVideoPlayer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		8F74D9EA91F4C43190670066BAC37D44 /* MJRefresh */ = {
@@ -762,24 +813,43 @@
 			);
 			name = MJRefresh;
 			productName = MJRefresh;
-			productReference = 59D14290E9B1AF2026EDD23D8B4CAD71 /* libMJRefresh.a */;
+			productReference = B4EB381E135C768300944BC30440F8F4 /* libMJRefresh.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */ = {
+		924E8A068E76CD38FE8390D639621F4C /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2F5671C4613023EE94A2E62DA06031D /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
+			buildConfigurationList = 8168A73A4414A0F41F60F09FB7D9F56E /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				098439AB598DDF1AF51146A2E3E2E562 /* Sources */,
-				E81C08F5CCC0A5FBFF4559E2173164C7 /* Frameworks */,
-				EF1C003613925663F17E023C73AF519C /* Headers */,
+				843682E13CED89AA16FC9CE7981A65AD /* Sources */,
+				5529ED5F391B1F2873EE57E07B0B466E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154BBE882DD0E37EB3B7050B0F604208 /* PBXTargetDependency */,
+				58EB42A2B8DB1A35280D56558B3111D8 /* PBXTargetDependency */,
+				7D214D89774A7025BB9D652870FE12AF /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 556FBF5B486A55669F1BA9D0DCD14F5C /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B23B3D15FFC0FC9893968F478086D58D /* MJExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3755813E806991794D335BE59E0D5786 /* Build configuration list for PBXNativeTarget "MJExtension" */;
+			buildPhases = (
+				38FE856E1AE81A94E44A9DAE88AEC8F9 /* Sources */,
+				5A6B1E07912E48C49E2E6E59701001AE /* Frameworks */,
+				7CE23E179CD1F0088209DFA18D08F79F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MBProgressHUD;
-			productName = MBProgressHUD;
-			productReference = 9F063094EB36393EBEB8EDBD681AE6EE /* libMBProgressHUD.a */;
+			name = MJExtension;
+			productName = MJExtension;
+			productReference = 6AA4DB9C2EC3408AA3D99A73ED436767 /* libMJExtension.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -799,15 +869,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8C6D1D4786A025F7EC00F95D591B5614 /* Products */;
+			productRefGroup = 2F7605A9A9F65B322A3E382B9B141C1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8BEF0DFF860C02FDB264264226C116DD /* KRVideoPlayer */,
 				7DF7BD9F7CD81922DC3BEE5FFB1FE163 /* KRVideoPlayer-KRVideoPlayer */,
-				FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */,
+				B23B3D15FFC0FC9893968F478086D58D /* MJExtension */,
 				8F74D9EA91F4C43190670066BAC37D44 /* MJRefresh */,
-				0D09DD266652B7FB61550AC1DA9E0962 /* Pods */,
+				924E8A068E76CD38FE8390D639621F4C /* Pods */,
 			);
 		};
 /* End PBXProject section */
@@ -835,15 +905,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		098439AB598DDF1AF51146A2E3E2E562 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC214077677D4F02E03C6C85F774E028 /* MBProgressHUD-dummy.m in Sources */,
-				82FC12F67E83874B93592218E9FB4CA0 /* MBProgressHUD.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		346003011339A97DDE1A394DF0A3BB91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -870,18 +931,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38FE856E1AE81A94E44A9DAE88AEC8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6B4FB5A92E1EEDAFC98E6DD1E81CA7 /* MJDictionaryCache.m in Sources */,
+				C3E942A24436AFAE47C0F265F0CA369A /* MJExtension-dummy.m in Sources */,
+				0C2B33BE64F0CF1C6ED2B2200953568E /* MJExtensionConst.m in Sources */,
+				BFE1D87E9D4D58C95CEAF1737F70C956 /* MJFoundation.m in Sources */,
+				E5FDED1F3CFC60D892F02046B8F4FB91 /* MJProperty.m in Sources */,
+				764A917183297280E7F02642D7C8047C /* MJPropertyKey.m in Sources */,
+				630E7EB6AA410EB4E3F0AE39B187CF52 /* MJPropertyType.m in Sources */,
+				5E6AD069AEFAE5E8E3538B532F09674E /* NSObject+MJClass.m in Sources */,
+				14F67635944C4C8A9A87FDD7CD101A2A /* NSObject+MJCoding.m in Sources */,
+				C3EB1AF50203F4E383BB02AA9EAA2539 /* NSObject+MJKeyValue.m in Sources */,
+				5CB847381DE56E2B338F95A8FC79E620 /* NSObject+MJProperty.m in Sources */,
+				E9FF6786EDCF303B455D928C19A94B23 /* NSString+MJExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		843682E13CED89AA16FC9CE7981A65AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583FC02FF9E1982D4BCDD906F6D598D8 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98F363BC81C4627DFD4F37BD9FE8DE41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0B66E5B3E1D25D77E010C79B67F5A7B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C74157B507EF5B152D633AD150F523F /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,23 +978,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		106BC62468CA097C206D33482AAAFF16 /* PBXTargetDependency */ = {
+		154BBE882DD0E37EB3B7050B0F604208 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KRVideoPlayer;
 			target = 8BEF0DFF860C02FDB264264226C116DD /* KRVideoPlayer */;
-			targetProxy = 0887F2E747F4ED153496CDADBB9A4EAB /* PBXContainerItemProxy */;
+			targetProxy = 246CFD24EF28DD87B157A672D83E551E /* PBXContainerItemProxy */;
 		};
-		836636FC8271DFEA18E1EA402F96A4F6 /* PBXTargetDependency */ = {
+		58EB42A2B8DB1A35280D56558B3111D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */;
-			targetProxy = F9F4DA2F727E0422BEE78EDD0AF08C69 /* PBXContainerItemProxy */;
+			name = MJExtension;
+			target = B23B3D15FFC0FC9893968F478086D58D /* MJExtension */;
+			targetProxy = 47FFA73B52413DB1D485356C3B5CC415 /* PBXContainerItemProxy */;
 		};
-		AA9D2A13C37C100FDE559D0CBC56587E /* PBXTargetDependency */ = {
+		7D214D89774A7025BB9D652870FE12AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MJRefresh;
 			target = 8F74D9EA91F4C43190670066BAC37D44 /* MJRefresh */;
-			targetProxy = 4C562106AFD68B69F5D3FA5A7BF1FDA7 /* PBXContainerItemProxy */;
+			targetProxy = ECFC53A64F8C2AFB818FE16D1D04F02F /* PBXContainerItemProxy */;
 		};
 		F8B20825DB696B6B1F0AC509FFBD5A75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -925,27 +1005,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A0C6E22D01F46ECC9AC2DC8E95E60F8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41DBF42F71923DB2916E44C82EF97A6D /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		0D9ED45EF90E8FF84C7068997A99EEC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */;
+			baseConfigurationReference = 93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/KRVideoPlayer/KRVideoPlayer-prefix.pch";
@@ -961,12 +1023,46 @@
 			};
 			name = Debug;
 		};
-		30933579AEA35D949484F4EDE0157A9A /* Release */ = {
+		2A2C4AABCCD63612E915307B4D2CB94E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41DBF42F71923DB2916E44C82EF97A6D /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2A9FE6CB88AF4C27D1D2D7205F5EB6CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		380B74FE9C2CFDC1A2599821DEB12D50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1363218D10E29DBAB5041067FF00A64F /* MJExtension.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MJExtension/MJExtension-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -979,9 +1075,27 @@
 			};
 			name = Release;
 		};
+		48FC3054C9F8F5B0437A5C6E19EC593A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1363218D10E29DBAB5041067FF00A64F /* MJExtension.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MJExtension/MJExtension-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		5040A2DF9407F9016B4E8CD6C3D59FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */;
+			baseConfigurationReference = 93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/KRVideoPlayer/KRVideoPlayer-prefix.pch";
@@ -999,7 +1113,7 @@
 		};
 		801420948A9B25C1498F8D1B53414548 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */;
+			baseConfigurationReference = 93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = KRVideoPlayer;
@@ -1009,26 +1123,9 @@
 			};
 			name = Debug;
 		};
-		82A5EA1C9CE147058626E0FCB6FF5279 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		8426D51F3559888DD5AA5EBE2CEC9FBD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0950596E92A4EFFC9054FEEAD212147C /* KRVideoPlayer.xcconfig */;
+			baseConfigurationReference = 93D6E28E85ADF61E9AE8900986E29E34 /* KRVideoPlayer.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = KRVideoPlayer;
@@ -1040,7 +1137,7 @@
 		};
 		9AEDE683DB022320BB0B106F7B209623 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C02AED73C5025C6C9A1B6D7AEA71FE73 /* MJRefresh.xcconfig */;
+			baseConfigurationReference = 71E8FE5AE0C6B5E74EF311EE404059BE /* MJRefresh.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
@@ -1097,7 +1194,7 @@
 		};
 		D84D71D7016D76635DED84CF4CB3EF09 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C02AED73C5025C6C9A1B6D7AEA71FE73 /* MJRefresh.xcconfig */;
+			baseConfigurationReference = 71E8FE5AE0C6B5E74EF311EE404059BE /* MJRefresh.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
@@ -1108,23 +1205,6 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		DCBE796011B07E5A972F37BF5479EFE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -1185,6 +1265,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3755813E806991794D335BE59E0D5786 /* Build configuration list for PBXNativeTarget "MJExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48FC3054C9F8F5B0437A5C6E19EC593A /* Debug */,
+				380B74FE9C2CFDC1A2599821DEB12D50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3D32356147D239362A3FF7DCAB918205 /* Build configuration list for PBXNativeTarget "MJRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1194,11 +1283,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5E547C44A75903CF5FE45BEFF98A622 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		8168A73A4414A0F41F60F09FB7D9F56E /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82A5EA1C9CE147058626E0FCB6FF5279 /* Debug */,
-				DCBE796011B07E5A972F37BF5479EFE3 /* Release */,
+				2A9FE6CB88AF4C27D1D2D7205F5EB6CE /* Debug */,
+				2A2C4AABCCD63612E915307B4D2CB94E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1208,15 +1297,6 @@
 			buildConfigurations = (
 				801420948A9B25C1498F8D1B53414548 /* Debug */,
 				8426D51F3559888DD5AA5EBE2CEC9FBD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F5671C4613023EE94A2E62DA06031D /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0A0C6E22D01F46ECC9AC2DC8E95E60F8 /* Debug */,
-				30933579AEA35D949484F4EDE0157A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

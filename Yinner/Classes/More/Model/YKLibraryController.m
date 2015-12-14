@@ -1,4 +1,4 @@
-    //
+//
 //  YKLocLibController.m
 //  Yinner
 //
@@ -13,9 +13,9 @@
 #import "YKBrowseViewController.h"
 
 @interface YKLibraryController ()
-
-@property (nonatomic,assign) NSArray *dataSource;
-
+{
+    NSArray *_dataSource;
+}
 @end
 
 @implementation YKLibraryController
@@ -25,57 +25,41 @@
     [super viewDidLoad];
     
     [self setupSetting];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     
     [self reloadNewDataSource];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)dealloc {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"database" object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"removeRepeat" object:nil];
-}
 
 #pragma mark - Private Method
 
 - (void)setupSetting {
-    //注册接收消息
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteRepeatDatabaseWithPath:) name:@"removeRepeat" object:nil];
 }
 
 - (void)reloadNewDataSource
 {
     YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
     
-    self.dataSource = [manager queryEntityWithEntityName:@"Media"];
+    _dataSource = [manager queryEntityWithEntityName:@"Media"];
+    
+    if (!_dataSource) {
+        _dataSource = [NSArray array];
+    }
 
     [self.tableView reloadData];
 }
 
-//删除覆盖掉的数据库
-- (void)deleteRepeatDatabaseWithPath:(NSNotification *)notification
-{
-    NSLog(@"需要覆盖掉的路径为：%@",notification.object);
-    for (NSManagedObject *entity in self.dataSource) {
-        if ([[entity valueForKey:@"name"] isEqualToString:notification.object]) {
-            [[YKCoreDataManager sharedYKCoreDataManager] deleteDataWithEntity:entity];
-            [self reloadNewDataSource];
-            NSLog(@"删除");
-            NSLog(@"时间:%@",[entity valueForKey:@"time"]);
-        }
-    }
-}
-
 #pragma mark - DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    [tableView tableViewDisplayWithEmptyMsg:@"暂时没有本地的配音哦~" ifNecessaryForDataCount:self.dataSource.count];
-    return self.dataSource.count;
+    [tableView tableViewDisplayWithEmptyMsg:@"暂时没有本地的配音哦~" ifNecessaryForDataCount:_dataSource.count];
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"libCell";
+    
     YKLibraryCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
@@ -83,7 +67,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"YKLibraryCell" owner:nil options:nil] lastObject];
     }
     
-    NSManagedObject *entity = self.dataSource[indexPath.row];
+    NSManagedObject *entity = _dataSource[indexPath.row];
     
     cell.title.text = [entity valueForKey:@"name"];
     
@@ -103,32 +87,40 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        
-        
-//        NSManagedObject *entity = self.dataSource[indexPath.row];
-//        
+        NSManagedObject *obj = [_dataSource objectAtIndex:indexPath.row];
+
         YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
         
-        [manager queryAllDataBase];
-//
-//        //删除本地文件
-//        NSString *path = [entity valueForKey:@"url"];
-//        
-//        NSLog(@"删除的路径:%@",path);
-//        
-//        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
-//        
-//        [manager deleteDataWithEntity:entity];
-//        
-//        [self reloadNewDataSource];
+        NSString *url = [obj valueForKey:@"url"];
+        
+        NSError *error = nil;
+        
+        [[NSFileManager defaultManager] removeItemAtPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:url] error:&error];
+        
+        if (!error) {
+            
+            [manager deleteDataWithEntity:obj];
+            
+            YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
+            
+            _dataSource = [manager queryEntityWithEntityName:@"Media"];
+            
+            if (!_dataSource) {
+                _dataSource = [NSArray array];
+            }
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }else {
+            debugLog(@"%@",error.description);
+        }
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    YKBrowseViewController *vc = [YKBrowseViewController browseViewcontrollerWithUrl:[NSURL URLWithString:[MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"]]];
+    NSManagedObject *model = _dataSource[indexPath.row];
     
-    debugLog(@"%@",[NSURL URLWithString:[MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"]]);
+    YKBrowseViewController *vc = [YKBrowseViewController browseViewcontrollerWithUrl:[NSURL fileURLWithPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:[model valueForKey:@"url"]]]];
     
     [self presentViewController:vc animated:YES completion:^{
         
@@ -144,11 +136,6 @@
 }
 
 #pragma mark - Property
-- (NSArray *)dataSource {
-    if (!_dataSource) {
-        _dataSource = [NSArray array];
-    }
-    return _dataSource;
-}
+
 
 @end

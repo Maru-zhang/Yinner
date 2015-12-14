@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,17 +13,9 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="214" height="186"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武媚娘传奇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-hq-MOT">
-                        <rect key="frame" x="8" y="123" width="198" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="5uo-Oe-dug"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browse_fav" translatesAutoresizingMaskIntoConstraints="NO" id="RDd-ZN-bGq" userLabel="fav">
                         <rect key="frame" x="8" y="163" width="15" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="SrC-Vz-nUm"/>
                             <constraint firstAttribute="width" constant="15" id="sBr-D5-XRu"/>
@@ -30,6 +23,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-UX-cax">
                         <rect key="frame" x="22" y="163" width="40" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="NXA-fi-ro2"/>
                             <constraint firstAttribute="height" constant="15" id="pLb-u1-a5t"/>
@@ -40,6 +34,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="browse_comment" translatesAutoresizingMaskIntoConstraints="NO" id="Tyy-ED-QCU">
                         <rect key="frame" x="55" y="163" width="15" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="EVY-Um-3py"/>
                             <constraint firstAttribute="height" constant="15" id="pwJ-6S-whV"/>
@@ -47,9 +42,11 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wuneiniang" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-Dk-Z6B">
                         <rect key="frame" x="8" y="8" width="198" height="113"/>
+                        <animations/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-02-24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRn-eA-6an">
                         <rect key="frame" x="141" y="163" width="65" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="ASq-Rl-pXq"/>
                             <constraint firstAttribute="height" constant="15" id="riu-he-xt1"/>
@@ -60,6 +57,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="865" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chJ-mC-WEO">
                         <rect key="frame" x="72" y="163" width="50" height="15"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="ACj-av-Bxv"/>
                             <constraint firstAttribute="height" constant="15" id="BXB-vK-Xyn"/>
@@ -68,9 +66,21 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武媚娘传奇" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-hq-MOT">
+                        <rect key="frame" x="8" y="123" width="198" height="39"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="39" id="5uo-Oe-dug"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
             <constraints>
                 <constraint firstItem="wCJ-hq-MOT" firstAttribute="top" secondItem="wTp-Dk-Z6B" secondAttribute="bottom" constant="2" id="0ry-h4-j5m"/>
                 <constraint firstAttribute="bottom" secondItem="RDd-ZN-bGq" secondAttribute="bottom" constant="8" id="16S-Hi-5HJ"/>
@@ -83,7 +93,7 @@
                 <constraint firstItem="Tyy-ED-QCU" firstAttribute="leading" secondItem="aYw-UX-cax" secondAttribute="trailing" constant="-7" id="Gep-jF-1vR"/>
                 <constraint firstAttribute="bottom" secondItem="chJ-mC-WEO" secondAttribute="bottom" constant="8" id="Kl9-zC-yTl"/>
                 <constraint firstItem="wCJ-hq-MOT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="R2g-zH-czc"/>
-                <constraint firstItem="RRn-eA-6an" firstAttribute="top" secondItem="wCJ-hq-MOT" secondAttribute="bottom" constant="16" id="Sy7-xy-Hrt"/>
+                <constraint firstItem="RRn-eA-6an" firstAttribute="top" secondItem="wCJ-hq-MOT" secondAttribute="bottom" constant="1" id="Sy7-xy-Hrt"/>
                 <constraint firstItem="RDd-ZN-bGq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="T78-mC-oBj"/>
                 <constraint firstAttribute="bottom" secondItem="Tyy-ED-QCU" secondAttribute="bottom" constant="8" id="Xxv-AV-M4f"/>
                 <constraint firstItem="aYw-UX-cax" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="22" id="YdR-B8-G7c"/>

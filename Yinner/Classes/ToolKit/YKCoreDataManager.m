@@ -109,6 +109,10 @@ singleton_implementation(YKCoreDataManager)
     
     NSArray *result = [_context executeFetchRequest:request error:&error];
     
+    if (error) {
+        debugLog(@"%@",error.description);
+    }
+    
     return result;
 }
 

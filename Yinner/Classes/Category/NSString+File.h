@@ -10,7 +10,9 @@
 
 @interface NSString (File)
 
++ (NSString *)getMediaPathWithModelURL:(NSString *)url;
 - (NSString *)fileNameAppend:(NSString *)append;
 - (NSString *)replaceExtension:(NSString *)extension;
+
 
 @end

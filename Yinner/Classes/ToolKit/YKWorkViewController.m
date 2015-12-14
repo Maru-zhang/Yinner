@@ -377,14 +377,13 @@ singleton_implementation(YKWorkViewController)
     
     bool yes = YES;
     // 是否存在该文件夹，如果不存在，那么创建
-    if (![[NSFileManager defaultManager] fileExistsAtPath:MY_MEDIA_DIR isDirectory:&yes]) {
-        debugLog(@"新建文件夹");
-        [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR withIntermediateDirectories:YES attributes:nil error:nil];
+    if (![[NSFileManager defaultManager] fileExistsAtPath: MY_MEDIA_DIR_STR isDirectory:&yes]) {
+        debugLog(@"新建文件夹-%@",MY_MEDIA_DIR.absoluteString);
+        [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR_STR withIntermediateDirectories:NO attributes:nil error:nil];
     }
     
-
     //创建保存路径
-    NSString *myPathDocs =  [MY_MEDIA_DIR stringByAppendingPathComponent:@"example.mov"];
+    NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%f_%@",[[NSDate date] timeIntervalSinceNow],[videoURL lastPathComponent]]];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
     
     debugLog(@"%@",[url filePathURL]);
@@ -397,36 +396,35 @@ singleton_implementation(YKWorkViewController)
     
     //覆盖本地文件并且更新数据库
     [[NSFileManager defaultManager] removeRepeatFileWithPath:myPathDocs];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeRepeat" object:[NSString getFileNameWithPath:myPathDocs]];
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     
     //进行导出视频的操作
     [export exportAsynchronouslyWithCompletionHandler:^{
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+
         // 保存数据库
-        [self saveDatabaseWithURL:myPathDocs];
+        YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
+        
+        // 赋值
+        model.cover = myPathDocs;
+        model.name = [[videoURL lastPathComponent] stringByDeletingPathExtension];
+        model.origin = @"音控";
+        model.time = [[NSDate date] getCurrentTime];
+        model.titleurl = [url lastPathComponent];
+        model.url = [url lastPathComponent];
+        
+        // 开始存储数据
+        YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
+        [manager insertEntityWithLocationMediaModel:model];
         
         // 合成完毕之后的操作
         completion();
         
     }];
-}
-
-#pragma mark 保存数据至本地数据库
-- (void)saveDatabaseWithURL:(NSString *)url
-{
-    YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
-    
-    model.cover = url;
-    model.name = [[url lastPathComponent] stringByDeletingPathExtension];
-    model.origin = @"音控";
-    model.time = [[NSDate date] getCurrentTime];
-    model.titleurl = url;
-    model.url = url;
-    
-    //开始存储数据
-    YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
-    [manager insertEntityWithLocationMediaModel:model];
-    [manager queryAllDataBase];
 }
 
 #pragma mark 按钮点击事件
@@ -500,6 +498,7 @@ singleton_implementation(YKWorkViewController)
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *sessionError;
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    
     if(session == nil)
         NSLog(@"Error creating session: %@", [sessionError description]);
     else
@@ -531,9 +530,7 @@ singleton_implementation(YKWorkViewController)
         NSLog(@"判断");
         return;
     }
-    
-    NSLog(@"%d",_watchModel);
-    
+
     //判断是否已经录音完成
     if (self.alreadyMrege) {
         [_videoPlayer dismiss];
@@ -543,7 +540,7 @@ singleton_implementation(YKWorkViewController)
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前配音吗？" preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         [_videoPlayer dismiss];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];

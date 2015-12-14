@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface YKBrowseViewCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *browseImage;
+@property (weak, nonatomic) IBOutlet UILabel *browseTitle;
+@property (weak, nonatomic) IBOutlet UILabel *browseFavourite;
+@property (weak, nonatomic) IBOutlet UILabel *browseComment;
+@property (weak, nonatomic) IBOutlet UILabel *browseTime;
 @end

@@ -9,6 +9,10 @@
 
 
 
-#define DOCUMRNT_DIR [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#define DOCUMRNT_DIR [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject]
 
-#define MY_MEDIA_DIR [DOCUMRNT_DIR stringByAppendingPathComponent:@"My_Media"]
+#define DOCUMENT_DIR_STR [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+
+#define MY_MEDIA_DIR [DOCUMRNT_DIR URLByAppendingPathComponent:@"My_Media"]
+
+#define MY_MEDIA_DIR_STR [DOCUMENT_DIR_STR stringByAppendingPathComponent:@"My_Media"]
