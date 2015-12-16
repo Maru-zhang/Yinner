@@ -59,8 +59,7 @@
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"];
     
-    YKWorkViewController *player = [YKWorkViewController WorkViewControllerWithURL:url];
-    
+    YKWorkViewController *player = [[YKWorkViewController alloc] initWithURL:url];
     //关闭观赏模式
     player.watchModel = NO;
     

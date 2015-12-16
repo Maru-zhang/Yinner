@@ -24,23 +24,19 @@ typedef void(^mergeMediaComplete)();
     NSMutableArray *_locationArray;
     NSMutableDictionary *_subTitleArray;
     NSMutableArray *_subTitleTimeArray;
-    NSTimer *_timeManager;
     int _currentTime;
 }
+@property (nonatomic,weak) NSTimer *timeManager;
 @end
 
 @implementation YKWorkViewController
 
-singleton_implementation(YKWorkViewController)
-
-#pragma mark - 工场方法
-+ (YKWorkViewController *)WorkViewControllerWithURL:(NSURL *)url
-{
-    YKWorkViewController *controller = [YKWorkViewController sharedYKWorkViewController];
-    
-    controller.videoURL = url;
-    
-    return controller;
+#pragma mark - 构造方法
+- (instancetype)initWithURL:(NSURL *)url {
+    if (self = [super init]) {
+        self.videoURL = url;
+    }
+    return self;
 }
 
 #pragma mark - life cycle
@@ -62,6 +58,16 @@ singleton_implementation(YKWorkViewController)
     
     [self.videoPlayer hiddenControlButton];
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.timeManager invalidate];
+}
+
+- (void)dealloc {
+    debugLog(@"销毁了");
 }
 
 #pragma mark - autolayout
@@ -255,49 +261,6 @@ singleton_implementation(YKWorkViewController)
     [_recorder stop];
     
     [self pauseTimeManager];
-}
-
-#pragma mark load subtitle
-- (void)loadSubTitleWithURL:(NSURL *)url
-{
-    _subTitleArray = [NSMutableDictionary dictionary];
-    _subTitleTimeArray = [NSMutableArray array];
-    
-    NSURL *testURL = [[NSBundle mainBundle] URLForResource:@"zimu" withExtension:@"srt"];
-    
-    NSError *error = nil;
-    NSString *sourceString = [NSString stringWithContentsOfURL:testURL encoding:NSUTF8StringEncoding error:&error];
-    
-    NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
-    
-    //加载时间数组
-    for (int i = 0; i < stringArray.count;i++) {
-        if ((i - 1) % 4 == 0) {
-            
-            NSString *temp = stringArray[i];
-            
-            NSString *result = [temp substringWithRange:NSMakeRange(3, 5)];
-            
-            [_subTitleTimeArray addObject:result];
-        }
-    }
-    
-    NSMutableArray *temp = [NSMutableArray array];
-    
-    //加载字幕数组临时
-    for (int i = 0; i < stringArray.count;i++) {
-        if ((i - 2) % 4 == 0) {
-            [temp addObject:stringArray[i]];
-        }
-    }
-    
-    //加载字幕字典
-    for (int i = 0; i < _subTitleTimeArray.count; i++) {
-        [_subTitleArray setObject:temp[i] forKey:_subTitleTimeArray[i]];
-    }
-    
-    NSLog(@"测试：%@",stringArray);
-    NSLog(@"时间测试:%@",_subTitleTimeArray);
 }
 
 #pragma mark mrege video&audio
@@ -545,6 +508,49 @@ singleton_implementation(YKWorkViewController)
 - (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
 {
     NSLog(@"出错");
+}
+
+#pragma mark load subtitle
+- (void)loadSubTitleWithURL:(NSURL *)url
+{
+    _subTitleArray = [NSMutableDictionary dictionary];
+    _subTitleTimeArray = [NSMutableArray array];
+    
+    NSURL *testURL = [[NSBundle mainBundle] URLForResource:@"zimu" withExtension:@"srt"];
+    
+    NSError *error = nil;
+    NSString *sourceString = [NSString stringWithContentsOfURL:testURL encoding:NSUTF8StringEncoding error:&error];
+    
+    NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
+    
+    //加载时间数组
+    for (int i = 0; i < stringArray.count;i++) {
+        if ((i - 1) % 4 == 0) {
+            
+            NSString *temp = stringArray[i];
+            
+            NSString *result = [temp substringWithRange:NSMakeRange(3, 5)];
+            
+            [_subTitleTimeArray addObject:result];
+        }
+    }
+    
+    NSMutableArray *temp = [NSMutableArray array];
+    
+    //加载字幕数组临时
+    for (int i = 0; i < stringArray.count;i++) {
+        if ((i - 2) % 4 == 0) {
+            [temp addObject:stringArray[i]];
+        }
+    }
+    
+    //加载字幕字典
+    for (int i = 0; i < _subTitleTimeArray.count; i++) {
+        [_subTitleArray setObject:temp[i] forKey:_subTitleTimeArray[i]];
+    }
+    
+    NSLog(@"测试：%@",stringArray);
+    NSLog(@"时间测试:%@",_subTitleTimeArray);
 }
 
 #pragma mark 关于TimeManager的业务逻辑

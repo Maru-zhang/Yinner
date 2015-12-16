@@ -49,7 +49,7 @@
 {
     
     _dock = [[YKDock alloc] initWithFrame:self.tabBar.frame];
-    //添加item
+    // 添加item
     [_dock addDockItemWithIcon:@"tabbar_home.png" title:@"首页"];
     [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
     [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"音库"];

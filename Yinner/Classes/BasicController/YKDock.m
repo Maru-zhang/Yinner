@@ -50,17 +50,17 @@
     
     [self addSubview:dockItem];
     
-    //设置item的文字
+    // 设置item的文字
     [dockItem setTitle:title forState:UIControlStateNormal];
 
-    //设置item的图片
+    // 设置item的图片
     [dockItem setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
     [dockItem setImage:[UIImage imageNamed:[name fileNameAppend:@"_selected"]] forState:UIControlStateSelected];
     
-    //添加item的监听方法
+    // 添加item的监听方法
     [dockItem addTarget:self action:@selector(dockItemClick:) forControlEvents:UIControlEventTouchDown];
     
-    //调整
+    // 调整
     [self adjustDockItemPosition];
 }
 
@@ -84,18 +84,21 @@
         
     }
     
-    //设置初始的点击位置
+    // 设置初始的点击位置
     self.selectedIndex = 0;
 }
 
 #pragma mark - DockItem点击事件
 -(void)dockItemClick:(YKDockItem *)dockItem
 {
-    _currentItem.selected = NO;
-    
-    _currentItem = dockItem;
-    
-    _currentItem.selected = YES;
+    if (dockItem.tag != 1) {
+        
+        _currentItem.selected = NO;
+        
+        _currentItem = dockItem;
+        
+        _currentItem.selected = YES;
+    }
     
     if (_itemClickBlock) {
         _itemClickBlock((int)dockItem.tag);
@@ -105,7 +108,7 @@
 #pragma mark - 重写selectedIndex的set方法
 -(void)setSelectedIndex:(int)selectedIndex
 {
-    //过滤条件
+    // 过滤条件
     if (selectedIndex < 0 || selectedIndex >= self.subviews.count) {
         return;
     }

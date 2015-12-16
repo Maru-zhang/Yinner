@@ -59,6 +59,10 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_seletView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_reuseableView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
 }
 
+- (void)dealloc {
+    debugLog(@"dealloc");
+}
+
 #pragma mark - setup
 - (void)setupView
 {
@@ -230,13 +234,11 @@ static NSString *const reuseIdentifier = @"reuseCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"];
-    
     NSURL *url = [NSURL URLWithString:@"http://video2.peiyinxiu.com/2015121223577084db4a830c2df2.mp4"];
     
-    YKBrowseViewController *browseVC = [YKBrowseViewController browseViewcontrollerWithUrl:url];
+    YKBrowseViewController *brwoseVC = [[YKBrowseViewController alloc] initWithURL:url];
     
-    [self presentViewController:browseVC animated:YES completion:nil];
+    [self presentViewController:brwoseVC animated:YES completion:nil];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

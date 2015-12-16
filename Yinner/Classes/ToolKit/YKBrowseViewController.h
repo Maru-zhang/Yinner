@@ -15,11 +15,9 @@
 
 @interface YKBrowseViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
-singleton_interface(YKBrowseViewController)
-
 @property (nonatomic,strong) NSURL *videoURL;
 @property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
 
-+ (YKBrowseViewController *)browseViewcontrollerWithUrl:(NSURL *)url;
+- (instancetype)initWithURL:(NSURL *)url;
 
 @end

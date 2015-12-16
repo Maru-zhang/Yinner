@@ -88,32 +88,28 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        NSManagedObject *obj = [_dataSource objectAtIndex:indexPath.row];
-
         YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
         
+        NSManagedObject *obj = [_dataSource objectAtIndex:indexPath.row];
+
         NSString *url = [obj valueForKey:@"url"];
         
         NSError *error = nil;
         
         [[NSFileManager defaultManager] removeItemAtPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:url] error:&error];
         
-        if (!error) {
-            
-            [manager deleteDataWithEntity:obj];
-            
-            YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
-            
-            _dataSource = [manager queryEntityWithEntityName:@"Media"];
-            
-            if (!_dataSource) {
-                _dataSource = [NSArray array];
-            }
-            
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        }else {
+        if (error) {
             debugLog(@"%@",error.description);
         }
+        [manager deleteDataWithEntity:obj];
+        
+        _dataSource = [manager queryEntityWithEntityName:@"Media"];
+        
+        if (!_dataSource) {
+            _dataSource = [NSArray array];
+        }
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -121,7 +117,7 @@
     
     NSManagedObject *model = _dataSource[indexPath.row];
     
-    YKBrowseViewController *vc = [YKBrowseViewController browseViewcontrollerWithUrl:[NSURL fileURLWithPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:[model valueForKey:@"url"]]]];
+    YKBrowseViewController *vc = [[YKBrowseViewController alloc] initWithURL:[NSURL fileURLWithPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:[model valueForKey:@"url"]]]];
     
     [self presentViewController:vc animated:YES completion:^{
         

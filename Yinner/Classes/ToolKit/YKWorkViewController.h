@@ -21,8 +21,6 @@
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate,UITableViewDataSource,UITableViewDelegate>
 
-singleton_interface(YKWorkViewController)
-
 /** 观看模式 */
 @property (nonatomic) BOOL watchModel;
 @property (nonatomic) BOOL alreadyMrege;
@@ -30,6 +28,6 @@ singleton_interface(YKWorkViewController)
 @property (nonatomic,strong) NSURL *videoURL;
 @property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
 
-+ (YKWorkViewController *)WorkViewControllerWithURL:(NSURL *)url;
+- (instancetype)initWithURL:(NSURL *)url;
 
 @end

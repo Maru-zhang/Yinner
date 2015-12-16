@@ -19,7 +19,13 @@
 
 @implementation YKBrowseViewController
 
-singleton_implementation(YKBrowseViewController)
+#pragma mark - 构造方法
+- (instancetype)initWithURL:(NSURL *)url {
+    if (self == [super init]) {
+        self.videoURL = url;
+    }
+    return self;
+}
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
@@ -39,6 +45,12 @@ singleton_implementation(YKBrowseViewController)
     [self playVideoWithURL:self.videoURL];
     
     [self.videoPlayer hiddenCloseButton];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.videoPlayer play];
 }
 
 
@@ -108,17 +120,6 @@ singleton_implementation(YKBrowseViewController)
                                                           attribute:NSLayoutAttributeHeight
                                                          multiplier:1
                                                            constant:-self.view.frame.size.height + 90]];
-    
-}
-
-#pragma mark - 工厂方法
-+ (YKBrowseViewController *)browseViewcontrollerWithUrl:(NSURL *)url
-{
-    YKBrowseViewController *browseVC = [YKBrowseViewController sharedYKBrowseViewController];
-    
-    browseVC.videoURL = url;
-    
-    return browseVC;
     
 }
 

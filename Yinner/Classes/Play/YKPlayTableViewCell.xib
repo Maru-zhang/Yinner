@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -11,44 +12,43 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-40" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-Pe-IMQ">
                         <rect key="frame" x="8" y="5" width="60" height="60"/>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="YlE-N1-cwA"/>
-                            <constraint firstAttribute="width" constant="60" id="m6f-j3-rBG"/>
+                            <constraint firstAttribute="height" constant="60" id="dUO-qB-I1v"/>
+                            <constraint firstAttribute="width" constant="60" id="kQO-72-9Ho"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="YlE-N1-cwA"/>
-                            </mask>
-                        </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-IC-2Gy">
-                        <rect key="frame" x="184" y="24" width="42" height="21"/>
+                        <rect key="frame" x="253" y="24" width="42" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="7eM-Di-W2U"/>
+                            <constraint firstAttribute="height" constant="21" id="U87-eE-1x5"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7eM-Di-W2U"/>
+                            </mask>
+                        </variation>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
-                    <constraint firstItem="sJl-Pe-IMQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="7DA-Cg-U9B"/>
-                    <constraint firstItem="sJl-Pe-IMQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8ID-FH-T7q"/>
-                    <constraint firstItem="sJl-Pe-IMQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="IcN-iZ-lZi"/>
-                    <constraint firstItem="C0O-IC-2Gy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ktc-Dk-oLl"/>
-                    <constraint firstAttribute="bottom" secondItem="sJl-Pe-IMQ" secondAttribute="bottom" constant="11" id="mah-g5-XxY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="sJl-Pe-IMQ" secondAttribute="bottom" constant="-4" id="zpI-hj-KAd"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="C0O-IC-2Gy" secondAttribute="trailing" constant="86" id="zyt-U0-RJq"/>
+                    <constraint firstItem="sJl-Pe-IMQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0fH-YS-TlQ"/>
+                    <constraint firstItem="sJl-Pe-IMQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="AMf-5n-9WL"/>
+                    <constraint firstItem="C0O-IC-2Gy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="APc-S6-fMl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="C0O-IC-2Gy" secondAttribute="trailing" constant="17" id="DV6-Lh-fKU"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="IcN-iZ-lZi"/>
-                        <exclude reference="mah-g5-XxY"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="headImage" destination="sJl-Pe-IMQ" id="W2y-Le-I0O"/>
                 <outlet property="title" destination="C0O-IC-2Gy" id="iyv-zF-SZ9"/>
