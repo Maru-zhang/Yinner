@@ -11,6 +11,7 @@
 #import "YKLibraryCell.h"
 #import "UITableView+EmptyData.h"
 #import "YKBrowseViewController.h"
+#import "UIView+GrayLine.h"
 
 @interface YKLibraryController ()
 {
@@ -76,7 +77,7 @@
 
 #pragma mark - TableView Delegate
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [UIView new];
+    return [UIView getGrayLine];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,6 +126,10 @@
     [self presentViewController:vc animated:YES completion:^{
         
     }];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

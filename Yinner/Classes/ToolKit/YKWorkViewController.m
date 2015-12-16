@@ -8,7 +8,9 @@
 
 #import "YKWorkViewController.h"
 #import "KRVideoPlayerController+Hidden.h"
+#import "YKSubtitleView.h"
 
+#define kSUBTITLE_H 140.0
 
 typedef void(^mergeMediaComplete)();
 
@@ -17,7 +19,7 @@ typedef void(^mergeMediaComplete)();
     UIButton *_start;
     UIButton *_back;
     UIButton *_info;
-    UITableView *_subTitle;
+    YKSubtitleView *_subTitle;
     AVAudioRecorder *_recorder;
     NSMutableArray *_locationArray;
     NSMutableDictionary *_subTitleArray;
@@ -72,9 +74,9 @@ singleton_implementation(YKWorkViewController)
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-20]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - KwinW]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:80 - KwinW]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:50 - KwinW]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_start attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:80 - KwinW]];
     
     //back添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_back attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:40 - KwinW]];
@@ -99,7 +101,7 @@ singleton_implementation(YKWorkViewController)
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(KwinW / 16) * 9 + 20]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-100]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-kSUBTITLE_H]];
     
 }
 
@@ -116,7 +118,6 @@ singleton_implementation(YKWorkViewController)
     //赋值
     _watchModel = watchModel;
     
-    NSLog(@"开始设置");
     if (watchModel) {
         [self.videoPlayer hiddenCloseButton];
         _start.hidden = YES;
@@ -137,9 +138,9 @@ singleton_implementation(YKWorkViewController)
 {
     //添加开始、暂停按钮
     _start = [[UIButton alloc] init];
-    _start.backgroundColor = [UIColor redColor];
-    [_start setTitle:@"开始" forState:UIControlStateNormal];
-    [_start setTitle:@"暂停" forState:UIControlStateSelected];
+    _start.backgroundColor = [UIColor clearColor];
+    [_start setImage:[UIImage imageNamed:@"record_start"] forState:UIControlStateNormal];
+    [_start setImage:[UIImage imageNamed:@"record_pause"] forState:UIControlStateSelected];
     [_start.layer setCornerRadius:25];
     [_start addTarget:self action:@selector(startButtonClick) forControlEvents:UIControlEventTouchUpInside];
     _start.translatesAutoresizingMaskIntoConstraints = NO;
@@ -149,8 +150,8 @@ singleton_implementation(YKWorkViewController)
     
     //添加返回按钮
     _back = [[UIButton alloc] init];
-    _back.backgroundColor = [UIColor orangeColor];
-    [_back setTitle:@"返回" forState:UIControlStateNormal];
+    _back.backgroundColor = [UIColor clearColor];
+    [_back setImage:[UIImage imageNamed:@"record_back"] forState:UIControlStateNormal];
     [_back.layer setCornerRadius:20];
     _back.translatesAutoresizingMaskIntoConstraints = NO;
     _back.adjustsImageWhenHighlighted = NO;
@@ -160,8 +161,8 @@ singleton_implementation(YKWorkViewController)
     
     //添加信息按钮
     _info = [[UIButton alloc] init];
-    _info.backgroundColor = [UIColor orangeColor];
-    [_info setTitle:@"信息" forState:UIControlStateNormal];
+    _info.backgroundColor = [UIColor clearColor];
+    [_info setImage:[UIImage imageNamed:@"record_info"] forState:UIControlStateNormal];
     [_info.layer setCornerRadius:20];
     _info.translatesAutoresizingMaskIntoConstraints = NO;
     _info.adjustsImageWhenHighlighted = NO;
@@ -170,7 +171,7 @@ singleton_implementation(YKWorkViewController)
     [self.view addSubview:_info];
     
     //添加字幕视图
-    _subTitle = [[UITableView alloc] init];
+    _subTitle = [[YKSubtitleView alloc] init];
     _subTitle.backgroundColor = [UIColor clearColor];
     _subTitle.translatesAutoresizingMaskIntoConstraints = NO;
     _subTitle.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -178,6 +179,8 @@ singleton_implementation(YKWorkViewController)
     _subTitle.showsVerticalScrollIndicator = NO;
     _subTitle.dataSource = self;
     _subTitle.delegate = self;
+    _subTitle.contentInset = UIEdgeInsetsMake(kSUBTITLE_H, 0, kSUBTITLE_H, 0);
+    _subTitle.contentOffset = CGPointMake(0, -kSUBTITLE_H);
     
     [self.view addSubview:_subTitle];
     
@@ -185,7 +188,7 @@ singleton_implementation(YKWorkViewController)
 
 - (void)setupSetting
 {
-    self.view.backgroundColor = [UIColor colorWithWhite:0.298 alpha:1.000];
+    self.view.backgroundColor = RGB(28, 32, 44);
     
     //添加返回手势
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(exit)];
@@ -252,64 +255,6 @@ singleton_implementation(YKWorkViewController)
     [_recorder stop];
     
     [self pauseTimeManager];
-}
-
-
-#pragma mark 关于TimeManager的业务逻辑
-- (void)startTimeManager
-{
-    _timeManager = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeManger) userInfo:nil repeats:YES];
-    
-    [_timeManager fire];
-    
-}
-
-- (void)pauseTimeManager
-{
-    [_timeManager invalidate];
-}
-
-- (void)updateTimeManger
-{
-    NSLog(@"正在播放----------------%f",_recorder.currentTime);
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"mm:ss"];
-    
-    //计算当前的播放时间
-    double minutesElapsed = floor(_recorder.currentTime / 60);
-    double secondsElapsed = fmod(_recorder.currentTime, 60);
-    NSString *currentTime = [NSString stringWithFormat:@"%02.f:%02.f",minutesElapsed,secondsElapsed];
-
-    //懒加载
-    if (!_currentTime) {
-        _currentTime = 0;
-    }
-    
-    //防止数组越界
-    if ((_currentTime + 1) > _subTitleTimeArray.count) {
-        return;
-    }
-    
-    //滚动
-    NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
-    
-    [_subTitle scrollToRowAtIndexPath:toIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    
-
-    //判断当前读取的是哪一行字幕
-    if ([_subTitleTimeArray containsObject:currentTime]) {
-        
-        //获取当前字幕的index
-        NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
-        
-        _currentTime = (int)index;
-        
-        //当前行字幕变色
-        [_subTitle reloadData];
-    }
-    
-    
 }
 
 #pragma mark load subtitle
@@ -585,6 +530,8 @@ singleton_implementation(YKWorkViewController)
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
+            _start.selected = NO;
+            
             [self presentViewController:alert animated:YES completion:^{
                 
             }];
@@ -599,6 +546,61 @@ singleton_implementation(YKWorkViewController)
 {
     NSLog(@"出错");
 }
+
+#pragma mark 关于TimeManager的业务逻辑
+- (void)startTimeManager
+{
+    _timeManager = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeManger) userInfo:nil repeats:YES];
+    
+    [_timeManager fire];
+    
+}
+
+- (void)pauseTimeManager
+{
+    [_timeManager invalidate];
+}
+
+- (void)updateTimeManger
+{
+    NSLog(@"正在播放----------------%f",_recorder.currentTime);
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm:ss"];
+    
+    //计算当前的播放时间
+    double minutesElapsed = floor(_recorder.currentTime / 60);
+    double secondsElapsed = fmod(_recorder.currentTime, 60);
+    NSString *currentTime = [NSString stringWithFormat:@"%02.f:%02.f",minutesElapsed,secondsElapsed];
+    
+    //懒加载
+    if (!_currentTime) {
+        _currentTime = 0;
+    }
+    
+    //防止数组越界
+    if ((_currentTime + 1) > _subTitleTimeArray.count) {
+        return;
+    }
+    
+    //滚动
+    NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
+    
+    [_subTitle scrollToRowAtIndexPath:toIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    //判断当前读取的是哪一行字幕
+    if ([_subTitleTimeArray containsObject:currentTime]) {
+        
+        //获取当前字幕的index
+        NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
+        
+        _currentTime = (int)index;
+        
+    }
+    
+    
+}
+
 
 #pragma mark - <TableView DataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -629,18 +631,18 @@ singleton_implementation(YKWorkViewController)
     
     cell.textLabel.text = [_subTitleArray objectForKey:_subTitleTimeArray[indexPath.row]];
     //设置字体颜色
-    cell.textLabel.textColor = [UIColor whiteColor];
-    //设置当前所到的字幕
-    if (indexPath.row == _currentTime) {
-        
-        cell.textLabel.textColor = [UIColor yellowColor];
-        
-    }
+    cell.textLabel.textColor = [UIColor lightGrayColor];
     
     return cell;
 }
 
 #pragma mark - <TableView Delegate>
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+
+#pragma mark - ScrollView Delegate
+
 
 
 @end

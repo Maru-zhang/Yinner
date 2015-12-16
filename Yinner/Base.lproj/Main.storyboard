@@ -1420,7 +1420,11 @@
                         <animations/>
                         <color key="backgroundColor" red="0.83542455808080807" green="0.83542455808080807" blue="0.83542455808080807" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="意见反馈" id="0cX-Zc-Nyg"/>
+                    <navigationItem key="navigationItem" title="意见反馈" id="0cX-Zc-Nyg">
+                        <barButtonItem key="rightBarButtonItem" title="提交" id="irp-Sl-58D">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmb-Ao-tFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

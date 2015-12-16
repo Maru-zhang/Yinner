@@ -9,6 +9,9 @@
 typedef void(^SuccessHander)(id responseObject);
 typedef void(^FailHander)(NSError *error);
 
+#define kAPPKEY @"3e8622117aee570a"
+#define kAPPV @"4.1.17"
+
 #import <Foundation/Foundation.h>
 
 

@@ -7,6 +7,9 @@
 //
 
 
+#import "UITableView+EmptyData.h"
+#import "UIImageView+WebCache.h"
+
 #import "DebugConstant.h"
 #import "EaseMob.h"
 #import "UITableView+EmptyData.h"

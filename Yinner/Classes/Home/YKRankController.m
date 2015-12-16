@@ -7,9 +7,11 @@
 //
 
 #import "YKRankController.h"
+#import "YKRankListModel.h"
+#import "YKRankListOperator.h"
 
 @interface YKRankController ()
-
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end
 
 @implementation YKRankController
@@ -31,34 +33,46 @@
 - (void)setup
 {
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-        
-        [self loadNewData];
+        [self loadDataWithSetup:YES];
+    }];
+    
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self loadDataWithSetup:NO];
     }];
     
     [self.tableView.header beginRefreshing];
 }
 
 #pragma mark Load New Data
-- (void)loadNewData
+- (void)loadDataWithSetup:(BOOL)setup
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
+    YKRankListOperator *operator = [[YKRankListOperator alloc] init];
+    
+    [operator getWithpageNum:1 SuccessHander:^(id responseObject) {
+        
+        if (setup) {
+            [self.dataSource removeAllObjects];
+        }
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        [self.dataSource addObjectsFromArray:[YKRankListModel mj_objectArrayWithKeyValuesArray:json[@"data"]]];
+        
         [self.tableView reloadData];
         
-        // 拿到当前的上拉刷新控件，变为没有更多数据的状态
         [self.tableView.header endRefreshing];
-    });
+        [self.tableView.footer endRefreshing];
+    } andFailHander:^(NSError *error) {
+        [self.tableView.header endRefreshing];
+        [self.tableView.header endRefreshing];
+    }];
 }
 
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    [tableView tableViewDisplayWithEmptyMsg:@"没有相应的数据!" ifNecessaryForDataCount:[self.dataSource count]];
+    return self.dataSource.count;
 }
 
 
@@ -95,7 +109,13 @@
 
     cell.rankNum.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
     
+    // 配置cell
+    YKRankListModel *model = self.dataSource[indexPath.row];
     
+    [cell.breviaryImage sd_setImageWithURL:[NSURL URLWithString:model.image]];
+    cell.title.text = model.title;
+    cell.startCount.text = [NSString stringWithFormat:@"%ld",(long)model.good_count];
+    cell.commentCount.text = [NSString stringWithFormat:@"%ld",(long)model.forward_count];
     
     return cell;
 }
@@ -104,6 +124,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
+}
+
+#pragma mark - Property
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 
 
