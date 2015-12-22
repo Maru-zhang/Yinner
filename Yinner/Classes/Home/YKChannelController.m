@@ -9,6 +9,7 @@
 #import "YKChannelController.h"
 #import "YKChannelViewCell.h"
 #import "ReuseFrame.h"
+#import "YKBrowseController.h"
 
 @interface YKChannelController ()
 {
@@ -24,7 +25,6 @@ static NSString * const reuseIdentifier = @"channelCell";
 #pragma mark - Life cycle
 - (instancetype)init
 {
-    NSLog(@"dsadsadsadsa");
     _layout = [[UICollectionViewFlowLayout alloc] init];
     _layout.itemSize = CGSizeMake(145, 98);
     return [self initWithCollectionViewLayout:_layout];
@@ -87,4 +87,8 @@ static NSString * const reuseIdentifier = @"channelCell";
     return UIEdgeInsetsMake(spacing, spacing, 44, spacing);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    YKBrowseController *vc = [[YKBrowseController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

@@ -22,6 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // 设置全局样式
+    [self setupAppearance];
+    
     //获取APNS文件的名字
     NSString *apnsCertName = nil;
 #if DEBUG
@@ -91,6 +94,21 @@
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:KNotification_ReloadData object:nil]];
     
     NSLog(@"%@",username);
+}
+
+#pragma mark - Setup
+- (void)setupAppearance {
+    
+    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsZero];
+    [[UITableViewCell appearance] setSeparatorInset:UIEdgeInsetsZero];
+    
+    if ([UITableView instancesRespondToSelector:@selector(setLayoutMargins:)]) {
+        [[UITableView appearance] setLayoutMargins:UIEdgeInsetsZero];
+        [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsZero];
+        [[UITableViewCell appearance] setPreservesSuperviewLayoutMargins:NO];
+    }
 }
 
 @end

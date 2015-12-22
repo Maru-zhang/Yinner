@@ -36,7 +36,7 @@
 #pragma mark - Private Method
 - (void)setupView
 {
-    self.tableView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.950 alpha:1.000];
 }
 
 - (void)setupSetting
@@ -115,7 +115,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 49;
+    return 50;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

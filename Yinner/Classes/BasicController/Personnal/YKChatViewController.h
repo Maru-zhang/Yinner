@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YKChatViewController : UIViewController <UITextViewDelegate,UITableViewDelegate,UITableViewDataSource,EMChatManagerDelegate>
-
+@interface YKChatViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,EMChatManagerDelegate>
+/** 对话者ID */
 @property (nonatomic,copy) NSString *chatter;
+/** 对话类型 */
 @property (nonatomic) EMConversationType conversationType;
-
 
 + (YKChatViewController *)chatViewControllerWithChatter:(NSString *)chatter conversationType:(EMConversationType)type;
 

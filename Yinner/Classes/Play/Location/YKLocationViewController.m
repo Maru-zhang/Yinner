@@ -8,6 +8,7 @@
 
 #import "YKLocationViewController.h"
 #import "YKWorkViewController.h"
+#import "UIView+GrayLine.h"
 
 @interface YKLocationViewController ()
 
@@ -70,5 +71,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView getGrayLine];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.5;
 }
 @end

@@ -21,7 +21,14 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    // 设置头像圆角
+    [self.headImage.layer setCornerRadius:25.0];
+    [self.headImage.layer setMasksToBounds:YES];
+    [self.headImage setNeedsLayout];
+    [self.headImage layoutIfNeeded];
+    
+    // 设置分割线宽度
+    [self setSeparatorInset:UIEdgeInsetsMake(0, 50, 0, 0)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -31,12 +38,5 @@
 }
 
 #pragma mark - 
-- (void)loadContactModel:(YKContactModel *)model
-{
-    self.headImage.image = model.headImage;
-    self.name.text = model.name;
-    self.lastMessage.text = model.lastMessage;
-    self.lastTime.text = model.lastTime;
-}
 
 @end

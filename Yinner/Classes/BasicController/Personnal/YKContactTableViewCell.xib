@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="bwU-Up-gRr">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defalut_user" translatesAutoresizingMaskIntoConstraints="NO" id="bwU-Up-gRr">
                         <rect key="frame" x="2" y="2" width="46" height="45"/>
                         <animations/>
                         <constraints>
@@ -79,6 +79,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="touxiang" width="231" height="230"/>
+        <image name="defalut_user" width="128" height="128"/>
     </resources>
 </document>

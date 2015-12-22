@@ -41,8 +41,7 @@
 #pragma mark - 初始化图标
 
 - (void)setupView {
-    
-    [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
+
 }
 
 - (void)settingDock

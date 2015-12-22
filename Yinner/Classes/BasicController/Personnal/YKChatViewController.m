@@ -9,19 +9,28 @@
 #import "YKChatViewCell.h"
 #import "NSString+Size.h"
 #import "ReuseFrame.h"
+#import "UUInputFunctionView.h"
+#import "MJRefresh.h"
+#import "UUMessageCell.h"
+#import "ChatModel.h"
+#import "UUMessageFrame.h"
+#import "UUMessage.h"
+#import "YKContactModel.h"
 
-@interface YKChatViewController ()
-{
-    NSMutableArray *_dataSource;
-}
+/** 每次加载的消息数 */
+static int loadOnceCount = 20;
+/** 标识 */
+static NSString *const cellIdentifier = @"MessageCellID";
 
+@interface YKChatViewController ()<UIScrollViewDelegate,UUMessageCellDelegate,UUInputFunctionViewDelegate>
+@property (nonatomic,strong) id<IChatManager> manager;
+/** 消息模型 */
+@property (nonatomic, strong) YKContactModel *chatModel;
+/** 输入框 */
+@property (nonatomic,strong) UUInputFunctionView *inputView;
+/** 显示表格 */
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UITextView *inputView;
-@property (weak, nonatomic) IBOutlet UIButton *faceButton;
-@property (weak, nonatomic) IBOutlet UIButton *recoderButton;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewBotttomLayout;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end
 
@@ -35,33 +44,21 @@
     YKChatViewController *chatVC =  [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"chat"];
     
     chatVC.chatter = chatter;
-    chatVC.conversationType = type;
     
+    chatVC.conversationType = type;
     
     return chatVC;
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [self setupView];
     
     [self setupSetting];
     
-    [self loadDataSource];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self scrollViewtoBottom];
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+    [self loadDataSourceWithSetup:YES];
 }
 
 - (void)dealloc
@@ -73,115 +70,138 @@
 #pragma mark - Private Method
 - (void)setupView
 {
-    //设置标题
+    // 设置标题
     self.title = [NSString stringWithFormat:@"%@",self.chatter];
-    
-    //设置圆角
-    [_inputView.layer setCornerRadius:10];
-    
-    //给faceButton设置高亮图片
-    [self.faceButton setImage:[UIImage imageNamed:@"chatBar_more_faceSelected"] forState:UIControlStateHighlighted];
-    
-    [self.recoderButton setImage:[UIImage imageNamed:@"chatBar_recordSelected"] forState:UIControlStateHighlighted];
-    
-    //设置分离器样式
+    // 添加输入框
+    [self.view addSubview:self.inputView];
+    // 添加代理
+    self.inputView.delegate = self;
+    self.tableView.delegate = self;
+    // 设置分离器样式
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //设置背景颜色
+    // 设置背景颜色
     self.tableView.backgroundColor = [UIColor whiteColor];
-    
+    // 隐藏滚轮
+    self.tableView.showsVerticalScrollIndicator = NO;
+    // 设置下拉刷新
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 刷新数据
+        [self loadDataSourceWithSetup:NO];
+    }];
+    // 开始的时候自动在最下方
+    self.tableView.contentOffset = CGPointMake(0, INT16_MAX);
 }
-
-- (void)loadDataSource
-{
-    EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:self.chatter conversationType:self.conversationType];
-    
-    NSArray *array = [conversation loadAllMessages];
-    
-    _dataSource = [NSMutableArray arrayWithArray:array];
-    
-    NSLog(@"此会话中得消息：%@",array);
-}
-
 
 - (void)setupSetting
 {
-    
     //设置代理
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
     //消息注册
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tableViewScrollToBottom) name:UIKeyboardDidShowNotification object:nil];
     
 }
 
-#pragma mark 滑到最底部
-- (void)scrollViewtoBottom
+
+#pragma mark 初始化加载数据
+- (void)loadDataSourceWithSetup:(BOOL)setup
 {
-    if (_dataSource.count < 1) {
-        return;
+    EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:self.chatter conversationType:self.conversationType];
+    
+    if (setup) {
+        
+        NSArray *messages = [conversation loadNumbersOfMessages:loadOnceCount withMessageId:nil];
+        
+        self.chatModel = [YKContactModel configWithMessageArray:messages];
+        
+    }else {
+        
+        UUMessageFrame *firstMessage = [self.chatModel.dataSource firstObject];
+        
+        NSArray *messages = [conversation loadNumbersOfMessages:loadOnceCount withMessageId:[firstMessage.message strId]];
+        
+        YKContactModel *tempModel = [YKContactModel configWithMessageArray:messages];
+        
+        [tempModel.dataSource addObjectsFromArray:self.chatModel.dataSource];
+        
+        self.chatModel.dataSource = tempModel.dataSource;
     }
     
-    [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:_dataSource.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self.tableView reloadData];
+
+    [self.tableView.header endRefreshing];
 }
 
 #pragma mark 键盘拉上和拉下
-- (void)keyboardWillShow:(NSNotification *)noti
+-(void)keyboardChange:(NSNotification *)notification
 {
+    NSDictionary *userInfo = [notification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardEndFrame;
     
-    NSDictionary *info = [noti userInfo];
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
     
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
     
-    [UIView animateWithDuration:0.1 animations:^{
+    //adjust ChatTableView's height
+    if (notification.name == UIKeyboardWillShowNotification) {
+        self.bottomConstraint.constant = keyboardEndFrame.size.height+40;
+    }else{
+        self.bottomConstraint.constant = 40;
+    }
+    [self.view layoutIfNeeded];
     
-        _viewBotttomLayout.constant = keyboardSize.height;
-        
-        [self.view layoutIfNeeded];
-    }];
-
-    //滚动到最下方
-    [self scrollViewtoBottom];
+    //adjust UUInputFunctionView's originPoint
+    CGRect newFrame = self.inputView.frame;
+    newFrame.origin.y = keyboardEndFrame.origin.y - newFrame.size.height;
+    self.inputView.frame = newFrame;
+    
+    [UIView commitAnimations];
+    
 }
 
-
-
-- (void)keyboardWillDisappear:(NSNotification *)noti
+- (void)tableViewScrollToBottom
 {
- 
-    self.viewBotttomLayout.constant = 0;
-
+    if (self.chatModel.dataSource.count==0)
+        return;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chatModel.dataSource.count-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
+#pragma mark - 发送消息
+#pragma mark 发送文字
+- (void)sendMessageWithEMMessage:(EMMessage *)message {
+    
+    [self.chatModel insertMessageModel:message];
+    
+    [self.tableView reloadData];
+    
+    [self tableViewScrollToBottom];
+}
 
 
 #pragma mark - Table View DataSOurce
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataSource.count;
+    return self.chatModel.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"chatCell";
-    
-    YKChatViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        
-        cell = [[YKChatViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    UUMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UUMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellID"];
+        cell.delegate = self;
     }
-    
-    EMMessage *message = _dataSource[indexPath.row];
-    
-    [cell loadEMMessage:message];
-    
+    [cell setMessageFrame:self.chatModel.dataSource[indexPath.row]];
     return cell;
 }
 
@@ -192,69 +212,97 @@
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.chatModel.dataSource[indexPath.row] cellHeight];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
+#pragma mark - InputFunctionViewDelegate
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendMessage:(NSString *)message
 {
-    EMMessage *message = _dataSource[indexPath.row];
     
-    EMTextMessageBody *body = [message.messageBodies lastObject];
+    EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:[[EMChatText alloc] initWithText:message]];
     
-    NSString *content = body.text;
+    __block EMMessage *msg = [[EMMessage alloc] initWithReceiver:self.chatter bodies:[NSArray arrayWithObject:body]];
     
-    CGSize size = [content textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+    __weak typeof(self) weakSelf = self;
     
-    CGSize single = [@"a" textSizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(KcontentWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+    [self.manager asyncSendMessage:msg progress:nil prepare:nil onQueue:nil completion:^(EMMessage *message, EMError *error) {
+        // 清空输入框
+        funcView.TextViewInput.text = @"";
+        // 回到相机按钮
+        [funcView changeSendBtnWithPhoto:YES];
+        // 发送消息的本地相关操作
+        [weakSelf sendMessageWithEMMessage:msg];
+    } onQueue:dispatch_get_main_queue()];
+
     
-    return (44 + size.height - single.height);
+}
+
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendPicture:(UIImage *)image
+{
+    return;
+//    NSDictionary *dic = @{@"picture": image,
+//                          @"type": @(UUMessageTypePicture)};
+//    [self dealTheFunctionData:dic];
+}
+
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendVoice:(NSData *)voice time:(NSInteger)second
+{
+    return;
+//    NSDictionary *dic = @{@"voice": voice,
+//                          @"strVoiceTime": [NSString stringWithFormat:@"%d",(int)second],
+//                          @"type": @(UUMessageTypeVoice)};
+//    [self dealTheFunctionData:dic];
 }
 
 
-
-#pragma mark - Text View Delegate 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    [_inputView becomeFirstResponder];
-
-}
-
-- (void)textViewDidChange:(UITextView *)textView
-{
-    if ([textView.text containsString:@"\n"] && textView.text.length > 1) {
-        
-        EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:[[EMChatText alloc] initWithText:[textView.text substringToIndex:textView.text.length - 1]]];
-        
-        NSArray *bodyArray = [NSArray arrayWithObject:body];
-        
-        EMError *error = nil;
-        
-        #warning 暂时不设置代理
-        [[EaseMob sharedInstance].chatManager sendMessage:[[EMMessage alloc] initWithReceiver:self.chatter bodies:bodyArray] progress:nil error:&error];
-        
-        if (error) {
-            NSLog(@"%@",error.description);
-        }
-        
-        //结束输入，关闭键盘
-        textView.text = @"";
-        [[UIApplication sharedApplication].keyWindow endEditing:YES];
-        
-        //刷新列表
-        [self loadDataSource];
-        
-        [self.tableView reloadData];
-        
-        [self scrollViewtoBottom];
-    }
+#pragma mark - cellDelegate
+- (void)headImageDidClick:(UUMessageCell *)cell userId:(NSString *)userId{
+    // headIamgeIcon is clicked
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:cell.messageFrame.message.strName message:@"headImage clicked" delegate:nil cancelButtonTitle:@"sure" otherButtonTitles:nil];
+    [alert show];
 }
 
 
 #pragma mark - EMCharManagerDelegate
 - (void)didReceiveMessage:(EMMessage *)message
 {
-    [self loadDataSource];
+    [self.chatModel insertMessageModel:message];
     
     [self.tableView reloadData];
-    
-    [self scrollViewtoBottom];
+
+    [self tableViewScrollToBottom];
+}
+
+#pragma mark - 父类方法
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    debugLog(@"%@",NSStringFromCGPoint(self.tableView.contentOffset));
+}
+
+
+
+
+#pragma mark - Property
+- (UUInputFunctionView *)inputView {
+    if (!_inputView) {
+        _inputView = [[UUInputFunctionView alloc] initWithSuperVC:self];
+    }
+    return _inputView;
+}
+
+- (id<IChatManager>)manager {
+    if (!_manager) {
+        _manager = [EaseMob sharedInstance].chatManager;
+    }
+    return _manager;
 }
 
 

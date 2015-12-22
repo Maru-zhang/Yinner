@@ -9,10 +9,12 @@
 #import "YKWorkViewController.h"
 #import "KRVideoPlayerController+Hidden.h"
 #import "YKSubtitleView.h"
+#import "YKBrowseViewController.h"
+#import "YKLocationViewController.h"
 
 #define kSUBTITLE_H 140.0
 
-typedef void(^mergeMediaComplete)();
+typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 @interface YKWorkViewController ()
 {
@@ -105,7 +107,7 @@ typedef void(^mergeMediaComplete)();
     //字幕添加约束
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(KwinW / 16) * 9 + 20]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:(KwinW / 16) * 9]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_subTitle attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-kSUBTITLE_H]];
     
@@ -330,7 +332,7 @@ typedef void(^mergeMediaComplete)();
         [manager insertEntityWithLocationMediaModel:model];
         
         // 合成完毕之后的操作
-        completion();
+        completion(model);
         
     }];
 }
@@ -472,15 +474,22 @@ typedef void(^mergeMediaComplete)();
     NSLog(@"audioURL:%@",_audioURL);
     
     //开始合成
-    [self mregeWithVideo:_videoURL andAudio:_audioURL completion:^{
-        //设置为已经录制完成
+    [self mregeWithVideo:_videoURL andAudio:_audioURL completion:^(YKLocationMediaModel *model) {
+        // 设置为已经录制完成
         self.alreadyMrege = YES;
         
-        //友情提示框
+        // 友情提示框
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜您，配音成功！" preferredStyle:UIAlertControllerStyleAlert];
         
-        //添加按钮
+        // 添加按钮
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"去看看" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // 播放刚刚存储的视频
+                YKBrowseViewController *vc = [[YKBrowseViewController alloc] initWithURL:[NSURL fileURLWithPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:[model valueForKey:@"url"]]]];
+                
+                [self presentViewController:vc animated:YES completion:nil];
+            });
             
         }];
         

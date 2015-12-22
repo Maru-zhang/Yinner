@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const browseCell = @"browseCell";
+
 @interface YKBrowseViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *browseImage;
 @property (weak, nonatomic) IBOutlet UILabel *browseTitle;

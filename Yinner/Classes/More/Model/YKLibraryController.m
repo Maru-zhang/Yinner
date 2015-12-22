@@ -37,6 +37,18 @@
 #pragma mark - Private Method
 
 - (void)setupSetting {
+    
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+        
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)])  {
+        
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+        
+    }
 }
 
 - (void)reloadNewDataSource
@@ -134,6 +146,22 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPat{
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+        
+    }
+    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]){
+        
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+        
+    }
+    
 }
 
 #pragma mark - Property

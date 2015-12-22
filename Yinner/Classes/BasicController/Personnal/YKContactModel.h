@@ -10,9 +10,23 @@
 
 @interface YKContactModel : NSObject
 
-@property (nonatomic,strong) UIImage *headImage;
-@property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSString *lastMessage;
-@property (nonatomic,strong) NSString *lastTime;
+/** 用户名称 */
+@property (nonatomic, strong) NSString *myUserName;
+/** 数据源 */
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
++ (YKContactModel *)configWithMessageArray:(NSArray <EMMessage *>*)array;
+/**
+ *    根据模型添加数据
+ *
+ *    @param obj 模型
+ */
+- (void)insertMessageModel:(EMMessage *)obj;
+/**
+ *    根据字典添加数据
+ *
+ *    @param dic 字典
+ */
+- (void)addSpecifiedItem:(NSDictionary *)dic;
 
 @end
