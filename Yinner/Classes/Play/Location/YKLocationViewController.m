@@ -61,6 +61,7 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"example" withExtension:@"mov"];
     
     YKWorkViewController *player = [[YKWorkViewController alloc] initWithURL:url];
+    player.zipURL = [NSURL URLWithString:@"http://7xp4ku.com1.z0.glb.clouddn.com/201411171813a004c168398c20bb.zip"];
     //关闭观赏模式
     player.watchModel = NO;
     

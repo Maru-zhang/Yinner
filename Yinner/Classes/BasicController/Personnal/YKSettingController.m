@@ -36,7 +36,37 @@
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2 && indexPath.row == 0) {
+    
+    
+    if (indexPath.section == 1) {
+        
+        if (indexPath.row == 2) {
+            
+            [SVProgressHUD showSuccessWithStatus:@"请前往App Store支持我们！" maskType:SVProgressHUDMaskTypeGradient];
+        }else if (indexPath.row == 4) {
+            
+            NSError *error;
+            
+            NSArray *items = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:ORIGIN_MEDIA_DIR_STR error:&error];
+            
+            // 开始遍历删除
+            for (NSString *item in items) {
+                [[NSFileManager defaultManager] removeItemAtPath:[ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:item] error:nil];
+            }
+            
+            // UI显示
+            if (error == nil) {
+                [SVProgressHUD showSuccessWithStatus:@"缓存清理成功！" maskType:SVProgressHUDMaskTypeGradient];
+            }else {
+                [SVProgressHUD showErrorWithStatus:@"出现未知错误" maskType:SVProgressHUDMaskTypeGradient];
+            }
+            
+            debugLog(@"%@",items);
+
+        }
+
+        
+    }else if (indexPath.section == 2) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您是否确定退出！" preferredStyle:UIAlertControllerStyleActionSheet];
         
@@ -55,7 +85,7 @@
                 
                 
             } onQueue:nil];
-
+            
         }];
         
         //取消操作
@@ -70,8 +100,8 @@
         [self presentViewController:alert animated:YES completion:^{
             
         }];
-
     }
+    
 }
 #pragma mark - Action
 - (IBAction)closeClick:(id)sender {

@@ -25,6 +25,9 @@
     // 设置全局样式
     [self setupAppearance];
     
+    // 设置全局配置
+    [self setupSetting];
+    
     //获取APNS文件的名字
     NSString *apnsCertName = nil;
 #if DEBUG
@@ -99,15 +102,35 @@
 #pragma mark - Setup
 - (void)setupAppearance {
     
-    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsZero];
-    [[UITableViewCell appearance] setSeparatorInset:UIEdgeInsetsZero];
+    // 点击以后的反应
+    [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    if ([UITableView instancesRespondToSelector:@selector(setLayoutMargins:)]) {
-        [[UITableView appearance] setLayoutMargins:UIEdgeInsetsZero];
-        [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsZero];
-        [[UITableViewCell appearance] setPreservesSuperviewLayoutMargins:NO];
+//    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+//    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+//    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsZero];
+//    [[UITableViewCell appearance] setSeparatorInset:UIEdgeInsetsZero];
+//    
+//    if ([UITableView instancesRespondToSelector:@selector(setLayoutMargins:)]) {
+//        [[UITableView appearance] setLayoutMargins:UIEdgeInsetsZero];
+//        [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsZero];
+//        [[UITableViewCell appearance] setPreservesSuperviewLayoutMargins:NO];
+//    }
+}
+
+- (void)setupSetting {
+    
+    BOOL yes = nil;
+    
+    // 检查是否存在源文件夹，如果不存在那么就创建
+    if (![[NSFileManager defaultManager] fileExistsAtPath: ORIGIN_MEDIA_DIR_STR isDirectory:&yes]) {
+        debugLog(@"新建文件夹-%@",ORIGIN_MEDIA_DIR_STR);
+        [[NSFileManager defaultManager] createDirectoryAtPath:ORIGIN_MEDIA_DIR_STR withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    
+    // 是否存在本地媒体文件夹，如果不存在，那么创建
+    if (![[NSFileManager defaultManager] fileExistsAtPath: MY_MEDIA_DIR_STR isDirectory:&yes]) {
+        debugLog(@"新建文件夹-%@",MY_MEDIA_DIR.absoluteString);
+        [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR_STR withIntermediateDirectories:NO attributes:nil error:nil];
     }
 }
 

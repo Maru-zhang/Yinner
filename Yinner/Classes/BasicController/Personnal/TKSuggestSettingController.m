@@ -9,7 +9,7 @@
 #import "TKSuggestSettingController.h"
 
 @interface TKSuggestSettingController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *suggestionContent;
 @end
 
 @implementation TKSuggestSettingController
@@ -22,6 +22,21 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+#pragma mark - Action
+- (IBAction)submitClick:(id)sender {
+    
+    // 检查信息正确性
+    if ([self.suggestionContent.text isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"反馈信息不得为空哦，亲！" maskType:SVProgressHUDMaskTypeGradient];
+        return;
+    }
+
+    // 进行提交反馈操作
+    [SVProgressHUD showSuccessWithStatus:@"已经成功提交反馈，谢谢您的支持与期待！" maskType:SVProgressHUDMaskTypeGradient];
+    
 }
 
 

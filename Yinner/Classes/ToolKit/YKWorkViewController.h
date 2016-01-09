@@ -23,7 +23,10 @@
 
 /** 观看模式 */
 @property (nonatomic) BOOL watchModel;
+/** 是否已经合成 */
 @property (nonatomic) BOOL alreadyMrege;
+/** 资源URL */
+@property (nonatomic,strong) NSURL *zipURL;
 @property (nonatomic,strong) NSURL *audioURL;
 @property (nonatomic,strong) NSURL *videoURL;
 @property (nonatomic,strong) KRVideoPlayerController *videoPlayer;

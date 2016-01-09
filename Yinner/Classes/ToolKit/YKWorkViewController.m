@@ -11,6 +11,7 @@
 #import "YKSubtitleView.h"
 #import "YKBrowseViewController.h"
 #import "YKLocationViewController.h"
+//#import "ZipZap.h"
 
 #define kSUBTITLE_H 140.0
 
@@ -53,12 +54,47 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    [self loadSubTitleWithURL:self.videoURL];
     
-    [self playVideoWithURL:self.videoURL];
+    // 输出路径
+    NSString *localPath = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[self.zipURL lastPathComponent]];
     
-    [self.videoPlayer hiddenControlButton];
+    // 检查是否已经换出完毕
+    if ([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
+        
+        [self loadResource];
+        
+    }else {
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.zipURL];
+        
+        AFHTTPRequestOperation *operator = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        
+        // 设置输出路径
+        operator.outputStream = [NSOutputStream outputStreamToFileAtPath:localPath append:NO];
+        
+        // 下载中块
+        [operator setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+            [SVProgressHUD showProgress:totalBytesRead / totalBytesExpectedToRead status:@"正在下载素材..." maskType:SVProgressHUDMaskTypeGradient];
+        }];
+        
+        // 完成操作
+        [operator setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            debugLog(@"-----%@",ORIGIN_MEDIA_DIR_STR);
+            [SVProgressHUD dismiss];
+            
+            // 解压操作
+//            ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:localPath] error:nil];
+            
+            [self loadResource];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:@"下载失败!" maskType:SVProgressHUDMaskTypeGradient];
+        }];
+        
+        // 开始操作
+        [operator start];
+    }
     
 }
 
@@ -153,6 +189,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [_start addTarget:self action:@selector(startButtonClick) forControlEvents:UIControlEventTouchUpInside];
     _start.translatesAutoresizingMaskIntoConstraints = NO;
     _start.adjustsImageWhenHighlighted = NO;
+    _start.hidden = YES;
 
     [self.view addSubview:_start];
     
@@ -164,6 +201,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _back.translatesAutoresizingMaskIntoConstraints = NO;
     _back.adjustsImageWhenHighlighted = NO;
     [_back addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    _back.hidden = YES;
     
     [self.view addSubview:_back];
     
@@ -175,6 +213,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _info.translatesAutoresizingMaskIntoConstraints = NO;
     _info.adjustsImageWhenHighlighted = NO;
     [_info addTarget:self action:@selector(infoButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    _info.hidden = YES;
     
     [self.view addSubview:_info];
     
@@ -218,6 +257,19 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 
 #pragma mark - Private Method
+#pragma mark 加载资源
+- (void)loadResource {
+    
+    _start.hidden = NO;
+    _info.hidden = NO;
+    _back.hidden = NO;
+    
+    [self loadSubTitleWithURL:self.videoURL];
+    
+    [self playVideoWithURL:self.videoURL];
+    
+}
+
 - (void)playVideoWithURL:(NSURL *)url
 {
     if (!_videoPlayer) {
@@ -232,6 +284,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     }
     self.videoPlayer.contentURL = url;
     
+    [self.videoPlayer hiddenControlButton];
     
     //完成播放通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStart) name:MPMoviePlayerReadyForDisplayDidChangeNotification object:nil];
@@ -284,13 +337,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
-    
-    bool yes = YES;
-    // 是否存在该文件夹，如果不存在，那么创建
-    if (![[NSFileManager defaultManager] fileExistsAtPath: MY_MEDIA_DIR_STR isDirectory:&yes]) {
-        debugLog(@"新建文件夹-%@",MY_MEDIA_DIR.absoluteString);
-        [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR_STR withIntermediateDirectories:NO attributes:nil error:nil];
-    }
     
     //创建保存路径
     NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%f_%@",[[NSDate date] timeIntervalSinceNow],[videoURL lastPathComponent]]];
@@ -532,7 +578,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
     NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
     
-    //加载时间数组
+    // 加载时间数组
     for (int i = 0; i < stringArray.count;i++) {
         if ((i - 1) % 4 == 0) {
             
@@ -546,17 +592,20 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
     NSMutableArray *temp = [NSMutableArray array];
     
-    //加载字幕数组临时
+    // 加载字幕数组临时
     for (int i = 0; i < stringArray.count;i++) {
         if ((i - 2) % 4 == 0) {
             [temp addObject:stringArray[i]];
         }
     }
     
-    //加载字幕字典
+    // 加载字幕字典
     for (int i = 0; i < _subTitleTimeArray.count; i++) {
         [_subTitleArray setObject:temp[i] forKey:_subTitleTimeArray[i]];
     }
+    
+    // 刷新
+    [_subTitle reloadData];
     
     NSLog(@"测试：%@",stringArray);
     NSLog(@"时间测试:%@",_subTitleTimeArray);

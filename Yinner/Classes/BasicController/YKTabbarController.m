@@ -9,8 +9,10 @@
 #import "YKTabbarController.h"
 #import "YKDock.h"
 #import "YKPersonnalView.h"
+#import "YKFansListController.h"
+#import "YKWorksListController.h"
 
-@interface YKTabbarController ()
+@interface YKTabbarController () <YKPersonnalViewDelegate>
 {
     YKDock *_dock;
     UIPanGestureRecognizer *_pan;
@@ -218,6 +220,22 @@
     [self dismissPersonnalView:_pan];
     
     [self performSegueWithIdentifier:@"message" sender:self];
+}
+
+- (void)personnalFansClick {
+    [self dismissPersonnalView:_pan];
+    
+    YKFansListController *fanVC = [[UIStoryboard storyboardWithName:@"Independent" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"YKFansListController"];
+    
+    [self presentViewController:fanVC animated:YES completion:nil];
+}
+
+- (void)personnalWorksClick {
+    [self dismissPersonnalView:_pan];
+    
+    YKWorksListController *workVC = [[UIStoryboard storyboardWithName:@"Independent" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"YKWorksListController"];
+    
+    [self presentViewController:workVC animated:YES completion:nil];
 }
 
 #pragma mark - Get&Set

@@ -9,11 +9,16 @@
 #import "YKPersonnalView.h"
 #import "YKPersonnalCell.h"
 #import "YKLoginViewController.h"
+#import "YKFansListController.h"
+#import "YKWorksListController.h"
 
 @interface YKPersonnalView ()
 {
     NSArray *_dataSource;
 }
+@property (weak, nonatomic) IBOutlet UILabel *fansBtn;
+@property (weak, nonatomic) IBOutlet UILabel *worksBtn;
+
 @end
 
 @implementation YKPersonnalView
@@ -35,7 +40,6 @@
     
     self.personnalTable.delegate = self;
     self.personnalTable.dataSource = self;
-//    self.personnalTable.allowsSelection = NO;
     //给每一个按钮设置手势监听事件
     
     UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingButtonClick)];
@@ -47,6 +51,11 @@
     self.rewardsButton.userInteractionEnabled = YES;
     [self.rewardsButton addGestureRecognizer:tapRewards];
     
+    [self.fansBtn  setUserInteractionEnabled:YES];
+    [self.worksBtn setUserInteractionEnabled:YES];
+    [self.fansBtn addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fansButtonClick)]];
+    [self.worksBtn addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(worksButtonClick)]];
+    
     
     if (!_dataSource) {
         _dataSource = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"PersonnalPlist" withExtension:@"plist"]];
@@ -55,11 +64,22 @@
 
 
 #pragma mark - Private Method
+- (void)fansButtonClick {
+    if ([_delegate respondsToSelector:@selector(personnalFansClick)]) {
+        [_delegate personnalFansClick];
+    }
+}
+
+- (void)worksButtonClick {
+    if ([_delegate respondsToSelector:@selector(personnalWorksClick)]) {
+        [_delegate personnalWorksClick];
+    }
+}
+
 - (void)rewardsButtonClick
 {
 
 }
-
 
 - (void)settingButtonClick
 {

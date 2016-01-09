@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="-2518" y="-2508"/>
         </scene>
-        <!--音控-->
+        <!--热门-->
         <scene sceneID="Ypa-RC-VgL">
             <objects>
                 <collectionViewController id="PfQ-T3-Ef7" customClass="YKHomeViewController" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                             <outlet property="delegate" destination="PfQ-T3-Ef7" id="RB7-rz-3X4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="音控" id="Yb9-9Z-PQe"/>
+                    <navigationItem key="navigationItem" title="热门" id="Yb9-9Z-PQe"/>
                     <connections>
                         <segue destination="BUe-hf-xXl" kind="push" identifier="favourite" id="lps-V2-evB"/>
                         <segue destination="JHh-3c-5bb" kind="push" identifier="rank" id="I9c-bU-eqf"/>
@@ -1347,23 +1347,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyb-0r-yuD">
-                                <rect key="frame" x="16" y="92" width="343" height="154"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyb-0r-yuD">
+                                <rect key="frame" x="16" y="92" width="288" height="150"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Vgf-jy-JgS"/>
+                                </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.83542455808080807" green="0.83542455808080807" blue="0.83542455808080807" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yyb-0r-yuD" firstAttribute="trailing" secondItem="FgR-BF-ZGm" secondAttribute="trailingMargin" id="0Hc-ix-itM"/>
+                            <constraint firstItem="Yyb-0r-yuD" firstAttribute="leading" secondItem="FgR-BF-ZGm" secondAttribute="leadingMargin" id="3Na-0b-pSS"/>
+                            <constraint firstItem="Yyb-0r-yuD" firstAttribute="top" secondItem="3T2-QN-M7Y" secondAttribute="bottom" constant="28" id="S7Q-Jl-wfg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="意见反馈" id="0cX-Zc-Nyg">
-                        <barButtonItem key="rightBarButtonItem" title="提交" id="irp-Sl-58D">
+                        <barButtonItem key="rightBarButtonItem" title="提交" style="plain" id="irp-Sl-58D">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="submitClick:" destination="2FX-Nw-5Wg" id="fiL-8t-03r"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="suggestionContent" destination="Yyb-0r-yuD" id="xpt-MA-r8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qmb-Ao-tFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
