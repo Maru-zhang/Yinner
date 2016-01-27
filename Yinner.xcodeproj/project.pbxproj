@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */; };
+		18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDA84E1C58599000AC74CF /* libZipZap.a */; };
+		18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA85D1C5897DA00AC74CF /* NSURL+File.m */; };
 		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
 		420120681C168A650024A79E /* YKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120671C168A650024A79E /* YKTabbarController.m */; };
 		420120781C17DFB70024A79E /* YKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120771C17DFB70024A79E /* YKNavigationController.m */; };
@@ -175,6 +177,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		18DDA84B1C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D87BA1F81B3D6DEA00ED7EB3;
+			remoteInfo = "ZipZap (iOS Framework)";
+		};
+		18DDA84D1C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CFB0162C5EEB00112F49;
+			remoteInfo = "ZipZap (iOS Static Library)";
+		};
+		18DDA84F1C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8D140D31B423B1100C411B0;
+			remoteInfo = "ZipZap (OS X Framework)";
+		};
+		18DDA8511C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CF82162C5EC100112F49;
+			remoteInfo = "ZipZap (OS X Static Library)";
+		};
+		18DDA8531C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF8624CB1BB7495200C12EEE;
+			remoteInfo = "ZipZap (tvOS Framework)";
+		};
+		18DDA8551C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF8624EF1BB74B1F00C12EEE;
+			remoteInfo = "ZipZap (tvOS Static Library)";
+		};
+		18DDA8571C58599000AC74CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D899CF96162C5EC100112F49;
+			remoteInfo = ZipZapTests;
+		};
 		42C585ED1B0AFAF0005BE52E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42C585CB1B0AFAF0005BE52E /* Project object */;
@@ -187,6 +238,9 @@
 /* Begin PBXFileReference section */
 		18B92DDC1C584EED0060AE23 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZipZap.xcodeproj; path = ZipZap/ZipZap.xcodeproj; sourceTree = "<group>"; };
+		18DDA85C1C5897DA00AC74CF /* NSURL+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+File.h"; sourceTree = "<group>"; };
+		18DDA85D1C5897DA00AC74CF /* NSURL+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+File.m"; sourceTree = "<group>"; };
 		420120631C15AB8C0024A79E /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
 		420120641C15AB8C0024A79E /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
 		420120661C168A650024A79E /* YKTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKTabbarController.h; sourceTree = "<group>"; };
@@ -494,6 +548,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */,
 				42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */,
 				42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */,
 				42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */,
@@ -532,6 +587,20 @@
 				18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18DDA8421C58599000AC74CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18DDA84C1C58599000AC74CF /* ZipZap.framework */,
+				18DDA84E1C58599000AC74CF /* libZipZap.a */,
+				18DDA8501C58599000AC74CF /* ZipZap.framework */,
+				18DDA8521C58599000AC74CF /* libZipZap.a */,
+				18DDA8541C58599000AC74CF /* ZipZap.framework */,
+				18DDA8561C58599000AC74CF /* libZipZap.a */,
+				18DDA8581C58599000AC74CF /* ZipZapTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2B142949B1845E1D05C96578 /* Pods */ = {
@@ -961,6 +1030,8 @@
 				4201207F1C1813230024A79E /* KRVideoPlayerController+Hidden.m */,
 				426F90E81C1EF86B006A91E3 /* UIView+GrayLine.h */,
 				426F90E91C1EF86B006A91E3 /* UIView+GrayLine.m */,
+				18DDA85C1C5897DA00AC74CF /* NSURL+File.h */,
+				18DDA85D1C5897DA00AC74CF /* NSURL+File.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1175,6 +1246,7 @@
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */,
 				426F90C31C1EEC58006A91E3 /* libc++abi.tbd */,
 				42A15DCF1B7089220029EC0F /* libresolv.dylib */,
 				42A15DCD1B7089160029EC0F /* libz.dylib */,
@@ -1262,6 +1334,12 @@
 			mainGroup = 42C585CA1B0AFAF0005BE52E;
 			productRefGroup = 42C585D41B0AFAF0005BE52E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 18DDA8421C58599000AC74CF /* Products */;
+					ProjectRef = 18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				42C585D21B0AFAF0005BE52E /* Yinner */,
@@ -1269,6 +1347,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		18DDA84C1C58599000AC74CF /* ZipZap.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZipZap.framework;
+			remoteRef = 18DDA84B1C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA84E1C58599000AC74CF /* libZipZap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZipZap.a;
+			remoteRef = 18DDA84D1C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA8501C58599000AC74CF /* ZipZap.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZipZap.framework;
+			remoteRef = 18DDA84F1C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA8521C58599000AC74CF /* libZipZap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZipZap.a;
+			remoteRef = 18DDA8511C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA8541C58599000AC74CF /* ZipZap.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ZipZap.framework;
+			remoteRef = 18DDA8531C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA8561C58599000AC74CF /* libZipZap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZipZap.a;
+			remoteRef = 18DDA8551C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18DDA8581C58599000AC74CF /* ZipZapTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZipZapTests.xctest;
+			remoteRef = 18DDA8571C58599000AC74CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42C585D11B0AFAF0005BE52E /* Resources */ = {
@@ -1472,6 +1602,7 @@
 				425215361C203443009759D3 /* YKRankListOperator.m in Sources */,
 				420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */,
 				425215391C214F88009759D3 /* YKSubtitleView.m in Sources */,
+				18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */,
 				420120801C1813230024A79E /* KRVideoPlayerController+Hidden.m in Sources */,
 				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
@@ -1634,6 +1765,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/EaseMobSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/KRVideoPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"$(SRCROOT)/ZipZap\"",
+				);
 				INFOPLIST_FILE = Yinner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1644,6 +1784,7 @@
 					"$(PROJECT_DIR)/Yinner/Classes/Lib/VoiceLib",
 					"$(PROJECT_DIR)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alloc.Yinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1667,6 +1808,15 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/EaseMobSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/KRVideoPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"$(SRCROOT)/ZipZap\"",
+				);
 				INFOPLIST_FILE = Yinner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1677,6 +1827,7 @@
 					"$(PROJECT_DIR)/Yinner/Classes/Lib/VoiceLib",
 					"$(PROJECT_DIR)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alloc.Yinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

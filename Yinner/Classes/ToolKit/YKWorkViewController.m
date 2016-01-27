@@ -11,7 +11,7 @@
 #import "YKSubtitleView.h"
 #import "YKBrowseViewController.h"
 #import "YKLocationViewController.h"
-//#import "ZipZap.h"
+#import "NSURL+File.h"
 
 #define kSUBTITLE_H 140.0
 
@@ -58,7 +58,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     // 输出路径
     NSString *localPath = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[self.zipURL lastPathComponent]];
     
-    // 检查是否已经换出完毕
+    // 检查是否已经缓存完毕
     if ([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
         
         [self loadResource];
@@ -79,11 +79,25 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         
         // 完成操作
         [operator setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            debugLog(@"-----%@",ORIGIN_MEDIA_DIR_STR);
+            debugLog(@"-----%@",localPath);
             [SVProgressHUD dismiss];
             
             // 解压操作
-//            ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:localPath] error:nil];
+            ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:localPath] error:nil];
+            
+            // 创建解压文件夹
+            NSString *unarchivePath = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[[localPath lastPathComponent] stringByDeletingPathExtension]];
+            
+            [[NSFileManager defaultManager] createDirectoryAtPath:unarchivePath withIntermediateDirectories:NO attributes:nil error:nil];
+            
+            // 循环解压
+            for (ZZArchiveEntry* entry in archive.entries)
+            {
+                NSURL* targetPath = [[NSURL fileURLWithPath:unarchivePath] URLByAppendingPathComponent:entry.fileName];
+                
+                [[entry newDataWithError:nil] writeToURL:targetPath
+                                                  atomically:NO];
+            }
             
             [self loadResource];
             
@@ -264,9 +278,11 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _info.hidden = NO;
     _back.hidden = NO;
     
-    [self loadSubTitleWithURL:self.videoURL];
+    [self loadSubTitleWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"srt"]];
     
-    [self playVideoWithURL:self.videoURL];
+    [self playVideoWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"]];
+    
+    debugLog(@"====%@",[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"]);
     
 }
 
@@ -274,7 +290,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     if (!_videoPlayer) {
         CGFloat width = [UIScreen mainScreen].bounds.size.width;
-        _videoPlayer = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width*(9.0/16.0))];
+        _videoPlayer = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width * (9.0/16.0))];
         __weak typeof(self)weakSelf = self;
         [self.videoPlayer setDimissCompleteBlock:^{
             weakSelf.videoPlayer = nil;
@@ -296,8 +312,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 - (void)playerStart
 {
     [self startAudioRecordWithName:@"test" andDuration:_videoPlayer.duration];
-    NSLog(@"素材时间：%lf",_videoPlayer.duration);
-    NSLog(@"素材当前播放时间:%f",_recorder.currentTime);
+//    NSLog(@"素材时间：%lf",_videoPlayer.duration);
+//    NSLog(@"素材当前播放时间:%f",_recorder.currentTime);
     
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:1];
     NSDateFormatter *fotmatter = [[NSDateFormatter alloc] init];
@@ -322,8 +338,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 - (void)mregeWithVideo:(NSURL *)videoURL andAudio:(NSURL *)audioURL completion:(mergeMediaComplete)completion
 {
     
-    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"] options:nil];
     AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
+    AVURLAsset *bgmAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp3"] options:nil];
     
     // 合成器
     AVMutableComposition *composition = [[AVMutableComposition alloc] init];
@@ -336,7 +353,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     // 在音轨中插入资源
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, audioAsset.duration) ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
-    [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
+    [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, bgmAsset.duration) ofTrack:[[bgmAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     
     //创建保存路径
     NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%f_%@",[[NSDate date] timeIntervalSinceNow],[videoURL lastPathComponent]]];
@@ -571,10 +588,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _subTitleArray = [NSMutableDictionary dictionary];
     _subTitleTimeArray = [NSMutableArray array];
     
-    NSURL *testURL = [[NSBundle mainBundle] URLForResource:@"zimu" withExtension:@"srt"];
-    
     NSError *error = nil;
-    NSString *sourceString = [NSString stringWithContentsOfURL:testURL encoding:NSUTF8StringEncoding error:&error];
+    NSString *sourceString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
     NSArray *stringArray = [sourceString componentsSeparatedByString:@"\n"];
     

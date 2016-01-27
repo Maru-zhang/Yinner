@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5035D08F16AE7E61A0E2379E553B28AFB734FBCC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5035D08F16AE7E61A0E2379E553B28AFB734FBCC" : 0,
+    "82DF43EF5CA016D15C41E0AF1AF686E9973475B7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C5CB7D4-38A7-406F-8779-7A66A6165A6B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5035D08F16AE7E61A0E2379E553B28AFB734FBCC" : "Yinner",
+    "82DF43EF5CA016D15C41E0AF1AF686E9973475B7" : "Yinner\/ZipZap\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Yinner",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Yinner.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Maru-zhang\/Yinner.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5035D08F16AE7E61A0E2379E553B28AFB734FBCC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pixelglow\/ZipZap.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "82DF43EF5CA016D15C41E0AF1AF686E9973475B7"
+    }
+  ]
+}

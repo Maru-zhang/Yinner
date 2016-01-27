@@ -18,6 +18,7 @@
 #import "NSString+FileName.h"
 #import "NSString+File.h"
 #import "ReuseFrame.h"
+#import <ZipZap/ZipZap.h>
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate,UITableViewDataSource,UITableViewDelegate>
 
