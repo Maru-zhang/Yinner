@@ -13,6 +13,7 @@
 #import "YKLocationViewController.h"
 #import "NSURL+File.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioServices.h>
 
 #define kSUBTITLE_H 140.0
 
@@ -239,13 +240,15 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
     // 设置默认的模式
     self.alreadyMrege = NO;
-    
-    //真机下需要的代码
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    NSError *sessionError;
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:&sessionError];
-    [session setActive:YES error:nil];
+  
+    /*
+     真机下需要的代码
+     妈的，外国人就是牛逼啊，全靠google!
+     */
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker error: nil];
+    [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
+    [audioSession setActive:YES error:nil];
     
     //隐藏状态栏
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
@@ -315,7 +318,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 }
 
 #pragma mark mrege video&audio
-- (void)mregeWithVideo:(NSURL *)videoURL andAudio:(NSURL *)audioURL completion:(mergeMediaComplete)completion
+- (void)mregeVideoWithCompletion:(mergeMediaComplete)completion
 {
     
     AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"] options:nil];
@@ -336,7 +339,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [bgmTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, bgmAsset.duration) ofTrack:[[bgmAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
     
     //创建保存路径
-    NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%f_%@",[[NSDate date] timeIntervalSinceNow],[videoURL lastPathComponent]]];
+    NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mov",[[NSUUID UUID] UUIDString]]];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
     
     debugLog(@"%@",[url filePathURL]);
@@ -364,7 +367,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         
         // 赋值
         model.cover = myPathDocs;
-        model.name = [[videoURL lastPathComponent] stringByDeletingPathExtension];
+        model.name = [[self.zipURL lastPathComponent] stringByDeletingPathExtension];
         model.origin = @"音控";
         model.time = [[NSDate date] getCurrentTime];
         model.titleurl = [url lastPathComponent];
@@ -466,7 +469,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     debugLog(@"完成录音");
     
     //开始合成
-    [self mregeWithVideo:nil andAudio:nil completion:^(YKLocationMediaModel *model) {
+    [self mregeVideoWithCompletion:^(YKLocationMediaModel *model) {
         // 设置为已经录制完成
         self.alreadyMrege = YES;
         
@@ -500,6 +503,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
                 
             }];
         });
+
     }];
     
     //关闭Timer
