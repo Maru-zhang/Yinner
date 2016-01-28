@@ -66,7 +66,6 @@ static const CGFloat kVideoPlayerControllerAnimationTimeinterval = 0.3f;
     [UIView animateWithDuration:kVideoPlayerControllerAnimationTimeinterval animations:^{
         self.view.alpha = 1.0;
     } completion:^(BOOL finished) {
-        
     }];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 }

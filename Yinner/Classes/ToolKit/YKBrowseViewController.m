@@ -8,6 +8,7 @@
 
 #import "YKBrowseViewController.h"
 #import "KRVideoPlayerController+Hidden.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface YKBrowseViewController ()
 {
@@ -151,6 +152,11 @@
 
 - (void)setupSetting
 {
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *sesstionError;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&sesstionError];
+    
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(exitController)];
     
     swipe.direction = UISwipeGestureRecognizerDirectionRight;

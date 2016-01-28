@@ -12,6 +12,7 @@
 #import "YKBrowseViewController.h"
 #import "YKLocationViewController.h"
 #import "NSURL+File.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define kSUBTITLE_H 140.0
 
@@ -23,12 +24,16 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     UIButton *_back;
     UIButton *_info;
     YKSubtitleView *_subTitle;
-    AVAudioRecorder *_recorder;
     NSMutableArray *_locationArray;
     NSMutableDictionary *_subTitleArray;
     NSMutableArray *_subTitleTimeArray;
     int _currentTime;
 }
+/** 录音器 */
+@property (nonatomic,strong)  AVAudioRecorder *recorder;
+/** 背景音乐播放器 */
+@property (nonatomic,strong) AVAudioPlayer *audioPlayer;
+/** 时间器 */
 @property (nonatomic,weak) NSTimer *timeManager;
 @end
 
@@ -266,6 +271,12 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     self.alreadyMrege = NO;
     self.watchModel = NO;
     
+    //真机下需要的代码
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *sessionError;
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    [session setActive:YES error:nil];
+    
 }
 
 
@@ -281,9 +292,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [self loadSubTitleWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"srt"]];
     
     [self playVideoWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"]];
-    
-    debugLog(@"====%@",[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"]);
-    
 }
 
 - (void)playVideoWithURL:(NSURL *)url
@@ -311,9 +319,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)playerStart
 {
-    [self startAudioRecordWithName:@"test" andDuration:_videoPlayer.duration];
-//    NSLog(@"素材时间：%lf",_videoPlayer.duration);
-//    NSLog(@"素材当前播放时间:%f",_recorder.currentTime);
+    [self startAudioRecordWithName:nil andDuration:0];
     
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:1];
     NSDateFormatter *fotmatter = [[NSDateFormatter alloc] init];
@@ -329,7 +335,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     if (self.watchModel) {
         return;
     }
-    [_recorder stop];
+    [self.recorder stop];
     
     [self pauseTimeManager];
 }
@@ -339,7 +345,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     
     AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp4"] options:nil];
-    AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
+    AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"wav"] options:nil];
     AVURLAsset *bgmAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp3"] options:nil];
     
     // 合成器
@@ -425,7 +431,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     [_videoPlayer pause];
     
-    [_recorder pause];
+    [self.recorder pause];
+    
+    [self.audioPlayer pause];
     
     [self pauseTimeManager];
 }
@@ -434,7 +442,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     [_videoPlayer play];
     
-    [_recorder record];
+    [self.recorder record];
+    
+    [self.audioPlayer play];
     
     [self startTimeManager];
 }
@@ -442,53 +452,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark audio record
 - (void)startAudioRecordWithName:(NSString *)name andDuration:(NSTimeInterval)duration
 {
-    //录音参数设置
-    NSMutableDictionary *recorderSetting = [NSMutableDictionary dictionary];
-    
-    //设置保存格式
-    [recorderSetting setValue:[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-    //设置采样频率
-    [recorderSetting setValue:[NSNumber numberWithInt:44100] forKey:AVSampleRateKey];
-    //设置通道数
-    [recorderSetting setValue:[NSNumber numberWithInt:1] forKey:AVNumberOfChannelsKey];
-    //设置采样位数
-    [recorderSetting setValue:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-    //设置录音质量
-    [recorderSetting setValue:[NSNumber numberWithInt:AVAudioQualityHigh] forKey:AVEncoderAudioQualityKey];
-    
-    //获取存储路径
-    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
-    
-    //覆盖操作
-    [[NSFileManager defaultManager] removeRepeatFileWithPath:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
-    
-    NSError *error = nil;
-    
-    _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:recorderSetting error:&error];
-    
-    //真机下需要的代码
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    NSError *sessionError;
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
-    
-    if(session == nil)
-        NSLog(@"Error creating session: %@", [sessionError description]);
-    else
-        [session setActive:YES error:nil];
-    
-    _recorder.delegate = self;
-    
-    [_recorder record];
-    
-    _audioURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@.wav",cachePath,name]];
-    
-    NSLog(@"%@",cachePath);
-    
-    //异常处理
-    if (error) {
-        [NSException raise:@"录音失败！" format:@"原因：%@",[error localizedDescription]];
-    }
+    // 开始录音
+    [self.recorder record];
 }
 
 
@@ -579,7 +544,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
 {
-    NSLog(@"出错");
+    debugLog(@"出错");
 }
 
 #pragma mark load subtitle
@@ -721,6 +686,41 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 }
 
 #pragma mark - ScrollView Delegate
+
+
+#pragma mark - Property
+- (AVAudioPlayer *)audioPlayer {
+    if (!_audioPlayer) {
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"mp3"] error:nil];
+    }
+    return _audioPlayer;
+}
+
+- (AVAudioRecorder *)recorder {
+    if (!_recorder) {
+        
+        // 录音参数设置
+        NSMutableDictionary *recorderSetting = [NSMutableDictionary dictionary];
+        
+        // 设置保存格式
+        [recorderSetting setValue:[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
+        // 设置采样频率
+        [recorderSetting setValue:[NSNumber numberWithInt:44100] forKey:AVSampleRateKey];
+        // 设置通道数
+        [recorderSetting setValue:[NSNumber numberWithInt:1] forKey:AVNumberOfChannelsKey];
+        // 设置采样位数
+        [recorderSetting setValue:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+        // 设置录音质量
+        [recorderSetting setValue:[NSNumber numberWithInt:AVAudioQualityHigh] forKey:AVEncoderAudioQualityKey];
+        
+        // 初始化
+        _recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL getMaterialByZipURL:self.zipURL andType:@"wav"] settings:recorderSetting error:nil];
+        // 控制音量
+        [_recorder peakPowerForChannel:0];
+        _recorder.delegate = self;
+    }
+    return _recorder;
+}
 
 
 
