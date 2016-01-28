@@ -22,6 +22,8 @@
 - (void)hiddenCloseButton {
     KRVideoPlayerControlView *controlView = [self valueForKey:@"videoControl"];
     controlView.closeButton.hidden = YES;
+    controlView.playButton.hidden = YES;
+    controlView.pauseButton.hidden = YES;
 }
 
 @end

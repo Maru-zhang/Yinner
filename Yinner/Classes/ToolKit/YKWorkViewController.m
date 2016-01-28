@@ -29,6 +29,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     NSMutableArray *_subTitleTimeArray;
     int _currentTime;
 }
+/** 视频播放器 */
+@property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
 /** 录音器 */
 @property (nonatomic,strong)  AVAudioRecorder *recorder;
 /** 背景音乐播放器 */
@@ -42,7 +44,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark - 构造方法
 - (instancetype)initWithURL:(NSURL *)url {
     if (self = [super init]) {
-        self.videoURL = url;
+        self.zipURL = url;
     }
     return self;
 }
@@ -175,27 +177,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     return YES;
 }
 
-#pragma mark 设置是否为观看模式
-- (void)setWatchModel:(BOOL)watchModel
-{
-    //赋值
-    _watchModel = watchModel;
-    
-    if (watchModel) {
-        [self.videoPlayer hiddenCloseButton];
-        _start.hidden = YES;
-        _back.hidden =YES;
-        _info.hidden = YES;
-    }
-    else
-    {
-        [self.videoPlayer hiddenControlButton];
-        _start.hidden = NO;
-        _back.hidden = NO;
-        _info.hidden = NO;
-    }
-}
-
 #pragma mark - 初始化
 - (void)setupView
 {
@@ -256,26 +237,21 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     self.view.backgroundColor = RGB(28, 32, 44);
     
-    //添加返回手势
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(exit)];
-    swipe.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swipe];
+    // 设置默认的模式
+    self.alreadyMrege = NO;
+    
+    //真机下需要的代码
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *sessionError;
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:&sessionError];
+    [session setActive:YES error:nil];
     
     //隐藏状态栏
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         [self prefersStatusBarHidden];
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
     }
-    
-    //设置默认的模式
-    self.alreadyMrege = NO;
-    self.watchModel = NO;
-    
-    //真机下需要的代码
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    NSError *sessionError;
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
-    [session setActive:YES error:nil];
     
 }
 
@@ -308,6 +284,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     }
     self.videoPlayer.contentURL = url;
     
+    // 隐藏不需要显示的按钮
     [self.videoPlayer hiddenControlButton];
     
     //完成播放通知
@@ -332,9 +309,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)playerStop
 {
-    if (self.watchModel) {
-        return;
-    }
     [self.recorder stop];
     
     [self pauseTimeManager];
@@ -411,8 +385,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 {
     _start.selected ? [_start setSelected:NO] : [_start setSelected:YES];
     _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ?[self onPlayerPause]: [self onPlayerStart];
-    [self setWatchModel:NO];
-    
+    [_videoPlayer hiddenControlButton];
 }
 
 - (void)backButtonClick
@@ -461,13 +434,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark  退出控制器
 - (void)exit
 {
-    //判断是否为观赏模式
-    if (self.watchModel) {
-        [_videoPlayer dismiss];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        NSLog(@"判断");
-        return;
-    }
 
     //判断是否已经录音完成
     if (self.alreadyMrege) {
@@ -497,12 +463,10 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark - audioRecode delegate
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
 {
-    NSLog(@"完成录音");
-    NSLog(@"videoURL:%@",_videoURL);
-    NSLog(@"audioURL:%@",_audioURL);
+    debugLog(@"完成录音");
     
     //开始合成
-    [self mregeWithVideo:_videoURL andAudio:_audioURL completion:^(YKLocationMediaModel *model) {
+    [self mregeWithVideo:nil andAudio:nil completion:^(YKLocationMediaModel *model) {
         // 设置为已经录制完成
         self.alreadyMrege = YES;
         
