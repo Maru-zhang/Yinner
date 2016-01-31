@@ -37,7 +37,6 @@
     [self setupSetting];
     
     [self setupView];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -7,7 +7,6 @@
 //
 
 #import "YKWorkViewController.h"
-#import "KRVideoPlayerController+Hidden.h"
 #import "YKSubtitleView.h"
 #import "YKBrowseViewController.h"
 #import "YKLocationViewController.h"
@@ -31,7 +30,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     int _currentTime;
 }
 /** 视频播放器 */
-@property (nonatomic,strong) KRVideoPlayerController *videoPlayer;
+@property (nonatomic,strong) AVPlayer *videoPlayer;
+/** 视频播放图层 */
+@property (nonatomic,strong) AVPlayerLayer *videoLayer;
 /** 录音器 */
 @property (nonatomic,strong)  AVAudioRecorder *recorder;
 /** 背景音乐播放器 */
@@ -58,6 +59,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [self setupSetting];
     //初始化视图
     [self setupView];
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -124,6 +128,10 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [super viewWillDisappear:animated];
     
     [self.timeManager invalidate];
+    
+    [self.videoPlayer.currentItem cancelPendingSeeks];
+    
+    [self.videoPlayer.currentItem.asset cancelLoading];
 }
 
 - (void)dealloc {
@@ -181,7 +189,10 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark - 初始化
 - (void)setupView
 {
-    //添加开始、暂停按钮
+    // 添加播放图层
+    [self.view.layer addSublayer:self.videoLayer];
+    
+    // 添加开始、暂停按钮
     _start = [[UIButton alloc] init];
     _start.backgroundColor = [UIColor clearColor];
     [_start setImage:[UIImage imageNamed:@"record_start"] forState:UIControlStateNormal];
@@ -229,6 +240,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _subTitle.delegate = self;
     _subTitle.contentInset = UIEdgeInsetsMake(kSUBTITLE_H, 0, kSUBTITLE_H, 0);
     _subTitle.contentOffset = CGPointMake(0, -kSUBTITLE_H);
+    _subTitle.userInteractionEnabled = NO;
     
     [self.view addSubview:_subTitle];
     
@@ -248,7 +260,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker error: nil];
     [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
-    [audioSession setActive:YES error:nil];
+    [audioSession setActive:NO error:nil];
     
     //隐藏状态栏
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
@@ -275,46 +287,10 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)playVideoWithURL:(NSURL *)url
 {
-    if (!_videoPlayer) {
-        CGFloat width = [UIScreen mainScreen].bounds.size.width;
-        _videoPlayer = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width * (9.0/16.0))];
-        __weak typeof(self)weakSelf = self;
-        [self.videoPlayer setDimissCompleteBlock:^{
-            weakSelf.videoPlayer = nil;
-        }];
-        
-        [self.videoPlayer showInWindow];
-    }
-    self.videoPlayer.contentURL = url;
+    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+    [self.videoPlayer replaceCurrentItemWithPlayerItem:playerItem];
     
-    // 隐藏不需要显示的按钮
-    [self.videoPlayer hiddenControlButton];
-    
-    //完成播放通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStart) name:MPMoviePlayerReadyForDisplayDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerStop) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-    
-}
-
-- (void)playerStart
-{
-    [self startAudioRecordWithName:nil andDuration:0];
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:1];
-    NSDateFormatter *fotmatter = [[NSDateFormatter alloc] init];
-    [fotmatter dateFromString:@"HH：mm"];
-    NSString *time = [fotmatter stringFromDate:date];
-    NSLog(@"%@",date);
-    NSLog(@"test:%@",time);
-    
-}
-
-- (void)playerStop
-{
-    [self.recorder stop];
-    
-    [self pauseTimeManager];
 }
 
 #pragma mark mrege video&audio
@@ -387,8 +363,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 - (void)startButtonClick
 {
     _start.selected ? [_start setSelected:NO] : [_start setSelected:YES];
-    _videoPlayer.playbackState == MPMoviePlaybackStatePlaying ?[self onPlayerPause]: [self onPlayerStart];
-    [_videoPlayer hiddenControlButton];
+    self.videoPlayer.rate == 1.0 ? [self onPlayerPause] : [self onPlayerStart];
+    
 }
 
 - (void)backButtonClick
@@ -405,7 +381,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark 播放状态逻辑
 - (void)onPlayerPause
 {
-    [_videoPlayer pause];
+    [self.videoPlayer pause];
     
     [self.recorder pause];
     
@@ -416,7 +392,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)onPlayerStart
 {
-    [_videoPlayer play];
+    [self.videoPlayer play];
     
     [self.recorder record];
     
@@ -425,14 +401,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [self startTimeManager];
 }
 
-#pragma mark audio record
-- (void)startAudioRecordWithName:(NSString *)name andDuration:(NSTimeInterval)duration
-{
-    // 开始录音
-    [self.recorder record];
-}
-
-
 
 #pragma mark  退出控制器
 - (void)exit
@@ -440,7 +408,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
     //判断是否已经录音完成
     if (self.alreadyMrege) {
-        [_videoPlayer dismiss];
         [self dismissViewControllerAnimated:YES completion:nil];
         return;
     }
@@ -448,7 +415,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃当前配音吗？" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"放弃" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [_videoPlayer dismiss];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
@@ -690,6 +656,31 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     return _recorder;
 }
 
+- (AVPlayer *)videoPlayer {
+    if (!_videoPlayer) {
+        _videoPlayer = [[AVPlayer alloc] init];
+        _videoPlayer.muted = YES;
+        __weak typeof(self)weakSelf = self;
+        [_videoPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:nil usingBlock:^(CMTime time) {
+            if (weakSelf.videoPlayer.currentItem.duration.value == time.value) {
+                [weakSelf.recorder stop];
+            }
+        }];
+    }
+    return _videoPlayer;
+}
+
+- (AVPlayerLayer *)videoLayer {
+    if (!_videoLayer) {
+        _videoLayer = [AVPlayerLayer playerLayerWithPlayer:self.videoPlayer];
+        _videoLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+        _videoLayer.anchorPoint = CGPointMake(0, 0);
+        _videoLayer.bounds = CGRectMake(0, 0, KwinW, KwinW * 9 / 16);
+        _videoLayer.position = CGPointMake(0,0);
+        
+    }
+    return _videoLayer;
+}
 
 
 @end

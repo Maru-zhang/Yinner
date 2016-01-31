@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */; };
+		18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */; };
+		18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */; };
+		18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */; };
 		18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDA84E1C58599000AC74CF /* libZipZap.a */; };
 		18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA85D1C5897DA00AC74CF /* NSURL+File.m */; };
 		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
@@ -44,11 +47,8 @@
 		425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B392C1B4A7940002468F4 /* YKSettingController.m */; };
 		425B39301B4A8149002468F4 /* YKFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B392F1B4A8149002468F4 /* YKFriendController.m */; };
 		425B39331B4A815F002468F4 /* YKMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B39321B4A815F002468F4 /* YKMessageController.m */; };
-		42656D1F1B157EC200D2AB4B /* example.mov in Resources */ = {isa = PBXBuildFile; fileRef = 42656D1E1B157EC200D2AB4B /* example.mov */; };
 		42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D251B1597D900D2AB4B /* YKLocationViewController.m */; };
 		42656D2B1B15987B00D2AB4B /* YKWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */; };
-		426B73C41B188C0800E7EA7E /* example.wav in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C21B188C0800E7EA7E /* example.wav */; };
-		426B73C51B188C0800E7EA7E /* 1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 426B73C31B188C0800E7EA7E /* 1.mov */; };
 		426F90EA1C1EF86B006A91E3 /* UIView+GrayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 426F90E91C1EF86B006A91E3 /* UIView+GrayLine.m */; };
 		426FCBC51C40C7360045B369 /* ChannelPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426FCBC11C40C7360045B369 /* ChannelPlist.plist */; };
 		426FCBC61C40C7360045B369 /* MatterSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426FCBC21C40C7360045B369 /* MatterSort.plist */; };
@@ -142,8 +142,6 @@
 		42A15D4A1B7032E40029EC0F /* YKAboutSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A15D491B7032E40029EC0F /* YKAboutSettingController.m */; };
 		42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC11B7088650029EC0F /* MobileCoreServices.framework */; };
 		42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC31B7088710029EC0F /* CFNetwork.framework */; };
-		42A28A791B64465600F390EF /* zimu.srt in Resources */ = {isa = PBXBuildFile; fileRef = 42A28A781B64465600F390EF /* zimu.srt */; };
-		42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42A8EE171B1D67E100D34EAD /* DefautCover.jpg */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
 		42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B5B6E31B1E81600061CF4B /* NSString+FileName.m */; };
 		42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A481B1FD92800F6AAAC /* YKLibraryCell.m */; };
@@ -236,8 +234,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187A83BA1C5D9DC700A8F3BF /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		18B92DDC1C584EED0060AE23 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		18D70BA01C5BEA7D00548B85 /* YKUserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKUserCenter.h; sourceTree = "<group>"; };
+		18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUserCenter.m; sourceTree = "<group>"; };
+		18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		18D70BA81C5BF13F00548B85 /* UIAlertController+ShortWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ShortWay.h"; sourceTree = "<group>"; };
+		18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ShortWay.m"; sourceTree = "<group>"; };
 		18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZipZap.xcodeproj; path = ZipZap/ZipZap.xcodeproj; sourceTree = "<group>"; };
 		18DDA85C1C5897DA00AC74CF /* NSURL+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+File.h"; sourceTree = "<group>"; };
 		18DDA85D1C5897DA00AC74CF /* NSURL+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+File.m"; sourceTree = "<group>"; };
@@ -309,14 +313,11 @@
 		425B392F1B4A8149002468F4 /* YKFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKFriendController.m; sourceTree = "<group>"; };
 		425B39311B4A815F002468F4 /* YKMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMessageController.h; sourceTree = "<group>"; };
 		425B39321B4A815F002468F4 /* YKMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMessageController.m; sourceTree = "<group>"; };
-		42656D1E1B157EC200D2AB4B /* example.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.mov; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
 		42656D281B15986400D2AB4B /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		42656D291B15987B00D2AB4B /* YKWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKWorkViewController.h; sourceTree = "<group>"; };
 		42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKWorkViewController.m; sourceTree = "<group>"; };
-		426B73C21B188C0800E7EA7E /* example.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = example.wav; sourceTree = "<group>"; };
-		426B73C31B188C0800E7EA7E /* 1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 1.mov; sourceTree = "<group>"; };
 		426B73C71B1898F100E7EA7E /* ReuseFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReuseFrame.h; path = ../Other/ReuseFrame.h; sourceTree = "<group>"; };
 		426F90C31C1EEC58006A91E3 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		426F90E81C1EF86B006A91E3 /* UIView+GrayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GrayLine.h"; sourceTree = "<group>"; };
@@ -487,8 +488,6 @@
 		42A15DCB1B70890B0029EC0F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		42A15DCD1B7089160029EC0F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		42A15DCF1B7089220029EC0F /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
-		42A28A781B64465600F390EF /* zimu.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zimu.srt; sourceTree = "<group>"; };
-		42A8EE171B1D67E100D34EAD /* DefautCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DefautCover.jpg; sourceTree = "<group>"; };
 		42A8EE191B1DDA9400D34EAD /* NSFileManager+Repeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Repeat.h"; sourceTree = "<group>"; };
 		42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Repeat.m"; sourceTree = "<group>"; };
 		42B5B6E21B1E81600061CF4B /* NSString+FileName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FileName.h"; sourceTree = "<group>"; };
@@ -548,6 +547,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */,
 				18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */,
 				42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */,
 				42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */,
@@ -587,6 +587,15 @@
 				18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18D70B9F1C5BEA2C00548B85 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				18D70BA01C5BEA7D00548B85 /* YKUserCenter.h */,
+				18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		18DDA8421C58599000AC74CF /* Products */ = {
@@ -691,13 +700,9 @@
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				187A83BA1C5D9DC700A8F3BF /* 1.mp4 */,
 				42D67D691BB2ACB200B1C81D /* Images.xcassets */,
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
-				42A28A781B64465600F390EF /* zimu.srt */,
-				426B73C21B188C0800E7EA7E /* example.wav */,
-				426B73C31B188C0800E7EA7E /* 1.mov */,
-				42A8EE171B1D67E100D34EAD /* DefautCover.jpg */,
-				42656D1E1B157EC200D2AB4B /* example.mov */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 		42656D271B1597F900D2AB4B /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				18D70B9F1C5BEA2C00548B85 /* User */,
 				426F877F1B6B133800624E1B /* View */,
 				42656D281B15986400D2AB4B /* Singleton.h */,
 				42656D291B15987B00D2AB4B /* YKWorkViewController.h */,
@@ -1032,6 +1038,8 @@
 				426F90E91C1EF86B006A91E3 /* UIView+GrayLine.m */,
 				18DDA85C1C5897DA00AC74CF /* NSURL+File.h */,
 				18DDA85D1C5897DA00AC74CF /* NSURL+File.m */,
+				18D70BA81C5BF13F00548B85 /* UIAlertController+ShortWay.h */,
+				18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1246,6 +1254,7 @@
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */,
 				18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */,
 				426F90C31C1EEC58006A91E3 /* libc++abi.tbd */,
 				42A15DCF1B7089220029EC0F /* libresolv.dylib */,
@@ -1311,6 +1320,7 @@
 		42C585CB1B0AFAF0005BE52E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YK;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Alloc;
 				TargetAttributes = {
@@ -1405,20 +1415,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426B73C51B188C0800E7EA7E /* 1.mov in Resources */,
 				42D67D6A1BB2ACB200B1C81D /* Images.xcassets in Resources */,
 				421A68691B33F1AC002E249A /* YKPersonnalCell.xib in Resources */,
 				42FCF2161B858135005C108E /* YKCommentTableViewCell.xib in Resources */,
 				42FCF2141B858135005C108E /* YKBrowseAuthorInfoView.xib in Resources */,
 				424DAB2E1C300CF100F8BC52 /* Independent.storyboard in Resources */,
 				42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */,
-				426B73C41B188C0800E7EA7E /* example.wav in Resources */,
 				426FCBC81C40C7360045B369 /* ProvincesAndCities.plist in Resources */,
 				426FCD101C40D5190045B369 /* chat_send_message.png in Resources */,
 				426FCD2A1C40D5190045B369 /* SVProgressHUD.bundle in Resources */,
 				42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */,
-				42656D1F1B157EC200D2AB4B /* example.mov in Resources */,
-				42A28A791B64465600F390EF /* zimu.srt in Resources */,
 				4294A3471B735749009C86B6 /* YKChatMessageCell.xib in Resources */,
 				426FCD131C40D5190045B369 /* chatfrom_bg_normal.png in Resources */,
 				42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */,
@@ -1440,7 +1446,6 @@
 				426FCD0A1C40D5190045B369 /* chat_animation_white1.png in Resources */,
 				42C585E71B0AFAF0005BE52E /* LaunchScreen.xib in Resources */,
 				426FCD0E1C40D5190045B369 /* chat_message_back.png in Resources */,
-				42A8EE181B1D67E100D34EAD /* DefautCover.jpg in Resources */,
 				426FCBC51C40C7360045B369 /* ChannelPlist.plist in Resources */,
 				426FCD091C40D5190045B369 /* chat_animation3.png in Resources */,
 				426FCD161C40D5190045B369 /* 0.jpeg in Resources */,
@@ -1604,6 +1609,7 @@
 				425215391C214F88009759D3 /* YKSubtitleView.m in Sources */,
 				18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */,
 				420120801C1813230024A79E /* KRVideoPlayerController+Hidden.m in Sources */,
+				18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */,
 				42046FB31B8075BD0042BDD7 /* NSString+Size.m in Sources */,
 				42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */,
 				426FCD1F1C40D5190045B369 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1628,6 +1634,7 @@
 				425B39301B4A8149002468F4 /* YKFriendController.m in Sources */,
 				426FCD301C40D5190045B369 /* UIImageView+AFNetworking.m in Sources */,
 				421A3ADB1B7A1DD900E62D9A /* YKSearchFriendController.m in Sources */,
+				18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

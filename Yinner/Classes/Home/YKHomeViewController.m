@@ -41,12 +41,9 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseIdentifier];
     
     [self setupView];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
 }
+
 
 - (void)viewDidLayoutSubviews
 {

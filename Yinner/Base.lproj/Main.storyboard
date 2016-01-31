@@ -1260,7 +1260,43 @@
                     <view key="view" contentMode="scaleToFill" id="DqR-Qm-lHy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maru-zhang@foxmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-Cx-ZV1">
+                                <rect key="frame" x="60" y="527" width="201" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="phB-tj-fdO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前版本：V1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2W-oc-ebh">
+                                <rect key="frame" x="87" y="402" width="147" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="zvK-4v-XkP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainButton" translatesAutoresizingMaskIntoConstraints="NO" id="X18-0e-E4p">
+                                <rect key="frame" x="135" y="344" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="r43-pn-MTK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cmb-Cx-ZV1" firstAttribute="leading" secondItem="DqR-Qm-lHy" secondAttribute="leadingMargin" constant="44" id="055-Cw-pPZ"/>
+                            <constraint firstAttribute="bottom" secondItem="cmb-Cx-ZV1" secondAttribute="bottom" constant="20" symbolic="YES" id="57M-L4-cVW"/>
+                            <constraint firstItem="X18-0e-E4p" firstAttribute="top" secondItem="DJO-FY-6vC" secondAttribute="bottom" constant="280" id="SdV-V3-WiM"/>
+                            <constraint firstItem="cmb-Cx-ZV1" firstAttribute="centerX" secondItem="a2W-oc-ebh" secondAttribute="centerX" id="XGx-N1-l9O"/>
+                            <constraint firstItem="a2W-oc-ebh" firstAttribute="centerX" secondItem="DqR-Qm-lHy" secondAttribute="centerX" id="drf-fH-Lx3"/>
+                            <constraint firstItem="cmb-Cx-ZV1" firstAttribute="top" secondItem="a2W-oc-ebh" secondAttribute="bottom" constant="86" id="ejO-nr-0n9"/>
+                            <constraint firstItem="X18-0e-E4p" firstAttribute="centerX" secondItem="a2W-oc-ebh" secondAttribute="centerX" id="o7p-j9-LgC"/>
+                            <constraint firstItem="a2W-oc-ebh" firstAttribute="top" secondItem="X18-0e-E4p" secondAttribute="bottom" constant="8" symbolic="YES" id="u27-y9-Gb9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="关于Yinner" id="dWZ-GG-z0j"/>
                 </viewController>
