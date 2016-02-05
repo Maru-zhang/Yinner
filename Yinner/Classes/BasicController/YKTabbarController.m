@@ -57,12 +57,14 @@
     [self.view addSubview:_dock];
 
     __weak typeof(self) weakSelf = self;
-    //监听按钮的点击
+    // 监听按钮的点击
     _dock.itemClickBlock = ^(int index)
     {
         [weakSelf selectDockItemAt:index];
     };
     
+    // 默认第一次点击
+    _dock.selectedIndex = 0;
 }
 
 #pragma mark 选中的方法
@@ -189,9 +191,6 @@
         }
     }
     
-    NSLog(@"起始位置%@",NSStringFromCGPoint(_beginPoint));
-    NSLog(@"当前位置%@",NSStringFromCGPoint([pan locationInView:self.view.window]));
-    NSLog(@"%f",instance);
 }
 
 

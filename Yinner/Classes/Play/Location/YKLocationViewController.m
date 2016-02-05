@@ -9,6 +9,7 @@
 #import "YKLocationViewController.h"
 #import "YKWorkViewController.h"
 #import "UIView+GrayLine.h"
+#import "YKMatterModel.h"
 
 @interface YKLocationViewController ()
 
@@ -28,14 +29,9 @@
 
 
 #pragma mark - dataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,7 +44,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = @"example";
+    cell.textLabel.text = @"后会无期";
     
     return cell;
 }
@@ -58,8 +54,14 @@
 #pragma mark - tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YKWorkViewController *player = [[YKWorkViewController alloc] initWithURL:[NSURL URLWithString:@"http://7xp4ku.com1.z0.glb.clouddn.com/201411171813a004c168398c20bb.zip"]];
-    [self presentViewController:player animated:YES completion:nil];
+    YKMatterModel *model = [[YKMatterModel alloc] init];
+    
+    model.title = @"后会无期";
+    model.zipURL = [NSURL URLWithString:@"http://7xp4ku.com1.z0.glb.clouddn.com/201411171813a004c168398c20bb.zip"];
+    
+    YKWorkViewController *vc = [[YKWorkViewController alloc] initWithModel:model];
+    
+    [self presentViewController:vc animated:YES completion:nil];
     
 }
 

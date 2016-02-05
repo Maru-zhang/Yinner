@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180E8F831C6126380028209B /* YKMatterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E8F821C6126380028209B /* YKMatterModel.m */; };
+		181139CC1C643C0D00DE3638 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139C91C643C0D00DE3638 /* YKDock.m */; };
+		181139CD1C643C0D00DE3638 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139CB1C643C0D00DE3638 /* YKDockItem.m */; };
 		18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */; };
 		18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */; };
 		18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */; };
@@ -130,8 +133,6 @@
 		42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42764AA91B33CE65007A4F9E /* YKPersonnalView.xib */; };
 		4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4294A3441B735749009C86B6 /* YKChatMessageCell.m */; };
 		4294A3471B735749009C86B6 /* YKChatMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4294A3451B735749009C86B6 /* YKChatMessageCell.xib */; };
-		4297F8F61B143B1B00706B72 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F31B143B1B00706B72 /* YKDock.m */; };
-		4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8F51B143B1B00706B72 /* YKDockItem.m */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
 		4297F90A1B144CF100706B72 /* YKPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F9091B144CF100706B72 /* YKPlayViewController.m */; };
 		4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F90F1B144D0700706B72 /* YKHomeViewController.m */; };
@@ -234,6 +235,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180E8F811C6126380028209B /* YKMatterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMatterModel.h; sourceTree = "<group>"; };
+		180E8F821C6126380028209B /* YKMatterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMatterModel.m; sourceTree = "<group>"; };
+		181139C81C643C0D00DE3638 /* YKDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDock.h; sourceTree = "<group>"; };
+		181139C91C643C0D00DE3638 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDock.m; sourceTree = "<group>"; };
+		181139CA1C643C0D00DE3638 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDockItem.h; sourceTree = "<group>"; };
+		181139CB1C643C0D00DE3638 /* YKDockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDockItem.m; sourceTree = "<group>"; };
 		187A83BA1C5D9DC700A8F3BF /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		18B92DDC1C584EED0060AE23 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
@@ -460,10 +467,6 @@
 		4294A3431B735749009C86B6 /* YKChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChatMessageCell.h; sourceTree = "<group>"; };
 		4294A3441B735749009C86B6 /* YKChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChatMessageCell.m; sourceTree = "<group>"; };
 		4294A3451B735749009C86B6 /* YKChatMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKChatMessageCell.xib; sourceTree = "<group>"; };
-		4297F8F21B143B1B00706B72 /* YKDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKDock.h; path = ../YKDock.h; sourceTree = "<group>"; };
-		4297F8F31B143B1B00706B72 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YKDock.m; path = ../YKDock.m; sourceTree = "<group>"; };
-		4297F8F41B143B1B00706B72 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKDockItem.h; path = ../YKDockItem.h; sourceTree = "<group>"; };
-		4297F8F51B143B1B00706B72 /* YKDockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YKDockItem.m; path = ../YKDockItem.m; sourceTree = "<group>"; };
 		4297F8FC1B143BD500706B72 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		4297F8FD1B143BD500706B72 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		4297F9081B144CF100706B72 /* YKPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayViewController.h; sourceTree = "<group>"; };
@@ -589,6 +592,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		180E8F791C61261E0028209B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				180E8F811C6126380028209B /* YKMatterModel.h */,
+				180E8F821C6126380028209B /* YKMatterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181139C71C643BE300DE3638 /* Dock */ = {
+			isa = PBXGroup;
+			children = (
+				181139C81C643C0D00DE3638 /* YKDock.h */,
+				181139C91C643C0D00DE3638 /* YKDock.m */,
+				181139CA1C643C0D00DE3638 /* YKDockItem.h */,
+				181139CB1C643C0D00DE3638 /* YKDockItem.m */,
+			);
+			path = Dock;
+			sourceTree = "<group>";
+		};
 		18D70B9F1C5BEA2C00548B85 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,17 +665,6 @@
 				42C585E51B0AFAF0005BE52E /* LaunchScreen.xib */,
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		420120791C17DFBC0024A79E /* Dock */ = {
-			isa = PBXGroup;
-			children = (
-				4297F8F21B143B1B00706B72 /* YKDock.h */,
-				4297F8F31B143B1B00706B72 /* YKDock.m */,
-				4297F8F41B143B1B00706B72 /* YKDockItem.h */,
-				4297F8F51B143B1B00706B72 /* YKDockItem.m */,
-			);
-			path = Dock;
 			sourceTree = "<group>";
 		};
 		4204950E1B7C89FE00FD3150 /* Model */ = {
@@ -977,7 +989,7 @@
 		4273A5271B12CF2900871B44 /* BasicController */ = {
 			isa = PBXGroup;
 			children = (
-				420120791C17DFBC0024A79E /* Dock */,
+				181139C71C643BE300DE3638 /* Dock */,
 				42764AA51B33CE14007A4F9E /* Personnal */,
 				42FF56111B719D6300C7781D /* YKLoginViewController.h */,
 				42FF56121B719D6300C7781D /* YKLoginViewController.m */,
@@ -1071,6 +1083,7 @@
 		4297F9071B144C6A00706B72 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				180E8F791C61261E0028209B /* Model */,
 				4297F9081B144CF100706B72 /* YKPlayViewController.h */,
 				4297F9091B144CF100706B72 /* YKPlayViewController.m */,
 				42D71B041B638AE900567F3B /* View */,
@@ -1531,11 +1544,10 @@
 				426F90EA1C1EF86B006A91E3 /* UIView+GrayLine.m in Sources */,
 				42019B2B1C294E2C006E9967 /* NSDate+Category.m in Sources */,
 				426FCD3A1C40D5190045B369 /* UUMessageContentButton.m in Sources */,
-				4297F8F61B143B1B00706B72 /* YKDock.m in Sources */,
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
-				4297F8F71B143B1B00706B72 /* YKDockItem.m in Sources */,
 				426FCD3E1C40D5190045B369 /* Mp3Recorder.m in Sources */,
 				426FCD1B1C40D5190045B369 /* SDImageCache.m in Sources */,
+				180E8F831C6126380028209B /* YKMatterModel.m in Sources */,
 				426FCD3B1C40D5190045B369 /* UUMessageFrame.m in Sources */,
 				42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */,
 				425B39331B4A815F002468F4 /* YKMessageController.m in Sources */,
@@ -1576,6 +1588,7 @@
 				426FCD011C40D5190045B369 /* AFNetworkReachabilityManager.m in Sources */,
 				420C4FF41C1D709F004143C6 /* YKBrowseVideoModel.m in Sources */,
 				42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */,
+				181139CD1C643C0D00DE3638 /* YKDockItem.m in Sources */,
 				42FF56131B719D6300C7781D /* YKLoginViewController.m in Sources */,
 				426FCCFE1C40D5190045B369 /* AFHTTPRequestOperation.m in Sources */,
 				426FCD211C40D5190045B369 /* SDWebImagePrefetcher.m in Sources */,
@@ -1632,6 +1645,7 @@
 				420C502B1C1D7F7F004143C6 /* YKBaseOperator.m in Sources */,
 				18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */,
 				425B39301B4A8149002468F4 /* YKFriendController.m in Sources */,
+				181139CC1C643C0D00DE3638 /* YKDock.m in Sources */,
 				426FCD301C40D5190045B369 /* UIImageView+AFNetworking.m in Sources */,
 				421A3ADB1B7A1DD900E62D9A /* YKSearchFriendController.m in Sources */,
 				18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */,

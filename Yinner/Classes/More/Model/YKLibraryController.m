@@ -83,6 +83,8 @@
     NSManagedObject *entity = _dataSource[indexPath.row];
     
     cell.title.text = [entity valueForKey:@"name"];
+    cell.time.text = [entity valueForKey:@"time"];
+    cell.origin.text = [entity valueForKey:@"origin"];
     
     return cell;
 }

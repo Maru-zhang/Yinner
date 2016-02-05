@@ -14,7 +14,7 @@
 {
     NSDate *data = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYYMMdd"];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
     NSString *currentTime = [formatter stringFromDate:data];
     
     return currentTime;

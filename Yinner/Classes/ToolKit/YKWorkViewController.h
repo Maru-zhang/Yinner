@@ -19,14 +19,14 @@
 #import "NSString+File.h"
 #import "ReuseFrame.h"
 #import <ZipZap/ZipZap.h>
+#import "YKMatterModel.h"
 
 @interface YKWorkViewController : UIViewController <AVAudioRecorderDelegate,UITableViewDataSource,UITableViewDelegate>
-
 /** 是否已经合成 */
 @property (nonatomic) BOOL alreadyMrege;
-/** 资源URL */
-@property (nonatomic,strong) NSURL *zipURL;
+/** 素材模型 */
+@property (nonatomic,strong,readonly) YKMatterModel *matter;
 
-- (instancetype)initWithURL:(NSURL *)url;
+- (instancetype)initWithModel:(YKMatterModel *)model;
 
 @end

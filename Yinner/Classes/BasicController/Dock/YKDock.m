@@ -11,6 +11,7 @@
 #import "NSString+File.h"
 
 #define KWinW [UIScreen mainScreen].bounds.size.width
+#define kJumpH 5.0
 
 @interface YKDock()
 {
@@ -62,6 +63,7 @@
     
     // 调整
     [self adjustDockItemPosition];
+    
 }
 
 #pragma mark - 调整每一个item的位置
@@ -83,9 +85,6 @@
         item.tag = i;
         
     }
-    
-    // 设置初始的点击位置
-    self.selectedIndex = 0;
 }
 
 #pragma mark - DockItem点击事件
@@ -103,6 +102,16 @@
     if (_itemClickBlock) {
         _itemClickBlock((int)dockItem.tag);
     }
+    
+    // 点击动画
+    [UIView animateWithDuration:0.2 animations:^{
+        dockItem.center = CGPointMake(dockItem.center.x, dockItem.center.y - kJumpH);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            dockItem.center = CGPointMake(dockItem.center.x, dockItem.center.y + kJumpH);
+        }];
+    }];
+
 }
 
 #pragma mark - 重写selectedIndex的set方法
