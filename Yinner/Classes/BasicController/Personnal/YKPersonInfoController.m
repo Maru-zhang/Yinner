@@ -320,7 +320,7 @@
     
     NSString *province = [_ProvincesAndCities[provincesIndex] objectForKey:@"State"];
     NSString *city = [_cityArray[cityIndex] objectForKey:@"city"];
-    NSString *result = [NSString stringWithFormat:@"%@%@",province,city];
+    NSString *result = [NSString stringWithFormat:@"%@ %@",province,city];
     
     _areaLable.text = result;
     

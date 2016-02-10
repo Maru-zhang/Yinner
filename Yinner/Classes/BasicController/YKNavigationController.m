@@ -21,8 +21,6 @@
 - (void)setupView {
     // 设置返回的颜色
     self.navigationBar.tintColor = [UIColor whiteColor];
-    // 设置状态栏样式
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     // 设置导航栏颜色
     self.navigationBar.barTintColor = NAVIGATION_COLOR;
     // 导航栏标题颜色

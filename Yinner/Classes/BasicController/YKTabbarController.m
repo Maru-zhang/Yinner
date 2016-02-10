@@ -11,6 +11,7 @@
 #import "YKPersonnalView.h"
 #import "YKFansListController.h"
 #import "YKWorksListController.h"
+#import "YKModaController.h"
 
 @interface YKTabbarController () <YKPersonnalViewDelegate>
 {
@@ -144,7 +145,6 @@
         _beginPoint = [pan locationInView:self.view.window];
     }
     
-    
     CGFloat instance = [pan locationInView:self.view.window].x - _beginPoint.x;
     
     //判断是否需要进行动画
@@ -195,6 +195,12 @@
 
 
 #pragma mark - personnalvcDelegate
+- (void)personnalHeadClick {
+    [self dismissPersonnalView:_pan];
+    
+    [YKSkipHelper skipToHeadImageSetting];
+}
+
 - (void)personnalSettingClick
 {
     [self dismissPersonnalView:_pan];
@@ -223,10 +229,12 @@
 
 - (void)personnalFansClick {
     [self dismissPersonnalView:_pan];
-    
+
     YKFansListController *fanVC = [[UIStoryboard storyboardWithName:@"Independent" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"YKFansListController"];
     
-    [self presentViewController:fanVC animated:YES completion:nil];
+    YKModaController *nav = [[YKModaController alloc] initWithRootViewController:fanVC];
+
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)personnalWorksClick {
@@ -234,7 +242,9 @@
     
     YKWorksListController *workVC = [[UIStoryboard storyboardWithName:@"Independent" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"YKWorksListController"];
     
-    [self presentViewController:workVC animated:YES completion:nil];
+    YKModaController *nav = [[YKModaController alloc] initWithRootViewController:workVC];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - Get&Set

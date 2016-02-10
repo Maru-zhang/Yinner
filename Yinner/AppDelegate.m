@@ -94,8 +94,6 @@
     
     //注册通知
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:KNotification_ReloadData object:nil]];
-    
-    NSLog(@"%@",username);
 }
 
 #pragma mark - Setup
@@ -103,17 +101,13 @@
     
     // 点击以后的反应
     [[UITableViewCell appearance] setSelectionStyle:UITableViewCellSelectionStyleNone];
+    // 导航栏颜色
+    [[UINavigationBar appearance] setBarTintColor:NAVIGATION_COLOR];
+    // 导航栏标题颜色
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:NAVIGATION_TITLE_COLOR,NSForegroundColorAttributeName,nil]];
+    // 状态栏的样式
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-//    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-//    [[UITableView appearance] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-//    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsZero];
-//    [[UITableViewCell appearance] setSeparatorInset:UIEdgeInsetsZero];
-//    
-//    if ([UITableView instancesRespondToSelector:@selector(setLayoutMargins:)]) {
-//        [[UITableView appearance] setLayoutMargins:UIEdgeInsetsZero];
-//        [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsZero];
-//        [[UITableViewCell appearance] setPreservesSuperviewLayoutMargins:NO];
-//    }
 }
 
 - (void)setupSetting {

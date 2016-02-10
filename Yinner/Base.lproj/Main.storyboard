@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q4l-oX-lFj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q4l-oX-lFj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -543,7 +543,7 @@
         <!--设置-->
         <scene sceneID="suM-5i-gyx">
             <objects>
-                <tableViewController id="m4O-5Q-OYf" customClass="YKSettingController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="YKSettingController" id="m4O-5Q-OYf" customClass="YKSettingController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Tgj-8x-nHL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,9 +574,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-hi-vcg">
-                                                    <rect key="frame" x="356" y="30" width="11" height="19"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -587,7 +584,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="其他" id="ZrG-ve-fX6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="qxe-Xb-EKd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="qxe-Xb-EKd">
                                         <rect key="frame" x="0.0" y="237.5" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qxe-Xb-EKd" id="IeV-Ba-nfQ">
@@ -601,9 +598,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Zbn-vX-Zj7">
-                                                    <rect key="frame" x="356" y="15" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_play" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-hz-YOP">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 </imageView>
@@ -626,9 +620,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="h2y-7I-e9G">
-                                                    <rect key="frame" x="356" y="15" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_news" translatesAutoresizingMaskIntoConstraints="NO" id="puB-zH-KI7">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 </imageView>
@@ -651,9 +642,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="d70-Wr-JkF">
-                                                    <rect key="frame" x="356" y="15" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_like" translatesAutoresizingMaskIntoConstraints="NO" id="Thk-rB-0ui">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 </imageView>
@@ -673,9 +661,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="3Wl-tX-7hn">
-                                                    <rect key="frame" x="356" y="14" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_agreement" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-ca-PfV">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 </imageView>
@@ -698,9 +683,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-fp-G2d">
-                                                    <rect key="frame" x="356" y="15" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_clear" translatesAutoresizingMaskIntoConstraints="NO" id="KIZ-WY-eGS">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 </imageView>
@@ -720,9 +702,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="tGa-7W-aok">
-                                                    <rect key="frame" x="356" y="15" width="11" height="19"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MainButton" translatesAutoresizingMaskIntoConstraints="NO" id="miB-Bu-8Ok">
                                                     <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                 </imageView>
@@ -791,7 +770,7 @@
         <!--个人资料-->
         <scene sceneID="x3N-1h-cez">
             <objects>
-                <tableViewController id="5eI-Fe-hev" customClass="YKPersonInfoController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="YKPersonInfoController" id="5eI-Fe-hev" customClass="YKPersonInfoController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="U3J-ZB-WzG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -900,7 +879,7 @@
                                                     <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="浙江嘉兴" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-yf-uPk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="浙江 嘉兴" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-yf-uPk">
                                                     <rect key="frame" x="95" y="11" width="197" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1276,7 +1255,7 @@
                                     <constraint firstAttribute="height" constant="39" id="zvK-4v-XkP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainButton" translatesAutoresizingMaskIntoConstraints="NO" id="X18-0e-E4p">
@@ -1372,7 +1351,6 @@
         <image name="login-password" width="256" height="256"/>
         <image name="setting_btn_quit" width="305" height="50"/>
         <image name="setting_icon_agreement" width="60" height="50"/>
-        <image name="setting_icon_arrow" width="11" height="19"/>
         <image name="setting_icon_clear" width="60" height="50"/>
         <image name="setting_icon_like" width="60" height="50"/>
         <image name="setting_icon_news" width="60" height="50"/>

@@ -10,6 +10,10 @@
 
 @protocol YKPersonnalViewDelegate <NSObject>
 /**
+ *  点击头像
+ */
+- (void)personnalHeadClick;
+/**
  *    点击粉丝
  */
 - (void)personnalFansClick;

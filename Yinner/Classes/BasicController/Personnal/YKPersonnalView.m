@@ -35,12 +35,16 @@
 #pragma makr - Private Method
 - (void)setupSetting
 {
-    self.headImage.layer.masksToBounds = YES;
-    self.headImage.layer.cornerRadius = 50;
     
     self.personnalTable.delegate = self;
     self.personnalTable.dataSource = self;
+
     //给每一个按钮设置手势监听事件
+    
+    self.headImage.layer.masksToBounds = YES;
+    self.headImage.layer.cornerRadius = 50;
+    self.headImage.userInteractionEnabled = YES;
+    [self.headImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headImageClick)]];
     
     UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(settingButtonClick)];
     self.settingButton.userInteractionEnabled = YES;
@@ -64,6 +68,13 @@
 
 
 #pragma mark - Private Method
+
+- (void)headImageClick {
+    if ([_delegate respondsToSelector:@selector(personnalHeadClick)]) {
+        [_delegate personnalHeadClick];
+    }
+}
+
 - (void)fansButtonClick {
     if ([_delegate respondsToSelector:@selector(personnalFansClick)]) {
         [_delegate personnalFansClick];
