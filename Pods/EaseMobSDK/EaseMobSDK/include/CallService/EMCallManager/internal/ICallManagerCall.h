@@ -59,6 +59,12 @@
 
 /*!
  @method
+ @brief  设置实时视频的码率，必须在通话进行前设置
+ */
+- (void)setBitrate:(int)bitrate;
+
+/*!
+ @method
  @brief  进行实时语音
  @param chatter  要进行语音通话的username（不能与自己通话）
  @param timeout  超时时间（传0，使用SDK默认超时时间）
@@ -69,6 +75,14 @@
 - (EMCallSession *)asyncMakeVoiceCall:(NSString *)chatter
                               timeout:(NSUInteger)timeout
                                 error:(EMError **)pError;
+
+/*!
+ @method
+ @brief  获取音频音量，实时变化
+ @param sessionId  要进行的实时通话的ID
+ @result           音量
+ */
+- (int)getAudioLevel:(NSString *)sessionId;
 
 #pragma makr - call video
 
@@ -137,6 +151,49 @@
  @brief  获取本地实时视频的比特率kbps，实时变化
  */
 - (int)getVideoLocalBitrate;
+
+
+/*!
+ @method
+ @brief  获取实时视频快照
+ */
+- (void)takeRemotePicture:(NSString *)fullPath;
+
+/*!
+ @method
+ @brief  暂停语音数据传输
+ */
+- (void)pauseVoiceTransfer;
+
+/*!
+ @method
+ @brief  恢复语音数据传输
+ */
+- (void)resumeVoiceTransfer;
+
+/*!
+ @method
+ @brief  暂停视频(图像)数据传输
+ */
+- (void)pauseVideoTransfer;
+
+/*!
+ @method
+ @brief  恢复视频(图像)数据传输
+ */
+- (void)resumeVideoTransfer;
+
+/*!
+ @method
+ @brief  开始录制视频
+ */
+- (BOOL)videoStartRecord:(NSString*)path;
+
+/*!
+ @method
+ @brief  停止录制视频
+ */
+- (NSString*)videoStopRecord;
 
 @optional
 

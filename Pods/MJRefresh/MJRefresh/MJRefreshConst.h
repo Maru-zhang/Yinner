@@ -3,6 +3,9 @@
 #import <UIKit/UIKit.h>
 #import <objc/message.h>
 
+// 弱引用
+#define MJWeakSelf __weak typeof(self) weakSelf = self;
+
 // 日志输出
 #ifdef DEBUG
 #define MJRefreshLog(...) NSLog(__VA_ARGS__)
@@ -13,7 +16,7 @@
 // 过期提醒
 #define MJRefreshDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
-// 运行时objc_MJRefreshMsgSend
+// 运行时objc_msgSend
 #define MJRefreshMsgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
 #define MJRefreshMsgTarget(target) (__bridge void *)(target)
 

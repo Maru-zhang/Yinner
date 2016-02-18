@@ -41,9 +41,11 @@ static NSString *const reuseIdentifier = @"reuseCell";
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseIdentifier];
     
     [self setupView];
-    
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tabBarController.tabBar setHidden:NO];
+}
 
 - (void)viewDidLayoutSubviews
 {
@@ -57,7 +59,6 @@ static NSString *const reuseIdentifier = @"reuseCell";
 }
 
 - (void)dealloc {
-    debugLog(@"dealloc");
 }
 
 #pragma mark - setup
@@ -86,6 +87,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
     _seletView.itemClick = ^(int index)
     {
         [safeSelf selectButtonWithTag:index];
+        safeSelf.tabBarController.tabBar.hidden = YES;
     };
     
     //设置collectionView的背景颜色
@@ -98,7 +100,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
         [self loadNewDataWithSetup:YES];
     }];
     
-    self.collectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self loadNewDataWithSetup:NO];
     }];
     
@@ -121,9 +123,9 @@ static NSString *const reuseIdentifier = @"reuseCell";
     // 设置正在刷新状态的动画图片
     [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
     
-    self.collectionView.header = header;
+    self.collectionView.mj_header = header;
     
-    [self.collectionView.header beginRefreshing];
+    [self.collectionView.mj_header beginRefreshing];
     
 }
 
@@ -150,13 +152,13 @@ static NSString *const reuseIdentifier = @"reuseCell";
         [weakself.collectionView reloadData];
         
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weakself.collectionView.header endRefreshing];
-        [weakself.collectionView.footer endRefreshing];
+        [weakself.collectionView.mj_header endRefreshing];
+        [weakself.collectionView.mj_footer endRefreshing];
     } andFailHander:^(NSError *error) {
         debugLog(@"%@",[error description]);
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weakself.collectionView.header endRefreshing];
-        [weakself.collectionView.footer endRefreshing];
+        [weakself.collectionView.mj_header endRefreshing];
+        [weakself.collectionView.mj_footer endRefreshing];
     }];
     
 }

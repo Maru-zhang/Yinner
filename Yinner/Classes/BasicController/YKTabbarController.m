@@ -50,12 +50,12 @@
 - (void)settingDock
 {
     
-    _dock = [[YKDock alloc] initWithFrame:self.tabBar.frame];
+    _dock = [[YKDock alloc] initWithFrame:self.tabBar.bounds];
     // 添加item
     [_dock addDockItemWithIcon:@"tabbar_home.png" title:@"首页"];
     [_dock addDockItemWithIcon:@"Icon-40.png" title:@""];
     [_dock addDockItemWithIcon:@"tabbar_more.png" title:@"音库"];
-    [self.view addSubview:_dock];
+    [self.tabBar addSubview:_dock];
 
     __weak typeof(self) weakSelf = self;
     // 监听按钮的点击

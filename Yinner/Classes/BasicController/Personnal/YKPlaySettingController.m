@@ -33,17 +33,13 @@
 #pragma mark - Private Method
 - (void)setupSetting
 {
-    _currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"playSetting"];
-    
-    if (!_currentIndex) {
-        _currentIndex = 0;
-    }
+
+    _currentIndex = [YKUserSetting getPlayerSetting];
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_currentIndex inSection:0]];
     
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
-    NSLog(@"%ld",_currentIndex);
 }
 
 #pragma mark - <Table View Delegate>
@@ -64,7 +60,7 @@
     
     curCell.accessoryType = UITableViewCellAccessoryCheckmark;
     
-    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"playSetting"];
+    [YKUserSetting setPlayerSetting:indexPath.row];
 }
 
 @end

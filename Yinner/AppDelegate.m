@@ -125,6 +125,20 @@
         debugLog(@"新建文件夹-%@",MY_MEDIA_DIR.absoluteString);
         [[NSFileManager defaultManager] createDirectoryAtPath:MY_MEDIA_DIR_STR withIntermediateDirectories:NO attributes:nil error:nil];
     }
+    
+    ;
+    
+    // APP偏好设置
+    if (![[NSFileManager defaultManager] fileExistsAtPath:MY_PREFERENCE_DIR_STR]) {
+        
+        // 默认设置
+        NSArray *setting = @[@2,@[@1,@1]];
+        
+        [[NSFileManager defaultManager] createDirectoryAtPath:MY_PREFERENCE_DIR_STR withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        [setting writeToURL:[[[[NSFileManager defaultManager] URLsForDirectory:NSPreferencePanesDirectory inDomains:NSUserDomainMask] firstObject] URLByAppendingPathComponent:@"my_perferenece.plist"] atomically:YES];
+        
+    }
 }
 
 @end

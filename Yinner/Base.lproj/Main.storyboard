@@ -1124,6 +1124,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEY-WD-aeN">
                                                     <rect key="frame" x="307" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="pushClick:" destination="u5n-Fl-HXQ" eventType="valueChanged" id="Pld-Ka-xSF"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1142,6 +1145,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uId-yu-Y1v">
                                                     <rect key="frame" x="308" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="privateClick:" destination="u5n-Fl-HXQ" eventType="valueChanged" id="oNU-vH-7h3"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只接受我关注的人发来的私信" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9La-Ii-Yi7">
                                                     <rect key="frame" x="13" y="11" width="221" height="21"/>
@@ -1177,6 +1183,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="消息设置" id="rFp-8A-0Yx"/>
+                    <connections>
+                        <outlet property="messagePushSwitch" destination="tEY-WD-aeN" id="04U-Rg-Lel"/>
+                        <outlet property="privateMessageSwitch" destination="uId-yu-Y1v" id="bVZ-A3-N9M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gda-kM-uN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

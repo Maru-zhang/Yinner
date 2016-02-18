@@ -10,6 +10,7 @@
 		180E8F831C6126380028209B /* YKMatterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E8F821C6126380028209B /* YKMatterModel.m */; };
 		181139CC1C643C0D00DE3638 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139C91C643C0D00DE3638 /* YKDock.m */; };
 		181139CD1C643C0D00DE3638 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139CB1C643C0D00DE3638 /* YKDockItem.m */; };
+		188C96911C74EE29007FCBD4 /* YKUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C96901C74EE29007FCBD4 /* YKUserSetting.m */; };
 		18A226FF1C652C4200C6BEBB /* YKModaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A226FE1C652C4200C6BEBB /* YKModaController.m */; };
 		18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */; };
 		18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */; };
@@ -244,6 +245,8 @@
 		181139CA1C643C0D00DE3638 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDockItem.h; sourceTree = "<group>"; };
 		181139CB1C643C0D00DE3638 /* YKDockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDockItem.m; sourceTree = "<group>"; };
 		187A83BA1C5D9DC700A8F3BF /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		188C968F1C74EE29007FCBD4 /* YKUserSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKUserSetting.h; sourceTree = "<group>"; };
+		188C96901C74EE29007FCBD4 /* YKUserSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUserSetting.m; sourceTree = "<group>"; };
 		18A226FD1C652C4200C6BEBB /* YKModaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKModaController.h; sourceTree = "<group>"; };
 		18A226FE1C652C4200C6BEBB /* YKModaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKModaController.m; sourceTree = "<group>"; };
 		18B92DDC1C584EED0060AE23 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
@@ -632,6 +635,8 @@
 			children = (
 				18D70BA01C5BEA7D00548B85 /* YKUserCenter.h */,
 				18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */,
+				188C968F1C74EE29007FCBD4 /* YKUserSetting.h */,
+				188C96901C74EE29007FCBD4 /* YKUserSetting.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1602,6 +1607,7 @@
 				420495121B7C8C7500FD3150 /* YKChatViewCell.m in Sources */,
 				420120681C168A650024A79E /* YKTabbarController.m in Sources */,
 				420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */,
+				188C96911C74EE29007FCBD4 /* YKUserSetting.m in Sources */,
 				426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */,
 				426FCD061C40D5190045B369 /* AFURLSessionManager.m in Sources */,
 				426FCD241C40D5190045B369 /* UIImage+MultiFormat.m in Sources */,

@@ -25,3 +25,4 @@
 #import "NSDateFormatter+Category.h"
 #import "UIAlertController+ShortWay.h"
 #import "YKSkipHelper.h"
+#import "YKUserSetting.h"
