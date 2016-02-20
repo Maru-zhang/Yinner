@@ -316,7 +316,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mov",[[NSUUID UUID] UUIDString]]];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
     
-    debugLog(@"%@",[url filePathURL]);
+//    debugLog(@"%@",[url filePathURL]);
     
     //创建输出对象
     AVAssetExportSession *export = [AVAssetExportSession exportSessionWithAsset:composition presetName:AVAssetExportPresetHighestQuality];
@@ -539,8 +539,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 - (void)updateTimeManger
 {
-    NSLog(@"正在播放----------------%f",_recorder.currentTime);
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"mm:ss"];
     
@@ -559,11 +557,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         return;
     }
     
-    //滚动
-    NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
-    
-    [_subTitle scrollToRowAtIndexPath:toIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    
     //判断当前读取的是哪一行字幕
     if ([_subTitleTimeArray containsObject:currentTime]) {
         
@@ -571,6 +564,11 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
         
         _currentTime = (int)index;
+        
+        //滚动
+        NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
+        
+        [_subTitle scrollToRowAtIndexPath:toIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
         
     }
     

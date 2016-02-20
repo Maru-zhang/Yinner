@@ -51,7 +51,27 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.videoPlayer play];
+    // 检测设置和网络状态
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    
+    __weak typeof(self)weakSelf = self;
+    
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        NSInteger integer = [YKUserSetting getPlayerSetting];
+        
+        if (integer == 0 && status == AFNetworkReachabilityStatusReachableViaWiFi) {
+            [weakSelf.videoPlayer play];
+        }else if (integer == 1 && status == AFNetworkReachabilityStatusReachableViaWWAN) {
+            [weakSelf.videoPlayer play];
+        }else if (integer == 2) {
+        }else if (status == AFNetworkReachabilityStatusNotReachable) {
+            [SVProgressHUD showErrorWithStatus:@"网路链接失败！"];
+        }
+            
+    }];
+    
+    [manager startMonitoring];
 }
 
 
@@ -183,6 +203,7 @@
         
         [self.videoPlayer showInWindow];
     }
+    
     self.videoPlayer.contentURL = url;
     
 }
