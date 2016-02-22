@@ -250,20 +250,23 @@
     //异步登陆
     [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:account password:password completion:^(NSDictionary *loginInfo, EMError *error) {
         
+        //使菊花界面消失
+        [SVProgressHUD dismiss];
+        
         if (!error) {
-            NSLog(@"登陆成功！");
-            //设置自动登陆
+            // 设置自动登陆
             [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
-            //从数据库获取数据
+            // 从数据库获取数据
             [[EaseMob sharedInstance].chatManager loadDataFromDatabase];
-            //获取群组列表
+            // 获取群组列表
             [[EaseMob sharedInstance].chatManager fetchMyGroupsListWithError:nil];
-            //自动获取好友列表
+            // 自动获取好友列表
             [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
             
-            //使菊花界面消失
-            [SVProgressHUD dismiss];
-  
+            // 保存账号密码
+            [[NSUserDefaults standardUserDefaults] setObject:account forKey:KuserAccount];
+            [[NSUserDefaults standardUserDefaults] setObject:password forKey:KuserPassword];
+            
             //退出登陆控制器
             [self dismissViewControllerAnimated:YES completion:^{
                 
@@ -275,12 +278,12 @@
             [self showAlertViewWithMessage:@"无法连接至服务器！"];
         }else if (error.errorCode == EMErrorServerAuthenticationFailure) {
             [self showAlertViewWithMessage:@"获取token失败！"];
+        }else {
+            [self showAlertViewWithMessage:@"出现未知错误！"];
         }
+        
     } onQueue:nil];
-    
-    
-    [[NSUserDefaults standardUserDefaults] setObject:account forKey:KuserAccount];
-    [[NSUserDefaults standardUserDefaults] setObject:password forKey:KuserPassword];
+
 }
 
 - (IBAction)forgetButton:(id)sender {

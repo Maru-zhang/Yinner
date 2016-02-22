@@ -19,6 +19,14 @@
 		18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDA84E1C58599000AC74CF /* libZipZap.a */; };
 		18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA85D1C5897DA00AC74CF /* NSURL+File.m */; };
 		18E9B6B51C6714E800FF5403 /* YKSkipHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */; };
+		18F505271C7BCDDA002CF38F /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505261C7BCDDA002CF38F /* TencentOpenAPI.framework */; };
+		18F505291C7BCE12002CF38F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505281C7BCE12002CF38F /* Security.framework */; };
+		18F5052B1C7BCE20002CF38F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052A1C7BCE20002CF38F /* libiconv.tbd */; };
+		18F5052D1C7BCE2E002CF38F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052C1C7BCE2E002CF38F /* SystemConfiguration.framework */; };
+		18F5052F1C7BCE37002CF38F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052E1C7BCE37002CF38F /* CoreGraphics.framework */; };
+		18F505311C7BCE52002CF38F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505301C7BCE52002CF38F /* CoreTelephony.framework */; };
+		18F505331C7BCE5F002CF38F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505321C7BCE5F002CF38F /* libstdc++.tbd */; };
+		18F505351C7BCE67002CF38F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505341C7BCE67002CF38F /* libz.tbd */; };
 		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
 		420120681C168A650024A79E /* YKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120671C168A650024A79E /* YKTabbarController.m */; };
 		420120781C17DFB70024A79E /* YKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120771C17DFB70024A79E /* YKNavigationController.m */; };
@@ -244,7 +252,6 @@
 		181139C91C643C0D00DE3638 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDock.m; sourceTree = "<group>"; };
 		181139CA1C643C0D00DE3638 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDockItem.h; sourceTree = "<group>"; };
 		181139CB1C643C0D00DE3638 /* YKDockItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDockItem.m; sourceTree = "<group>"; };
-		187A83BA1C5D9DC700A8F3BF /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		188C968F1C74EE29007FCBD4 /* YKUserSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKUserSetting.h; sourceTree = "<group>"; };
 		188C96901C74EE29007FCBD4 /* YKUserSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUserSetting.m; sourceTree = "<group>"; };
 		18A226FD1C652C4200C6BEBB /* YKModaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKModaController.h; sourceTree = "<group>"; };
@@ -261,6 +268,14 @@
 		18DDA85D1C5897DA00AC74CF /* NSURL+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+File.m"; sourceTree = "<group>"; };
 		18E9B6B31C6714E800FF5403 /* YKSkipHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSkipHelper.h; sourceTree = "<group>"; };
 		18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSkipHelper.m; sourceTree = "<group>"; };
+		18F505261C7BCDDA002CF38F /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		18F505281C7BCE12002CF38F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		18F5052A1C7BCE20002CF38F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		18F5052C1C7BCE2E002CF38F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18F5052E1C7BCE37002CF38F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18F505301C7BCE52002CF38F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		18F505321C7BCE5F002CF38F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		18F505341C7BCE67002CF38F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		420120631C15AB8C0024A79E /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
 		420120641C15AB8C0024A79E /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
 		420120661C168A650024A79E /* YKTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKTabbarController.h; sourceTree = "<group>"; };
@@ -559,11 +574,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F505351C7BCE67002CF38F /* libz.tbd in Frameworks */,
+				18F505331C7BCE5F002CF38F /* libstdc++.tbd in Frameworks */,
+				18F505311C7BCE52002CF38F /* CoreTelephony.framework in Frameworks */,
 				18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */,
+				18F5052F1C7BCE37002CF38F /* CoreGraphics.framework in Frameworks */,
+				18F5052D1C7BCE2E002CF38F /* SystemConfiguration.framework in Frameworks */,
+				18F5052B1C7BCE20002CF38F /* libiconv.tbd in Frameworks */,
+				18F505291C7BCE12002CF38F /* Security.framework in Frameworks */,
 				18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */,
 				42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */,
 				42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */,
 				42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */,
+				18F505271C7BCDDA002CF38F /* TencentOpenAPI.framework in Frameworks */,
 				42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */,
 				42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */,
 				597978221B5EC40915C43DEC /* libPods.a in Frameworks */,
@@ -741,7 +764,6 @@
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				187A83BA1C5D9DC700A8F3BF /* 1.mp4 */,
 				42D67D691BB2ACB200B1C81D /* Images.xcassets */,
 				1800AC6A1B1A165600F0F4B6 /* Plist */,
 			);
@@ -1298,6 +1320,14 @@
 		4A5EECD4D2F2C38269793CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18F505341C7BCE67002CF38F /* libz.tbd */,
+				18F505321C7BCE5F002CF38F /* libstdc++.tbd */,
+				18F505301C7BCE52002CF38F /* CoreTelephony.framework */,
+				18F5052E1C7BCE37002CF38F /* CoreGraphics.framework */,
+				18F5052C1C7BCE2E002CF38F /* SystemConfiguration.framework */,
+				18F5052A1C7BCE20002CF38F /* libiconv.tbd */,
+				18F505281C7BCE12002CF38F /* Security.framework */,
+				18F505261C7BCDDA002CF38F /* TencentOpenAPI.framework */,
 				18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */,
 				18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */,
 				426F90C31C1EEC58006A91E3 /* libc++abi.tbd */,

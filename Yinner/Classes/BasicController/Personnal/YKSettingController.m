@@ -8,27 +8,40 @@
 
 #import "YKSettingController.h"
 #import "YKLoginViewController.h"
+#import "YKPersonInfoController.h"
 
 @interface YKSettingController ()
-
 @end
 
 @implementation YKSettingController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewWillLayoutSubviews {
+    
+    UITableViewCell *cell1 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    UILabel *name = cell1.contentView.subviews[1];
+    UILabel *account = cell1.contentView.subviews[2];
+    
+    // 判断当前是否有用户登录
+    if ([[EaseMob sharedInstance].chatManager isLoggedIn]) {
+        
+        name.text = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
+        account.text = [NSString stringWithFormat:@"账号:%@",[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    }else {
+        name.text = @"请登录后查看";
+        account.text = @"";
+    }
+    
+//    debugLog(@"%@",[[EaseMob sharedInstance].chatManager loginInfo]);
 }
+
 
 #pragma mark - Table view data source
 
@@ -37,6 +50,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (indexPath.section == 0) {
+        
+        if ([[EaseMob sharedInstance].chatManager isLoggedIn]) {
+            
+            YKPersonInfoController *VC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YKPersonInfoController"];
+            
+            [self.navigationController pushViewController:VC animated:YES];
+        }else {
+            
+            [self performSegueWithIdentifier:@"exit-login" sender:self];
+        }
+    }
     
     if (indexPath.section == 1) {
         
