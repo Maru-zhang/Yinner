@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180E8F831C6126380028209B /* YKMatterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E8F821C6126380028209B /* YKMatterModel.m */; };
 		181139CC1C643C0D00DE3638 /* YKDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139C91C643C0D00DE3638 /* YKDock.m */; };
 		181139CD1C643C0D00DE3638 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139CB1C643C0D00DE3638 /* YKDockItem.m */; };
 		188C96911C74EE29007FCBD4 /* YKUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C96901C74EE29007FCBD4 /* YKUserSetting.m */; };
@@ -19,9 +18,11 @@
 		18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */; };
 		18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */; };
 		18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */; };
+		18DD6D2A1C84B27600FBFB80 /* YKMatterListOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6D291C84B27600FBFB80 /* YKMatterListOperator.m */; };
 		18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDA84E1C58599000AC74CF /* libZipZap.a */; };
 		18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA85D1C5897DA00AC74CF /* NSURL+File.m */; };
 		18E9B6B51C6714E800FF5403 /* YKSkipHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */; };
+		18F325001C84B3F200150B54 /* YKMatterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F324FF1C84B3F200150B54 /* YKMatterModel.m */; };
 		18F505291C7BCE12002CF38F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505281C7BCE12002CF38F /* Security.framework */; };
 		18F5052B1C7BCE20002CF38F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052A1C7BCE20002CF38F /* libiconv.tbd */; };
 		18F5052D1C7BCE2E002CF38F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052C1C7BCE2E002CF38F /* SystemConfiguration.framework */; };
@@ -248,8 +249,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		180E8F811C6126380028209B /* YKMatterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMatterModel.h; sourceTree = "<group>"; };
-		180E8F821C6126380028209B /* YKMatterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMatterModel.m; sourceTree = "<group>"; };
 		181139C81C643C0D00DE3638 /* YKDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDock.h; sourceTree = "<group>"; };
 		181139C91C643C0D00DE3638 /* YKDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDock.m; sourceTree = "<group>"; };
 		181139CA1C643C0D00DE3638 /* YKDockItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDockItem.h; sourceTree = "<group>"; };
@@ -271,11 +270,15 @@
 		18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18D70BA81C5BF13F00548B85 /* UIAlertController+ShortWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+ShortWay.h"; sourceTree = "<group>"; };
 		18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+ShortWay.m"; sourceTree = "<group>"; };
+		18DD6D281C84B27600FBFB80 /* YKMatterListOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMatterListOperator.h; sourceTree = "<group>"; };
+		18DD6D291C84B27600FBFB80 /* YKMatterListOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMatterListOperator.m; sourceTree = "<group>"; };
 		18DDA8411C58599000AC74CF /* ZipZap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZipZap.xcodeproj; path = ZipZap/ZipZap.xcodeproj; sourceTree = "<group>"; };
 		18DDA85C1C5897DA00AC74CF /* NSURL+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+File.h"; sourceTree = "<group>"; };
 		18DDA85D1C5897DA00AC74CF /* NSURL+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+File.m"; sourceTree = "<group>"; };
 		18E9B6B31C6714E800FF5403 /* YKSkipHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSkipHelper.h; sourceTree = "<group>"; };
 		18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSkipHelper.m; sourceTree = "<group>"; };
+		18F324FE1C84B3F200150B54 /* YKMatterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMatterModel.h; sourceTree = "<group>"; };
+		18F324FF1C84B3F200150B54 /* YKMatterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMatterModel.m; sourceTree = "<group>"; };
 		18F505261C7BCDDA002CF38F /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		18F505281C7BCE12002CF38F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18F5052A1C7BCE20002CF38F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -634,8 +637,6 @@
 		180E8F791C61261E0028209B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				180E8F811C6126380028209B /* YKMatterModel.h */,
-				180E8F821C6126380028209B /* YKMatterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -754,6 +755,8 @@
 				420C4FF31C1D709F004143C6 /* YKBrowseVideoModel.m */,
 				425215311C2032C0009759D3 /* YKRankListModel.h */,
 				425215321C2032C0009759D3 /* YKRankListModel.m */,
+				18F324FE1C84B3F200150B54 /* YKMatterModel.h */,
+				18F324FF1C84B3F200150B54 /* YKMatterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -769,6 +772,8 @@
 				425215351C203443009759D3 /* YKRankListOperator.m */,
 				18ACC2161C844B5000396460 /* YKChannelOperator.h */,
 				18ACC2171C844B5000396460 /* YKChannelOperator.m */,
+				18DD6D281C84B27600FBFB80 /* YKMatterListOperator.h */,
+				18DD6D291C84B27600FBFB80 /* YKMatterListOperator.m */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -1156,11 +1161,11 @@
 		4297F9071B144C6A00706B72 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				42D71B041B638AE900567F3B /* View */,
+				42656D231B1597A300D2AB4B /* Location */,
 				180E8F791C61261E0028209B /* Model */,
 				4297F9081B144CF100706B72 /* YKPlayViewController.h */,
 				4297F9091B144CF100706B72 /* YKPlayViewController.m */,
-				42D71B041B638AE900567F3B /* View */,
-				42656D231B1597A300D2AB4B /* Location */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -1631,7 +1636,6 @@
 				4297F9101B144D0700706B72 /* YKHomeViewController.m in Sources */,
 				426FCD3E1C40D5190045B369 /* Mp3Recorder.m in Sources */,
 				426FCD1B1C40D5190045B369 /* SDImageCache.m in Sources */,
-				180E8F831C6126380028209B /* YKMatterModel.m in Sources */,
 				426FCD3B1C40D5190045B369 /* UUMessageFrame.m in Sources */,
 				42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */,
 				425B39331B4A815F002468F4 /* YKMessageController.m in Sources */,
@@ -1647,6 +1651,7 @@
 				426FCD261C40D5190045B369 /* UIImageView+HighlightedWebCache.m in Sources */,
 				426FCD6B1B2862B400A5DB0E /* YKBrowseTableViewCell.m in Sources */,
 				4204950D1B7C7BC900FD3150 /* YKContactModel.m in Sources */,
+				18F325001C84B3F200150B54 /* YKMatterModel.m in Sources */,
 				42FCF2131B858135005C108E /* YKBrowseAuthorInfoView.m in Sources */,
 				42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
@@ -1687,6 +1692,7 @@
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				426FCD3C1C40D5190045B369 /* UUProgressHUD.m in Sources */,
 				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
+				18DD6D2A1C84B27600FBFB80 /* YKMatterListOperator.m in Sources */,
 				426FCD031C40D5190045B369 /* AFURLConnectionOperation.m in Sources */,
 				426FCD271C40D5190045B369 /* UIImageView+WebCache.m in Sources */,
 				425B392D1B4A7940002468F4 /* YKSettingController.m in Sources */,

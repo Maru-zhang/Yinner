@@ -10,28 +10,65 @@
 #import "YKWorkViewController.h"
 #import "UIView+GrayLine.h"
 #import "YKMatterModel.h"
+#import <MJRefresh/MJRefresh.h>
+#import "YKMatterListOperator.h"
 
 @interface YKLocationViewController ()
-
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end
 
 @implementation YKLocationViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.locationtableView.dataSource = self;
-    self.locationtableView.delegate = self;
+    [self setupSetting];
+    
+    [self setupView];
     
 }
 
 
+#pragma mark - Private Method
+- (void)setupSetting {
+    self.locationtableView.dataSource = self;
+    self.locationtableView.delegate = self;
+}
+
+- (void)setupView {
+   
+    self.locationtableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadData];
+    }];
+    
+    [self.locationtableView.mj_header beginRefreshing];
+}
+
+
+- (void)loadData{
+    
+    YKMatterListOperator *operator = [[YKMatterListOperator alloc] init];
+    @weakify(self);
+    [operator getTopicResponseWithSuccessHandler:^(id responseObject) {
+        
+        [weak_self.dataSource removeAllObjects];
+        
+        [weak_self.dataSource addObjectsFromArray:responseObject];
+        
+        [weak_self.locationtableView reloadData];
+        
+        [weak_self.locationtableView.mj_header endRefreshing];
+    } andFailureHandler:^(NSError *error) {
+        [weak_self.locationtableView.mj_header endRefreshing];
+    }];
+}
 
 #pragma mark - dataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,7 +81,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = @"后会无期";
+    YKMatterModel *model = self.dataSource[indexPath.row];
+    
+    cell.textLabel.text = model.title;
     
     return cell;
 }
@@ -54,12 +93,7 @@
 #pragma mark - tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YKMatterModel *model = [[YKMatterModel alloc] init];
-    
-    model.title = @"后会无期";
-    model.zipURL = [NSURL URLWithString:@"http://7xp4ku.com1.z0.glb.clouddn.com/201411171813a004c168398c20bb.zip"];
-    
-    YKWorkViewController *vc = [[YKWorkViewController alloc] initWithModel:model];
+    YKWorkViewController *vc = [[YKWorkViewController alloc] initWithModel:[self.dataSource objectAtIndex:indexPath.row]];
     
     [self presentViewController:vc animated:YES completion:nil];
     
@@ -76,5 +110,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.5;
+}
+
+#pragma mark - Property
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 @end
