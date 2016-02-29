@@ -14,7 +14,6 @@
 #import "UIImageView+WebCache.h"
 @interface YKHomeViewController ()
 {
-    UICollectionViewFlowLayout *_layout;
     YKHomeSelectView *_seletView;
     UICollectionView *_collectionView;
     UICollectionReusableView *_reuseableView;
@@ -135,30 +134,29 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     YKBrowseListOperator *operator = [[YKBrowseListOperator alloc] init];
     
-    __weak typeof(self) weakself = self;
-    
+    @weakify(self)
     [operator getWithSuccessHander:^(id responseObject) {
         
         // 如果是初始化那么就清空
         if (setup) {
-            [weakself.dataSource removeAllObjects];
+            [weak_self.dataSource removeAllObjects];
         }
         
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         
-        [weakself.dataSource addObjectsFromArray:[YKBrowseItem mj_objectArrayWithKeyValuesArray:dic[@"data"]]];
+        [weak_self.dataSource addObjectsFromArray:[YKBrowseItem mj_objectArrayWithKeyValuesArray:dic[@"data"]]];
         
         // 刷新表格
-        [weakself.collectionView reloadData];
+        [weak_self.collectionView reloadData];
         
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weakself.collectionView.mj_header endRefreshing];
-        [weakself.collectionView.mj_footer endRefreshing];
+        [weak_self.collectionView.mj_header endRefreshing];
+        [weak_self.collectionView.mj_footer endRefreshing];
     } andFailHander:^(NSError *error) {
         debugLog(@"%@",[error description]);
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weakself.collectionView.mj_header endRefreshing];
-        [weakself.collectionView.mj_footer endRefreshing];
+        [weak_self.collectionView.mj_header endRefreshing];
+        [weak_self.collectionView.mj_footer endRefreshing];
     }];
     
 }

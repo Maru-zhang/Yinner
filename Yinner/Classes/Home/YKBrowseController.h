@@ -10,4 +10,6 @@
 
 @interface YKBrowseController : UICollectionViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic,copy) NSString *browseTitle;
+
 @end

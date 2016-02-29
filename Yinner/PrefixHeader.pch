@@ -9,6 +9,7 @@
 
 #import "UITableView+EmptyData.h"
 #import "UIImageView+WebCache.h"
+#import "NSDictionary+Parmaters.h"
 
 #import "DebugConstant.h"
 #import "EaseMob.h"

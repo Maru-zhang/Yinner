@@ -12,14 +12,16 @@
 		181139CD1C643C0D00DE3638 /* YKDockItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 181139CB1C643C0D00DE3638 /* YKDockItem.m */; };
 		188C96911C74EE29007FCBD4 /* YKUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C96901C74EE29007FCBD4 /* YKUserSetting.m */; };
 		18A226FF1C652C4200C6BEBB /* YKModaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A226FE1C652C4200C6BEBB /* YKModaController.m */; };
+		18ACC2181C844B5000396460 /* YKChannelOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACC2171C844B5000396460 /* YKChannelOperator.m */; };
+		18ACC21B1C8456A300396460 /* NSDictionary+Parmaters.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACC21A1C8456A300396460 /* NSDictionary+Parmaters.m */; };
 		18B92DDE1C584EED0060AE23 /* YKLocationMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */; };
+		18C4BB4D1C833E7D0026E4E8 /* YKBrowseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4BB4C1C833E7D0026E4E8 /* YKBrowseLayout.m */; };
 		18D70BA21C5BEA7D00548B85 /* YKUserCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */; };
 		18D70BA41C5BEF8700548B85 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */; };
 		18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */; };
 		18DDA8591C58599000AC74CF /* libZipZap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDA84E1C58599000AC74CF /* libZipZap.a */; };
 		18DDA85E1C5897DA00AC74CF /* NSURL+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA85D1C5897DA00AC74CF /* NSURL+File.m */; };
 		18E9B6B51C6714E800FF5403 /* YKSkipHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */; };
-		18F505271C7BCDDA002CF38F /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505261C7BCDDA002CF38F /* TencentOpenAPI.framework */; };
 		18F505291C7BCE12002CF38F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505281C7BCE12002CF38F /* Security.framework */; };
 		18F5052B1C7BCE20002CF38F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052A1C7BCE20002CF38F /* libiconv.tbd */; };
 		18F5052D1C7BCE2E002CF38F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5052C1C7BCE2E002CF38F /* SystemConfiguration.framework */; };
@@ -256,8 +258,14 @@
 		188C96901C74EE29007FCBD4 /* YKUserSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUserSetting.m; sourceTree = "<group>"; };
 		18A226FD1C652C4200C6BEBB /* YKModaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKModaController.h; sourceTree = "<group>"; };
 		18A226FE1C652C4200C6BEBB /* YKModaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKModaController.m; sourceTree = "<group>"; };
+		18ACC2161C844B5000396460 /* YKChannelOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChannelOperator.h; sourceTree = "<group>"; };
+		18ACC2171C844B5000396460 /* YKChannelOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChannelOperator.m; sourceTree = "<group>"; };
+		18ACC2191C8456A300396460 /* NSDictionary+Parmaters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Parmaters.h"; sourceTree = "<group>"; };
+		18ACC21A1C8456A300396460 /* NSDictionary+Parmaters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Parmaters.m"; sourceTree = "<group>"; };
 		18B92DDC1C584EED0060AE23 /* YKLocationMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationMediaModel.h; sourceTree = "<group>"; };
 		18B92DDD1C584EED0060AE23 /* YKLocationMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationMediaModel.m; sourceTree = "<group>"; };
+		18C4BB4B1C833E7D0026E4E8 /* YKBrowseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseLayout.h; sourceTree = "<group>"; };
+		18C4BB4C1C833E7D0026E4E8 /* YKBrowseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseLayout.m; sourceTree = "<group>"; };
 		18D70BA01C5BEA7D00548B85 /* YKUserCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKUserCenter.h; sourceTree = "<group>"; };
 		18D70BA11C5BEA7D00548B85 /* YKUserCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKUserCenter.m; sourceTree = "<group>"; };
 		18D70BA31C5BEF8700548B85 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -346,7 +354,7 @@
 		425B39321B4A815F002468F4 /* YKMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMessageController.m; sourceTree = "<group>"; };
 		42656D241B1597D900D2AB4B /* YKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLocationViewController.h; sourceTree = "<group>"; };
 		42656D251B1597D900D2AB4B /* YKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLocationViewController.m; sourceTree = "<group>"; };
-		42656D281B15986400D2AB4B /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		42656D281B15986400D2AB4B /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = ../ToolKit/Singleton.h; sourceTree = "<group>"; };
 		42656D291B15987B00D2AB4B /* YKWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKWorkViewController.h; sourceTree = "<group>"; };
 		42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKWorkViewController.m; sourceTree = "<group>"; };
 		426B73C71B1898F100E7EA7E /* ReuseFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReuseFrame.h; path = ../Other/ReuseFrame.h; sourceTree = "<group>"; };
@@ -586,7 +594,6 @@
 				42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */,
 				42A15DC21B7088650029EC0F /* MobileCoreServices.framework in Frameworks */,
 				42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */,
-				18F505271C7BCDDA002CF38F /* TencentOpenAPI.framework in Frameworks */,
 				42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */,
 				42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */,
 				597978221B5EC40915C43DEC /* libPods.a in Frameworks */,
@@ -653,6 +660,15 @@
 			name = Custom;
 			sourceTree = "<group>";
 		};
+		18C4BB4A1C833E380026E4E8 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				18C4BB4B1C833E7D0026E4E8 /* YKBrowseLayout.h */,
+				18C4BB4C1C833E7D0026E4E8 /* YKBrowseLayout.m */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
 		18D70B9F1C5BEA2C00548B85 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +697,7 @@
 		18E9B6AB1C6714CC00FF5403 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				42656D281B15986400D2AB4B /* Singleton.h */,
 				18E9B6B31C6714E800FF5403 /* YKSkipHelper.h */,
 				18E9B6B41C6714E800FF5403 /* YKSkipHelper.m */,
 			);
@@ -750,6 +767,8 @@
 				420C502D1C1D7FEF004143C6 /* YKBrowseListOperator.m */,
 				425215341C203443009759D3 /* YKRankListOperator.h */,
 				425215351C203443009759D3 /* YKRankListOperator.m */,
+				18ACC2161C844B5000396460 /* YKChannelOperator.h */,
+				18ACC2171C844B5000396460 /* YKChannelOperator.m */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -784,7 +803,6 @@
 			children = (
 				18D70B9F1C5BEA2C00548B85 /* User */,
 				426F877F1B6B133800624E1B /* View */,
-				42656D281B15986400D2AB4B /* Singleton.h */,
 				42656D291B15987B00D2AB4B /* YKWorkViewController.h */,
 				42656D2A1B15987B00D2AB4B /* YKWorkViewController.m */,
 				42F4BD121B1C54DD00E23726 /* YKCoreDataManager.h */,
@@ -1104,6 +1122,8 @@
 				18DDA85D1C5897DA00AC74CF /* NSURL+File.m */,
 				18D70BA81C5BF13F00548B85 /* UIAlertController+ShortWay.h */,
 				18D70BA91C5BF13F00548B85 /* UIAlertController+ShortWay.m */,
+				18ACC2191C8456A300396460 /* NSDictionary+Parmaters.h */,
+				18ACC21A1C8456A300396460 /* NSDictionary+Parmaters.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1111,6 +1131,7 @@
 		4297F9051B144C4700706B72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				18C4BB4A1C833E380026E4E8 /* Layout */,
 				420C4FEE1C1D6FCF004143C6 /* Model */,
 				426FCD5E1B285B6600A5DB0E /* SubController */,
 				42C46A801B20806500F6AAAC /* View */,
@@ -1601,6 +1622,7 @@
 				18A226FF1C652C4200C6BEBB /* YKModaController.m in Sources */,
 				426FCD311C40D5190045B369 /* UIProgressView+AFNetworking.m in Sources */,
 				426FCD2C1C40D5190045B369 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				18ACC2181C844B5000396460 /* YKChannelOperator.m in Sources */,
 				426FCD341C40D5190045B369 /* NSDate+Utils.m in Sources */,
 				426FCD2E1C40D5190045B369 /* UIAlertView+AFNetworking.m in Sources */,
 				426F90EA1C1EF86B006A91E3 /* UIView+GrayLine.m in Sources */,
@@ -1633,6 +1655,7 @@
 				426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */,
 				426FCD2D1C40D5190045B369 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				424DAB291C30089200F8BC52 /* YKFansListController.m in Sources */,
+				18C4BB4D1C833E7D0026E4E8 /* YKBrowseLayout.m in Sources */,
 				420120CE1C1933EC0024A79E /* YKLibraryController.m in Sources */,
 				420495121B7C8C7500FD3150 /* YKChatViewCell.m in Sources */,
 				420120681C168A650024A79E /* YKTabbarController.m in Sources */,
@@ -1702,6 +1725,7 @@
 				42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */,
 				426FCD1E1C40D5190045B369 /* SDWebImageDownloader.m in Sources */,
 				4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */,
+				18ACC21B1C8456A300396460 /* NSDictionary+Parmaters.m in Sources */,
 				426FCD221C40D5190045B369 /* UIButton+WebCache.m in Sources */,
 				42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */,
 				42A15D411B70245A0029EC0F /* YKPlaySettingController.m in Sources */,

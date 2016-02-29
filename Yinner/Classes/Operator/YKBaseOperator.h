@@ -18,7 +18,7 @@ typedef void(^FailHander)(NSError *error);
 @interface YKBaseOperator : NSObject
 
 @property (nonatomic,copy) NSString *host;
-@property (nonatomic,strong) NSMutableArray *parmaters;
+@property (nonatomic,strong) NSDictionary *parmaters;
 @property (nonatomic,strong) AFHTTPSessionManager *manager;
 
 @end

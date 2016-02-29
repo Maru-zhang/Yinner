@@ -89,6 +89,8 @@ static NSString * const reuseIdentifier = @"channelCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     YKBrowseController *vc = [[YKBrowseController alloc] init];
+    YKChannelViewCell *cell = (YKChannelViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    vc.browseTitle = cell.cellTitle.text;
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end
