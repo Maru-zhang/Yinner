@@ -12,6 +12,7 @@
 
 #define kHighLight_C [UIColor whiteColor]
 #define kNormal_C [UIColor lightGrayColor]
+#define kOffsetValue 30.0f
 
 @interface YKSubtitleView ()
 {
@@ -70,7 +71,7 @@
     // 设置线条参数
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
-    CGRect textRect = [cell.textLabel.text boundingRectWithSize:CGSizeMake(cell.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:nil context:nil];
+    CGRect textRect = [cell.textLabel.text boundingRectWithSize:cell.textLabel.bounds.size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:nil context:nil];
     
     _leftLine.frame = cell.bounds;
     _leftLine.position = CGPointMake(CGRectGetWidth(cell.bounds) / 2, CGRectGetHeight(cell.bounds) / 2);
@@ -80,16 +81,25 @@
     CGMutablePathRef secondLine = CGPathCreateMutable();
     
     CGPathMoveToPoint(firstLine, NULL, 0, CGRectGetHeight(cell.frame) / 2);
-    CGPathAddLineToPoint(firstLine, NULL, CGRectGetMidX(cell.frame) - CGRectGetWidth(textRect) / 2, CGRectGetHeight(cell.frame) / 2);
+    CGPathAddLineToPoint(firstLine, NULL, CGRectGetWidth(cell.frame) / 2 - CGRectGetWidth(textRect) / 2 - kOffsetValue, CGRectGetHeight(cell.frame) / 2);
     
     CGPathMoveToPoint(secondLine, NULL, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame) / 2);
-    CGPathAddLineToPoint(secondLine, NULL, CGRectGetWidth(cell.frame) / 2 + CGRectGetWidth(textRect) / 2, CGRectGetHeight(cell.frame) / 2);
+    CGPathAddLineToPoint(secondLine, NULL, CGRectGetWidth(cell.frame) / 2 + CGRectGetWidth(textRect) / 2 + kOffsetValue, CGRectGetHeight(cell.frame) / 2);
     
     [_leftLine setPath:firstLine];
     [_rightLine setPath:secondLine];
     
     [cell.layer addSublayer:_leftLine];
     [cell.layer addSublayer:_rightLine];
+
+    CABasicAnimation *annimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    
+    annimation.fromValue = @0;
+    annimation.toValue = @1;
+    annimation.duration = 2.0;
+    
+    [_leftLine addAnimation:annimation forKey:nil];
+    [_rightLine addAnimation:annimation forKey:nil];
     
 }
 
