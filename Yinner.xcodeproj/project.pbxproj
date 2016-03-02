@@ -30,6 +30,7 @@
 		18F505311C7BCE52002CF38F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505301C7BCE52002CF38F /* CoreTelephony.framework */; };
 		18F505331C7BCE5F002CF38F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505321C7BCE5F002CF38F /* libstdc++.tbd */; };
 		18F505351C7BCE67002CF38F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F505341C7BCE67002CF38F /* libz.tbd */; };
+		18F65D421C85DD9600F10F23 /* YKSubtitleIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F65D411C85DD9600F10F23 /* YKSubtitleIndicator.m */; };
 		420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120641C15AB8C0024A79E /* UITableView+EmptyData.m */; };
 		420120681C168A650024A79E /* YKTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120671C168A650024A79E /* YKTabbarController.m */; };
 		420120781C17DFB70024A79E /* YKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420120771C17DFB70024A79E /* YKNavigationController.m */; };
@@ -287,6 +288,8 @@
 		18F505301C7BCE52002CF38F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		18F505321C7BCE5F002CF38F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		18F505341C7BCE67002CF38F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		18F65D401C85DD9600F10F23 /* YKSubtitleIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSubtitleIndicator.h; sourceTree = "<group>"; };
+		18F65D411C85DD9600F10F23 /* YKSubtitleIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKSubtitleIndicator.m; sourceTree = "<group>"; };
 		420120631C15AB8C0024A79E /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
 		420120641C15AB8C0024A79E /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
 		420120661C168A650024A79E /* YKTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKTabbarController.h; sourceTree = "<group>"; };
@@ -1339,6 +1342,8 @@
 				42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */,
 				42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */,
 				42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */,
+				18F65D401C85DD9600F10F23 /* YKSubtitleIndicator.h */,
+				18F65D411C85DD9600F10F23 /* YKSubtitleIndicator.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1741,6 +1746,7 @@
 				425B39301B4A8149002468F4 /* YKFriendController.m in Sources */,
 				181139CC1C643C0D00DE3638 /* YKDock.m in Sources */,
 				426FCD301C40D5190045B369 /* UIImageView+AFNetworking.m in Sources */,
+				18F65D421C85DD9600F10F23 /* YKSubtitleIndicator.m in Sources */,
 				421A3ADB1B7A1DD900E62D9A /* YKSearchFriendController.m in Sources */,
 				18D70BAA1C5BF13F00548B85 /* UIAlertController+ShortWay.m in Sources */,
 			);

@@ -13,6 +13,7 @@
 #import "NSURL+File.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
+#import "YKSubtitleIndicator.h"
 
 #define kSUBTITLE_H 140.0
 
@@ -242,6 +243,12 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
     [self.view addSubview:_subTitle];
     
+    //隐藏状态栏
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self prefersStatusBarHidden];
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
 }
 
 - (void)setupSetting
@@ -281,6 +288,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [self loadSubTitleWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"srt"]];
     
     [self playVideoWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"mp4"]];
+    
+    [self subtitleIndicatorAnimation];
 }
 
 - (void)playVideoWithURL:(NSURL *)url
@@ -512,7 +521,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     }
     
     // 加载字幕字典
-    for (int i = 0; i < _subTitleTimeArray.count; i++) {
+    for (int i = 0; i < MIN(_subTitleTimeArray.count, temp.count); i++) {
         [_subTitleArray setObject:temp[i] forKey:_subTitleTimeArray[i]];
     }
     
@@ -553,12 +562,12 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     }
     
     //防止数组越界
-    if ((_currentTime + 1) > _subTitleTimeArray.count) {
+    if ((_currentTime + 1) > [_subTitleArray allKeys].count) {
         return;
     }
     
     //判断当前读取的是哪一行字幕
-    if ([_subTitleTimeArray containsObject:currentTime]) {
+    if ([[_subTitleArray allKeys] containsObject:currentTime]) {
         
         //获取当前字幕的index
         NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
@@ -575,6 +584,20 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
 }
 
+- (void)subtitleIndicatorAnimation {
+    
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, 0, 1, 1, 1);
+    
+    CGPoint SEPoint[2];
+    
+    CGContextMoveToPoint(context, SEPoint[0].x, SEPoint[0].y);
+    CGContextAddLineToPoint(context, SEPoint[1].x, SEPoint[1].y);
+    
+    CGContextStrokePath(context);
+
+}
 
 #pragma mark - <TableView DataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
