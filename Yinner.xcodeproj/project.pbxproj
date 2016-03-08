@@ -1431,6 +1431,7 @@
 				TargetAttributes = {
 					42C585D21B0AFAF0005BE52E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 678WD436L9;
 					};
 					42C585EB1B0AFAF0005BE52E = {
 						CreatedOnToolsVersion = 6.1;
@@ -1873,7 +1874,6 @@
 			baseConfigurationReference = F53DF99BD8E6F4B8D9AB68DC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1916,7 +1916,6 @@
 			baseConfigurationReference = F073887A5EC671A59ED481CE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
