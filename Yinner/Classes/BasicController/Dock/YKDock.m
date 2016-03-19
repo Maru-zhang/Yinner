@@ -104,10 +104,10 @@
     }
     
     // 点击动画
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         dockItem.center = CGPointMake(dockItem.center.x, dockItem.center.y - kJumpH);
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.1 animations:^{
             dockItem.center = CGPointMake(dockItem.center.x, dockItem.center.y + kJumpH);
         }];
     }];

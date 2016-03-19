@@ -21,5 +21,10 @@
     self.backgroundColor = [UIColor whiteColor];
 }
 
-
+- (void)configWithModel:(YKBrowseItem *)model {
+    self.browseTitle.text = model.title;
+    self.browseComment.text = [NSString stringWithFormat:@"%ld",(long)model.comment_count];
+    self.browseFavourite.text = [NSString stringWithFormat:@"%ld",(long)model.good_count];
+    [self.browseImage sd_setImageWithURL:[NSURL URLWithString:model.image]];
+}
 @end

@@ -14,6 +14,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
 #import "YKSubtitleIndicator.h"
+#import "YKDownloadOperator.h"
 
 #define kSUBTITLE_H 140.0
 
@@ -67,58 +68,31 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [super viewWillAppear:animated];
     
     // 输出路径
-    NSString *localPath = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[[NSURL URLWithString:self.matter.sourceurl] lastPathComponent]];
-    
     // 检查是否已经缓存完毕
-    if ([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[self.matter.video_url lastPathComponent]]]) {
         
         [self loadResource];
         
     }else {
         
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.matter.sourceurl]];
+        [SVProgressHUD showWithStatus:@"正在下载素材中..."];
         
-        AFHTTPRequestOperation *operator = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        YKDownloadOperator *operator = [[YKDownloadOperator alloc] init];
         
-        // 设置输出路径
-        operator.outputStream = [NSOutputStream outputStreamToFileAtPath:localPath append:NO];
-        
-        // 下载中块
-        [operator setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-            [SVProgressHUD showProgress:totalBytesRead / totalBytesExpectedToRead status:@"正在下载素材..." maskType:SVProgressHUDMaskTypeGradient];
-        }];
-        
-        // 完成操作
-        [operator setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            debugLog(@"-----%@",localPath);
+        [operator downloadWithMatter:self.matter successHandler:^(id responseObject) {
+            
             [SVProgressHUD dismiss];
-            
-            // 解压操作
-            ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:localPath] error:nil];
-            
-            // 创建解压文件夹
-            NSString *unarchivePath = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:[[localPath lastPathComponent] stringByDeletingPathExtension]];
-            
-            [[NSFileManager defaultManager] createDirectoryAtPath:unarchivePath withIntermediateDirectories:NO attributes:nil error:nil];
-            
-            // 循环解压
-            for (ZZArchiveEntry* entry in archive.entries)
-            {
-                NSURL* targetPath = [[NSURL fileURLWithPath:unarchivePath] URLByAppendingPathComponent:entry.fileName];
-                
-                [[entry newDataWithError:nil] writeToURL:targetPath
-                                                  atomically:NO];
-            }
             
             [self loadResource];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failureHandler:^(NSError *error) {
             [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:@"下载失败!" maskType:SVProgressHUDMaskTypeGradient];
+            
+            [SVProgressHUD showErrorWithStatus:@"下载失败!"];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
         }];
         
-        // 开始操作
-        [operator start];
+        
     }
     
 }
@@ -285,9 +259,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     _info.hidden = NO;
     _back.hidden = NO;
     
-    [self loadSubTitleWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"srt"]];
+    [self loadSubTitleWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeSRT]];
     
-    [self playVideoWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"mp4"]];
+    [self playVideoWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeMP4]];
     
     [self subtitleIndicatorAnimation];
 }
@@ -304,9 +278,9 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 - (void)mregeVideoWithCompletion:(mergeMediaComplete)completion
 {
     
-    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"mp4"] options:nil];
-    AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"wav"] options:nil];
-    AVURLAsset *bgmAsset = [[AVURLAsset alloc] initWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"mp3"] options:nil];
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeMP4] options:nil];
+    AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeRec] options:nil];
+    AVURLAsset *bgmAsset = [[AVURLAsset alloc] initWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeMP3] options:nil];
     
     // 合成器
     AVMutableComposition *composition = [[AVMutableComposition alloc] init];
@@ -325,8 +299,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     NSString *myPathDocs =  [MY_MEDIA_DIR_STR stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mov",[[NSUUID UUID] UUIDString]]];
     NSURL *url = [NSURL fileURLWithPath:myPathDocs];
     
-//    debugLog(@"%@",[url filePathURL]);
-    
+
     //创建输出对象
     AVAssetExportSession *export = [AVAssetExportSession exportSessionWithAsset:composition presetName:AVAssetExportPresetHighestQuality];
     export.outputURL = url;
@@ -349,12 +322,11 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         YKLocationMediaModel *model = [[YKLocationMediaModel alloc] init];
         
         // 赋值
-        model.cover = myPathDocs;
+        model.cover = self.matter.img_url;
         model.name = self.matter.title;
-        model.origin = @"音控";
+        model.origin = self.matter.from;
         model.time = [[NSDate date] getCurrentTime];
-        model.titleurl = [url lastPathComponent];
-        model.url = [url lastPathComponent];
+        model.url = myPathDocs;
         
         // 开始存储数据
         YKCoreDataManager *manager = [YKCoreDataManager sharedYKCoreDataManager];
@@ -527,9 +499,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
     // 刷新
     [_subTitle reloadData];
-    
-    NSLog(@"测试：%@",stringArray);
-    NSLog(@"时间测试:%@",_subTitleTimeArray);
 }
 
 #pragma mark 关于TimeManager的业务逻辑
@@ -644,7 +613,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark - Property
 - (AVAudioPlayer *)audioPlayer {
     if (!_audioPlayer) {
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"mp3"] error:nil];
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeMP3] error:nil];
     }
     return _audioPlayer;
 }
@@ -667,7 +636,7 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         [recorderSetting setValue:[NSNumber numberWithInt:AVAudioQualityHigh] forKey:AVEncoderAudioQualityKey];
         
         // 初始化
-        _recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL getMaterialByZipURL:[NSURL URLWithString:self.matter.sourceurl] andType:@"wav"] settings:recorderSetting error:nil];
+        _recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeRec] settings:recorderSetting error:nil];
         // 控制音量
         [_recorder peakPowerForChannel:0];
         _recorder.delegate = self;

@@ -17,8 +17,10 @@
         self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+        
     }
     return self;
+    
 }
 
 @end

@@ -7,3 +7,9 @@
 //
 
 #define kAPIHOST @"http://api.peiyinxiu.com"
+
+#if TARGET_IPHONE_SIMULATOR
+#define LOCAL_API @"http://localhost:5000"
+#elif TARGET_OS_IPHONE
+#define LOCAL_API @"http://localhost:5000"
+#endif

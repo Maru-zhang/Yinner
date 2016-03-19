@@ -272,6 +272,8 @@
                 
             }];
             
+            debugLog(@"%@",[[EaseMob sharedInstance].chatManager loginInfo]);
+            
         }else if (error.errorCode == EMErrorServerTimeout) {
             [self showAlertViewWithMessage:@"连接超时！"];
         }else if (error.errorCode == EMErrorServerNotReachable) {

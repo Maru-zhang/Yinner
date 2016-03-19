@@ -10,19 +10,34 @@
 
 @implementation NSURL (File)
 
-+ (NSURL *)getMaterialByZipURL:(NSURL *)url andType:(NSString *)type {
+
++ (NSURL *)urlWithMatter:(YKMatterModel *)model andType:(YKMatterType)type {
     
-    NSString *fileName = [[url lastPathComponent] stringByDeletingPathExtension];
+    NSString *fileName;
+    NSString *result;
     
-    NSString *videoPath;
-    
-    if ([type isEqualToString:@"mp3"]) {
-        videoPath = [[ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName] stringByAppendingString:[NSString stringWithFormat:@"/1x.%@",type]];
-    }else {
-        videoPath = [[ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName] stringByAppendingString:[NSString stringWithFormat:@"/1.%@",type]];
+    switch (type) {
+        case YKMatterTypeSRT:
+            fileName =  [model.srt_url lastPathComponent];
+            result = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName];
+            break;
+            
+        case YKMatterTypeMP3:
+            fileName = [model.audio_url lastPathComponent];
+            result = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName];
+            break;
+        case YKMatterTypeMP4:
+            fileName = [model.video_url lastPathComponent];
+            result = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName];
+            break;
+        case YKMatterTypeRec:
+            fileName = [[[model.audio_url lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"wav"];
+            result = [ORIGIN_MEDIA_DIR_STR stringByAppendingPathComponent:fileName];
+        default:
+            break;
     }
     
-    return [NSURL fileURLWithPath:videoPath];
+    return [NSURL fileURLWithPath:result];
 }
 
 

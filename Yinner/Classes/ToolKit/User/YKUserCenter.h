@@ -12,7 +12,6 @@
 
 typedef void(^loginHander)();
 
-
 @interface YKUserCenter : NSObject
 
 

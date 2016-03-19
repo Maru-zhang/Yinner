@@ -7,9 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YKMatterModel.h"
+
+typedef enum : NSUInteger {
+    // 字幕
+    YKMatterTypeSRT,
+    // 视频
+    YKMatterTypeMP4,
+    // 背景音乐
+    YKMatterTypeMP3,
+    // 录音
+    YKMatterTypeRec,
+    
+} YKMatterType;
 
 @interface NSURL (File)
 
-+ (NSURL *)getMaterialByZipURL:(NSURL *)url andType:(NSString *)type;
++ (NSURL *)urlWithMatter:(YKMatterModel *)model andType:(YKMatterType)type;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "YKRankListOperator.h"
+#import "YKRankListModel.h"
 
 @implementation YKRankListOperator
 
@@ -32,7 +33,8 @@
                                    };
     
     [self.manager GET:self.host parameters:paramaters success:^(NSURLSessionDataTask *task, id responseObject) {
-        successHander(responseObject);
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        successHander([YKRankListModel mj_objectArrayWithKeyValuesArray:json[@"data"]]);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failHander(error);
     }];

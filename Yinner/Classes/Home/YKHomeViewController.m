@@ -135,17 +135,14 @@ static NSString *const reuseIdentifier = @"reuseCell";
     YKBrowseListOperator *operator = [[YKBrowseListOperator alloc] init];
     
     @weakify(self)
-    [operator getWithSuccessHander:^(id responseObject) {
+    [operator getWithSuccessHander:^(NSArray * responseObject) {
         
         // 如果是初始化那么就清空
         if (setup) {
             [weak_self.dataSource removeAllObjects];
         }
         
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        
-        [weak_self.dataSource addObjectsFromArray:[YKBrowseItem mj_objectArrayWithKeyValuesArray:dic[@"data"]]];
-        
+        [self.dataSource addObjectsFromArray:responseObject];
         // 刷新表格
         [weak_self.collectionView reloadData];
         
@@ -193,11 +190,7 @@ static NSString *const reuseIdentifier = @"reuseCell";
     
     YKBrowseItem *item = self.dataSource[indexPath.row];
     
-    cell.browseTitle.text = item.title;
-    cell.browseComment.text = [NSString stringWithFormat:@"%ld",(long)item.comment_count];
-    cell.browseFavourite.text = [NSString stringWithFormat:@"%ld",(long)item.good_count];
-    [cell.browseImage sd_setImageWithURL:[NSURL URLWithString:item.image]];
-    
+    [cell configWithModel:item];
     
     return cell;
 }

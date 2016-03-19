@@ -174,6 +174,7 @@
 		42D71B021B63628E00567F3B /* YKBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B011B63628E00567F3B /* YKBrowseViewController.m */; };
 		42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */; };
 		42D71B091B638B1000567F3B /* YKPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */; };
+		42DF6EFD1C9ACF01009D0A42 /* YKDownloadOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF6EFC1C9ACF01009D0A42 /* YKDownloadOperator.m */; };
 		42E644F41B17099400247877 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F31B17099400247877 /* AVFoundation.framework */; };
 		42E644F61B17099D00247877 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E644F51B17099D00247877 /* CoreAudio.framework */; };
 		42F4BD111B1C4D7D00E23726 /* MediaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD0F1B1C4D7D00E23726 /* MediaModel.xcdatamodeld */; };
@@ -557,6 +558,8 @@
 		42D71B051B638B1000567F3B /* YKPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPlayTableViewCell.h; sourceTree = "<group>"; };
 		42D71B061B638B1000567F3B /* YKPlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPlayTableViewCell.m; sourceTree = "<group>"; };
 		42D71B071B638B1000567F3B /* YKPlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKPlayTableViewCell.xib; sourceTree = "<group>"; };
+		42DF6EFB1C9ACF01009D0A42 /* YKDownloadOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDownloadOperator.h; sourceTree = "<group>"; };
+		42DF6EFC1C9ACF01009D0A42 /* YKDownloadOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDownloadOperator.m; sourceTree = "<group>"; };
 		42E644F31B17099400247877 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42E644F51B17099D00247877 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		42F4BD101B1C4D7D00E23726 /* MediaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaModel.xcdatamodel; sourceTree = "<group>"; };
@@ -777,6 +780,8 @@
 				18ACC2171C844B5000396460 /* YKChannelOperator.m */,
 				18DD6D281C84B27600FBFB80 /* YKMatterListOperator.h */,
 				18DD6D291C84B27600FBFB80 /* YKMatterListOperator.m */,
+				42DF6EFB1C9ACF01009D0A42 /* YKDownloadOperator.h */,
+				42DF6EFC1C9ACF01009D0A42 /* YKDownloadOperator.m */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -1671,6 +1676,7 @@
 				420495121B7C8C7500FD3150 /* YKChatViewCell.m in Sources */,
 				420120681C168A650024A79E /* YKTabbarController.m in Sources */,
 				420495091B7C78C100FD3150 /* YKContactTableViewCell.m in Sources */,
+				42DF6EFD1C9ACF01009D0A42 /* YKDownloadOperator.m in Sources */,
 				188C96911C74EE29007FCBD4 /* YKUserSetting.m in Sources */,
 				426FCD611B285B9F00A5DB0E /* YKFavouriteController.m in Sources */,
 				426FCD061C40D5190045B369 /* AFURLSessionManager.m in Sources */,

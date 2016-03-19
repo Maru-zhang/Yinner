@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YKBrowseVideoModel.h"
 
 static NSString *const browseCell = @"browseCell";
 
 @interface YKBrowseViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *browseImage;
 @property (weak, nonatomic) IBOutlet UILabel *browseTitle;
 @property (weak, nonatomic) IBOutlet UILabel *browseFavourite;
 @property (weak, nonatomic) IBOutlet UILabel *browseComment;
-@property (weak, nonatomic) IBOutlet UILabel *browseTime;
+
+- (void)configWithModel:(YKBrowseItem *)model;
 @end

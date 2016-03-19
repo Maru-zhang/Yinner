@@ -131,7 +131,7 @@
     
     NSManagedObject *model = _dataSource[indexPath.row];
     
-    YKBrowseViewController *vc = [[YKBrowseViewController alloc] initWithURL:[NSURL fileURLWithPath:[MY_MEDIA_DIR_STR stringByAppendingPathComponent:[model valueForKey:@"url"]]]];
+    YKBrowseViewController *vc = [[YKBrowseViewController alloc] initWithURL:[NSURL fileURLWithPath:[model valueForKey:@"url"]]];
     
     [self presentViewController:vc animated:YES completion:^{
         

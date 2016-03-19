@@ -11,12 +11,6 @@
 @implementation YKMatterModel
 
 
-+ (NSDictionary *)objectClassInArray{
-    return @{@"roles" : [YKMatterRoles class]};
-}
-@end
-@implementation YKMatterRoles
-
 @end
 
 

@@ -55,7 +55,7 @@ singleton_implementation(YKCoreDataManager)
     
 }
 
-#pragma mark - private method
+#pragma mark - Public Method
 - (void)insertEntityWithLocationMediaModel:(YKLocationMediaModel *)model
 {
     [self insertEntityWithLocationMediaModel:model WithEntityName:@"Media"];
@@ -70,7 +70,6 @@ singleton_implementation(YKCoreDataManager)
     [media setValue:model.name forKey:@"name"];
     [media setValue:model.origin forKey:@"origin"];
     [media setValue:model.time forKey:@"time"];
-    [media setValue:model.titleurl forKey:@"titleurl"];
     [media setValue:model.url forKey:@"url"];
     
     NSError *error = nil;

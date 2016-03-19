@@ -7,6 +7,7 @@
 //
 
 #import "YKBrowseListOperator.h"
+#import "YKBrowseVideoModel.h"
 
 @implementation YKBrowseListOperator
 
@@ -22,7 +23,8 @@
 - (void)getWithSuccessHander:(SuccessHander)successHander andFailHander:(FailHander)failHander {
     
     [self.manager GET:tempURL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        successHander(responseObject);
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        successHander([YKBrowseItem mj_objectArrayWithKeyValuesArray:dic[@"data"]]);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failHander(error);
     }];

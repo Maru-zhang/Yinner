@@ -32,15 +32,15 @@
 #pragma mark - Private method
 - (void)setup
 {
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadDataWithSetup:YES];
     }];
     
-    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self loadDataWithSetup:NO];
     }];
     
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 #pragma mark Load New Data
@@ -48,23 +48,22 @@
 {
     YKRankListOperator *operator = [[YKRankListOperator alloc] init];
     
-    [operator getWithpageNum:1 SuccessHander:^(id responseObject) {
+    [operator getWithpageNum:1 SuccessHander:^(NSMutableArray *resultArray) {
         
         if (setup) {
             [self.dataSource removeAllObjects];
         }
         
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        
-        [self.dataSource addObjectsFromArray:[YKRankListModel mj_objectArrayWithKeyValuesArray:json[@"data"]]];
+        [self.dataSource addObjectsFromArray:resultArray];
         
         [self.tableView reloadData];
         
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     } andFailHander:^(NSError *error) {
-        [self.tableView.header endRefreshing];
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 

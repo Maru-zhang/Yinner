@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Alloc. All rights reserved.
 //
 
-typedef void(^SuccessHander)(id responseObject);
+typedef void(^SuccessHander)(NSMutableArray *resultArray);
 typedef void(^FailHander)(NSError *error);
 
 #define kAPPKEY @"3e8622117aee570a"
