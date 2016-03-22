@@ -90,10 +90,8 @@
 }
 
 #pragma mark - Action
-- (IBAction)closeClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+- (IBAction)unwindSegue:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

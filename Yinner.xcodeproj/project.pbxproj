@@ -48,6 +48,7 @@
 		420C4FF41C1D709F004143C6 /* YKBrowseVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C4FF31C1D709F004143C6 /* YKBrowseVideoModel.m */; };
 		420C502B1C1D7F7F004143C6 /* YKBaseOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C502A1C1D7F7F004143C6 /* YKBaseOperator.m */; };
 		420C502E1C1D7FEF004143C6 /* YKBrowseListOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 420C502D1C1D7FEF004143C6 /* YKBrowseListOperator.m */; };
+		421627411C9FB6480032482F /* YKTranstaionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 421627401C9FB6480032482F /* YKTranstaionAnimator.m */; };
 		421A3AD81B7852B800E62D9A /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3AD71B7852B800E62D9A /* UIImage+Image.m */; };
 		421A3ADB1B7A1DD900E62D9A /* YKSearchFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A3ADA1B7A1DD900E62D9A /* YKSearchFriendController.m */; };
 		421A68681B33F1AC002E249A /* YKPersonnalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421A68661B33F1AC002E249A /* YKPersonnalCell.m */; };
@@ -327,6 +328,8 @@
 		420C502A1C1D7F7F004143C6 /* YKBaseOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBaseOperator.m; sourceTree = "<group>"; };
 		420C502C1C1D7FEF004143C6 /* YKBrowseListOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseListOperator.h; sourceTree = "<group>"; };
 		420C502D1C1D7FEF004143C6 /* YKBrowseListOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseListOperator.m; sourceTree = "<group>"; };
+		4216273F1C9FB6480032482F /* YKTranstaionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKTranstaionAnimator.h; sourceTree = "<group>"; };
+		421627401C9FB6480032482F /* YKTranstaionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKTranstaionAnimator.m; sourceTree = "<group>"; };
 		421A3AD61B7852B800E62D9A /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		421A3AD71B7852B800E62D9A /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		421A3AD91B7A1DD900E62D9A /* YKSearchFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKSearchFriendController.h; sourceTree = "<group>"; };
@@ -793,6 +796,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		421627341C9FB51A0032482F /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				4216273F1C9FB6480032482F /* YKTranstaionAnimator.h */,
+				421627401C9FB6480032482F /* YKTranstaionAnimator.m */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
 		42656D1D1B157CCC00D2AB4B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +1181,7 @@
 		4297F9071B144C6A00706B72 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				421627341C9FB51A0032482F /* Translate */,
 				42D71B041B638AE900567F3B /* View */,
 				42656D231B1597A300D2AB4B /* Location */,
 				180E8F791C61261E0028209B /* Model */,
@@ -1738,6 +1751,7 @@
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
 				426FCD051C40D5190045B369 /* AFURLResponseSerialization.m in Sources */,
 				42FF561A1B72DB8500C7781D /* NSString+Valid.m in Sources */,
+				421627411C9FB6480032482F /* YKTranstaionAnimator.m in Sources */,
 				426FCD191C40D5190045B369 /* MKAnnotationView+WebCache.m in Sources */,
 				42A15D3D1B6EFD060029EC0F /* YKPersonInfoController.m in Sources */,
 				42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */,

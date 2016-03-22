@@ -150,7 +150,6 @@ static NSString *const reuseIdentifier = @"reuseCell";
         [weak_self.collectionView.mj_header endRefreshing];
         [weak_self.collectionView.mj_footer endRefreshing];
     } andFailHander:^(NSError *error) {
-        debugLog(@"%@",[error description]);
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
         [weak_self.collectionView.mj_header endRefreshing];
         [weak_self.collectionView.mj_footer endRefreshing];
@@ -232,8 +231,9 @@ static NSString *const reuseIdentifier = @"reuseCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return kItemSize;
+    return kItemSize;    
 }
+
 
 #pragma mark - Property
 - (NSNumber *)currentPage {

@@ -12,8 +12,10 @@
 #import "YKFansListController.h"
 #import "YKWorksListController.h"
 #import "YKModaController.h"
+#import "YKNavigationController.h"
+#import "YKTranstaionAnimator.h"
 
-@interface YKTabbarController () <YKPersonnalViewDelegate>
+@interface YKTabbarController () <YKPersonnalViewDelegate,UIViewControllerTransitioningDelegate>
 {
     YKDock *_dock;
     UIPanGestureRecognizer *_pan;
@@ -44,7 +46,6 @@
 #pragma mark - 初始化图标
 
 - (void)setupView {
-
 }
 
 - (void)settingDock
@@ -71,21 +72,17 @@
 #pragma mark 选中的方法
 - (void)selectDockItemAt:(int)index
 {
-    switch (index) {
-        case 0:
-            _pan.enabled = YES;
-            self.selectedIndex = 0;
-            break;
-        case 1:
-            [self performSegueWithIdentifier:@"play" sender:nil];
-            break;
-        case 2:
-            _pan.enabled = NO;
-            self.selectedIndex = 1;
-            break;
-            
-        default:
-            break;
+    if (index == 0) {
+        _pan.enabled = YES;
+        self.selectedIndex = 0;
+    }else if (index == 1) {
+        YKNavigationController * vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"matterLib"];
+        vc.transitioningDelegate = self;
+        vc.modalTransitionStyle = UIModalPresentationCustom;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else {
+        _pan.enabled = NO;
+        self.selectedIndex = 1;
     }
 }
 
@@ -192,6 +189,12 @@
     }
     
 }
+
+#pragma mark - Transition Delegate
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [YKTranstaionAnimator new];
+}
+
 
 
 #pragma mark - personnalvcDelegate
