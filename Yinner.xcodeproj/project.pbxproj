@@ -182,6 +182,8 @@
 		42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD131B1C54DD00E23726 /* YKCoreDataManager.m */; };
 		42F4BD161B1C597400E23726 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4BD151B1C597400E23726 /* CoreData.framework */; };
 		42F4BD1B1B1C89F300E23726 /* NSDate+Current.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */; };
+		42FAE54B1CB2606400495273 /* YKCommentOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FAE54A1CB2606400495273 /* YKCommentOperator.m */; };
+		42FAE5551CB260B500495273 /* YKCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FAE5541CB260B500495273 /* YKCommentModel.m */; };
 		42FCF2131B858135005C108E /* YKBrowseAuthorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */; };
 		42FCF2141B858135005C108E /* YKBrowseAuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */; };
 		42FCF2151B858135005C108E /* YKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF2101B858135005C108E /* YKCommentTableViewCell.m */; };
@@ -571,6 +573,10 @@
 		42F4BD151B1C597400E23726 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		42F4BD191B1C89F300E23726 /* NSDate+Current.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Current.h"; sourceTree = "<group>"; };
 		42F4BD1A1B1C89F300E23726 /* NSDate+Current.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Current.m"; sourceTree = "<group>"; };
+		42FAE5491CB2606400495273 /* YKCommentOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCommentOperator.h; sourceTree = "<group>"; };
+		42FAE54A1CB2606400495273 /* YKCommentOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCommentOperator.m; sourceTree = "<group>"; };
+		42FAE5531CB260B500495273 /* YKCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCommentModel.h; sourceTree = "<group>"; };
+		42FAE5541CB260B500495273 /* YKCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCommentModel.m; sourceTree = "<group>"; };
 		42FCF20C1B858135005C108E /* YKBrowseAuthorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKBrowseAuthorInfoView.h; sourceTree = "<group>"; };
 		42FCF20D1B858135005C108E /* YKBrowseAuthorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKBrowseAuthorInfoView.m; sourceTree = "<group>"; };
 		42FCF20E1B858135005C108E /* YKBrowseAuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKBrowseAuthorInfoView.xib; sourceTree = "<group>"; };
@@ -766,6 +772,8 @@
 				425215321C2032C0009759D3 /* YKRankListModel.m */,
 				18F324FE1C84B3F200150B54 /* YKMatterModel.h */,
 				18F324FF1C84B3F200150B54 /* YKMatterModel.m */,
+				42FAE5531CB260B500495273 /* YKCommentModel.h */,
+				42FAE5541CB260B500495273 /* YKCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -785,6 +793,8 @@
 				18DD6D291C84B27600FBFB80 /* YKMatterListOperator.m */,
 				42DF6EFB1C9ACF01009D0A42 /* YKDownloadOperator.h */,
 				42DF6EFC1C9ACF01009D0A42 /* YKDownloadOperator.m */,
+				42FAE5491CB2606400495273 /* YKCommentOperator.h */,
+				42FAE54A1CB2606400495273 /* YKCommentOperator.m */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -1663,6 +1673,7 @@
 				426FCD3B1C40D5190045B369 /* UUMessageFrame.m in Sources */,
 				42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */,
 				425B39331B4A815F002468F4 /* YKMessageController.m in Sources */,
+				42FAE5551CB260B500495273 /* YKCommentModel.m in Sources */,
 				426FCD291C40D5190045B369 /* SVIndefiniteAnimatedView.m in Sources */,
 				42C585DC1B0AFAF0005BE52E /* AppDelegate.m in Sources */,
 				426FCD041C40D5190045B369 /* AFURLRequestSerialization.m in Sources */,
@@ -1747,6 +1758,7 @@
 				42656D261B1597D900D2AB4B /* YKLocationViewController.m in Sources */,
 				42A15D471B7032D10029EC0F /* TKSuggestSettingController.m in Sources */,
 				4236B2F41B269DF4005B7D43 /* YKBrowseViewCell.m in Sources */,
+				42FAE54B1CB2606400495273 /* YKCommentOperator.m in Sources */,
 				426FCD281C40D5190045B369 /* UIView+WebCacheOperation.m in Sources */,
 				4275CC3A1B29646E006B7690 /* YKChannelViewCell.m in Sources */,
 				426FCD051C40D5190045B369 /* AFURLResponseSerialization.m in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1h-7Z-yRM">
                         <rect key="frame" x="49" y="10" width="60" height="12"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="sfr-Qy-DGp"/>
                         </constraints>
@@ -27,17 +26,15 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="我你妈，笑死爹了！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxd-0r-eJp">
                         <rect key="frame" x="49" y="21" width="263" height="30"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="b3E-zA-E6A"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="发表于2015-05-12 13：16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO0-Te-gnL">
                         <rect key="frame" x="140" y="11" width="164" height="12"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="qJX-fL-Jlj"/>
                         </constraints>
@@ -47,14 +44,12 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-Qz-0oH">
                         <rect key="frame" x="6" y="9" width="35" height="35"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="Cc1-eo-IJC"/>
                             <constraint firstAttribute="height" constant="35" id="JjA-rh-E9i"/>
                         </constraints>
                     </imageView>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cxd-0r-eJp" secondAttribute="bottom" constant="4" id="1sG-Fb-yNX"/>
                     <constraint firstItem="cxd-0r-eJp" firstAttribute="leading" secondItem="dgN-Qz-0oH" secondAttribute="trailing" constant="8" id="IQW-UE-mJC"/>
@@ -66,7 +61,6 @@
                     <constraint firstItem="M1h-7Z-yRM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="mBz-6f-BCg"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="commentTime" destination="wO0-Te-gnL" id="9V4-TV-4Vb"/>
                 <outlet property="content" destination="cxd-0r-eJp" id="RYs-sc-PHX"/>

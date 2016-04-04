@@ -137,22 +137,23 @@ static NSString *const reuseIdentifier = @"reuseCell";
     @weakify(self)
     [operator getWithSuccessHander:^(NSArray * responseObject) {
         
+        @strongify(self)
         // 如果是初始化那么就清空
         if (setup) {
-            [weak_self.dataSource removeAllObjects];
+            [self.dataSource removeAllObjects];
         }
         
         [self.dataSource addObjectsFromArray:responseObject];
         // 刷新表格
-        [weak_self.collectionView reloadData];
+        [self.collectionView reloadData];
         
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weak_self.collectionView.mj_header endRefreshing];
-        [weak_self.collectionView.mj_footer endRefreshing];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
     } andFailHander:^(NSError *error) {
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [weak_self.collectionView.mj_header endRefreshing];
-        [weak_self.collectionView.mj_footer endRefreshing];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
     }];
     
 }

@@ -9,13 +9,16 @@
 #import "YKBrowseViewController.h"
 #import "KRVideoPlayerController+Hidden.h"
 #import <AVFoundation/AVFoundation.h>
+#import "YKCommentOperator.h"
+#import "YKCommentModel.h"
 
 @interface YKBrowseViewController ()
 {
-    UITableView *_tableView;
+    UITableView *_commentView;
     UIButton *_testButton;
     YKBrowseAuthorInfoView *_infoView;
 }
+@property (nonatomic,strong) NSMutableArray *dataSource;
 @end
 
 @implementation YKBrowseViewController
@@ -32,11 +35,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化视图
+    // 初始化视图
     [self setupView];
     
-    //初始化设置
+    // 初始化设置
     [self setupSetting];
+    
+    // 加载评论
+    [self loadComment:YES];
     
 }
 
@@ -81,7 +87,7 @@
     [super viewDidLayoutSubviews];
     
     //给评论区添加约束
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -89,7 +95,7 @@
                                                          multiplier:1
                                                            constant:KwinW / 16 * 9 + 110]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
                                                           attribute:NSLayoutAttributeBottom
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -97,14 +103,14 @@
                                                          multiplier:1
                                                            constant:0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
                                                           attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeLeft
                                                          multiplier:1
                                                            constant:5]];
 
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_commentView
                                                           attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeRight
@@ -149,15 +155,16 @@
 {
     self.view.backgroundColor = [UIColor colorWithWhite:0.877 alpha:1.000];
     
-    if (!_tableView) {
+    if (!_commentView) {
         
-        _tableView = [[UITableView alloc] init];
-        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
-        _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.dataSource = self;
-        _tableView.delegate = self;
+        _commentView = [[UITableView alloc] init];
+        _commentView.translatesAutoresizingMaskIntoConstraints = NO;
+        _commentView.showsVerticalScrollIndicator = NO;
+        _commentView.tableFooterView = [UIView new];
+        _commentView.dataSource = self;
+        _commentView.delegate = self;
         
-        [self.view addSubview:_tableView];
+        [self.view addSubview:_commentView];
         
     }
     
@@ -208,6 +215,25 @@
     
 }
 
+- (void)loadComment:(BOOL)setup {
+    
+    YKCommentOperator *operator = [[YKCommentOperator alloc] init];
+    
+    @weakify(self)
+    [operator fetchCommentResponseWithSuccessHandler:^(NSMutableArray *resultArray) {
+        
+        @strongify(self)
+        
+        [self.dataSource addObjectsFromArray:resultArray];
+        
+        [_commentView reloadData];
+        
+    } andFailureHandler:^(NSError *error) {
+        
+    }];
+    
+}
+
 #pragma mark 退出
 - (void)exitController
 {
@@ -225,14 +251,9 @@
 
 
 #pragma mark - <UITableview Datasource>
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -245,7 +266,7 @@
         UITableViewCell *totalCell = [tableView dequeueReusableCellWithIdentifier:totalIdentifer];
         
         totalCell = [[UITableViewCell alloc] init];
-        totalCell.textLabel.text = @"共有201条评论";
+        totalCell.textLabel.text = [NSString stringWithFormat:@"共有%lu条评论",(unsigned long)self.dataSource.count];
         totalCell.textLabel.textColor = [UIColor grayColor];
         
         return totalCell;
@@ -254,10 +275,16 @@
     {
         YKCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
         
-        if (!cell) {
-            
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"YKCommentTableViewCell" owner:self options:nil] lastObject];
-        }
+        if (!cell) { cell = [[[NSBundle mainBundle] loadNibNamed:@"YKCommentTableViewCell" owner:self options:nil] lastObject]; }
+        
+        YKCommentItem *item = self.dataSource[indexPath.row];
+        
+        cell.name.text = item.username;
+        cell.content.text = item.content;
+        cell.commentTime.text = [item.date substringFromIndex:1];
+        [cell.headImage sd_setImageWithURL:[NSURL URLWithString:item.userhead]];
+        
+        debugLog(@"%@",item);
         
         return cell;
     }
@@ -275,6 +302,14 @@
     {
         return 55;
     }
+}
+
+#pragma mark - Property
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 
 @end

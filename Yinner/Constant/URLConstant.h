@@ -11,5 +11,5 @@
 #if TARGET_IPHONE_SIMULATOR
 #define LOCAL_API @"http://localhost:5000"
 #elif TARGET_OS_IPHONE
-#define LOCAL_API @"http://localhost:5000"
+#define LOCAL_API @"http://10.73.5.140:5000"
 #endif
