@@ -18,6 +18,8 @@
 
 #define kSUBTITLE_H 140.0
 
+#import "JXTProgressLabel.h"
+
 typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 
 @interface YKWorkViewController ()
@@ -262,8 +264,8 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     [self loadSubTitleWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeSRT]];
     
     [self playVideoWithURL:[NSURL urlWithMatter:self.matter andType:YKMatterTypeMP4]];
-    
-    [self subtitleIndicatorAnimation];
+
+    debugLog(@"资源地址:%@",[NSURL urlWithMatter:self.matter andType:YKMatterTypeSRT]);
 }
 
 - (void)playVideoWithURL:(NSURL *)url
@@ -411,8 +413,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
 #pragma mark - audioRecode delegate
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
 {
-    debugLog(@"完成录音");
-    
     //开始合成
     [self mregeVideoWithCompletion:^(YKLocationMediaModel *model) {
         // 设置为已经录制完成
@@ -525,16 +525,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     double secondsElapsed = fmod(_recorder.currentTime, 60);
     NSString *currentTime = [NSString stringWithFormat:@"%02.f:%02.f",minutesElapsed,secondsElapsed];
     
-    //懒加载
-    if (!_currentTime) {
-        _currentTime = 0;
-    }
-    
-    //防止数组越界
-    if ((_currentTime + 1) > [_subTitleArray allKeys].count) {
-        return;
-    }
-    
     //判断当前读取的是哪一行字幕
     if ([[_subTitleArray allKeys] containsObject:currentTime]) {
         
@@ -542,6 +532,11 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
         NSUInteger index = [_subTitleTimeArray indexOfObject:currentTime];
         
         _currentTime = (int)index;
+        
+        // 防止数组越界
+        if ((_currentTime + 1) > [_subTitleArray allKeys].count) {
+            return;
+        }
         
         //滚动
         NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:_currentTime inSection:0];
@@ -553,20 +548,6 @@ typedef void(^mergeMediaComplete)(YKLocationMediaModel *model);
     
 }
 
-- (void)subtitleIndicatorAnimation {
-    
-
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetRGBStrokeColor(context, 0, 1, 1, 1);
-    
-    CGPoint SEPoint[2];
-    
-    CGContextMoveToPoint(context, SEPoint[0].x, SEPoint[0].y);
-    CGContextAddLineToPoint(context, SEPoint[1].x, SEPoint[1].y);
-    
-    CGContextStrokePath(context);
-
-}
 
 #pragma mark - <TableView DataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

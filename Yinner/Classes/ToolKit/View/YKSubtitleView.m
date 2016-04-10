@@ -49,12 +49,13 @@
 
 
 #pragma mark - 重写
+
 - (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated {
     
     // 移除线条
-    [_rightLine removeFromSuperlayer];
-    [_leftLine removeFromSuperlayer];
-    
+//    [_rightLine removeFromSuperlayer];
+//    [_leftLine removeFromSuperlayer];
+//    
     dispatch_async(dispatch_get_main_queue(), ^{
         
         UITableViewCell *pre_cell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentLine inSection:0]];
@@ -69,13 +70,14 @@
     [super scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:animated];
     
     // 设置线条参数
-    UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
+//    UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
-    CGRect textRect = [cell.textLabel.text boundingRectWithSize:cell.textLabel.bounds.size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:nil context:nil];
+//    CGRect textRect = [cell.textLabel.text boundingRectWithSize:cell.textLabel.bounds.size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:nil context:nil];
     
-    _leftLine.frame = cell.bounds;
-    _leftLine.position = CGPointMake(CGRectGetWidth(cell.bounds) / 2, CGRectGetHeight(cell.bounds) / 2);
+//    _leftLine.frame = cell.bounds;
+//    _leftLine.position = CGPointMake(CGRectGetWidth(cell.bounds) / 2, CGRectGetHeight(cell.bounds) / 2);
     
+    /*
     // 创建路径
     CGMutablePathRef firstLine = CGPathCreateMutable();
     CGMutablePathRef secondLine = CGPathCreateMutable();
@@ -100,6 +102,7 @@
     
     [_leftLine addAnimation:annimation forKey:nil];
     [_rightLine addAnimation:annimation forKey:nil];
+     */
     
 }
 

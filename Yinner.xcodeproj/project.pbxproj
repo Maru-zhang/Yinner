@@ -161,6 +161,10 @@
 		42A15DC41B7088710029EC0F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A15DC31B7088710029EC0F /* CFNetwork.framework */; };
 		42A8EE1B1B1DDA9500D34EAD /* NSFileManager+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */; };
 		42B5B6E41B1E81600061CF4B /* NSString+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B5B6E31B1E81600061CF4B /* NSString+FileName.m */; };
+		42BC31C21CBA351500837864 /* JXTHollowOutLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BC31BB1CBA351500837864 /* JXTHollowOutLabel.m */; };
+		42BC31C31CBA351500837864 /* JXTProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BC31BD1CBA351500837864 /* JXTProgressLabel.m */; };
+		42BC31C41CBA351500837864 /* JXTSlideClipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BC31BF1CBA351500837864 /* JXTSlideClipLabel.m */; };
+		42BC31C51CBA351500837864 /* ParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BC31C11CBA351500837864 /* ParallaxView.m */; };
 		42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A481B1FD92800F6AAAC /* YKLibraryCell.m */; };
 		42C46A4B1B1FD94900F6AAAC /* YKLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42C46A4A1B1FD94900F6AAAC /* YKLibraryCell.xib */; };
 		42C46A831B20808F00F6AAAC /* YKHomeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C46A821B20808F00F6AAAC /* YKHomeSelectView.m */; };
@@ -539,6 +543,14 @@
 		42A8EE1A1B1DDA9500D34EAD /* NSFileManager+Repeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Repeat.m"; sourceTree = "<group>"; };
 		42B5B6E21B1E81600061CF4B /* NSString+FileName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FileName.h"; sourceTree = "<group>"; };
 		42B5B6E31B1E81600061CF4B /* NSString+FileName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FileName.m"; sourceTree = "<group>"; };
+		42BC31BA1CBA351500837864 /* JXTHollowOutLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTHollowOutLabel.h; sourceTree = "<group>"; };
+		42BC31BB1CBA351500837864 /* JXTHollowOutLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTHollowOutLabel.m; sourceTree = "<group>"; };
+		42BC31BC1CBA351500837864 /* JXTProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTProgressLabel.h; sourceTree = "<group>"; };
+		42BC31BD1CBA351500837864 /* JXTProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTProgressLabel.m; sourceTree = "<group>"; };
+		42BC31BE1CBA351500837864 /* JXTSlideClipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTSlideClipLabel.h; sourceTree = "<group>"; };
+		42BC31BF1CBA351500837864 /* JXTSlideClipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTSlideClipLabel.m; sourceTree = "<group>"; };
+		42BC31C01CBA351500837864 /* ParallaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxView.h; sourceTree = "<group>"; };
+		42BC31C11CBA351500837864 /* ParallaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxView.m; sourceTree = "<group>"; };
 		42C46A471B1FD92800F6AAAC /* YKLibraryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLibraryCell.h; sourceTree = "<group>"; };
 		42C46A481B1FD92800F6AAAC /* YKLibraryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLibraryCell.m; sourceTree = "<group>"; };
 		42C46A4A1B1FD94900F6AAAC /* YKLibraryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKLibraryCell.xib; sourceTree = "<group>"; };
@@ -1246,6 +1258,29 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		42BC31B11CBA34F600837864 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				42BC31B91CBA351500837864 /* JXTLibrary */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		42BC31B91CBA351500837864 /* JXTLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				42BC31BA1CBA351500837864 /* JXTHollowOutLabel.h */,
+				42BC31BB1CBA351500837864 /* JXTHollowOutLabel.m */,
+				42BC31BC1CBA351500837864 /* JXTProgressLabel.h */,
+				42BC31BD1CBA351500837864 /* JXTProgressLabel.m */,
+				42BC31BE1CBA351500837864 /* JXTSlideClipLabel.h */,
+				42BC31BF1CBA351500837864 /* JXTSlideClipLabel.m */,
+				42BC31C01CBA351500837864 /* ParallaxView.h */,
+				42BC31C11CBA351500837864 /* ParallaxView.m */,
+			);
+			path = JXTLibrary;
+			sourceTree = "<group>";
+		};
 		42C46A461B1FD8F500F6AAAC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,6 +1335,7 @@
 		42C585D51B0AFAF0005BE52E /* Yinner */ = {
 			isa = PBXGroup;
 			children = (
+				42BC31B11CBA34F600837864 /* Vender */,
 				420120751C17DCC50024A79E /* Interface */,
 				42656D1D1B157CCC00D2AB4B /* Resource */,
 				420120741C17DC8A0024A79E /* Constant */,
@@ -1691,6 +1727,7 @@
 				42FF561D1B72E36E00C7781D /* YKChatViewController.m in Sources */,
 				42C46A881B20814D00F6AAAC /* YKSelectButton.m in Sources */,
 				426FCD251C40D5190045B369 /* UIImage+WebP.m in Sources */,
+				42BC31C51CBA351500837864 /* ParallaxView.m in Sources */,
 				42C46A491B1FD92800F6AAAC /* YKLibraryCell.m in Sources */,
 				426FCD671B285BDF00A5DB0E /* YKRankController.m in Sources */,
 				426FCD2D1C40D5190045B369 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1723,10 +1760,12 @@
 				4225E70B1C253CEB00924257 /* ChatModel.m in Sources */,
 				426FCD321C40D5190045B369 /* UIRefreshControl+AFNetworking.m in Sources */,
 				421A3AD81B7852B800E62D9A /* UIImage+Image.m in Sources */,
+				42BC31C21CBA351500837864 /* JXTHollowOutLabel.m in Sources */,
 				42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */,
 				424DAB2C1C30092000F8BC52 /* YKWorksListController.m in Sources */,
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
 				426FCD3C1C40D5190045B369 /* UUProgressHUD.m in Sources */,
+				42BC31C31CBA351500837864 /* JXTProgressLabel.m in Sources */,
 				42D71B081B638B1000567F3B /* YKPlayTableViewCell.m in Sources */,
 				18DD6D2A1C84B27600FBFB80 /* YKMatterListOperator.m in Sources */,
 				426FCD031C40D5190045B369 /* AFURLConnectionOperation.m in Sources */,
@@ -1744,6 +1783,7 @@
 				42C585D91B0AFAF0005BE52E /* main.m in Sources */,
 				426FCD201C40D5190045B369 /* SDWebImageManager.m in Sources */,
 				420120781C17DFB70024A79E /* YKNavigationController.m in Sources */,
+				42BC31C41CBA351500837864 /* JXTSlideClipLabel.m in Sources */,
 				426FCD1C1C40D5190045B369 /* SDWebImageCompat.m in Sources */,
 				425215361C203443009759D3 /* YKRankListOperator.m in Sources */,
 				420120651C15AB8C0024A79E /* UITableView+EmptyData.m in Sources */,

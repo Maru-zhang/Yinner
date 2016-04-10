@@ -284,8 +284,6 @@
         cell.commentTime.text = [item.date substringFromIndex:1];
         [cell.headImage sd_setImageWithURL:[NSURL URLWithString:item.userhead]];
         
-        debugLog(@"%@",item);
-        
         return cell;
     }
     

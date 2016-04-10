@@ -42,7 +42,7 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-Qz-0oH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-Qz-0oH">
                         <rect key="frame" x="6" y="9" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="Cc1-eo-IJC"/>
@@ -70,7 +70,4 @@
             <point key="canvasLocation" x="256" y="535.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="0" width="406" height="436"/>
-    </resources>
 </document>
