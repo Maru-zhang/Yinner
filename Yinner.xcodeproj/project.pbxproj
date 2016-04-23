@@ -147,6 +147,7 @@
 		4275CC3E1B296673006B7690 /* YKChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4275CC3D1B296673006B7690 /* YKChannelController.m */; };
 		42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42764AA71B33CE54007A4F9E /* YKPersonnalView.m */; };
 		42764AAA1B33CE65007A4F9E /* YKPersonnalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42764AA91B33CE65007A4F9E /* YKPersonnalView.xib */; };
+		4284D5681CCB348400998D4B /* YKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4284D5671CCB348400998D4B /* YKRegisterViewController.m */; };
 		4294A3461B735749009C86B6 /* YKChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4294A3441B735749009C86B6 /* YKChatMessageCell.m */; };
 		4294A3471B735749009C86B6 /* YKChatMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4294A3451B735749009C86B6 /* YKChatMessageCell.xib */; };
 		4297F8FE1B143BD500706B72 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 4297F8FD1B143BD500706B72 /* NSString+File.m */; };
@@ -512,6 +513,8 @@
 		42764AA61B33CE54007A4F9E /* YKPersonnalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPersonnalView.h; sourceTree = "<group>"; };
 		42764AA71B33CE54007A4F9E /* YKPersonnalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPersonnalView.m; sourceTree = "<group>"; };
 		42764AA91B33CE65007A4F9E /* YKPersonnalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKPersonnalView.xib; sourceTree = "<group>"; };
+		4284D5661CCB348400998D4B /* YKRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKRegisterViewController.h; sourceTree = "<group>"; };
+		4284D5671CCB348400998D4B /* YKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKRegisterViewController.m; sourceTree = "<group>"; };
 		4294A3431B735749009C86B6 /* YKChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChatMessageCell.h; sourceTree = "<group>"; };
 		4294A3441B735749009C86B6 /* YKChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChatMessageCell.m; sourceTree = "<group>"; };
 		4294A3451B735749009C86B6 /* YKChatMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKChatMessageCell.xib; sourceTree = "<group>"; };
@@ -1110,6 +1113,8 @@
 				42764AA51B33CE14007A4F9E /* Personnal */,
 				42FF56111B719D6300C7781D /* YKLoginViewController.h */,
 				42FF56121B719D6300C7781D /* YKLoginViewController.m */,
+				4284D5661CCB348400998D4B /* YKRegisterViewController.h */,
+				4284D5671CCB348400998D4B /* YKRegisterViewController.m */,
 				420120661C168A650024A79E /* YKTabbarController.h */,
 				420120671C168A650024A79E /* YKTabbarController.m */,
 				420120761C17DFB70024A79E /* YKNavigationController.h */,
@@ -1761,6 +1766,7 @@
 				426FCD321C40D5190045B369 /* UIRefreshControl+AFNetworking.m in Sources */,
 				421A3AD81B7852B800E62D9A /* UIImage+Image.m in Sources */,
 				42BC31C21CBA351500837864 /* JXTHollowOutLabel.m in Sources */,
+				4284D5681CCB348400998D4B /* YKRegisterViewController.m in Sources */,
 				42764AA81B33CE54007A4F9E /* YKPersonnalView.m in Sources */,
 				424DAB2C1C30092000F8BC52 /* YKWorksListController.m in Sources */,
 				42F4BD141B1C54DD00E23726 /* YKCoreDataManager.m in Sources */,
@@ -1954,7 +1960,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Yinner",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Yinner/Classes/Lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
@@ -1965,7 +1970,6 @@
 					"\"${PODS_ROOT}/Headers/Public/KRVideoPlayer\"",
 					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
 					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"$(SRCROOT)/ZipZap\"",
 				);
 				INFOPLIST_FILE = Yinner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1996,7 +2000,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Yinner",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Yinner/Classes/Lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Yinner/PrefixHeader.pch";
@@ -2007,7 +2010,6 @@
 					"\"${PODS_ROOT}/Headers/Public/KRVideoPlayer\"",
 					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
 					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"$(SRCROOT)/ZipZap\"",
 				);
 				INFOPLIST_FILE = Yinner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

@@ -68,6 +68,8 @@
         self.account.text = account;
         self.password.text = password;
     }
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissRegisterKeyboard)]];
 }
 
 - (void)setupView
@@ -136,6 +138,11 @@
     
 }
 
+- (void)dismissRegisterKeyboard {
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+}
+
+
 - (void)judgeValid
 {
     //判断中文字符
@@ -195,46 +202,6 @@
 
 
 #pragma mark - Action
-- (IBAction)registerButton:(id)sender {
-    
-    //有效值判断
-    [self judgeValid];
-    
-    NSString *account = self.account.text;
-    NSString *password = self.password.text;
-    
-    
-    
-    //异步注册
-    [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:account password:password withCompletion:^(NSString *username, NSString *password, EMError *error) {
-        if (!error) {
-            NSLog(@"注册成功");
-            
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"恭喜您，注册成功！" preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                
-            }];
-            
-            UIAlertAction *login = [UIAlertAction actionWithTitle:@"现在登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
-            }];
-            
-            [alert addAction:cancel];
-            [alert addAction:login];
-            
-            
-            [self presentViewController:alert animated:YES completion:^{
-                
-            }];
-        }
-        
-        [[NSUserDefaults standardUserDefaults] setObject:account forKey:KuserAccount];
-        [[NSUserDefaults standardUserDefaults] setObject:password forKey:KuserPassword];
-        
-    } onQueue:nil];
-    
-}
 
 - (IBAction)loginButton:(id)sender {
     

@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 
-- (IBAction)registerButton:(id)sender;
 - (IBAction)loginButton:(id)sender;
 - (IBAction)forgetButton:(id)sender;
 
