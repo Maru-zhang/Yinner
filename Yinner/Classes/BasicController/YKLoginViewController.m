@@ -111,6 +111,7 @@
                          self.passwordX.constant = _originLeftTwoX;
                          self.acountInputX.constant = _originRightOneX;
                          self.passwordInputX.constant = _originRightTwoX;
+//                         self.forgetX.constant = _originForgetX;
                          
                          [self.view layoutIfNeeded];
                          

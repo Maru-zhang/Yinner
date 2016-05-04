@@ -493,7 +493,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-zI-boQ">
                                 <rect key="frame" x="223" y="270" width="46" height="19"/>
                                 <state key="normal" title="注册">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="yV1-Dm-AkO" kind="modal" id="D3P-Hy-bM8"/>
@@ -513,9 +513,9 @@
                             <constraint firstItem="b6R-wJ-EZW" firstAttribute="leading" secondItem="VyR-ZF-8rK" secondAttribute="leading" constant="68" id="RAA-n8-bee"/>
                             <constraint firstItem="bJl-zI-boQ" firstAttribute="top" secondItem="iMi-nb-vTq" secondAttribute="bottom" constant="20" id="RmZ-rl-4zK"/>
                             <constraint firstItem="YQf-le-WDo" firstAttribute="top" secondItem="0Uw-ET-lag" secondAttribute="bottom" constant="132" id="WDi-LT-lYS"/>
-                            <constraint firstItem="T25-Ql-KG1" firstAttribute="leading" secondItem="VyR-ZF-8rK" secondAttribute="leadingMargin" constant="52" id="jE0-gh-dMd"/>
                             <constraint firstItem="Nxi-gU-Cny" firstAttribute="top" secondItem="T25-Ql-KG1" secondAttribute="bottom" constant="274" id="ji6-B5-5nA"/>
                             <constraint firstItem="b6R-wJ-EZW" firstAttribute="top" secondItem="rlS-aX-0jA" secondAttribute="bottom" constant="38" id="nlx-GZ-5w6"/>
+                            <constraint firstItem="T25-Ql-KG1" firstAttribute="leading" secondItem="b6R-wJ-EZW" secondAttribute="leading" id="v7e-La-J1i"/>
                             <constraint firstItem="iMi-nb-vTq" firstAttribute="top" secondItem="YQf-le-WDo" secondAttribute="bottom" constant="38" id="vEE-kP-dTo"/>
                             <constraint firstItem="rlS-aX-0jA" firstAttribute="leading" secondItem="VyR-ZF-8rK" secondAttribute="leading" constant="68" id="x6d-wd-el2"/>
                         </constraints>
