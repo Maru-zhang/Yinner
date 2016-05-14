@@ -883,7 +883,6 @@
 			isa = PBXGroup;
 			children = (
 				426FCC7F1C40D5190045B369 /* AFNetworking */,
-				426FCC931C40D5190045B369 /* EaseMobSDK */,
 				426FCC961C40D5190045B369 /* pic */,
 				426FCCAA1C40D5190045B369 /* SDWebImage */,
 				426FCCCC1C40D5190045B369 /* SVProgressHUD */,
@@ -918,29 +917,6 @@
 				426FCC921C40D5190045B369 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		426FCC931C40D5190045B369 /* EaseMobSDK */ = {
-			isa = PBXGroup;
-			children = (
-				426FCC941C40D5190045B369 /* include */,
-			);
-			path = EaseMobSDK;
-			sourceTree = "<group>";
-		};
-		426FCC941C40D5190045B369 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				426FCC951C40D5190045B369 /* EaseMobClientSDKLite */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		426FCC951C40D5190045B369 /* EaseMobClientSDKLite */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EaseMobClientSDKLite;
 			sourceTree = "<group>";
 		};
 		426FCC961C40D5190045B369 /* pic */ = {
