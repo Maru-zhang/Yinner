@@ -1,8 +1,8 @@
 //
-//  YKLocationMediaMod.m
+//  YKLocationMediaModel.m
 //  Yinner
 //
-//  Created by apple on 16/1/27.
+//  Created by Maru on 2016/10/10.
 //  Copyright © 2016年 Alloc. All rights reserved.
 //
 
