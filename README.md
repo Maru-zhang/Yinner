@@ -24,11 +24,11 @@
 
 ## 效果展示
 
-账号 | 首页 | 录音
--------------|-------------|-------------
+| 配音 | IM | 账号 |
+| :-------------: | :-------------: | :-------------: |
 ![01](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/01.gif) | ![02](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/02.gif) | ![03](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/03.gif)
-方言 | 排行 | IM
 ![04](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/04.gif)|![05](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/05.gif)|![06](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/06.gif)
+
 
 ## 尾巴
 
