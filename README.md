@@ -24,12 +24,12 @@
 
 ## 效果展示
 
-首页 | 侧边栏 | 详情
+* | * | *
 -------------|-------------|-------------
 ![01](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/01.gif) | ![02](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/02.gif) | ![03](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/03.gif)
-首页 | 侧边栏 | 详情
+* | * | *
 -------------|-------------|-------------
-![04](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/04.gif) | ![05](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/05.gif)| ! [06](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/06.gif)
+![04](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/04.gif)|![05](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/05.gif)|![06](https://github.com/Maru-zhang/Yinner/blob/master/Screenshot/06.gif)
 
 ## 尾巴
 
